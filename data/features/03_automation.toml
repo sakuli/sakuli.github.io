@@ -2,4 +2,6 @@ Title="Automation"
 Image="images/icon_automate.svg"
 Text="""
 This *is* formatted _or_ not?
+Do you need to transfer data manually between systems or do you want to automate a workflow without an extensive implementation?
+Let Sakuli do the job for you!
 """
