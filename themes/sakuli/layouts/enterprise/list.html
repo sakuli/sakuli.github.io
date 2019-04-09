@@ -45,12 +45,16 @@
             </li>
             {{end}}
         </ul>
+
+<div align="center">
+              {{ if isset . "price"}}
+              {{ .price }},- €
+              {{else}}
+              On Request
+              {{end}}
+</div>
         <div class="button">
-            {{ if isset . "price"}}
-            {{ .price }}€
-            {{else}}
-            On Request
-            {{end}}
+            Contact
         </div>
     </li>
     {{end}}
@@ -60,7 +64,7 @@
 <dl class="price-list-description shrink-content">
     <dt>
         <a id="sla-time">
-            <h2>What does <i>SLA Time</i> mean?</h2>
+            <h2>What does <i>Support</i> and <i>SLA Time</i> mean?</h2>
         </a>
     </dt>
     <dd>
@@ -78,6 +82,19 @@
     </dt>
     <dd>
         {{$priceList.InstanceDescription}}
+    </dd>
+</dl>
+{{end}}
+
+{{if isset $priceList "PriceDescription"}}
+<dl class="price-list-description shrink-content">
+    <dt>
+        <a id="price">
+            <h2>Price information:</h2>
+        </a>
+    </dt>
+    <dd>
+        {{$priceList.PriceDescription}}
     </dd>
 </dl>
 {{end}}
