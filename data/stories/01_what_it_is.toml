@@ -4,12 +4,12 @@ Description="""
 """
 Content="""
 
-Sakuli is a open Platform for a variaty on E2E Scenarios including testing, monitoring or any other kind of automation. You can simulate the interaction of a real user with your system.
+Sakuli is an open platform for a variaty of E2E Scenarios including UI-testing, monitoring or any other kind of automation. You can simulate the interaction of a real user with your system.
 
-Sakuli 2 it is rewritten from groud-up with following points in mind:
+Sakuli 2 is rewritten from groud-up with the following aims in mind:
 
 - Ready for the future
-- Open and extentible
+- Open and extendible
 - Compatibility with [Sakuli V1.x](https://github.com/consol/sakuli)
 
 """

@@ -1,3 +1,3 @@
 Title="Monitoring"
 Image="images/icon_monitor.svg"
-Text="lorem ipsem"
+Text="Measure execution times of your application tests and send them to monitoring systems like Nagios, check_MK and many others. You will never miss a lack of performance in your architecture again!"
