@@ -12,6 +12,7 @@ before_install:
 # script - run the build script
 script:
     - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo
+    - ls -rtla public
 
 deploy:
   provider: pages
