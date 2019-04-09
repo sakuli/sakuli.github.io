@@ -1,0 +1,17 @@
+<h1>{{ .Title }}</h1>
+
+<p>
+    <small>{{ .Date.Format "02.01.2006" }}</small>
+</p>
+
+{{ .Content }}
+
+<!-- Tags -->
+{{ if isset .Params "tags" }}
+    {{ $baseURL := .Site.BaseURL }}
+    <ul class="tags">
+        {{ range .Params.tags }}
+        <li> <a href="{{ $baseURL }}tags/{{ . | urlize }}/">#{{ . }}</a> </li>
+        {{ end }}
+    </ul>
+{{ end }}

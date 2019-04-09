@@ -1,0 +1,68 @@
+@import 'story.scss';
+@import 'features.scss';
+@import 'hero.scss';
+@import 'header.scss';
+
+:root {
+    --color-gray-dark: #403f41;
+    --color-gray-light: rgb(118, 120, 123);
+    --color-green: #8dc64e;
+    --color-green-pale: hsl(89, 0%, 45%);
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.07rem;
+}
+
+main {
+    flex: 1;
+    >section {
+        margin-bottom: 5rem;
+    }
+    line-height: 1.75rem;
+}
+
+.fork-me-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+footer {
+    background: var(--color-gray-dark);
+    color: var(--color-green);
+}
+
+.button {
+    background: var(--color-green);
+    padding: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 2rem;
+    color: var(--color-gray-dark);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    text-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-gray-dark);
+    border-bottom: 1px solid var(--color-green);
+    text-align: center;
+    margin: 1rem 2rem;
+    padding-bottom: 1rem;
+    line-height: 2.5rem;
+}
+
+footer {
+    display: flex; 
+    justify-content: center;
+    padding: 2rem;
+}
