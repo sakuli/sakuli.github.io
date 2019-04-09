@@ -1,0 +1,25 @@
+dist: xenial
+language: python
+python:
+  - "3.7"
+
+servies: 
+  - docker
+
+before_install:
+  - docker pull jojomi/hugo
+
+# script - run the build script
+script:
+    - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure  
+  verbose: true
+  keep-history: true
+  local-dir: public
+  target_branch: master  # branch contains blog content
+  on:
+    branch: develop  # branch contains Hugo generator code
