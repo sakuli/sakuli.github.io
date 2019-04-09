@@ -20,6 +20,6 @@ deploy:
   verbose: true
   keep-history: true
   local-dir: public
-  target_branch: ghpages  # branch contains blog content
+  target_branch: gh-pages  # branch contains blog content
   on:
     branch: master  # branch contains Hugo generator code
