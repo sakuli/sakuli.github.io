@@ -3,11 +3,11 @@ language: python
 python:
   - "3.7"
 
-servies: 
+services: 
   - docker
 
 before_install:
-  -ls -rtla
+  - ls -rtla
   - docker pull jojomi/hugo
 
 # script - run the build script
