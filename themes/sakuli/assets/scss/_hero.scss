@@ -3,8 +3,8 @@
     flex-direction: row;
     background-image: linear-gradient(to bottom right, $color-green-pale, $color-gray-very-dark);
     padding: 5rem 0 5rem 0;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    text-shadow: $shadow-l1;
+    box-shadow: $shadow-l1;
     color: lighten($color-gray-light, 10%);
 
     @media screen and (max-width: 820px) {

@@ -1,0 +1,37 @@
+SlaDescription="""
+    SLA: Initial reaction time between Mo.-Fr. German Business Hours 08:00 - 17.00
+"""
+
+InstanceDescription="""
+    Number of parallel runnign Tests that are supported.
+"""
+
+[[plans]]
+code="LSD"
+instances="< 10"
+sla="8h"
+forwarder=true
+container=true
+cli=false
+hub=false
+price=700.00
+
+[[plans]]
+code="SPEED"
+instances="< 40"
+sla="3h"
+forwarder=true
+container=true
+cli=true
+hub=false
+price=3500.00
+
+[[plans]]
+code="CRACK"
+instances="> 50"
+sla="3h"
+forwarder=true
+container=true
+cli=true
+hub=true
+#price=

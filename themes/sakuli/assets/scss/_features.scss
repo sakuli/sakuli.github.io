@@ -3,12 +3,6 @@
     flex-direction: row;
     margin-top: 1rem;
 
-    @media screen and (min-width: 1200px) {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .key-features__feature {
         background: white;
         display: flex;

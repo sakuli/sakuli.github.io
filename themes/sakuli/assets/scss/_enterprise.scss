@@ -1,0 +1,81 @@
+#price-table {
+    list-style: none;
+    display: flex;
+    flex-direction: row;        
+    padding: 0;
+    @media screen and (max-width: 820px) {
+        flex-direction: column;    
+    }
+
+    >li {
+        @media screen and (max-width: 820px) {
+            margin-bottom: 3rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        margin: 0 1rem;
+        flex: 1;
+        box-shadow: $shadow-l1;
+
+        >ul {
+            list-style: none;
+            padding: 1rem;
+            flex: 1;
+
+            >li {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i.check-mark {
+                    color: $color-green;
+                    &::before {
+                        content: "✓"
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: $color-gray-dark;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                a.info {
+                    background: $color-green;
+                    border-radius: 50%;
+                    display: flex;
+                    width: 20px;
+                    height: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    text-decoration: none;
+                    font-size: .8rem;
+                    font-weight: bold;
+                    margin-left: .5rem;
+                    &::before {
+                        content: "i"
+                    }
+                }
+            }
+        }
+
+        .button {
+            width: 75%;
+            align-self: center;
+            margin-bottom: -2rem;
+            text-align: center;
+            font-size: 1.5rem
+        }
+    }
+    margin-bottom: 4rem;    
+}
+
+.price-list-description {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+}

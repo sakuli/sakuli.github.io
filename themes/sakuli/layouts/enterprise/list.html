@@ -1,0 +1,86 @@
+<!-- Header -->
+{{ partial "header.html" . }}
+{{ $priceList := .Site.Data.enterprise.price_table }}
+<h1>{{.Title}}</h1>
+<article class="shrink-content">
+    {{.Content}}
+</article>
+<ul id="price-table" class="shrink-content">
+    {{ range $priceList.plans }}
+    <li>
+        <h2>{{ .code }}</h2>
+        <ul>
+            <li>
+                <span>
+                    <strong>{{.instances}}</strong> instances
+                </span>
+                <a href="#instances" class="info">
+                </a>
+            </li>
+            <li>
+                <span>
+                    <strong>{{.sla}}</strong> SLA Time
+                </span>
+                <a href="#sla-time" class="info">
+                </a>
+            </li>
+            {{ if .forwarder }}
+            <li>
+                <a href="forwarder"><i class="check-mark"></i> Monitoring Forwarder</a>
+            </li>
+            {{end}}
+            {{ if .container }}
+            <li>
+                <a href="container"><i class="check-mark"></i> Pre-Configured Headless Container</a>
+            </li>
+            {{end}}
+            {{ if .cli }}
+            <li>
+                <a href="cli"><i class="check-mark"></i> Sakuli CLI Tools</a>
+            </li>
+            {{end}}
+            {{ if .hub }}
+            <li>
+                <a href="hub"><i class="check-mark"></i> Sakuli Hub</a>
+            </li>
+            {{end}}
+        </ul>
+        <div class="button">
+            {{ if isset . "price"}}
+            {{ .price }}€
+            {{else}}
+            On Request
+            {{end}}
+        </div>
+    </li>
+    {{end}}
+</ul>
+
+{{if isset $priceList "SlaDescription"}}
+<dl class="price-list-description shrink-content">
+    <dt>
+        <a id="sla-time">
+            <h2>What does <i>SLA Time</i> mean?</h2>
+        </a>
+    </dt>
+    <dd>
+        {{$priceList.SlaDescription}}
+    </dd>
+</dl>
+{{end}}
+
+{{if isset $priceList "InstanceDescription"}}
+<dl class="price-list-description shrink-content">
+    <dt>
+        <a id="instances">
+            <h2>What does <i>Instances</i> mean?</h2>
+        </a>
+    </dt>
+    <dd>
+        {{$priceList.InstanceDescription}}
+    </dd>
+</dl>
+{{end}}
+
+<!-- Footer -->
+{{ partial "footer.html" . }}
