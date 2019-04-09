@@ -2,7 +2,7 @@ Title="How it works"
 
 
 Content="""
-Sakuli combines Seleniums power for webautomation (in real browsers) with the power of Nut.js to emulate any other possible user-interaction, like opening rich-clients.
+Sakuli extends Seleniums technology for webautomation (in real browsers) with the power of Nut.js to emulate any other possible user-interaction, like opening rich-clients, typing and moving the mouse.
 """
 
 [Image]
