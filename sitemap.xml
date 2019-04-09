@@ -8,8 +8,28 @@
   </url>
   
   <url>
+    <loc>/enterprise/</loc>
+  </url>
+  
+  <url>
+    <loc>/enterprise/forwarder/</loc>
+  </url>
+  
+  <url>
+    <loc>/enterprise/container/</loc>
+  </url>
+  
+  <url>
+    <loc>/enterprise/cli/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/enterprise/hub/</loc>
   </url>
   
   <url>
