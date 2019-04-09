@@ -8,11 +8,11 @@ services:
 
 before_install:
   - ls -rtla
-  - docker pull jojomi/hugo
+  - docker pull jojomi/hugo:0.53
 
 # script - run the build script
 script:
-    - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo
+    - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo:0.53
     - ls -rtla public
 
 deploy:
