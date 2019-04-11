@@ -20,7 +20,7 @@
 </div>
         <nav>
             <ul>
-                <li><a href="#">Docs</a></li>
+                <li><a href="/docs">Docs</a></li>
                 <li><a href="/enterprise">Enterprise</a></li>
             </ul>
         </nav>
@@ -29,7 +29,7 @@
 
 
 <h1>Enterprise Plans</h1>
-<article class="shrink-content">
+<article class="shrink-content text-center">
     <p>Sakuli has various offers for enterprise support end exclusive features, find your plan and contact us now!</p>
 
 </article>
@@ -37,6 +37,13 @@
     
     <li>
         <h2>S</h2>
+        <div class="price">
+            
+            
+            Free <small class="price-addon">Open Source</small>
+            
+            
+        </div>
         <ul>
             <li>
                 <span>
@@ -52,23 +59,23 @@
             
         </ul>
 
-<div align="center">
-              
-                
-                    Free
-                
-              
-</div>
-        <div class="button">
-            
-                <a href="https://github.com/sakuli/sakuli/">GitHub</a>
-            
+        
+            <a class="button" href="https://github.com/sakuli/sakuli" target="_blank">Github</a>
+        
 
-        </div>
+
+        
     </li>
     
     <li>
         <h2>M</h2>
+        <div class="price">
+            
+            
+            100€ <small class="price-addon">pre month</small>
+            
+            
+        </div>
         <ul>
             <li>
                 <span>
@@ -100,23 +107,23 @@
             
         </ul>
 
-<div align="center">
-              
-                
-                    100,- € per month
-                
-              
-</div>
-        <div class="button">
-            
-                Contact
-            
+        
+            <a class="button" href="?code=M#enterprise-contact-form">Contact</a>
+        
 
-        </div>
+
+        
     </li>
     
     <li>
         <h2>L</h2>
+        <div class="price">
+            
+            
+            700€ <small class="price-addon">pre month</small>
+            
+            
+        </div>
         <ul>
             <li>
                 <span>
@@ -148,23 +155,23 @@
             
         </ul>
 
-<div align="center">
-              
-                
-                    700,- € per month
-                
-              
-</div>
-        <div class="button">
-            
-                Contact
-            
+        
+            <a class="button" href="?code=L#enterprise-contact-form">Contact</a>
+        
 
-        </div>
+
+        
     </li>
     
     <li>
         <h2>XL</h2>
+        <div class="price">
+            
+            
+            3500€ <small class="price-addon">pre month</small>
+            
+            
+        </div>
         <ul>
             <li>
                 <span>
@@ -200,23 +207,21 @@
             
         </ul>
 
-<div align="center">
-              
-                
-                    3500,- € per month
-                
-              
-</div>
-        <div class="button">
-            
-                Contact
-            
+        
+            <a class="button" href="?code=XL#enterprise-contact-form">Contact</a>
+        
 
-        </div>
+
+        
     </li>
     
     <li>
         <h2>XXL</h2>
+        <div class="price">
+            
+            Request <small class="price-addon">individual offer</small>
+            
+        </div>
         <ul>
             <li>
                 <span>
@@ -256,17 +261,12 @@
             
         </ul>
 
-<div align="center">
-              
-                On Request
-              
-</div>
-        <div class="button">
-            
-                Contact
-            
+        
+            <a class="button" href="?code=XXL#enterprise-contact-form">Contact</a>
+        
 
-        </div>
+
+        
     </li>
     
 </ul>
@@ -313,6 +313,34 @@
     </dd>
 </dl>
 
+<h3>Contact us:</h3>
+<form action="https://formspree.io/testautomatisierung@consol.de" method="POST" id="enterprise-contact-form" class="shrink-content">
+
+    <label>
+        <span>Name:</span>
+        <input type="text" name="name">
+    </label>
+    <label>
+        <span>Email</span>
+        <input type="email" name="_replyto">
+    </label>
+    <label>
+        <span>Interested in:</span>
+        <select>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+        </select>
+    </label>
+    <label>
+        <span>Tell us more about your plans with Sakuli</span>
+        <textarea></textarea>
+    </label>
+    <div class="actions">
+        <input type="submit" value="Send Request" class="button">
+    </div>
+</form>
 
 
 </main>
@@ -323,4 +351,3 @@
 </footer>
 </body>
 </html>
-
