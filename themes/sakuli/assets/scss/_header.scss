@@ -1,3 +1,13 @@
+.github-corner {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    svg {
+        fill: $color-green !important;
+    }
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -26,6 +36,7 @@ header {
         display: flex;
         justify-content: flex-end;
         flex: 1;
+        margin-right: 50px;
         ul {
             align-self: center;
             display: flex;
