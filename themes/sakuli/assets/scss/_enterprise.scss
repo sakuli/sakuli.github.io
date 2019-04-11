@@ -64,11 +64,23 @@
         }
 
         .button {
-            width: 75%;
+            width: 50%;
             align-self: center;
-            margin-bottom: -2rem;
             text-align: center;
-            font-size: 1.5rem;
+            margin-bottom: -1.5rem;
+        }
+
+        .price {
+            align-self: center;
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            .price-addon {
+                margin-top: .5rem;
+                display:block; 
+                font-weight: lighter;
+                font-size: .75rem;
+            }
             a {
                 text-decoration: none;
                 color: $color-gray-dark;
@@ -81,8 +93,36 @@
     margin-bottom: 4rem;    
 }
 
+#enterprise-contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    label {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+        span {
+            flex: .33;
+            text-align: right;
+            padding: .5rem;
+        }
+       
+        input, select, textarea {
+            padding: .5rem;
+            border-radius: 1rem;
+            flex: 1;
+            border: 1px solid $color-green;
+            font-size: 1rem;
+
+        }
+    }
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
 .price-list-description {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+
 }

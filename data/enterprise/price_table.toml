@@ -19,6 +19,7 @@ container=false
 cli=false
 hub=false
 price=0
+priceLink="https://www.github.com/sakuli/sakuli"
 
 [[plans]]
 code="M"
@@ -29,6 +30,7 @@ container=true
 cli=false
 hub=false
 price=100.00
+priceLink="#contact"
 
 [[plans]]
 code="L"
@@ -39,6 +41,7 @@ container=true
 cli=false
 hub=false
 price=700.00
+priceLink="#contact"
 
 [[plans]]
 code="XL"
@@ -49,6 +52,7 @@ container=true
 cli=true
 hub=false
 price=3500.00
+priceLink="#contact"
 
 [[plans]]
 code="XXL"
@@ -58,4 +62,4 @@ forwarder=true
 container=true
 cli=true
 hub=true
-#price=
+priceLink="#contact"

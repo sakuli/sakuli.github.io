@@ -4,7 +4,7 @@
 @import 'hero.scss';
 @import 'header.scss';
 @import 'enterprise.scss';
-
+@import 'atomic.scss';
 
 body,
 html {
@@ -20,7 +20,6 @@ html {
 
 main {
     flex: 1;
-
     >section {
         margin-bottom: 5rem;
     }
@@ -69,15 +68,4 @@ footer {
     display: flex;
     justify-content: center;
     padding: 2rem;
-}
-
-.shrink-content {
-    @media screen and (max-width: 820px){
-        padding: 1rem;
-    }
-    @media screen and (min-width: 1200px) {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }

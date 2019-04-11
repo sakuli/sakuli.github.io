@@ -2,13 +2,24 @@
 {{ partial "header.html" . }}
 {{ $priceList := .Site.Data.enterprise.price_table }}
 <h1>{{.Title}}</h1>
-<article class="shrink-content">
+<article class="shrink-content text-center">
     {{.Content}}
 </article>
 <ul id="price-table" class="shrink-content">
     {{ range $priceList.plans }}
     <li>
         <h2>{{ .code }}</h2>
+        <div class="price">
+            {{ if isset . "price"}}
+            {{ if gt .price 0}}
+            {{ .price }}€ <small class="price-addon">pre month</small>
+            {{else}}
+            Free <small class="price-addon">Open Source</small>
+            {{end}}
+            {{else}}
+            Request <small class="price-addon">individual offer</small>
+            {{end}}
+        </div>
         <ul>
             <li>
                 <span>
@@ -48,25 +59,26 @@
             {{end}}
         </ul>
 
-<div align="center">
-              {{ if isset . "price"}}
-                {{ if gt .price 0}}
-                    {{ .price }},- € per month
-                {{else}}
-                    Free
-                {{end}}
-              {{else}}
-                On Request
-              {{end}}
-</div>
-        <div class="button">
-            {{ if or (gt .price 0) (not (isset . "price"))}}
-                Contact
-            {{else}}
-                <a href="https://github.com/sakuli/sakuli/">GitHub</a>
-            {{end}}
+        {{ if or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
+            <a class="button" href="?code={{ .code }}#enterprise-contact-form">Contact</a>
+        {{else}}
+            <a class="button" href="https://github.com/sakuli/sakuli" target="_blank">Github</a>
+        {{end}}
 
+
+        <!--
+        <div class="button">
+            {{ if isset . "price"}}
+            {{ if gt .price 0}}
+                {{ .price }}€ <small>per month</small>
+            {{else}}
+                Free
+            {{end}}
+          {{else}}
+            On Request
+          {{end}}
         </div>
+        -->
     </li>
     {{end}}
 </ul>
@@ -109,6 +121,34 @@
     </dd>
 </dl>
 {{end}}
+<h3>Contact us:</h3>
+<form action="https://formspree.io/testautomatisierung@consol.de" method="POST" id="enterprise-contact-form" class="shrink-content">
+
+    <label>
+        <span>Name:</span>
+        <input type="text" name="name">
+    </label>
+    <label>
+        <span>Email</span>
+        <input type="email" name="_replyto">
+    </label>
+    <label>
+        <span>Interested in:</span>
+        <select>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+        </select>
+    </label>
+    <label>
+        <span>Tell us more about your plans with Sakuli</span>
+        <textarea></textarea>
+    </label>
+    <div class="actions">
+        <input type="submit" value="Send Request" class="button">
+    </div>
+</form>
 
 <!-- Footer -->
 {{ partial "footer.html" . }}
