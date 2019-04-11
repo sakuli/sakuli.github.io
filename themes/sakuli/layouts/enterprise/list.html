@@ -17,6 +17,7 @@
                 <a href="#instances" class="info">
                 </a>
             </li>
+            {{ if isset . "sla"}}
             <li>
                 <span>
                     <strong>{{.sla}}</strong> SLA Time
@@ -24,6 +25,7 @@
                 <a href="#sla-time" class="info">
                 </a>
             </li>
+            {{end}}
             {{ if .forwarder }}
             <li>
                 <a href="forwarder"><i class="check-mark"></i> Monitoring Forwarder</a>
@@ -48,13 +50,22 @@
 
 <div align="center">
               {{ if isset . "price"}}
-              {{ .price }},- €
+                {{ if gt .price 0}}
+                    {{ .price }},- € per month
+                {{else}}
+                    Free
+                {{end}}
               {{else}}
-              On Request
+                On Request
               {{end}}
 </div>
         <div class="button">
-            Contact
+            {{ if or (gt .price 0) (not (isset . "price"))}}
+                Contact
+            {{else}}
+                <a href="https://github.com/sakuli/sakuli/">GitHub</a>
+            {{end}}
+
         </div>
     </li>
     {{end}}

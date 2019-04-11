@@ -68,7 +68,14 @@
             align-self: center;
             margin-bottom: -2rem;
             text-align: center;
-            font-size: 1.5rem
+            font-size: 1.5rem;
+            a {
+                text-decoration: none;
+                color: $color-gray-dark;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
     margin-bottom: 4rem;    
