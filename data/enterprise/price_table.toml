@@ -10,6 +10,25 @@ PriceDescription="""
     Prices per month and not including VAT.
 """
 
+[[plans]]
+code="S"
+instances="∞"
+#sla=""
+forwarder=false
+container=false
+cli=false
+hub=false
+price=0
+
+[[plans]]
+code="M"
+instances="< 4"
+sla="24h"
+forwarder=true
+container=true
+cli=false
+hub=false
+price=100.00
 
 [[plans]]
 code="L"
