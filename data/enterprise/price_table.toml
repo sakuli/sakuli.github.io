@@ -30,7 +30,7 @@ container=true
 cli=false
 hub=false
 price=100.00
-priceLink="#contact"
+priceLink="https://www.consol.de/anfrage-sakuli/"
 
 [[plans]]
 code="L"
@@ -41,7 +41,7 @@ container=true
 cli=false
 hub=false
 price=400.00
-priceLink="#contact"
+priceLink="https://www.consol.de/anfrage-sakuli/"
 
 [[plans]]
 code="XL"
@@ -51,4 +51,4 @@ forwarder=true
 container=true
 cli=true
 hub=true
-priceLink="#contact"
+priceLink="https://www.consol.de/anfrage-sakuli/"

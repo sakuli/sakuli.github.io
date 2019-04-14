@@ -59,26 +59,13 @@
             {{end}}
         </ul>
 
-        {{ if or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
-            <a class="button" href="?code={{ .code }}#enterprise-contact-form">Contact</a>
-        {{else}}
-            <a class="button" href="https://github.com/sakuli/sakuli" target="_blank">Github</a>
-        {{end}}
-
-
-        <!--
-        <div class="button">
-            {{ if isset . "price"}}
-            {{ if gt .price 0}}
-                {{ .price }}€ <small>per month</small>
-            {{else}}
-                Free
-            {{end}}
-          {{else}}
-            On Request
-          {{end}}
-        </div>
-        -->
+        <a class="button" href="{{ .priceLink }}" target="_blank">
+                {{ if or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
+                    Contact
+                {{else}}
+                    Github
+                {{end}}
+        </a>
     </li>
     {{end}}
 </ul>
