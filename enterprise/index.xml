@@ -16,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/forwarder/</guid>
-      <description></description>
+      <description>End-2-End Testing &amp;amp; End-2-End Monitoring – a Perfect Combination Combining End-2-End Testing with End-2-End Monitoring proves to be optimal. Because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client application keeps its promise. Ultimately though, the users will judge the quality of your systems.
+Test and monitor critical Workflows Imagine testing your critical processes and workflows (like the checkout process of your webshop that affects your conversion rate) by simulating a real user and sending the execution times, warnings and error messages to the monitoring system of your choice.</description>
     </item>
     
     <item>
@@ -25,7 +26,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/container/</guid>
-      <description></description>
+      <description>Summary Our pre-configured Docker container will run Sakuli in an isolated environment which ensures having the same setup and equal conditions for every test-run. You don´t need an unlocked display for native UI interaction with the headless VNC image configured in every container. You can watch your test execution live in a browser or a VNC client any time for debugging purposes.
+Benefits:  Always rely on the same environment: no cookie hassle, no active user sessions, no artefacts of old tests Scale your tests: run multiple instances of your container in parallel to accelerate overall execution time or simulate heavy load on your application CI/CD: Easily integrate your tests into your continuous integration environment The layout and scaling of websites and native applications will always be the same and therefore increases the liability of native interactions Orchestrate, execute and alter your Test Container within the Sakuli UI portal</description>
     </item>
     
     <item>
