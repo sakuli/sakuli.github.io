@@ -1,5 +1,5 @@
 ---
-title: Enterprise Plans 
+title: Enterprise Plans
 ---
 
-Sakuli has various offers for enterprise support end exclusive features, find your plan and contact us now!
+Sakuli offers various enterprise support packages, including exclusive features. Find your plan and contact us.

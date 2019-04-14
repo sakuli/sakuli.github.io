@@ -34,29 +34,18 @@ priceLink="#contact"
 
 [[plans]]
 code="L"
-instances="< 10"
+instances="< 20"
 sla="8h"
 forwarder=true
 container=true
 cli=false
 hub=false
-price=700.00
+price=400.00
 priceLink="#contact"
 
 [[plans]]
 code="XL"
-instances="< 40"
-sla="3h"
-forwarder=true
-container=true
-cli=true
-hub=false
-price=3500.00
-priceLink="#contact"
-
-[[plans]]
-code="XXL"
-instances="> 50"
+instances="∞"
 sla="3h"
 forwarder=true
 container=true
