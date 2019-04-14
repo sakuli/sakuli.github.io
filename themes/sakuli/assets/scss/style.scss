@@ -25,6 +25,10 @@ main {
     }
     margin-top: 70px;
     line-height: 1.75rem;
+
+    pre {
+        line-height: initial;
+    }
 }
 
 .fork-me-link {
@@ -61,7 +65,7 @@ h6 {
     text-align: center;
     margin: 1rem 2rem;
     padding-bottom: 1rem;
-    line-height: 2.5rem;
+    line-height: 3.5rem;
 }
 
 footer {
