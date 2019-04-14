@@ -8,6 +8,7 @@
     }
 
     >li {
+        //background-image: linear-gradient(lighten($color-green, 50%), transparent, transparent,transparent);
         @media screen and (max-width: 820px) {
             margin-bottom: 3rem;
         }
@@ -20,18 +21,22 @@
 
         >ul {
             list-style: none;
+            
             padding: 1rem;
             flex: 1;
 
             >li {
-                text-align: center;
+                &.meta-info {
+                    justify-content: center;
+                }
+                text-align: left;
                 margin-bottom: 1.5rem;
                 display: flex;
-                justify-content: center;
                 align-items: center;
-
                 i.check-mark {
                     color: $color-green;
+                    align-self: flex-start;
+                    margin-right: .5rem;
                     &::before {
                         content: "✓"
                     }

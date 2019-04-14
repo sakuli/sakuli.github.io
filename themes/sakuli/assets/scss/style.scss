@@ -50,7 +50,11 @@ footer {
     text-decoration: none;
     border-radius: 2rem;
     color: $color-gray-dark;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: $shadow-l1;
+    transition: box-shadow 250ms ease-out;
+    &:hover {
+        box-shadow: $shadow-l2;
+    }
     text-shadow: none;
 }
 

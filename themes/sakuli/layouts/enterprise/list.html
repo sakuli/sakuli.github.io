@@ -21,7 +21,7 @@
             {{end}}
         </div>
         <ul>
-            <li>
+            <li class="meta-info">
                 <span>
                     <strong>{{.instances}}</strong> instances
                 </span>
@@ -29,7 +29,7 @@
                 </a>
             </li>
             {{ if isset . "sla"}}
-            <li>
+            <li class="meta-info">
                 <span>
                     <strong>{{.sla}}</strong> SLA Time
                 </span>
@@ -39,32 +39,32 @@
             {{end}}
             {{ if .forwarder }}
             <li>
-                <a href="forwarder"><i class="check-mark"></i> Monitoring Forwarder</a>
+                <i class="check-mark"></i><a href="forwarder">Monitoring Forwarder</a>
             </li>
             {{end}}
             {{ if .container }}
             <li>
-                <a href="container"><i class="check-mark"></i> Pre-Configured Headless Container</a>
+                <i class="check-mark"></i> <a href="container">Pre-Configured Headless Container</a>
             </li>
             {{end}}
             {{ if .cli }}
             <li>
-                <a href="cli"><i class="check-mark"></i> Sakuli CLI Tools</a>
+                <i class="check-mark"></i> <a href="cli"> Sakuli CLI Tools</a>
             </li>
             {{end}}
             {{ if .hub }}
             <li>
-                <a href="hub"><i class="check-mark"></i> Sakuli Hub</a>
+                <i class="check-mark"></i> <a href="hub">Sakuli Hub</a>
             </li>
             {{end}}
         </ul>
 
         <a class="button" href="{{ .priceLink }}" target="_blank">
-                {{ if or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
-                    Contact
-                {{else}}
-                    Github
-                {{end}}
+            {{ if or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
+            Contact
+            {{else}}
+            Github
+            {{end}}
         </a>
     </li>
     {{end}}
