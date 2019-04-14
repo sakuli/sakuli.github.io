@@ -11,6 +11,24 @@
     
     
     <item>
+      <title>Automation</title>
+      <link>/automation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/monitoring/</guid>
+      <description>Sometimes you want to test more than just the behaviour of your application.</description>
+    </item>
+    
+    <item>
       <title>Monitoring Forwarder</title>
       <link>/enterprise/forwarder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -46,6 +64,16 @@ Benefits:  Always rely on the same environment: no cookie hassle, no active user
       
       <guid>/enterprise/hub/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/testing/</guid>
+      <description>Sakuli makes it easy to write tests that act like a real user. It automatically setup and start a webdriver instance and also let you take control over the mouse and keyboard of the system.
+(async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.endOfStep(&amp;#39;Login&amp;#39;); } catch (e) { tc.handleException(e); } finally { tc.saveResult(); } }).then(done); </description>
     </item>
     
   </channel>
