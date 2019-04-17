@@ -3,7 +3,7 @@ title: Testing
 slug: testing
 ---
 
-Sakuli makes it easy to write tests that act like a real user. It automatically setup and start a webdriver instance and also let you take control over the mouse and keyboard of the system. 
+Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also let you take control over the mouse and keyboard of the system. 
 
 {{< highlight typescript >}}
 
