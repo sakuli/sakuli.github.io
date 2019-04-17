@@ -1,4 +1,4 @@
 Title="Monitoring"
 Image="images/icon_monitor.svg"
-Text="Measure execution times of your application tests and send them to monitoring systems like Nagios, check_MK and many others. You will never miss a lack of performance in your architecture again!"
+Text="End-2-End Application Monitoring. You will never miss a lack of performance in your architecture again!"
 Link="monitoring"

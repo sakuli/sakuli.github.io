@@ -28,10 +28,19 @@
                 <a href="#instances" class="info">
                 </a>
             </li>
+            {{ if .maintenance }}
+            <li class="meta-info">
+                <span>
+                    Maintenance
+                </span>
+                <a href="#maintenance" class="info"></a>
+            </li>
+            {{end}}
             {{ if isset . "sla"}}
             <li class="meta-info">
                 <span>
-                    <strong>{{.sla}}</strong> SLA Time
+                    Professional Support<br />initial reaction time<br />
+                    <strong>{{.sla}}</strong>
                 </span>
                 <a href="#sla-time" class="info">
                 </a>
@@ -57,6 +66,11 @@
                 <i class="check-mark"></i> <a href="hub">Sakuli Hub</a>
             </li>
             {{end}}
+            {{ if .customerchannel }}
+            <li>
+                <i class="check-mark"></i><span>Customer support channel</span>
+            </li>
+            {{end}}
         </ul>
 
         <a class="button" href="{{ .priceLink }}" target="_blank">
@@ -70,11 +84,24 @@
     {{end}}
 </ul>
 
+{{if isset $priceList "MaintenanceDescription"}}
+<dl class="price-list-description shrink-content">
+    <dt>
+        <a id="maintenance">
+            <h2>What does <i>Maintenance</i> mean?</h2>
+        </a>
+    </dt>
+    <dd>
+        {{$priceList.MaintenanceDescription}}
+    </dd>
+</dl>
+{{end}}
+
 {{if isset $priceList "SlaDescription"}}
 <dl class="price-list-description shrink-content">
     <dt>
         <a id="sla-time">
-            <h2>What does <i>Support</i> and <i>SLA Time</i> mean?</h2>
+            <h2>What does <i>Support</i> mean?</h2>
         </a>
     </dt>
     <dd>
