@@ -29,8 +29,11 @@
                 </a>
             </li>
             {{ if .maintenance }}
-            <li>
-                Maintenance<a href="#maintenance" class="info"></a>
+            <li class="meta-info">
+                <span>
+                    Maintenance
+                </span>
+                <a href="#maintenance" class="info"></a>
             </li>
             {{end}}
             {{ if isset . "sla"}}
