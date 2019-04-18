@@ -40,6 +40,16 @@ Benefits:  Always rely on the same environment: no cookie hassle, no active user
     </item>
     
     <item>
+      <title>Sakuli Core</title>
+      <link>/enterprise/core/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/enterprise/core/</guid>
+      <description>UI testautomation with every application Sakuli combines web-driven testing with testing on native applications. That&amp;rsquo;s all you need to perfectly simulate a real world user. Design your tests, let them run automatically and save a ton of time by reducing your manual tests dramatically.
+Build sustainable tests Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages and therefore solves most of the pain points test designers encountered in the past.</description>
+    </item>
+    
+    <item>
       <title>Sakuli Hub</title>
       <link>/enterprise/hub/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

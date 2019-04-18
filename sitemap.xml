@@ -32,6 +32,10 @@
   </url>
   
   <url>
+    <loc>/enterprise/core/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <priority>0</priority>
   </url>
