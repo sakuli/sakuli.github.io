@@ -3,6 +3,7 @@
 @import 'features.scss';
 @import 'hero.scss';
 @import 'header.scss';
+@import 'footer.scss';
 @import 'enterprise.scss';
 @import 'atomic.scss';
 
@@ -38,11 +39,6 @@ main {
     z-index: 999;
 }
 
-footer {
-    background: $color-gray-dark;
-    color: $color-green;
-}
-
 .button {
     background: $color-green;
     padding: 1rem;
@@ -72,8 +68,4 @@ h6 {
     line-height: 3.5rem;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
+
