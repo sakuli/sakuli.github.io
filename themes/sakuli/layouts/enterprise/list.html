@@ -21,9 +21,7 @@
             {{end}}
         </div>
         <ul>
-            <li>
-                <i class="check-mark"></i> <a href="core">Sakuli Core</a>
-            </li>
+            
             <li class="meta-info">
                 <span>
                     <strong>{{.instances}}</strong> instances
@@ -49,6 +47,9 @@
                 </a>
             </li>
             {{end}}
+            <li>
+                <i class="check-mark"></i> <a href="core">Sakuli Core</a>
+            </li>
             {{ if .forwarder }}
             <li>
                 <i class="check-mark"></i><a href="forwarder">Monitoring Forwarder</a>
@@ -59,7 +60,7 @@
                 <i class="check-mark"></i> <a href="container">Pre-Configured Headless Container</a>
             </li>
             {{end}}
-            {{ if .cli }}
+            <!-- {{ if .cli }}
             <li>
                 <i class="check-mark"></i> <a href="cli"> Sakuli CLI Tools</a>
             </li>
@@ -69,9 +70,10 @@
                 <i class="check-mark"></i> <a href="hub">Sakuli Hub</a>
             </li>
             {{end}}
+            -->
             {{ if .customerchannel }}
             <li>
-                <i class="check-mark"></i><span>Customer support channel</span>
+                <i class="check-mark"></i><span>Use of Customer support channels</span>
             </li>
             {{end}}
         </ul>
