@@ -1,5 +1,6 @@
 ---
 title: Getting started
+slug: getting-started
 ---
 
 ## Installation
@@ -45,7 +46,7 @@ Please make sure to also install all required peer dependencies:
 
 The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!
 
-## Write your first test
+## Setup your first test
 
 Since we wanted to keep Sakuli compatible to V1 the file layout looks basically the same for test suites.
 
