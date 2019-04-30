@@ -75,35 +75,30 @@
     <main>
 
 
-<h1>Testing</h1>
-<div class="page">
-    <aside>
-        
-    </aside>
-    <article class="shrink-content">
-        <p>Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also let you take control over the mouse and keyboard of the system.</p>
+<article class="shrink-content">
+    
+    
+    
+    
+    <h2>Getting started</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
+    <p>
+        <small>01.01.0001</small>
+    </p>
 
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
-    <span style="color:#66d9ef">try</span> {
+    Installation Running
+npm i @sakuli/cli or
+yarn add @sakuli/cli will install Sakuli and its required dependencies.
+One of Sakulis core components, nut.js requires OpenCV. As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via opencv4nodejs.
+Building OpenCV from scratch requires a cmake installation.
+In case you already have an OpenCV installation (version 3.x.x required, e.g. via brew install opencv@3 or else), you can disable the build process via environment variable:
 
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;example.com&#34;</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_setValue</span>(<span style="color:#a6e22e">_input</span>(<span style="color:#e6db74">&#39;user&#39;</span>), <span style="color:#e6db74">&#39;me&#39;</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_setValue</span>(<span style="color:#a6e22e">_password_</span>(<span style="color:#e6db74">&#39;password&#39;</span>), <span style="color:#e6db74">&#39;top-$ecret&#39;</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_button</span>(<span style="color:#e6db74">&#39;Login&#39;</span>));
-
-        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#39;Login&#39;</span>);
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
-    } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>();
-    }
-
-}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></div>
-
-    </article>
-</div>
+    <p>
+        <a class="readmore" href="/docs/01_getting_started/">Read more</a>
+    </p>
+    
+    
+</article>
 
 
 </main>

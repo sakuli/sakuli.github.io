@@ -16,6 +16,10 @@
   </url>
   
   <url>
+    <loc>/docs/01_getting_started/</loc>
+  </url>
+  
+  <url>
     <loc>/legalnotice/</loc>
   </url>
   
@@ -37,6 +41,10 @@
   
   <url>
     <loc>/enterprise/core/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/</loc>
   </url>
   
   <url>

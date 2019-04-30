@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sakuli Docs on Sakuli E2E and Monitoring</title>
+    <link>/docs/</link>
+    <description>Recent content in Sakuli Docs on Sakuli E2E and Monitoring</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting started</title>
+      <link>/docs/01_getting_started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/01_getting_started/</guid>
+      <description>Installation Running
+npm i @sakuli/cli or
+yarn add @sakuli/cli will install Sakuli and its required dependencies.
+One of Sakulis core components, nut.js requires OpenCV. As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via opencv4nodejs.
+Building OpenCV from scratch requires a cmake installation.
+In case you already have an OpenCV installation (version 3.x.x required, e.g. via brew install opencv@3 or else), you can disable the build process via environment variable:</description>
+    </item>
+    
+  </channel>
+</rss>
