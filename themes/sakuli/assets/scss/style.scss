@@ -6,6 +6,7 @@
 @import 'footer.scss';
 @import 'enterprise.scss';
 @import 'atomic.scss';
+@import 'page.scss';
 
 body,
 html {
@@ -30,6 +31,8 @@ main {
 
     pre {
         line-height: initial;
+        overflow: auto;
+        padding: .5rem; 
     }
 }
 

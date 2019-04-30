@@ -12,6 +12,12 @@ footer {
             align-self: center;
             display: flex;
             flex-direction: row;
+            @media screen and (max-width: 820px) {
+                flex-direction: column;
+                li {
+                    margin-bottom: 1rem;
+                }
+            }
             list-style: none;
             li {
                 margin-right: 1rem;
