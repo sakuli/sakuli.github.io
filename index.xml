@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/automation/</guid>
-      <description></description>
+      <description>Over the years systems and processes are growing which leads to potential technology- and media breaks. In such scenarios the automation of processes and daily tasks can get very hard. Sakuli can help to automate tasks between various system boundaries. Download a report from a browser based reporting tool app and upload it to shared folder? No problem. Sakuli closes the gap between browser automation and desktop automation.</description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ Responsible for content (in accordance with § 6 MDStV) Nico Zellner</descriptio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/monitoring/</guid>
-      <description>Sometimes you want to test more than just the behaviour of your application.</description>
+      <description>Beside the correct behaviour of your system you might also be interested in the actual performance of user interactions with the system. Identifying possible performance bottlenecks before your users will is a critical task for operators and administrators. Sakuli makes it possible to integrate the such a real world performance analysis in an automated way. For this reason Sakuli provides a generic forwarder interface which gets the latest results of a testrun.</description>
     </item>
     
     <item>
