@@ -1,0 +1,26 @@
+.page {
+
+    display: flex;
+    @media screen and (max-width: 820px) {
+        flex-direction: column;
+    }
+    aside {
+        flex: .25;
+        margin-left: 2rem;        
+        background: lighten($color-green, 50%);
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        ul {
+            list-style: none;
+            padding: 1rem;
+            a {
+                color: darken($color-green, 30%);
+            }
+        }
+    }
+
+    article {
+        flex: 1;
+        margin-left: 2rem;
+    }
+}
