@@ -119,7 +119,7 @@ Build sustainable tests Sakuli uses state of the art web-testing technologies li
       
       <guid>/testing/</guid>
       <description>Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also let you take control over the mouse and keyboard of the system.
-(async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.endOfStep(&amp;#39;Login&amp;#39;); } catch (e) { tc.handleException(e); } finally { tc.saveResult(); } }).then(done); </description>
+(async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.endOfStep(&amp;#39;Login&amp;#39;); } catch (e) { tc.handleException(e); } finally { tc.saveResult(); } }).then(done); Testing Features Sakuli is build to create real end to end testing experiences for testers, developers and companies.</description>
     </item>
     
   </channel>
