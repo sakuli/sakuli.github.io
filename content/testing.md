@@ -3,7 +3,7 @@ title: Testing
 slug: testing
 ---
 
-Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also let you take control over the mouse and keyboard of the system.
+Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also lets you take control over the mouse and keyboard of the system.
 
 {{< highlight typescript >}}
 
@@ -30,11 +30,11 @@ Sakuli makes it easy to write tests that act like a real user. It automatically 
 
 ## Testing Features
 
-Sakuli is build to create real end to end testing experiences for testers, developers and companies. It enables you to fully automate every user interaction with your system without putting you inside any system or technology boundaries. 
+Sakuli is built to create real end to end testing experiences for testers, developers and companies. It enables you to fully automate every user interaction with your system without any system or technology boundaries. 
 
 ### Webbased Testing build on Selenium
 
-Sakuli implements the easy to use functional syntax of [Sahi](https://sahipro.com/) while executing real browser automation based on [selenium-webdriver](https://github.com/SeleniumHQ/selenium). This layer hides the complexity of Selenium into a more high-level API that let you focus on what you want to test rather than dealing with timeouts and `StaleElementReferenceError`.
+Sakuli implements an easy to use functional syntax for executing real browser automation based on [selenium-webdriver](https://github.com/SeleniumHQ/selenium). This layer hides the complexity of Selenium into a more high-level API that lets you focus on what you want to test rather than dealing with timeouts and `StaleElementReferenceError`.
 
 Key features are
 
@@ -44,4 +44,5 @@ Key features are
 
 ### Screenshotbased Testing
 
-Some end to end scenarios go beyond the borders of your browser and the capabilites of webdriver. This might include common usecases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In this cases your webbased tests can be extended to also validate bahavior and invoke interactions outside the browser. Sakuli can scan the hole screen (or a dedicated region) for patterns which are provided as screenshots.
+A lot of end to end scenarios go beyond the borders of your browser and the capabilities of webdriver.
+This might include common use-cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In these cases your webbased tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test. Of course you can also use Sakulis native testing power on its own, e.g. rich-client testing of SAP, Office or proprietary software systems. Sakuli accomplishes its native capabilities by scanning the whole screen (or a dedicated region) on a stand-alone computer or in headless container screens and searches for provided image patterns.
