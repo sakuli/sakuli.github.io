@@ -22,4 +22,4 @@ You have systems wich lack of APIs but must be integrated into an automated proc
 
 ### Create bulk operations
 
-Sometimes it is required to insert a lot of data or executing a lot of operations on the UI of your system. Unfortunally most systems don't offer any way to automate these bulk operations. With Sakuli you can automate any manual interaction with the system and create automated bulk-operations. 
+Sometimes it is required to insert a lot of data or executing a lot of operations on the UI of your system. Unfortunally most systems don't offer any way to automate these bulk operations. With Sakuli you can automate any manual interaction with the system and create automated bulk-operations.

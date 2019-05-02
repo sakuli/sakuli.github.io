@@ -3,8 +3,7 @@ title: Testing
 slug: testing
 ---
 
-Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also lets you take control over the mouse and keyboard of the system.
-
+Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also lets you take control over the mouse and keyboard of the system. The example below is showing a basic login to an imaginary webbased service with login form:
 {{< highlight typescript >}}
 
 (async () => {
@@ -30,7 +29,7 @@ Sakuli makes it easy to write tests that act like a real user. It automatically 
 
 ## Testing Features
 
-Sakuli is built to create real end to end testing experiences for testers, developers and companies. It enables you to fully automate every user interaction with your system without any system or technology boundaries. 
+Sakuli is built to create real end to end testing experiences for testers, developers and companies. It enables you to fully automate every user interaction with your system without any system or technology boundaries.
 
 ### Webbased Testing build on Selenium
 
