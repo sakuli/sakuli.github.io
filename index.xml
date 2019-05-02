@@ -16,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/automation/</guid>
-      <description>Over the years systems and processes are growing which leads to potential technology- and media breaks. In such scenarios the automation of processes and daily tasks can get very hard. Sakuli can help to automate tasks between various system boundaries. Download a report from a browser based reporting tool app and upload it to shared folder? No problem. Sakuli closes the gap between browser automation and desktop automation.</description>
+      <description>Over the years systems and processes are growing which leads to potential technology- and media breaks. In such scenarios the automation of processes and daily tasks can get very hard. Sakuli can help to automate tasks between various system boundaries. Download a report from a browser based reporting tool app and upload it to shared folder? No problem. Sakuli closes the gap between browser automation and desktop automation.
+Example Usecases  Lack of import / export APIs Data migration projects Automation of third-party tools Prototyping of process automation  Datamigration When it comes to the migration from a legacy system to a newer system, manual data migration could be the only possible solution to extract data from the legacy system and put it into a intermediate format (for further processing) or insert it into target system directly.</description>
     </item>
     
     <item>
@@ -61,7 +62,7 @@ Responsible for content (in accordance with § 6 MDStV) Nico Zellner</descriptio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/monitoring/</guid>
-      <description>Beside the correct behaviour of your system you might also be interested in the actual performance of user interactions with the system. Identifying possible performance bottlenecks before your users will is a critical task for operators and administrators. Sakuli makes it possible to integrate the such a real world performance analysis in an automated way. For this reason Sakuli provides a generic forwarder interface which gets the latest results of a testrun.</description>
+      <description>Beside the correct behaviour of your system you might also be interested in the actual performance of user interactions with the system. Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such a real world performance analysis in an automated way. For this reason Sakuli provides a generic forwarder interface which gets the latest results of a testrun.</description>
     </item>
     
     <item>
@@ -118,8 +119,7 @@ Build sustainable tests Sakuli uses state of the art web-testing technologies li
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/testing/</guid>
-      <description>Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also let you take control over the mouse and keyboard of the system.
-(async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.endOfStep(&amp;#39;Login&amp;#39;); } catch (e) { tc.handleException(e); } finally { tc.saveResult(); } }).then(done); Testing Features Sakuli is build to create real end to end testing experiences for testers, developers and companies.</description>
+      <description>Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also lets you take control over the mouse and keyboard of the system. The example below is showing a basic login to an imaginary webbased service with login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
     </item>
     
   </channel>
