@@ -24,5 +24,6 @@ Its modular node.js core enables developers to create their own DSL, integrate b
 
 Sakuli Core ships with:
 
-- Sakuli: Web-based UI testing
-- Nut.js: Native application testing
+- Web testing based on Selenium
+- Native application testing based on Nut.js
+- Open API
