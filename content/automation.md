@@ -18,7 +18,7 @@ When it comes to the migration from a legacy system to a newer system, manual da
 
 ### Expose APIs from Legacy Systems
 
-You have systems wich lack of APIs but must be integrated into an automated process or workflow? It's possible to expose APIs which triggers Sakuli automated interactions with your system and delivers and/or retrivies data in various formats.
+You have systems which lack of APIs but must be integrated into an automated process or workflow? It's possible to expose APIs which triggers Sakuli automated interactions with your system and delivers and/or retrivies data in various formats.
 
 ### Create bulk operations
 
