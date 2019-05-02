@@ -78,7 +78,7 @@ The `testsuite.suite` file tells Sakuli which testcases take place in this tests
 <FOLDER-NAME>/<FILE-NAME>.js <START_URL>
 {{< /highlight >}}
 
-The actual testcase file must be placed inside a folder (this is due to the format which was forced by Sahi in Sakuli V1). The starturl also needs to be added but is obsolete in V2+.
+The actual testcase file must be placed inside a folder (this is due to the format which was forced by Sahi in Sakuli V1). The starturl also needs to be added but has no effect in V2+.
 
 With this in mind we can add a testcase file:
 
@@ -110,3 +110,9 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
 }).then(done);
 
 {{< /highlight >}}
+
+## Write your first Test
+
+
+
+## Getting started with native interactions
