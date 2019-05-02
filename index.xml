@@ -17,7 +17,7 @@
       
       <guid>/automation/</guid>
       <description>Over the years systems and processes are growing which leads to potential technology- and media breaks. In such scenarios the automation of processes and daily tasks can get very hard. Sakuli can help to automate tasks between various system boundaries. Download a report from a browser based reporting tool app and upload it to shared folder? No problem. Sakuli closes the gap between browser automation and desktop automation.
-Example Usecases  Lack of import / export APIs Data migration projects Automation of third-party tools Prototyping of process automation  Datamigration When it comes to the migration from a legacy system to a newer system, manual data migration could be the only possible solution to extract data from the legacy system and put it into a intermediate format (for further processing) or insert it into target system directly.</description>
+Automate. Everything.</description>
     </item>
     
     <item>
@@ -71,8 +71,8 @@ Responsible for content (in accordance with § 6 MDStV) Nico Zellner</descriptio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/forwarder/</guid>
-      <description>End-2-End Testing &amp;amp; End-2-End Monitoring – a Perfect Combination Combining End-2-End Testing with End-2-End Monitoring proves to be optimal. Because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client application keeps its promise. Ultimately though, the users will judge the quality of your systems.
-Test and monitor critical Workflows Imagine testing your critical processes and workflows (like the checkout process of your webshop that affects your conversion rate) by simulating a real user and sending the execution times, warnings and error messages to the monitoring system of your choice.</description>
+      <description>End-2-End Application Testing and Monitoring – a Perfect Combination Combining End-2-End Tests with Monitoring solutions proves to be optimal. Because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem keeps its promise. Ultimately though, the users will judge the quality of your systems.
+Monitor critical Workflows Imagine testing your critical processes and workflows by simulating a real user and sending the execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice.</description>
     </item>
     
     <item>
@@ -100,7 +100,7 @@ Benefits:  Always rely on the same environment: no cookie hassle, no active user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/core/</guid>
-      <description>UI testautomation with every application Sakuli combines web-driven testing with testing on native applications. That&amp;rsquo;s all you need to perfectly simulate a real world user. Design your tests, let them run automatically and save a ton of time by reducing your manual tests dramatically.
+      <description>UI testautomation with every application Sakuli combines web testing with testing on native applications. That&amp;rsquo;s all you need to perfectly simulate a real world user. Design your tests, let them run automatically and save a ton of time by reducing your manual tests dramatically.
 Build sustainable tests Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages and therefore solves most of the pain points test designers encountered in the past.</description>
     </item>
     
