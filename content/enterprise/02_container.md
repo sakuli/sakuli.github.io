@@ -19,19 +19,23 @@ You don´t need an unlocked display for native UI interaction with the headless 
 
 Each Sakuli docker image is installed with the following components:
 
+<!-- Wir sollten überlegen ob wir wirklich beide browser per default ausliefern-->
+
 - Operating system Ubuntu xxx
 - Desktop environment (Xfce4)
-- VNC-Server (default VNC port 5901)
-- noVNC - HTML5 VNC client (default http port 6901)
+- VNC-Server
+- noVNC - HTML5 VNC client
 - Node.js
 - Mozilla Firefox
 - Google Chrome
 - Sakuli in the latest stable version
 
-The running container is accessible with VNC (default password: sakuli) by:
+The running container is accessible* with VNC by:
 
-- VNC viewer: DOCKER_HOST:5901
-- noVNC HTML5 client: http://localhost:6901/vnc_auto.html?password=sakuli
+- Any Common VNC Desktop client
+- Browserbased [noVNC HTML5 client](https://novnc.com/info.html)
+
+*VNC is optional can be turnend off in security requires it. 
 
 ## What is included?
 
