@@ -7,4 +7,4 @@ Sakuli extends Seleniums technology for webautomation (in real browsers) with th
 
 [Image]
 path="images/how_it_works.svg"
-alt=""
+alt="A Venn diagram showing that the intersection of selenium and nut.js is Sakuli"

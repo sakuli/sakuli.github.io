@@ -7,6 +7,6 @@ Sakuli was originaly created as a poc to show a combination of Sahi and Sikuli i
 We decide to build something new. Since the language for testscases was javascript (executed in the JVM-Based Nashorn - which is going to be deprecated) we decide to build the new Sakuli on Node.js. The new version focuses on an open "platform-like" architecture to provide a future ready infrastruture which can grow which the web. 
 """
 
-Description="""
-#?
-"""
+[Image]
+  path="https://media.tenor.co/images/0b73b9822898ecf8c2f0a74469c6e337/raw"
+  alt="A cat is typing somthing into a computer"
