@@ -19,7 +19,6 @@ yarn add @sakuli/cli
 
 will install Sakuli and its required dependencies.
 
-
 One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js) requires OpenCV.
 As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs).
 
