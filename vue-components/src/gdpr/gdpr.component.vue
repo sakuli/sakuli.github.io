@@ -59,6 +59,7 @@ export default Vue.extend({
 
   button {
     margin: 1rem;
+    border: 0;
   }
 }
 </style>
