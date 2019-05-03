@@ -202,17 +202,44 @@ touch my-testcase/testcase.js</code></pre></div>
 
 <p>after this setup you can add the actual testcode to <code>my-testcase/testcase.js</code>:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
-    <span style="color:#66d9ef">try</span> {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {  <span style="color:#75715e">// 1
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(); <span style="color:#75715e">// 2
+</span></span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span> {
+        <span style="color:#75715e">// actual test code goes here
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>); <span style="color:#75715e">// 3
+</span></span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">finally</span> {
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>(); <span style="color:#75715e">// 4
+</span></span><span style="color:#75715e"></span>    }
 
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
-    } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>();
-    }
+<span style="display:block;width:100%;background-color:#3c3d38">}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>); <span style="color:#960050;background-color:#1e0010">// 5</span></span></code></pre></td></tr></table>
+</div>
+</div>
 
-}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></div>
+<p>Lets examine this piece of code:</p>
+
+<ol>
+<li>The hole test is wrapped in a async immediate invoked function, it allows us to use ascy / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.</li>
+<li>To provide Sakuli information about our actual testcase we create a TestCase object, which handles the execution of a testcase.</li>
+<li>If any error occured during your testcode this error is redireced to the Testcase object. It triggers Sakulis internal error handling e.g. taking a screenshot in the actual errored situation</li>
+<li>Regardless of a failed or passed test execution sakuli saves its results. This is more like legacy artifact and will be removed in the future.</li>
+<li>When the async code whitin the main function (see 1.) is complete a callback passed to the <code>then</code> function is invoked. <code>done</code> is a global funtion which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function <code>done()</code> but this syntax above is recommanded).</li>
+</ol>
 
 <h2 id="write-your-first-test">Write your first Test</h2>
 
