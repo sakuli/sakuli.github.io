@@ -10,6 +10,14 @@
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity=”{{ $style.Data.Integrity }}” />
     {{ partial "head.html"}}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139547974-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-139547974-1');
+    </script>
 </head>
 
 <body>
