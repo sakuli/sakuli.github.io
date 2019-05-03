@@ -115,61 +115,35 @@
 <article class="shrink-content">
     
 
-<h2 id="summary">Summary</h2>
+<h2 id="sakuli-container-in-a-nutshell">Sakuli Container in a nutshell</h2>
 
 <p>Our pre-configured Docker container will run Sakuli in an isolated environment which ensures having the same setup and equal conditions for every test-run.
-You don´t need an unlocked display for native UI interaction with the headless VNC image configured in every container. You can watch your test execution live in a browser or a VNC client any time for debugging purposes.</p>
+You don´t need an unlocked display for native UI interaction with the headless VNC image which is configured in every container. You can watch your test execution live in a browser or a VNC client any time for debugging purposes. Scale your tests horizontally by instanciating as many container as you need.</p>
 
-<h2 id="benefits">Benefits:</h2>
+<h2 id="benefits">Benefits</h2>
 
 <ul>
-<li>Always rely on the same environment: no cookie hassle, no active user sessions, no artefacts of old tests</li>
+<li>Always rely on the same, clean environment: no cookie hassle, no session data, no artefacts of old tests</li>
 <li>Scale your tests: run multiple instances of your container in parallel to accelerate overall execution time or simulate heavy load on your application</li>
+<li>Orchestrate your test-cluster with OpenShift, Kubernetes or any other platform</li>
 <li>CI/CD: Easily integrate your tests into your continuous integration environment</li>
-<li>The layout and scaling of websites and native applications will always be the same and therefore increases the liability of native interactions</li>
-<li>Orchestrate, execute and alter your Test Container within the Sakuli UI portal</li>
+<li>The layout and scaling of websites and native applications will always be the same and therefore increases the reliability of native interactions</li>
+<li>Orchestrate, execute and alter your Test Container within the Sakuli UI portal <em>coming soon</em></li>
 </ul>
 
-<h2 id="architecture-of-sakuli-containers">Architecture of Sakuli containers</h2>
+<h2 id="what-is-included">What is included?</h2>
 
-<p>Each Sakuli docker image is installed with the following components:</p>
-
-<!-- Wir sollten überlegen ob wir wirklich beide browser per default ausliefern-->
+<p>Each Sakuli docker image includes the following components in the respective latest stable release:</p>
 
 <ul>
-<li>Operating system Ubuntu xxx</li>
-<li>Desktop environment (Xfce4)</li>
+<li>Operating system Ubuntu</li>
+<li>Desktop environment Xfce</li>
 <li>VNC-Server</li>
 <li>noVNC - HTML5 VNC client</li>
 <li>Node.js</li>
 <li>Mozilla Firefox</li>
 <li>Google Chrome</li>
-<li>Sakuli in the latest stable version</li>
-</ul>
-
-<p>The running container is accessible* with VNC by:</p>
-
-<ul>
-<li>Any Common VNC Desktop client</li>
-<li>Browserbased <a href="https://novnc.com/info.html">noVNC HTML5 client</a></li>
-</ul>
-
-<p>*VNC is optional can be turnend off in security requires it.</p>
-
-<h2 id="what-is-included">What is included?</h2>
-
-<p>Sakuli Container package ships with:</p>
-
-<ul>
-<li>Pre-Configured Docker Container</li>
-<li>Container image:
-
-<ul>
-<li>Latest stable release of Ubuntu x.x.x</li>
-<li>Security patches</li>
-<li>Latest stable release of noVNC</li>
-<li>etc.</li>
-</ul></li>
+<li>Sakuli</li>
 </ul>
 
 </article>
