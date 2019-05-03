@@ -13,9 +13,7 @@ before_install:
 install: false
 # script - run the build script
 script:
-    - cd vue-components && npm ci && npm run build
-    - ls -rtla
-    - docker run -v $(pwd):/src -v $(pwd)/public:/output --entry-point sh jojomi/hugo:0.53 ls
+    - (cd vue-components && npm ci && npm run build)
     - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo:0.53
 
 deploy:
