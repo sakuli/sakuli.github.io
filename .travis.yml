@@ -1,7 +1,8 @@
 dist: xenial
-language: python
-python:
-  - "3.7"
+language: node_js
+cache: npm
+node_js:
+  - "10"
 
 services: 
   - docker
@@ -9,8 +10,10 @@ services:
 before_install:
   - docker pull jojomi/hugo:0.53
 
+install: false
 # script - run the build script
 script:
+    - cd vue-components && npm ci && npm run build
     - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo:0.53
 
 deploy:

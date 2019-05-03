@@ -1,2 +1,7 @@
 public/
 _gen/
+
+node_modules/
+.cache/
+
+static/vue/

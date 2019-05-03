@@ -120,6 +120,4 @@ Lets examine this piece of code:
 
 ## Write your first Test
 
-
-
 ## Getting started with native interactions

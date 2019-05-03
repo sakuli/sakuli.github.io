@@ -9,6 +9,7 @@
     {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed") }}
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity=”{{ $style.Data.Integrity }}” />
+    <link rel="stylesheet" href="/vue/index.css" />
     {{ partial "head.html"}}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139547974-1"></script>
