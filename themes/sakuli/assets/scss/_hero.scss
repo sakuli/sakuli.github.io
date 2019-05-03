@@ -1,3 +1,53 @@
+@keyframes fadein {
+    from {
+        transform: scale(0, 1.5);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fromTop {
+    from {
+        transform: translate(0, -50px);
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1500;
+        fill: transparent;
+        stroke: #7C7C7B;
+        stroke-width: 1;
+    }
+
+    50% {
+        //stroke-dashoffset: calc(1500 * .25);
+        stroke-width: 1;
+        fill: transparent;
+    }
+
+    to {
+        stroke: #7c7c7b;
+        stroke-dashoffset: 0;
+        stroke-width: 1;
+    }
+
+}
+
+
+@keyframes fromBottom {
+    from {
+        transform: translate(0, 50px);
+        opacity: 0;
+    }
+}
+
 .hero {
     display: flex;
     flex-direction: row;
@@ -25,11 +75,12 @@
             border-bottom: 1px solid $color-green;
             padding-bottom: 1.5rem;
             color: $color-green;
+            animation: fromTop 1s;
         }
 
         p {
             margin-bottom: 3rem;
-
+            animation: fromBottom 1s;
         }
 
     }
@@ -40,10 +91,27 @@
         justify-content: center;
         padding: 2rem;
 
-        img {
+
+
+        svg {
             max-width: 500px;
             align-self: center;
             width: 100%;
+
+            .logo-typography {
+                animation: fadein 1s;
+                transform-origin: 50% 50%;
+            }
+
+            .character, circle {
+                stroke-dasharray: 1500;
+                stroke-dashoffset: 0;
+                animation: dash 5s linear;
+                
+            }
+
+         
+
         }
     }
 
