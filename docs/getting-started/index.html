@@ -119,7 +119,11 @@
 <ul>
 <li>
 <ul>
-<li><a href="#installation">Installation</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#sakuli-installation">Sakuli Installation</a></li>
+<li><a href="#webdriver-installation">WebDriver Installation</a></li>
+</ul></li>
 <li><a href="#setup-your-first-test">Setup your first test</a></li>
 <li><a href="#write-your-first-test">Write your first Test</a></li>
 <li><a href="#getting-started-with-native-interactions">Getting started with native interactions</a></li>
@@ -132,7 +136,10 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>Running</p>
+<p>The following steps are required to set up Sakuli to work with a multitude of browsers.
+Once the initial setup is done, we will dive right into our first test.</p>
+
+<h3 id="sakuli-installation">Sakuli Installation</h3>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/cli</code></pre></div>
 
@@ -165,6 +172,34 @@ As of now the installation process assumes you do not have an existing OpenCV in
 </ul>
 
 <p>The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!</p>
+
+<h3 id="webdriver-installation">WebDriver Installation</h3>
+
+<p>Sakuli utilizes the <a href="https://www.w3.org/TR/webdriver1/">WebDriver protocol</a> to remote control browsers during test execution.
+In addition to the browser itself, you need to install the corresponding WebDriver as well.
+Several wrapper packages can be found on <a href="https://npmjs.com">npmjs.com</a>, which allow to install the required binaries via <code>npm</code>.</p>
+
+<p>To run tests on Chrome, a suitable WebDriver can be installed via</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i chromedriver</code></pre></div>
+
+<p>or</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add chromedriver</code></pre></div>
+
+<p>Alternatively, to run tests on FireFox:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i geckodriver</code></pre></div>
+
+<p>or</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add geckodriver</code></pre></div>
+
+<p>There are also WebDriver packages for <a href="https://www.npmjs.com/package/iedriver">IE</a> and <a href="https://www.npmjs.com/package/edgedriver">Edge</a>.
+macOS already ships a WebDriver for Safari, so there&rsquo;s no need to install an additional package.</p>
+
+<p>Sakuli is not limited to work with only a single browser.
+When installing multiple WebDriver packages, you can easily switch between multiple browsers.</p>
 
 <h2 id="setup-your-first-test">Setup your first test</h2>
 
@@ -235,11 +270,11 @@ touch my-testcase/testcase.js</code></pre></div>
 <p>Lets examine this piece of code:</p>
 
 <ol>
-<li>The hole test is wrapped in a async immediate invoked function, it allows us to use ascy / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.</li>
+<li>The whole test is wrapped in a async immediate invoked function, it allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.</li>
 <li>To provide Sakuli information about our actual testcase we create a TestCase object, which handles the execution of a testcase.</li>
 <li>If any error occured during your testcode this error is redireced to the Testcase object. It triggers Sakulis internal error handling e.g. taking a screenshot in the actual errored situation</li>
-<li>Regardless of a failed or passed test execution sakuli saves its results. This is more like legacy artifact and will be removed in the future.</li>
-<li>When the async code whitin the main function (see 1.) is complete a callback passed to the <code>then</code> function is invoked. <code>done</code> is a global funtion which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function <code>done()</code> but this syntax above is recommanded).</li>
+<li>Regardless of a failed or passed test execution Sakuli saves its results. This is more like legacy artifact and will be removed in the future.</li>
+<li>When the async code whitin the main function (see 1.) is completed, a callback passed to the <code>then</code> function is invoked. <code>done</code> is a global funtion which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function <code>done()</code> but this syntax above is recommended).</li>
 </ol>
 
 <h2 id="write-your-first-test">Write your first Test</h2>
