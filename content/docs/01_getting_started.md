@@ -151,11 +151,11 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
 
 Lets examine this piece of code:
 
-1. The hole test is wrapped in a async immediate invoked function, it allows us to use ascy / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.
+1. The whole test is wrapped in a async immediate invoked function, it allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.
 2. To provide Sakuli information about our actual testcase we create a TestCase object, which handles the execution of a testcase.
 3. If any error occured during your testcode this error is redireced to the Testcase object. It triggers Sakulis internal error handling e.g. taking a screenshot in the actual errored situation
-4. Regardless of a failed or passed test execution sakuli saves its results. This is more like legacy artifact and will be removed in the future.
-5. When the async code whitin the main function (see 1.) is complete a callback passed to the `then` function is invoked. `done` is a global funtion which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function `done()` but this syntax above is recommanded).
+4. Regardless of a failed or passed test execution Sakuli saves its results. This is more like legacy artifact and will be removed in the future.
+5. When the async code whitin the main function (see 1.) is completed, a callback passed to the `then` function is invoked. `done` is a global funtion which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function `done()` but this syntax above is recommended).
 
 ## Write your first Test
 
