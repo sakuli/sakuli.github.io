@@ -145,7 +145,7 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
         tc.saveResult(); // 4
     }
 
-}).then(done); // 5
+})().then(done); // 5
 
 {{< /highlight >}}
 
