@@ -140,9 +140,9 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
     try {
         // actual test code goes here
     } catch (e) {
-        tc.handleException(e); // 3
+        testCase.handleException(e); // 3
     } finally {
-        tc.saveResult(); // 4
+        testCase.saveResult(); // 4
     }
 
 }).then(done); // 5
