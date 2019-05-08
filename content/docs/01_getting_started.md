@@ -81,6 +81,12 @@ yarn add geckodriver
 There are also WebDriver packages for [IE](https://www.npmjs.com/package/iedriver) and [Edge](https://www.npmjs.com/package/edgedriver).
 macOS already ships a WebDriver for Safari, so there's no need to install an additional package.
 
+**Attention:** Be careful to install the correct version of a WebDriver package for your installed browser version. To install e.g. ChromeDriver for Chrome 73 you have to install
+
+{{< highlight bash >}}
+npm i chromedriver@73.0.0
+{{< /highlight >}}
+
 Sakuli is not limited to work with only a single browser.
 When installing multiple WebDriver packages, you can easily switch between multiple browsers.
 
