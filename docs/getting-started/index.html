@@ -119,6 +119,7 @@
 <ul>
 <li>
 <ul>
+<li><a href="#initialisation">Initialisation</a></li>
 <li><a href="#installation">Installation</a>
 <ul>
 <li><a href="#sakuli-installation">Sakuli Installation</a></li>
@@ -134,6 +135,41 @@
     <article class="shrink-content">
         
 
+<h2 id="initialisation">Initialisation</h2>
+
+<p>This guide will get you started with writing Sakuli tests from scratch.
+To follow the tutorial, you should create a new npm project in an empty folder.</p>
+
+<p>For this guide, we will assume that our working directory is <code>/tmp/sakuli_starter</code> on a *nix system, or <code>%Temp%\sakuli_starter</code> on a Windows machine, respectively.</p>
+
+<p>To create a new, empty project, first run:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init</code></pre></div>
+
+<p>This interactive prompt will ask you for some metadata regarding your project.
+You can either modify these fields to your needs, or just accept the defaults.</p>
+
+<p>Once completed you should see a short summary similar to the following snippet:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">About to write to /tmp/sakuli_starter/package.json:
+
+<span style="color:#f92672">{</span>
+  <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;sakuli_starter&#34;</span>,
+  <span style="color:#e6db74">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+  <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#e6db74">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;index.js&#34;</span>,
+  <span style="color:#e6db74">&#34;scripts&#34;</span>: <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>
+  <span style="color:#f92672">}</span>,
+  <span style="color:#e6db74">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+  <span style="color:#e6db74">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;ISC&#34;</span>
+<span style="color:#f92672">}</span>
+
+
+Is this OK? <span style="color:#f92672">(</span>yes<span style="color:#f92672">)</span></code></pre></div>
+
+<p>After confirming the prompt, an empty project has been initialized.</p>
+
 <h2 id="installation">Installation</h2>
 
 <p>The following steps are required to set up Sakuli to work with a multitude of browsers.
@@ -141,15 +177,17 @@ Once the initial setup is done, we will dive right into our first test.</p>
 
 <h3 id="sakuli-installation">Sakuli Installation</h3>
 
+<p>Still in our newly created project, we will install Sakuli by running</p>
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/cli</code></pre></div>
 
 <p>or</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add @sakuli/cli</code></pre></div>
 
-<p>will install Sakuli and its required dependencies.</p>
+<p>This will install Sakuli and its required dependencies.</p>
 
-<p>One of Sakulis core components, <a href="https://github.com/nut-tree/nut-js">nut.js</a> requires OpenCV.
+<p>One of Sakulis core components, <a href="https://github.com/nut-tree/nut-js">nut.js</a>, requires OpenCV.
 As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via <a href="https://github.com/justadudewhohacks/opencv4nodejs">opencv4nodejs</a>.</p>
 
 <p>Building OpenCV from scratch requires a <a href="https://cmake.org/">cmake</a> installation.</p>
@@ -197,6 +235,10 @@ Several wrapper packages can be found on <a href="https://npmjs.com">npmjs.com</
 
 <p>There are also WebDriver packages for <a href="https://www.npmjs.com/package/iedriver">IE</a> and <a href="https://www.npmjs.com/package/edgedriver">Edge</a>.
 macOS already ships a WebDriver for Safari, so there&rsquo;s no need to install an additional package.</p>
+
+<p><strong>Attention:</strong> Be careful to install the correct version of a WebDriver package for your installed browser version. To install e.g. ChromeDriver for Chrome 73 you have to install</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i chromedriver@73.0.0</code></pre></div>
 
 <p>Sakuli is not limited to work with only a single browser.
 When installing multiple WebDriver packages, you can easily switch between multiple browsers.</p>
@@ -258,9 +300,9 @@ touch my-testcase/testcase.js</code></pre></div>
 </span></span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span> {
         <span style="color:#75715e">// actual test code goes here
 </span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>); <span style="color:#75715e">// 3
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>); <span style="color:#75715e">// 3
 </span></span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">finally</span> {
-<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>(); <span style="color:#75715e">// 4
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>(); <span style="color:#75715e">// 4
 </span></span><span style="color:#75715e"></span>    }
 
 <span style="display:block;width:100%;background-color:#3c3d38">})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>); <span style="color:#960050;background-color:#1e0010">// 5</span></span></code></pre></td></tr></table>
