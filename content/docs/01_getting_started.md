@@ -3,12 +3,53 @@ title: Getting started
 slug: getting-started
 ---
 
+## Initialisation
+
+This guide will get you started with writing Sakuli tests from scratch.
+To follow the tutorial, you should create a new npm project in an empty folder.
+
+For this guide, we will assume that our working directory is `/tmp/sakuli_starter` on a *nix system, or `%Temp%\sakuli_starter` on a Windows machine, respectively.
+
+To create a new, empty project, first run:
+
+{{< highlight bash >}}
+npm init
+{{< /highlight >}}
+
+This interactive prompt will ask you for some metadata regarding your project.
+You can either modify these fields to your needs, or just accept the defaults.
+
+Once completed you should see a short summary similar to the following snippet:
+
+{{< highlight bash >}}
+About to write to /tmp/sakuli_starter/package.json:
+
+{
+  "name": "sakuli_starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+{{< /highlight >}}
+
+After confirming the prompt, an empty project has been initialized.
+
 ## Installation
 
 The following steps are required to set up Sakuli to work with a multitude of browsers.
 Once the initial setup is done, we will dive right into our first test.
 
 ### Sakuli Installation
+
+Still in our newly created project, we will install Sakuli by running
 
 {{< highlight bash >}}
 npm i @sakuli/cli
@@ -20,9 +61,9 @@ or
 yarn add @sakuli/cli
 {{< /highlight >}}
 
-will install Sakuli and its required dependencies.
+This will install Sakuli and its required dependencies.
 
-One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js) requires OpenCV.
+One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js), requires OpenCV.
 As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs).
 
 Building OpenCV from scratch requires a [cmake](https://cmake.org/) installation.
@@ -80,6 +121,12 @@ yarn add geckodriver
 
 There are also WebDriver packages for [IE](https://www.npmjs.com/package/iedriver) and [Edge](https://www.npmjs.com/package/edgedriver).
 macOS already ships a WebDriver for Safari, so there's no need to install an additional package.
+
+**Attention:** Be careful to install the correct version of a WebDriver package for your installed browser version. To install e.g. ChromeDriver for Chrome 73 you have to install
+
+{{< highlight bash >}}
+npm i chromedriver@73.0.0
+{{< /highlight >}}
 
 Sakuli is not limited to work with only a single browser.
 When installing multiple WebDriver packages, you can easily switch between multiple browsers.
@@ -140,9 +187,9 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
     try {
         // actual test code goes here
     } catch (e) {
-        tc.handleException(e); // 3
+        testCase.handleException(e); // 3
     } finally {
-        tc.saveResult(); // 4
+        testCase.saveResult(); // 4
     }
 
 })().then(done); // 5
