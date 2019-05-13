@@ -6,7 +6,3 @@ Sakuli was originally created as a proof of concept to show a combination of Sah
 
 We decided it´s time for something new... Since the language for tests-cases has always been javascript (executed in the JVM-based Nashorn - which is going to be deprecated), Node.js was the technology to go forward with. Sakuli 2 now focuses on an open platform-like architecture to provide a future ready infrastructure which can grow with the coming developments of web standards. 
 """
-
-[Image]
-  path="https://media.tenor.co/images/0b73b9822898ecf8c2f0a74469c6e337/raw"
-  alt="A cat is typing something into a computer"
