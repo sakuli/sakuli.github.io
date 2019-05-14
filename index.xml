@@ -11,16 +11,6 @@
     
     
     <item>
-      <title>Automation</title>
-      <link>/automation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/automation/</guid>
-      <description>Over the years systems and processes are growing which leads to potential technology- and media breaks. In such scenarios the automation of processes and daily tasks can get very hard. Sakuli can help to automate tasks between various system boundaries. Download a report from a browser based reporting tool app and upload it to shared folder? No problem. Sakuli closes the gap between browser automation and desktop automation.
-Automate. Everything.</description>
-    </item>
-    
-    <item>
       <title>Getting started</title>
       <link>/docs/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -60,7 +50,8 @@ Responsible for content (in accordance with § 6 MDStV) Nico Zellner</descriptio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/monitoring/</guid>
-      <description>Beside the correct behaviour of your system you might also be interested in the actual performance of user interactions with the system. Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such a real world performance analysis in an automated way. For this reason Sakuli provides a generic forwarder interface which gets the latest results of a testrun.</description>
+      <description>Aside from the correct behavior of your system, you may also be interested in the actual performance of user interactions with the system.
+First to Know, First to Act Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such real-world performance analysis in an automated way. To achieve this, Sakuli provides a generic forwarder interface which receives the latest results of a test run.</description>
     </item>
     
     <item>
@@ -69,8 +60,8 @@ Responsible for content (in accordance with § 6 MDStV) Nico Zellner</descriptio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/forwarder/</guid>
-      <description>End-2-End Application Testing and Monitoring – a Perfect Combination Combining End-2-End Tests with Monitoring solutions proves to be optimal. Because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem keeps its promise. Ultimately though, the users will judge the quality of your systems.
-Monitor critical Workflows Imagine testing your critical processes and workflows by simulating a real user and sending the execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice.</description>
+      <description>End-2-End Application Testing and Monitoring: Your Perfect Combination Combining end-2-end testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
+Monitor Critical Workflows Imagine testing your critical processes and workflows by simulating a real-world user, sending execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice.</description>
     </item>
     
     <item>
@@ -79,7 +70,17 @@ Monitor critical Workflows Imagine testing your critical processes and workflows
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/container/</guid>
-      <description>Sakuli Container in a nutshell Our pre-configured Docker container will run Sakuli in an isolated environment which ensures having the same setup and equal conditions for every test-run. You don´t need an unlocked display for native UI interaction with the headless VNC image which is configured in every container. You can watch your test execution live in a browser or a VNC client any time for debugging purposes. Scale your tests horizontally by instanciating as many container as you need.</description>
+      <description>Sakuli Container in a Nutshell Our pre-configured Docker container will run Sakuli in an isolated environment. This will ensure having the same setup and equal conditions for every test-run. You don´t need an unlocked display for native UI interaction with the headless VNC image configured in every container. For debugging purposes, you will be able to watch your test execution live in a browser or a VNC client any time.</description>
+    </item>
+    
+    <item>
+      <title>RPA - Robot Process Automation</title>
+      <link>/rpa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/rpa/</guid>
+      <description>Over the years systems and processes are growing, eventually heading for potential technology and media breakdowns. In such scenarios, automation of processes and daily tasks may become quite difficult. Sakuli can help to automate tasks between various system boundaries. Downloading a report from a browser-based reporting tool app and upload it to shared folder won’t create problems anymore: Sakuli closes the gap between browser automation and desktop automation.
+Have Sakuli do the Work Add import or export functionalities to your application when APIs are missing or too expensive to implement.</description>
     </item>
     
     <item>
@@ -97,8 +98,8 @@ Monitor critical Workflows Imagine testing your critical processes and workflows
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/enterprise/core/</guid>
-      <description>UI testautomation with every application Sakuli combines web testing with testing on native applications. That&amp;rsquo;s all you need to perfectly simulate a real world user. Design your tests, let them run automatically and save a ton of time by reducing your manual tests dramatically.
-Build sustainable tests Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages and therefore solves most of the pain points test designers encountered in the past.</description>
+      <description>All You Need UI Test Automation Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, have them run automatically and save a ton of time by dramatically reducing your manual testing.
+Build Sustainable Tests Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past.</description>
     </item>
     
     <item>
@@ -116,7 +117,7 @@ Build sustainable tests Sakuli uses state of the art web-testing technologies li
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/testing/</guid>
-      <description>Sakuli makes it easy to write tests that act like a real user. It automatically sets up and starts a webdriver instance and also lets you take control over the mouse and keyboard of the system. The example below is showing a basic login to an imaginary webbased service with login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
+      <description>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the systems’s mouse and keyboard. The example below shows a basic login to an imaginary webbased service with login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
     </item>
     
   </channel>

@@ -3,10 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/automation/</loc>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
@@ -33,6 +29,10 @@
   
   <url>
     <loc>/enterprise/container/</loc>
+  </url>
+  
+  <url>
+    <loc>/rpa/</loc>
   </url>
   
   <url>
