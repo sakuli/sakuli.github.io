@@ -1,7 +1,6 @@
-Title="Automation"
+Title="RPA"
 Image="images/icon_automate.svg"
 Text="""
-Automate processes and workflows without an extensive implementation.
-Let Sakuli do the job for you!
+Process and workflow automation by closing gaps and controlling tools. Sakuli does it!
 """
-Link="automation"
+Link="rpa"

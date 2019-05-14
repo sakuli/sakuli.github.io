@@ -1,10 +1,10 @@
 SlaDescription="""
-    Sakuli Core and Sakuli add-ons are supported on a business impact priorisiation. Consulting and setup is not included.
-    Initial reaction time between Mo.-Fr. German Business Hours 08:00 - 17.00 excluding German public holidays. Support channels include Email and Slack-Channels. Customer channels are only supported within the XL package.
+    Sakuli Core and Sakuli add-ons are supported on a business impact prioritization. Consulting and setup are not included. Initial reaction time is from Monday to Friday during German business hours 08:00 - 17:00 – excluding German public holidays. Support is offered via email. Customer channels are only supported within the XL package.
 """
 
 InstanceDescription="""
-    Number of Sakuli installations. If you use Sakuli in two docker container and additionally installed Sakuli on a Windows VM, you are using three Sakuli instances for example.
+    Number of Sakuli installations. 
+    For example: If you use Sakuli in two docker containers and if you additionally installed Sakuli on a Windows VM, you are using three Sakuli instances.
 """
 PriceDescription="""
     Prices per month and not including VAT.
