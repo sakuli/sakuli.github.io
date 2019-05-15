@@ -7,6 +7,10 @@ slug: forwarder
 
 Combining end-2-end testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
 
+
+<img src="/images/content/monitoring.svg" alt="" style="max-height: 400px; float:right" />
+
+
 ## Monitor Critical Workflows
 
 Imagine testing your critical processes and workflows by simulating a real-world user, sending execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice. Before the first customer complains about the performance, you will have been notified automatically and you will be able to investigate and minimize affects on your revenue stream.

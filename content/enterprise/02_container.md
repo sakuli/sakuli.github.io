@@ -6,6 +6,8 @@ slug: container
 
 Our pre-configured Docker container will run Sakuli in an isolated environment. This will ensure having the same setup and equal conditions for every test-run. You don´t need an unlocked display for native UI interaction with the headless VNC image configured in every container. For debugging purposes, you will be able to watch your test execution live in a browser or a VNC client any time. Scale your tests horizontally by instantiating as many containers as you need.
 
+<img src="/images/content/container.svg" alt="" style="max-height: 400px;" />
+
 ## Your Benefits
 
 - Always rely on the same, clean environment: no cookie hassle, no session data, no old test artefacts

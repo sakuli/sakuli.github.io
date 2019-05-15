@@ -7,6 +7,10 @@ slug: core
 
 Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, have them run automatically and save a ton of time by dramatically reducing your manual testing.
 
+
+<img src="/images/content/architecture.svg" alt="" style="max-height: 400px; margin: 1rem" />
+
+
 ## Build Sustainable Tests
 
 Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel. It was never easier to write sustainable user interface tests.

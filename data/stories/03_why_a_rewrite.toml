@@ -1,5 +1,7 @@
 Title="Sakuli answers to the Future"
-
+Description="""
+<iframe allowFullScreen="allowFullScreen" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);" src="https://www.youtube.com/embed/huJGEk8f_SQ?ecver=1&amp;iv_load_policy=1&amp;loop=1&amp;rel=0&amp;showinfo=0&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560" width="560" height="315" allowtransparency="true" frameborder="0"><script>function execute_YTvideo(){return youtube.query({ids:"channel==MINE",startDate:"2019-01-01",endDate:"2019-12-31",metrics:"views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained",dimensions:"day",sort:"day"}).then(function(e){},function(e){console.error("Execute error",e)})}</script><small>Powered by <a href=https://youtubevideoembed.com/>Embed YouTube Video</a></small></iframe>
+"""
 
 Content="""
 Sakuli was originally created as a proof of concept to show a combination of Sahi and Sikuli UI testing in a monitoring context. From this successful start, Sakuli kept growing and eventually became an open source product. But as time passed, with new web-technologies emerging and browsers getting more restrictive, some of the fundamental technologies of Sakuli grew old. Especially the web evolved a lot faster than the open source version of Sakuli’s underlying web automation framework with its proxy mechanism and security policy issues. So we had to decide whether to try and build a workaround for every shortcoming of the architecture or to build something new and future-proof, including the best downwards compatibility we could achieve.
