@@ -1,6 +1,6 @@
 <template>
   <span>
-    <a href="https://www.consol.de/datenschutz/" @click.prevent="modalOpen = true">Data Privacy</a>
+    <a :href="privacyUrl" @click.prevent="modalOpen = true">Data Privacy</a>
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
         <h1>{{title}}</h1>
@@ -20,7 +20,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      modalOpen: true,
+      modalOpen: false,
       title: "",
       privacyUrl: "https://www.consol.com/data-privacy/"
     };
