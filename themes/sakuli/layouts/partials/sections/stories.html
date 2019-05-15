@@ -1,5 +1,5 @@
 {{ $scratch := newScratch }}
-{{ $scratch.Set "counter" 0 }}
+{{ $scratch.Set "counter" 1 }}
 {{ range $name, $story := . }}
     {{ $c := int ($scratch.Get "counter")}}
     {{ with $story }}
