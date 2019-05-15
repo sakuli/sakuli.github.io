@@ -3,6 +3,13 @@ title: Getting started
 slug: getting-started
 ---
 
+## Prerequisites
+
+Sakuli is built and tested against the current LTS version of Node.js.
+So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.
+
+To install Node.js on your system, you can either go the [node website](https://nodejs.org/en/), or you could use [node version manager](https://github.com/nvm-sh/nvm), a utility to manage various node versions.
+
 ## Initialisation
 
 This guide will get you started with writing Sakuli tests from scratch.
