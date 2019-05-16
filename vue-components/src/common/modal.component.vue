@@ -1,5 +1,5 @@
 <template>
-  <MountingPortal mountTo="#modal" name="source" to="source" append>
+  <MountingPortal mountTo="#modal" append>
     <div class="overlay" v-if="show" @click.self="close">
       <transition name="modal">
         <section class="shrink-content">
@@ -10,8 +10,9 @@
             <slot></slot>
           </article>
           <footer>
-            <slot name="footer"></slot>
-            <button class="button" @click="close()">Close</button>
+            <slot name="footer">
+              <button class="button" @click="close()">Close</button>
+            </slot>
           </footer>
         </section>
       </transition>
@@ -20,17 +21,17 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import { Wormhole } from "portal-vue";
 
-console.log(Wormhole.targets);
 export default Vue.extend({
   props: ["isOpen"],
   data() {
     return {
-      show: this.isOpen || false
+      show: this.isOpen || false,
+      id: null
     };
   },
   mounted() {
+    this.id = this._uid;
     document.addEventListener("keydown", e => {
       console.log(e);
       if (e.keyCode == 27 && this.isOpen) {

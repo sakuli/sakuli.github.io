@@ -78,8 +78,9 @@
             {{end}}
         </ul>
 
-        <a class="button" href="{{ .priceLink }}" target="_blank">
-            {{ if or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
+        {{ $isContactLink := or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
+        <a class="button" href="{{ .priceLink }}" target="_blank" {{ if $isContactLink }} data-contactform="{{ .code }}"{{ end }}>
+            {{ if $isContactLink }}
             Contact
             {{else}}
             Github

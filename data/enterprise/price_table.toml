@@ -3,7 +3,7 @@ SlaDescription="""
 """
 
 InstanceDescription="""
-    Number of Sakuli installations. 
+    Number of Sakuli installations.
     For example: If you use Sakuli in two docker containers and if you additionally installed Sakuli on a Windows VM, you are using three Sakuli instances.
 """
 PriceDescription="""
@@ -37,7 +37,7 @@ container=true
 cli=false
 hub=false
 price=100.00
-priceLink="https://www.consol.de/anfrage-sakuli/"
+priceLink="https://www.consol.com/request-sakuli-enterprise"
 
 [[plans]]
 code="L"
@@ -50,7 +50,8 @@ container=true
 cli=false
 hub=false
 price=400.00
-priceLink="https://www.consol.de/anfrage-sakuli/"
+priceLink="https://www.consol.com/request-sakuli-enterprise"
+
 
 [[plans]]
 code="XL"
@@ -62,4 +63,4 @@ forwarder=true
 container=true
 cli=true
 hub=true
-priceLink="https://www.consol.de/anfrage-sakuli/"
+priceLink="https://www.consol.com/request-sakuli-enterprise"

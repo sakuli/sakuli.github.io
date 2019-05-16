@@ -20,6 +20,10 @@ html {
     font-size: 1.0rem;
 }
 
+:focus {
+    outline: 0;
+}
+
 main {
     background-color: hsl(89, 1%, 95%);
 

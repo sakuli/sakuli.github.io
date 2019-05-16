@@ -1,12 +1,10 @@
 <template>
-  <transition name="fade">
     <div v-if="error"></div>
     <div v-else-if="loading" class="loading">
       <spinner></spinner>
       <div>Loading content</div>
     </div>
     <div v-html="content" v-else></div>
-  </transition>
 </template>
 <script lang="ts">
 import Vue from "vue";
@@ -27,6 +25,7 @@ export default Vue.extend({
     };
   },
   async mounted() {
+    console.log('mount', this);
     await this.load();
   },
   methods: {
