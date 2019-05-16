@@ -1,23 +1,28 @@
 <template>
-  <div class="overlay" v-if="show" @click.self="close">
-    <transition name="modal">
-      <section class="shrink-content">
-        <header>
-          <slot name="header"></slot>
-        </header>
-        <article>
-          <slot></slot>
-        </article>
-        <footer>
-          <slot name="footer"></slot>
-          <button class="button" @click="close()">Close</button>
-        </footer>
-      </section>
-    </transition>
-  </div>
+  <MountingPortal mountTo="#modal" name="source" to="source" append>
+    <div class="overlay" v-if="show" @click.self="close">
+      <transition name="modal">
+        <section class="shrink-content">
+          <header>
+            <slot name="header"></slot>
+          </header>
+          <article>
+            <slot></slot>
+          </article>
+          <footer>
+            <slot name="footer"></slot>
+            <button class="button" @click="close()">Close</button>
+          </footer>
+        </section>
+      </transition>
+    </div>
+  </MountingPortal>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import { Wormhole } from "portal-vue";
+
+console.log(Wormhole.targets);
 export default Vue.extend({
   props: ["isOpen"],
   data() {
@@ -54,14 +59,15 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
+/*
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 5s;
 }
-.modal-enter, .modal-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.modal-enter, .modal-leave-to  {
   opacity: 0;
 }
-
+*/
 .overlay {
   position: fixed;
   z-index: 999;

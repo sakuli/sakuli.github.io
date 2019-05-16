@@ -1,6 +1,6 @@
 <template>
   <span>
-    <a :href="privacyUrl" @click.prevent="modalOpen = true">Data Privacy</a>
+    <a :href="privacyUrl" @click.prevent="modalOpen = true">{{link}}</a>
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
         <h1>{{title}}</h1>
@@ -14,6 +14,7 @@ import Vue from "vue";
 import modal from "../common/modal.component.vue";
 import remoteContent from "../common/remote-content.component.vue";
 export default Vue.extend({
+  props: ['linkText'],
   components: {
     modal,
     remoteContent
@@ -22,6 +23,7 @@ export default Vue.extend({
     return {
       modalOpen: false,
       title: "",
+      link: this.linkText || 'Data Privacy',
       privacyUrl: "https://www.consol.com/data-privacy/"
     };
   },

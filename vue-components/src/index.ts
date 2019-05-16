@@ -1,4 +1,7 @@
 import Vue from 'vue';
+import PortalVue from 'portal-vue';
+Vue.use(PortalVue);
+
 import GdprComponent from './gdpr/gdpr.component.vue';
 import DataPrivacyComponent from './gdpr/data-privacy.component.vue';
 
