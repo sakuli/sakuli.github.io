@@ -113,6 +113,7 @@ export default Vue.extend({
 <style lang="scss">
 a.button {
   cursor: pointer;
+  border: 0;
 }
 
 .error {

@@ -67,7 +67,7 @@ main {
     color: $color-gray-dark;
     box-shadow: $shadow-l1;
     transition: box-shadow 250ms ease-out;
-
+    border: 0;
     &:hover {
         box-shadow: $shadow-l2;
     }
