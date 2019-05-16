@@ -2,7 +2,8 @@
     <transition name="fade">
         <div class="gdpr-info-box" v-if="show">
             <div>
-            You like <abbr title="cookies">🍪🍪🍪</abbr>? We also like them and we are aware that a few can be sweet and delicous while too much will become unhealthy. So we keep the amount of cookies as low as possible while remaining a sweet snack for your user experience. <a target="_blank" href="https://www.consol.com/data-privacy/">Learn more</a> 
+            You like <abbr title="cookies">🍪🍪🍪</abbr>? We also like them and we are aware that a few can be sweet and delicous while too much will become unhealthy. So we keep the amount of cookies as low as possible while remaining a sweet snack for your user experience.
+            <data-privacy linkText="Learn more"></data-privacy>
             </div>
         <button @click="onAgree" class="button">I agree</button>
         </div>
@@ -10,7 +11,11 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import dataPrivacy from './data-privacy.component.vue';
 export default Vue.extend({
+  components: {
+    dataPrivacy
+  },
   mounted() {
       const agreed = Boolean(localStorage.getItem('gdpr-agreed'));
       this.show = !agreed
@@ -33,7 +38,7 @@ export default Vue.extend({
     transform: translate(0, 100%);
 }
 .fade-enter-active,
-.fade-leave-active {  
+.fade-leave-active {
   transition: transform 0.5s ease-out;
 }
 .fade-leave-to {
@@ -59,6 +64,7 @@ export default Vue.extend({
 
   button {
     margin: 1rem;
+    border: 0;
   }
 }
 </style>

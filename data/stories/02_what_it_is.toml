@@ -1,0 +1,17 @@
+Title="Sakulis leads the Way"
+
+Content="""
+
+Sakuli is an open platform for a variety of e2e scenarios including UI-testing, monitoring or any other kind of automation. Sakuli will enable you to simulate the interaction of a real user with your target systems.
+
+Sakuli 2 has been rewritten from scratch to be:
+
+- sustainable and future-proof
+- open and extensible
+- easy to use
+- compatible with [Sakuli V1.x](https://github.com/consol/sakuli)
+"""
+
+[Image]
+path="images/how_it_works.svg"
+alt="A Venn diagram showing that the intersection of selenium and nut.js is Sakuli"

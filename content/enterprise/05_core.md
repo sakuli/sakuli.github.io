@@ -3,24 +3,27 @@ title: Sakuli Core
 slug: core
 ---
 
-## UI testautomation with every application
+## All You Need UI Test Automation
 
-Sakuli combines web testing with testing on native applications. That's all you need to perfectly simulate a real world user. Design your tests, let them run automatically and save a ton of time by reducing your manual tests dramatically.
+Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, have them run automatically and save a ton of time by dramatically reducing your manual testing.
 
-## Build sustainable tests
 
-Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages and therefore solves most of the pain points test designers encountered in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel - It was never easier to write sustainable user interface tests.
+<img src="/images/content/architecture.svg" alt="" style="max-height: 400px; margin: 1rem" />
 
-## Integration of UI tests into CI/CD pipelines
 
-By integrating your Sakuli UI tests into continious integration systems, you will speed up your software development cycles and increase the quality of your delivered software. Sakuli supports a varity of CI/CD tools like Jenkins, Drone IO, Travis-CI and many more.
+## Build Sustainable Tests
 
-## Open platform
+Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel. It was never easier to write sustainable user interface tests.
 
-Sakuli is designed with the priority on an open and extensibe base.  
-Its modular node.js core enables developers to create their own DSL, integrate behaviour driven methods like cucumber, adapt Sakuli to new technologies and connect to any kind of downstream application using the comprehensive APIs. It´s an open platform for a varity of End-2-End use-cases. 
+## Integrate UI Tests into CI/CD Pipelines
 
-## What is included?
+By integrating your Sakuli UI tests into continuous integration systems, you will speed up your software development cycles and increase the quality of your delivered software. Sakuli supports a variety of CI/CD tools like Jenkins, Drone IO, Travis-CI and many more.
+
+## Benefit from Open Platform
+
+Sakuli is designed prioritizing an open and extensible base. Its modular node.js core enables developers to create their own DSL, integrate behavior driven methods like cucumber, adapt Sakuli to new technologies and connect to any kind of downstream application using the comprehensive APIs. Sakuli is an open platform for a variety of end-2-end use-cases.
+
+## Your Package
 
 Sakuli Core ships with:
 

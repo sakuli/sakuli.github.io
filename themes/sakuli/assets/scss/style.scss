@@ -20,19 +20,34 @@ html {
     font-size: 1.0rem;
 }
 
+:focus {
+    outline: 0;
+}
+
 main {
     background-color: hsl(89, 1%, 95%);
+
     flex: 1;
+
     >section {
         margin-bottom: 5rem;
     }
+
     margin-top: 70px;
     line-height: 1.75rem;
 
     pre {
         line-height: initial;
         overflow: auto;
-        padding: .5rem; 
+        padding: .5rem;
+    }
+
+    article {
+        img {
+            max-height: 400px;
+            width: 100%;
+            margin: 1rem
+        }
     }
 }
 
@@ -52,9 +67,11 @@ main {
     color: $color-gray-dark;
     box-shadow: $shadow-l1;
     transition: box-shadow 250ms ease-out;
+    border: 0;
     &:hover {
         box-shadow: $shadow-l2;
     }
+
     text-shadow: none;
 }
 
@@ -71,5 +88,3 @@ h6 {
     padding-bottom: 1rem;
     line-height: 3.5rem;
 }
-
-

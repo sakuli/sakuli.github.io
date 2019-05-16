@@ -2,7 +2,7 @@
 title: Legal Notice
 slug: legalnotice
 ---
-### Address
+## Address
 ConSol Consulting & Solutions Software GmbH
 
 St.-Cajetan-Straße 43  

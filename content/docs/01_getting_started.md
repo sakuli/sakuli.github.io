@@ -199,11 +199,11 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
         testCase.saveResult(); // 4
     }
 
-}).then(done); // 5
+})().then(done); // 5
 
 {{< /highlight >}}
 
-Lets examine this piece of code:
+Let´s examine this piece of code:
 
 1. The whole test is wrapped in a async immediate invoked function, it allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.
 2. To provide Sakuli information about our actual testcase we create a TestCase object, which handles the execution of a testcase.

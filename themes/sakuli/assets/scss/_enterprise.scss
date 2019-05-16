@@ -1,14 +1,20 @@
 #price-table {
     list-style: none;
     display: flex;
-    flex-direction: row;        
+    flex-direction: row;
     padding: 0;
     @media screen and (max-width: 820px) {
-        flex-direction: column;    
+        flex-direction: column;
     }
-
     >li {
         //background-image: linear-gradient(lighten($color-green, 50%), transparent, transparent,transparent);
+        img {
+            width: 33%;
+            align-self: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
         background-color: white;
         @media screen and (max-width: 820px) {
             margin-bottom: 3rem;
@@ -21,8 +27,9 @@
         box-shadow: $shadow-l1;
 
         >ul {
+            border-top: 1px solid #d2ed8c;
             list-style: none;
-            
+
             padding: 1rem;
             flex: 1;
 
@@ -31,18 +38,18 @@
                     flex:1;
                 }
 
-                border-bottom: 1px solid lighten($color-green, 30%);
+                border-bottom: 1px solid #d2ed8c;
                 padding-bottom: 1rem;
 
                 &.meta-info {
                     justify-content: center;
                     text-align: left;
-                    margin-left: 1.5rem;
+                    padding-left: 1.5rem;
                 }
                 text-align: left;
                 margin-bottom: 1rem;
                 display: flex;
-                align-items: center;                
+                align-items: center;
                 i.check-mark {
                     color: $color-green;
                     align-self: flex-start;
@@ -80,6 +87,7 @@
 
         .button {
             width: 50%;
+            padding: .5rem;
             align-self: center;
             text-align: center;
             margin-bottom: -1.5rem;
@@ -90,11 +98,13 @@
             text-align: center;
             font-size: 1.75rem;
             margin-bottom: 1rem;
+            color: $color-green;
             .price-addon {
                 margin-top: .5rem;
-                display:block; 
+                display:block;
                 font-weight: lighter;
                 font-size: .75rem;
+                color: $color-gray-dark;
             }
             a {
                 text-decoration: none;
@@ -105,7 +115,7 @@
             }
         }
     }
-    margin-bottom: 4rem;    
+    margin-bottom: 4rem;
 }
 
 #enterprise-contact-form {
@@ -122,7 +132,7 @@
             text-align: right;
             padding: .5rem;
         }
-       
+
         input, select, textarea {
             padding: .5rem;
             border-radius: 1rem;
