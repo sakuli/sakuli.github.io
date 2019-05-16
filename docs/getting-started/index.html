@@ -309,7 +309,7 @@ touch my-testcase/testcase.js</code></pre></div>
 </div>
 </div>
 
-<p>Lets examine this piece of code:</p>
+<p>Let´s examine this piece of code:</p>
 
 <ol>
 <li>The whole test is wrapped in a async immediate invoked function, it allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.</li>
@@ -320,6 +320,62 @@ touch my-testcase/testcase.js</code></pre></div>
 </ol>
 
 <h2 id="write-your-first-test">Write your first Test</h2>
+
+<p>Let´s write a simple test using the Sakuli.io homepage. This Test checks if the &ldquo;Getting Started&rdquo; guide linked on the front page is accessible.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> { 
+</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
+</span>    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://sakuli.io&#34;</span>);              <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Open Landing Page&#34;</span>,<span style="color:#ae81ff">5</span>);           <span style="color:#75715e">// 2
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Getting started&#34;</span>));              <span style="color:#75715e">// 3
+</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Navigate to Getting Started&#34;</span>,<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 4
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_code</span>(<span style="color:#e6db74">&#34;npm init&#34;</span>));                 <span style="color:#75715e">// 5
+</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Find npm init code sample&#34;</span>);     
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+</span>    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+    }
+
+})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+</div>
+</div>
+
+<ol>
+<li>Sakuli opens the domain / link - there is no need for certificate handling.</li>
+<li>With <code>testCase.endOfStep();</code> Sakuli will measure the time since the last step and publish it to the API.</li>
+<li>Use of labels such as &ldquo;Open Landing Page&rdquo; to identify an object is a nice feature, but will fail as soon as the label changes. There are multiple other methods to access objects - consult the documentation for help.</li>
+<li>This Step definition defines a Warning threshold of 3 seconds.</li>
+<li>With <code>_highlight</code> you can actually see what object was identified. Please only use for debug purposes, as it will decrease the performance.</li>
+</ol>
+
+<p>Run your test with
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm test</code></pre></div>
+<img src="/images/gettingstarted/simple_sakuli_test.png" alt="" style="max-width: 400px; float:right" />
+As long as our website is stable and fast, you should get a result like this:</p>
+
+<p>Congratulations, you wrote your first Sakuli test!</p>
 
 <h2 id="getting-started-with-native-interactions">Getting started with native interactions</h2>
 
