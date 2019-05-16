@@ -196,7 +196,7 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
 
 {{< /highlight >}}
 
-Lets examine this piece of code:
+Let´s examine this piece of code:
 
 1. The whole test is wrapped in a async immediate invoked function, it allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.
 2. To provide Sakuli information about our actual testcase we create a TestCase object, which handles the execution of a testcase.
@@ -205,5 +205,45 @@ Lets examine this piece of code:
 5. When the async code whitin the main function (see 1.) is completed, a callback passed to the `then` function is invoked. `done` is a global funtion which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function `done()` but this syntax above is recommended).
 
 ## Write your first Test
+
+Let´s write a simple test using the Sakuli.io homepage. This Test checks if the "Getting Started" guide linked on the front page is accessible.
+
+{{< highlight typescript "linenos=table,hl_lines=1 2 6 8 11" >}}
+
+(async () => { 
+    const testCase = new TestCase();
+    try {
+        await _navigateTo("https://sakuli.io");              // 1
+        testCase.endOfStep("Open Landing Page",5);           // 2
+        await _click(_link("Getting started"));              // 3
+        testCase.endOfStep("Navigate to Getting Started",3); // 4
+        await _highlight(_code("npm init"));                 // 5
+        testCase.endOfStep("Find npm init code sample");     
+    } catch (e) {
+        testCase.handleException(e);
+    } finally {
+        testCase.saveResult();
+    }
+
+})().then(done);
+
+{{< /highlight >}}
+
+1. Sakuli opens the domain / link - there is no need for certificate handling.
+2. With `testCase.endOfStep();` Sakuli will measure the time since the last step and publish it to the API.
+3. Use of labels such as "Open Landing Page" to identify an object is a nice feature, but will fail as soon as the label changes. There are multiple other methods to access objects - consult the documentation for help.
+4. This Step definition defines a Warning threshold of 3 seconds.
+5. With `_highlight` you can actually see what object was identified. Please only use for debug purposes, as it will decrease the performance.
+
+Run your test with 
+{{< highlight bash >}}
+
+npm test
+
+{{< /highlight >}}
+<img src="/images/gettingstarted/simple_sakuli_test.png" alt="" style="max-width: 400px; float:right" />
+As long as our website is stable and fast, you should get a result like this:
+
+Congratulations, you wrote your first Sakuli test!
 
 ## Getting started with native interactions
