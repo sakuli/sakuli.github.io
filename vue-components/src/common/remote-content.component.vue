@@ -25,7 +25,6 @@ export default Vue.extend({
     };
   },
   async mounted() {
-    console.log('mount', this);
     await this.load();
   },
   methods: {

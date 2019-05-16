@@ -27,13 +27,11 @@ export default Vue.extend({
   data() {
     return {
       show: this.isOpen || false,
-      id: null
+      defaultOverflow: document.body.style.overflow
     };
   },
   mounted() {
-    this.id = this._uid;
     document.addEventListener("keydown", e => {
-      console.log(e);
       if (e.keyCode == 27 && this.isOpen) {
         this.close();
       }
@@ -42,33 +40,23 @@ export default Vue.extend({
   methods: {
     open() {
       this.show = true;
+      document.body.style.overflow = "hidden";
       this.$emit("open");
     },
     close() {
       this.show = false;
+      document.body.style.overflow = this.defaultOverflow;
       this.$emit("close");
-    },
-    handleOverlayClick(e) {
-      console.log(e);
     }
   },
   watch: {
     isOpen(open: boolean) {
-      open ? this.open() : this.close;
+      (open && open != this.open) ? this.open() : this.close();
     }
   }
 });
 </script>
 <style lang="scss" scoped>
-/*
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 5s;
-}
-.modal-enter, .modal-leave-to  {
-  opacity: 0;
-}
-*/
 .overlay {
   position: fixed;
   z-index: 999;
@@ -92,6 +80,7 @@ $border-radius: 1rem;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
+
   header {
     box-shadow: none;
     width: auto;
@@ -99,6 +88,10 @@ $border-radius: 1rem;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
     justify-content: center;
+    height: initial;
+    @media screen and (max-width: 820px) {
+      font-size: 0.7rem;
+    }
   }
 
   article {
@@ -109,8 +102,16 @@ $border-radius: 1rem;
 
   footer {
     background: inherit;
+    padding: initial;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
+  }
+
+  @media screen and (max-width: 820px) {
+    margin: 0.5rem;
+    article {
+      padding: 0.5rem;
+    }
   }
 }
 </style>

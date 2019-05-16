@@ -68,11 +68,16 @@ main {
     box-shadow: $shadow-l1;
     transition: box-shadow 250ms ease-out;
     border: 0;
+
     &:hover {
         box-shadow: $shadow-l2;
     }
 
     text-shadow: none;
+
+    &.button-secondary {
+        background: lighten($color-gray-dark, 50%);
+    }
 }
 
 h1,

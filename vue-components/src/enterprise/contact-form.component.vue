@@ -3,7 +3,13 @@
     {{text}}
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
-        <h1>Your request for Sakuli package {{code}}</h1>
+        <h1>
+          <span class="hide-mobile">Your request for</span>
+          Sakuli package {{code}}</h1>
+      </template>
+      <template v-slot:footer>
+        <button class="button button-secondary" @click.prevent="modalOpen = false">Close</button>
+        <button v-if="!formDisabled" class="button" @click.prevent="sendFormData">Send</button>
       </template>
       <div v-if="success">
         <h2>Thank your for the request. Our sales team will contact you shortly.</h2>
@@ -111,15 +117,21 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-a.button {
+.button {
   cursor: pointer;
   border: 0;
+  margin: 1rem;
+
+  @media screen and (max-width: 820px) {
+    margin: .5rem;
+  }
 }
 
 .error {
   text-align: center;
   margin-bottom: 1rem;
 }
+
 #sakuli-enterpise-contact-form {
   fieldset {
     border: 0;
@@ -132,6 +144,7 @@ a.button {
       .form-group {
         margin-bottom: 1rem;
         display: flex;
+
         label {
           text-align: right;
           width: 20%;
@@ -155,12 +168,27 @@ a.button {
         textarea {
           height: 200px;
         }
+
+        @media screen and (max-width: 820px) {
+          flex-direction: column;
+          label {
+            width: initial;
+            text-align: left;
+            align-self: flex-start;
+          }
+        }
       }
     }
     .powermail_fieldwrap_datenschutz {
       margin-left: calc(20% + 1rem);
-    }
 
+      @media screen and (max-width: 820px) {
+        margin-left: 0;
+      }
+    }
+    .powermail_fieldwrap_senden {
+      display: none !important;
+    }
     .powermail_fieldwrap_type_submit {
       text-align: right;
       div {
@@ -173,6 +201,7 @@ a.button {
       align-self: flex-end;
       border-radius: 0.25rem;
       border: 0;
+
     }
   }
 }
