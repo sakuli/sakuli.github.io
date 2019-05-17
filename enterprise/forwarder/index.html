@@ -45,7 +45,7 @@
         var ua = window.navigator.userAgent;
         var version = ieVersion(ua);
         if(version && version >= 10 && version <= 11) {
-            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CArray.from%2CPromise%2Cfetch"><\/script>');
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CArray.from%2CPromise%2CString.prototype.startsWith"><\/script>');
             document.write('<link rel="stylesheet" href="\/ie.css" integrity=”” />')
         }
         function ieVersion(uaString) {
