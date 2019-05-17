@@ -8,7 +8,7 @@ slug: core
 Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, have them run automatically and save a ton of time by dramatically reducing your manual testing.
 
 
-<img src="/images/content/architecture.svg" alt="" style="max-height: 400px; margin: 1rem" />
+<img src="/images/content/architecture.svg" alt="Sakuli shown as an open End-2-End Testing Platform" style="max-height: 400px; margin: 1rem" />
 
 
 ## Build Sustainable Tests

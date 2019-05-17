@@ -1,7 +1,7 @@
 <section class="key-features shrink-content">
     {{range .}}
     <div class="key-features__feature">
-        <img src="{{ .Image }}" />
+        <img src="{{ .Image }}" alt="{{ .ImgAlt }}" />
         <h2>{{ .Title }}</h2>
         <p>
             {{ .Text | markdownify }}

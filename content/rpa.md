@@ -6,7 +6,7 @@ slug: rpa
 Over the years systems and processes are growing, eventually heading for potential technology and media breakdowns. In such scenarios, automation of processes and daily tasks may become quite difficult. Sakuli can help to automate tasks between various system boundaries. Downloading a report from a browser-based reporting tool app and upload it to shared folder won’t create problems anymore: Sakuli closes the gap between browser automation and desktop automation.
 
 
-<img src="/images/content/sakuli_infrastructure.svg" alt="" />
+<img src="/images/content/sakuli_infrastructure.svg" alt="Integration of Sakuli UI tests into CI/CD pipelines and Monitoring interfaces." />
 
 
 ## Have Sakuli do the Work
