@@ -22,3 +22,16 @@
     display: none;
   }
 }
+
+@mixin nav-list-item() {
+  &::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    color: $color-green;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+}
