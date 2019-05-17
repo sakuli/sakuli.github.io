@@ -15,9 +15,13 @@
       <div v-if="success">
         <h2>Thank your for the request. Our sales team will contact you shortly.</h2>
       </div>
-      <div v-if="isLoading">
+      <div v-if="isLoading" style="text-align: center">
         <spinner></spinner>
         <div>Forwarding your request</div>
+      </div>
+      <div v-if="reponseError">
+        <h3>Please fill all required fields: </h3>
+        <ul v-html="reponseError"></ul>
       </div>
       <div v-if="error" class="error">
         Oops something went wrong. Please contact
@@ -30,7 +34,9 @@
         ref="contactForm"
         @submit.prevent="sendFormData"
       >
-        <remote-content :href="formUrl" selector="main form" :parseContent="parseForm"/>
+        <keep-alive>
+          <remote-content :href="formUrl" selector="main form" :parseContent="parseForm"/>
+        </keep-alive>
       </form>
     </modal>
   </a>
@@ -55,18 +61,27 @@ export default Vue.extend({
       isLoading: false,
       error: null,
       count: 0,
-      success: false
+      success: false,
+      reponseError: ""
     };
   },
   computed: {
     formDisabled() {
-      return this.error || this.isLoading || this.success;
+      return this.error || this.success;
     },
     formElement() {
       return this.$refs["contactForm"];
     },
     formData() {
       return new FormData(this.formElement);
+    },
+    isValid() {
+      const form: HTMLFormElement = this.formElement;
+      if (!form) return false;
+      return Array.from(form.elements).reduce(
+        (valid: boolean, e: HTMLInputElement) => e.checkValidity(),
+        true
+      );
     },
     me() {
       return {
@@ -106,9 +121,18 @@ export default Vue.extend({
     async sendFormData() {
       this.isLoading = true;
       try {
-        await this.fetch();
-        this.success = true;
+        const responseText = await this.fetch();
+        const parser = new DOMParser();
+        const responseDom = parser.parseFromString(responseText, "text/html");
+        const message = responseDom.querySelector(".powermail_message_error");
+        if (message) {
+          this.reponseError = message.innerHTML;
+          this.success = false;
+        } else {
+          this.success = true;
+        }
       } catch (e) {
+        console.error(e);
         this.error = e;
       } finally {
         this.isLoading = false;
@@ -125,6 +149,13 @@ export default Vue.extend({
 
   @media screen and (max-width: 820px) {
     margin: 0.5rem;
+  }
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
   }
 }
 
@@ -202,11 +233,6 @@ export default Vue.extend({
         flex: 1;
         justify-content: flex-end;
       }
-    }
-    .button {
-      align-self: flex-end;
-      border-radius: 0.25rem;
-      border: 0;
     }
   }
 }
