@@ -7,6 +7,7 @@
 @import 'enterprise.scss';
 @import 'atomic.scss';
 @import 'page.scss';
+@import 'breadcrumb.scss';
 
 body,
 html {
@@ -26,9 +27,7 @@ html {
 
 main {
     background-color: hsl(89, 1%, 95%);
-
     flex: 1;
-
     >section {
         margin-bottom: 5rem;
     }
@@ -89,7 +88,13 @@ h6 {
     color: $color-gray-dark;
     border-bottom: 1px solid $color-green;
     text-align: center;
-    margin: 1rem 2rem;
-    padding-bottom: 1rem;
+    margin: 1rem;
+    //padding-bottom: 1rem;
     line-height: 3.5rem;
+}
+
+article {
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
 }

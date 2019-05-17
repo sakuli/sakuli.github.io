@@ -1,9 +1,10 @@
-<h1>{{ .Title }}</h1>
-<div class="page">
+<h1 class="shrink-content">{{ .Title }}</h1>
+<div class="shrink-content hide-mobile">{{ partial "breadcrumb.html" . }}</div>
+<div class="page shrink-content">
     <aside>
         {{ .TableOfContents }}
     </aside>
-    <article class="shrink-content">
+    <article>
         {{ .Content }}
     </article>
 </div>

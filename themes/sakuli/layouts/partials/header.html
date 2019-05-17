@@ -25,6 +25,7 @@
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity=”{{ $style.Data.Integrity }}” />
     <link rel="stylesheet" href="/vue/index.css" />
+    <link href="/fontawesome/css/all.min.css" rel="stylesheet"> <!--load all styles -->
 
     {{ partial "head.html"}}
 
@@ -216,7 +217,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="https://consol.github.io/sakuli/latest">Docs (v1)</a></li>
+                <li><a href="/docs">Docs</a></li>
                 <li><a href="/enterprise">Enterprise</a></li>
             </ul>
         </nav>

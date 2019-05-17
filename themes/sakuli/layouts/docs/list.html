@@ -1,25 +1,26 @@
 <!-- Header -->
 {{ partial "header.html" . }}
-
-<article class="shrink-content">
+<h1 class="shrink-content">
+    {{ .Title }}
+</h1>
+<section class="shrink-content">
     {{ .Content }}
+</section>
+<section class="key-features">
     <!-- Content -->
     <!-- Loop through all posts -->
     {{ range .Pages }}
-    <h2>{{ .Title }}</h2>
-
-    <p>
-        <small>{{ .Date.Format "02.01.2006" }}</small>
-    </p>
-
-    {{ .Summary }}
-
-    <p>
-        <a class="readmore" href="{{ .RelPermalink }}">Read more</a>
-    </p>
+    <div class="key-features__feature shrink-content">
+        <h2>{{ .Title }}</h2>
+        <p>
+            {{ .Description }}
+        </p>
+        <div>
+            <a class="button" href="{{ .RelPermalink }}">Read more</a>
+        </div>
+    </div>
     {{ end }}
     <!-- End loop -->
-</article>
-
+</section>
 <!-- Footer -->
 {{ partial "footer.html" . }}
