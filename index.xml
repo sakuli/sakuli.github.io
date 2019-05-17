@@ -27,7 +27,9 @@ Initialisation This guide will get you started with writing Sakuli tests from sc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/legacy-api/</guid>
-      <description> Common Classes and Utils Web Testing Native Testign </description>
+      <description>Sakulis runs its Tests in an isolated node.js vm script runner and injects its own global scope. The legacy preset adds the most common Classes and functions which where available in Sakuli V1.x.
+Common Classes and Utils TestCase The TestCase class - obviously - represents a testcase. It&amp;rsquo;s API doesn&amp;rsquo;t differ much from the former version.
+Web Testing For the webtesting most of the functions from sahi tests could be used (please note that Sakuli only implements the Open Soure APIs).</description>
     </item>
     
     <item>

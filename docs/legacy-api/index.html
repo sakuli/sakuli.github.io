@@ -259,9 +259,12 @@
 <ul>
 <li>
 <ul>
-<li><a href="#common-classes-and-utils">Common Classes and Utils</a></li>
+<li><a href="#common-classes-and-utils">Common Classes and Utils</a>
+<ul>
+<li><a href="#testcase">TestCase</a></li>
+</ul></li>
 <li><a href="#web-testing">Web Testing</a></li>
-<li><a href="#native-testign">Native Testign</a></li>
+<li><a href="#native-testing">Native Testing</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -269,11 +272,25 @@
     <article>
         
 
+<p>Sakulis runs its Tests in an isolated node.js vm script runner and injects its own global scope. The legacy preset adds the most common Classes and functions which where available in Sakuli V1.x.</p>
+
 <h2 id="common-classes-and-utils">Common Classes and Utils</h2>
+
+<h3 id="testcase">TestCase</h3>
+
+<p>The TestCase class - obviously - represents a testcase. It&rsquo;s API doesn&rsquo;t differ much from <a href="http://consol.github.io/sakuli/latest/index.html#TestCase">the former version</a>.</p>
 
 <h2 id="web-testing">Web Testing</h2>
 
-<h2 id="native-testign">Native Testign</h2>
+<p>For the webtesting most of the functions from <a href="https://sahipro.com/docs/sahi-apis/">sahi tests</a> could be used (please note that Sakuli only implements the Open Soure APIs).</p>
+
+<p>The main difference in the newer version is that it uses <a href="https://developers.google.com/web/fundamentals/primers/promises">Promises</a> in the action API. That means you have to <code>await</code> a click e.g.</p>
+
+<p>On the other hand element selectors remain sync functions but wont do the actual dom fetching anymore. While something like <code>var $e = _link('Sakuli')</code> did an actual DOM-access in Sakuli V1.x it now returns a kind of abstract query for an Element (you can compare it with <a href="https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index_exports_By.html">Locators in Selenium</a>). So in the end an action can fetch this element whenever it is required.</p>
+
+<h2 id="native-testing">Native Testing</h2>
+
+<p>The most important Class for Native interactions is the <a href="https://sakuli.io/apidoc/sakuli-legacy/interfaces/region.html"><code>Region</code> class</a>. It differes from it&rsquo;s predecessor because fluent api is not longer suitable with async operations.</p>
 
     </article>
 </div>
