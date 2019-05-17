@@ -41,6 +41,6 @@ Supported Monitoring Systems:
   - check_mk
   - SQL Databases
    - MySQL
-   - ElasticSearch *coming soon* ![alt text](/images/comingsoon.png "This feature will be implemented soon!")
-   - Any other DB system *on request*
-  - Nagios native *coming soon* ![alt text](/images/comingsoon.png "This feature will be implemented soon!")
+   - ElasticSearch --> __*coming soon*__
+   - Any other DB system --> __*on request*__
+  - Nagios native --> __*coming soon*__

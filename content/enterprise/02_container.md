@@ -15,7 +15,7 @@ Our pre-configured Docker container will run Sakuli in an isolated environment. 
 - Orchestrate your test-cluster with OpenShift, Kubernetes or any other platform
 - CI/CD: Easily integrate your tests into your continuous integration environment
 - The layout and scaling of websites and native applications will always be the same, therefore increasing the reliability of native interactions
-- Orchestrate, execute and alter your test container within the Sakuli UI portal coming soon
+- Orchestrate, execute and alter your test container within the Sakuli UI portal --> __*coming soon*__
 
 
 ## Your Package
