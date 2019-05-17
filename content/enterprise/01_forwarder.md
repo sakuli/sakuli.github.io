@@ -8,7 +8,7 @@ slug: forwarder
 Combining end-2-end testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
 
 
-<img src="/images/content/monitoring.svg" alt="" style="max-height: 400px; float:right" />
+<img src="/images/content/monitoring.svg" alt="Test results and data of Sakulis open API can be forwarded to different target systems like OMD, check_mk, databases and propriertary systems." style="max-height: 400px; float:right" />
 
 
 ## Monitor Critical Workflows
