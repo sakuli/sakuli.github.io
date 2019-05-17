@@ -251,7 +251,7 @@ The way we set up and configured our project in this guide, Sakuli is only avail
 
 In order to run our first test, we just have to execute `npx sakuli run my-sut` inside our project folder (e.g. `/tmp/sakuli_starter` on *nix).
 By default, Sakuli will pick up the browser configured in the `testsuite.properties` file, but with npx its possible to change the browser on the fly:
-<img src="/images/gettingstarted/simple_sakuli_test.png" alt="Successfull Sakuli test execution" style="max-width: 400px; float:right" />
+<img src="/images/gettingstarted/simple_sakuli_test.png" alt="Successful Sakuli test execution" style="max-width: 400px; float:right" />
 
 {{< highlight bash >}}`npx sakuli run my-sut --browser=chrome`{{< /highlight >}}
 will execute our test in Chrome, while
