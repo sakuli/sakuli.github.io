@@ -1,6 +1,6 @@
 <template>
     <div v-if="error">
-      Unable to load remote content. Please visit <a :href="href" target="_blank">{{href}}</a>
+      Unable to load remote content. Please visit <a :href="href" target="_blank" rel="noopener">{{href}}</a>
     </div>
     <div v-else-if="loading" class="loading">
       <spinner></spinner>

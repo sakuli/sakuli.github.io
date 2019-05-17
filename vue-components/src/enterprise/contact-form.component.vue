@@ -26,7 +26,7 @@
       <div v-if="error" class="error">
         Oops something went wrong. Please contact
         <a href="mailto:sales@consol.de">sales@consol.de</a>, reload the page or visit our
-        <a target="_blank" :href="formUrl">company page form</a>
+        <a target="_blank" rel="noopener" :href="formUrl">company page form</a>
       </div>
       <form
         v-if="!formDisabled"
