@@ -213,6 +213,7 @@
 <ul>
 <li>
 <ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#initialisation">Initialisation</a></li>
 <li><a href="#installation">Installation</a>
 <ul>
@@ -221,6 +222,13 @@
 </ul></li>
 <li><a href="#setup-your-first-test">Setup your first test</a></li>
 <li><a href="#write-your-first-test">Write your first Test</a></li>
+<li><a href="#execute-your-first-test">Execute your first test</a>
+<ul>
+<li><a href="#npx-https-www-npmjs-com-package-npx"><a href="https://www.npmjs.com/package/npx">npx</a></a></li>
+<li><a href="#npm-test">npm test</a></li>
+<li><a href="#global-installation">Global installation</a></li>
+<li><a href="#congratulations">Congratulations!</a></li>
+</ul></li>
 <li><a href="#getting-started-with-native-interactions">Getting started with native interactions</a></li>
 </ul></li>
 </ul>
@@ -228,6 +236,13 @@
     </aside>
     <article class="shrink-content">
         
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Sakuli is built and tested against the current LTS version of Node.js.
+So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.</p>
+
+<p>To install Node.js on your system, you can either go the <a href="https://nodejs.org/en/">node website</a>, or you could use <a href="https://github.com/nvm-sh/nvm">node version manager</a>, a utility to manage various node versions.</p>
 
 <h2 id="initialisation">Initialisation</h2>
 
@@ -415,7 +430,7 @@ touch my-testcase/testcase.js</code></pre></div>
 
 <h2 id="write-your-first-test">Write your first Test</h2>
 
-<p>Let´s write a simple test using the Sakuli.io homepage. This Test checks if the &ldquo;Getting Started&rdquo; guide linked on the front page is accessible.</p>
+<p>Let´s write a simple test using the Sakuli.io homepage. This test will verify that our &ldquo;Getting Started&rdquo; guide you are reading at the very moment is still accessible.</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -437,15 +452,15 @@ touch my-testcase/testcase.js</code></pre></div>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> { 
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
 </span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
 </span>    <span style="color:#66d9ef">try</span> {
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://sakuli.io&#34;</span>);              <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Open Landing Page&#34;</span>,<span style="color:#ae81ff">5</span>);           <span style="color:#75715e">// 2
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Getting started&#34;</span>));              <span style="color:#75715e">// 3
-</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Navigate to Getting Started&#34;</span>,<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 4
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_code</span>(<span style="color:#e6db74">&#34;npm init&#34;</span>));                 <span style="color:#75715e">// 5
-</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Find npm init code sample&#34;</span>);     
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://sakuli.io&#34;</span>);                  <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Open Landing Page&#34;</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>);          <span style="color:#75715e">// 2
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Getting started&#34;</span>));                  <span style="color:#75715e">// 3
+</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Navigate to Getting Started&#34;</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>);
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_code</span>(<span style="color:#e6db74">&#34;npm init&#34;</span>));                     <span style="color:#75715e">// 4
+</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Find npm init code sample&#34;</span>);
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
 <span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
 </span>    } <span style="color:#66d9ef">finally</span> {
@@ -457,19 +472,68 @@ touch my-testcase/testcase.js</code></pre></div>
 </div>
 
 <ol>
-<li>Sakuli opens the domain / link - there is no need for certificate handling.</li>
-<li>With <code>testCase.endOfStep();</code> Sakuli will measure the time since the last step and publish it to the API.</li>
-<li>Use of labels such as &ldquo;Open Landing Page&rdquo; to identify an object is a nice feature, but will fail as soon as the label changes. There are multiple other methods to access objects - consult the documentation for help.</li>
-<li>This Step definition defines a Warning threshold of 3 seconds.</li>
-<li>With <code>_highlight</code> you can actually see what object was identified. Please only use for debug purposes, as it will decrease the performance.</li>
+<li>Since we&rsquo;re dealing with a web test, the first thing we want to do is to <code>_navigateTo</code> our target page. Instead of manually setting up the correct WebDriver instance, we just have to provide a target URL, Sakuli will take care of the rest for us. <code>await</code> indicates that we are patiently waiting for our page to load, before we continue with our next teststep.</li>
+<li>Once our initial page load has completed, it&rsquo;s of great interest for us how long it took to render. When it comes to runtime, Sakuli not only measures execution time of testcases, but also allows to split a single testcase into several logical steps. This way its possible to accurately measure the runtime of certain processes like e.g. <em>login</em>, <em>shopping cart</em>, <em>checkout</em> and so on. By calling <code>testCase.endOfStep(&quot;Open Landing Page&quot;, 5, 10);</code>, we&rsquo;re ending our first step, the initial page load. In addition it&rsquo;s also possible to specify <code>warning</code> and <code>critical</code> thresholds for each step. Whenever a steps exceeds on of these values, its result will change from <code>OK</code> to <code>WARNING</code> or <code>CRITICAL</code>.</li>
+<li>With Sakuli it&rsquo;s really easy to interact with web elements. In our current example we want to <code>_click</code> a <code>_link</code> which is identified by some given text. Once again, we do not have to take care of many details, Sakuli will do most of the heavy lifting for us. We&rsquo;re just passing the link text to Sakuli, which will search for our desired element using multiple identifiers. This way we do not have to worry about whether to use an id, a CSS selector or something else to identify our element. As we have already seen in our first test action, <code>await</code> will wait until our testaction has completed.</li>
+<li>In some cases it is really helpful to visually verify testexecution. Sakuli comes with a buil-in <code>_highlight</code> function, which will highlight an element with a bright red border. Altough being useful, <code>_highlight</code> should be used carefully since it will increase the overall test runtime.</li>
 </ol>
 
-<p>Run your test with
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm test</code></pre></div>
-<img src="/images/gettingstarted/simple_sakuli_test.png" alt="" style="max-width: 400px; float:right" />
-As long as our website is stable and fast, you should get a result like this:</p>
+<h2 id="execute-your-first-test">Execute your first test</h2>
 
-<p>Congratulations, you wrote your first Sakuli test!</p>
+<p>Since Sakuli 2 is built with node, there are at least three different ways to execute a Sakuli test. We will take a look at each on of them.</p>
+
+<h3 id="npx-https-www-npmjs-com-package-npx"><a href="https://www.npmjs.com/package/npx">npx</a></h3>
+
+<p>The way we set up and configured our project in this guide, Sakuli is only available to this particular project. <code>npx</code> is a really handy tool which allows us to execute our Sakuli CLI directly from the command line, even though it is not in our PATH.</p>
+
+<p>In order to run our first test, we just have to execute <code>npx sakuli run my-sut</code> inside our project folder (e.g. <code>/tmp/sakuli_starter</code> on *nix).
+By default, Sakuli will pick up the browser configured in the <code>testsuite.properties</code> file, but with npx its possible to change the browser on the fly:
+<img src="/images/gettingstarted/simple_sakuli_test.png" alt="Successfull Sakuli test execution" style="max-width: 400px; float:right" /></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">`</span>npx sakuli run my-sut --browser<span style="color:#f92672">=</span>chrome<span style="color:#e6db74">`</span></code></pre></div>
+will execute our test in Chrome, while
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">`</span>npx sakuli run my-sut --browser<span style="color:#f92672">=</span>firefox<span style="color:#e6db74">`</span></code></pre></div>
+will run the test in FireFox.</p>
+
+<p>Regardless of browser choice, as long as our site didn&rsquo;t slow down, you should see a successfull test result, similar to the image on the right.</p>
+
+<h3 id="npm-test">npm test</h3>
+
+<p>As mentioned earlier, we installed Sakuli local to our test project.
+An alternative way to execute a Sakuli test are <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a>.</p>
+
+<p>In our project folder we can find a file named <a href="https://docs.npmjs.com/files/package.json">package.json</a>, the central configuration file for npm projects.
+This file contains a section called <code>scripts</code>, a collection of package local scripts which can be executed via npm.</p>
+
+<p>A default project contains a dummy script to execute tests, similar to the following snippet:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;scripts&#34;</span>: <span style="color:#f92672">{</span>
+  <span style="color:#e6db74">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>
+<span style="color:#f92672">}</span>,</code></pre></div></p>
+
+<p>The <code>test</code> script is the perfect place for us to execute our Sakuli test:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;scripts&#34;</span>: <span style="color:#f92672">{</span>
+  <span style="color:#e6db74">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;sakuli run my-sut --browser=chrome&#34;</span>
+<span style="color:#f92672">}</span>,</code></pre></div></p>
+
+<p>To run the test, just execute
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm test</code></pre></div>
+inside your project folder.</p>
+
+<p>Many modern IDEs support npm scripts, so its possible to trigger testexecution directly from within your IDE!</p>
+
+<h3 id="global-installation">Global installation</h3>
+
+<p>If you do not want to create separate npm projects for your test suites, it is also possible to install Sakuli system-wide.
+When installed with the additional flag <code>-g</code>, Sakuli will be installed system-wide and added to the PATH. (To accomplish this, you&rsquo;ll need the respective privileges on your machine.)</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -g @sakuli/cli</code></pre></div>
+
+<p>Once the installtion has completed, you can run your Sakuli tests from anywhere on your system by simply executing
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sakuli run $PATH_TO_TESTSUITE</code></pre></div></p>
+
+<h3 id="congratulations">Congratulations!</h3>
+
+<p>You wrote and executed your first Sakuli test! May there be many more to come!</p>
 
 <h2 id="getting-started-with-native-interactions">Getting started with native interactions</h2>
 

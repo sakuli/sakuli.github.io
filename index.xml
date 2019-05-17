@@ -16,10 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/getting-started/</guid>
-      <description>Initialisation This guide will get you started with writing Sakuli tests from scratch. To follow the tutorial, you should create a new npm project in an empty folder.
-For this guide, we will assume that our working directory is /tmp/sakuli_starter on a *nix system, or %Temp%\sakuli_starter on a Windows machine, respectively.
-To create a new, empty project, first run:
-npm init This interactive prompt will ask you for some metadata regarding your project.</description>
+      <description>Prerequisites Sakuli is built and tested against the current LTS version of Node.js. So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.
+To install Node.js on your system, you can either go the node website, or you could use node version manager, a utility to manage various node versions.
+Initialisation This guide will get you started with writing Sakuli tests from scratch.</description>
     </item>
     
     <item>
