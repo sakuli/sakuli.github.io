@@ -17,8 +17,7 @@
 
     <meta name=”twitter:title” content=”Sakuli | {{ .Page.Title }}”>
     <meta name=”twitter:description” content=”{{ .Page.Description }}”>
-    <meta name=”twitter:image” content=”/images/sakuli_hero.png”>
-    <meta name=”twitter:site” content=”@sakuli_e2e”>
+    <meta name=”twitter:image” content=”/images/sakuli_hero.png”> <meta name=”twitter:site” content=”@sakuli_e2e”>
 
 
 
@@ -28,6 +27,7 @@
     <link rel="stylesheet" href="/vue/index.css" />
 
     {{ partial "head.html"}}
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139547974-1"></script>
     <script>
@@ -36,6 +36,25 @@
         gtag('js', new Date());
         gtag('config', 'UA-139547974-1');
     </script>
+
+
+    {{ $ieOptions := (dict "targetPath" "ie.css" "outputStyle" "compressed") }}
+    {{ $ieStyle := resources.Get "scss/ie.scss" | resources.ToCSS $ieOptions }}
+    <script lang="text/javascript">
+        var ua = window.navigator.userAgent;
+        var version = ieVersion(ua);
+        if(version && version >= 10 && version <= 11) {
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CArray.from%2CPromise%2Cfetch"><\/script>');
+            document.write('<link rel="stylesheet" href="{{ $ieStyle.Permalink }}" integrity=”{{ $ieStyle.Data.Integrity }}” />')
+        }
+        function ieVersion(uaString) {
+            uaString = uaString || navigator.userAgent;
+            var match = /\b(MSIE |Trident.*?rv:|Edge\/)(\d+)/.exec(uaString);
+            if (match) return parseInt(match[2])
+        }
+    </script>
+
+
 </head>
 
 <body>

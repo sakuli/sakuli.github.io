@@ -5,7 +5,8 @@
       <template v-slot:header>
         <h1>
           <span class="hide-mobile">Your request for</span>
-          Sakuli package {{code}}</h1>
+          Sakuli package {{code}}
+        </h1>
       </template>
       <template v-slot:footer>
         <button class="button button-secondary" @click.prevent="modalOpen = false">Close</button>
@@ -123,7 +124,7 @@ export default Vue.extend({
   margin: 1rem;
 
   @media screen and (max-width: 820px) {
-    margin: .5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -165,6 +166,11 @@ export default Vue.extend({
             border-color: #95c11f;
           }
         }
+        select {
+          text-indent: 0.01px;
+          text-overflow: "";
+          padding: 0;
+        }
         textarea {
           height: 200px;
         }
@@ -201,7 +207,6 @@ export default Vue.extend({
       align-self: flex-end;
       border-radius: 0.25rem;
       border: 0;
-
     }
   }
 }
