@@ -1,14 +1,14 @@
 ---
 title: Monitoring Forwarder
 slug: forwarder
+description: "Combining end-2-end testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users."
 ---
 
 ## End-2-End Application Testing and Monitoring: Your Perfect Combination
 
 Combining end-2-end testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
 
-
-<img src="/images/content/monitoring.svg" alt="Test results and data of Sakulis open API can be forwarded to different target systems like OMD, check_mk, databases and propriertary systems." style="max-height: 400px; float:right" />
+<img src="/images/content/monitoring.svg" alt="Test results and data of Sakulis open API can be forwarded to different target systems like OMD, check_mk, databases and propriertary systems." style="max-height: 400px" />
 
 
 ## Monitor Critical Workflows
@@ -41,6 +41,6 @@ Supported Monitoring Systems:
   - check_mk
   - SQL Databases
    - MySQL
-   - ElasticSearch --> __*coming soon*__
    - Any other DB system --> __*on request*__
+  - ElasticSearch --> __*coming soon*__
   - Nagios native --> __*coming soon*__
