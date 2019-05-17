@@ -3,6 +3,13 @@ title: Getting started
 slug: getting-started
 ---
 
+## Prerequisites
+
+Sakuli is built and tested against the current LTS version of Node.js.
+So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.
+
+To install Node.js on your system, you can either go the [node website](https://nodejs.org/en/), or you could use [node version manager](https://github.com/nvm-sh/nvm), a utility to manage various node versions.
+
 ## Initialisation
 
 This guide will get you started with writing Sakuli tests from scratch.
@@ -206,19 +213,19 @@ Let´s examine this piece of code:
 
 ## Write your first Test
 
-Let´s write a simple test using the Sakuli.io homepage. This Test checks if the "Getting Started" guide linked on the front page is accessible.
+Let´s write a simple test using the Sakuli.io homepage. This test will verify that our "Getting Started" guide you are reading at the very moment is still accessible.
 
 {{< highlight typescript "linenos=table,hl_lines=1 2 6 8 11" >}}
 
-(async () => { 
+(async () => {
     const testCase = new TestCase();
     try {
-        await _navigateTo("https://sakuli.io");              // 1
-        testCase.endOfStep("Open Landing Page",5);           // 2
-        await _click(_link("Getting started"));              // 3
-        testCase.endOfStep("Navigate to Getting Started",3); // 4
-        await _highlight(_code("npm init"));                 // 5
-        testCase.endOfStep("Find npm init code sample");     
+        await _navigateTo("https://sakuli.io");                  // 1
+        testCase.endOfStep("Open Landing Page", 5, 10);          // 2
+        await _click(_link("Getting started"));                  // 3
+        testCase.endOfStep("Navigate to Getting Started", 3, 5);
+        await _highlight(_code("npm init"));                     // 4
+        testCase.endOfStep("Find npm init code sample");
     } catch (e) {
         testCase.handleException(e);
     } finally {
@@ -229,21 +236,75 @@ Let´s write a simple test using the Sakuli.io homepage. This Test checks if the
 
 {{< /highlight >}}
 
-1. Sakuli opens the domain / link - there is no need for certificate handling.
-2. With `testCase.endOfStep();` Sakuli will measure the time since the last step and publish it to the API.
-3. Use of labels such as "Open Landing Page" to identify an object is a nice feature, but will fail as soon as the label changes. There are multiple other methods to access objects - consult the documentation for help.
-4. This Step definition defines a Warning threshold of 3 seconds.
-5. With `_highlight` you can actually see what object was identified. Please only use for debug purposes, as it will decrease the performance.
+1. Since we're dealing with a web test, the first thing we want to do is to `_navigateTo` our target page. Instead of manually setting up the correct WebDriver instance, we just have to provide a target URL, Sakuli will take care of the rest for us. `await` indicates that we are patiently waiting for our page to load, before we continue with our next teststep.
+2. Once our initial page load has completed, it's of great interest for us how long it took to render. When it comes to runtime, Sakuli not only measures execution time of testcases, but also allows to split a single testcase into several logical steps. This way its possible to accurately measure the runtime of certain processes like e.g. *login*, *shopping cart*, *checkout* and so on. By calling `testCase.endOfStep("Open Landing Page", 5, 10);`, we're ending our first step, the initial page load. In addition it's also possible to specify `warning` and `critical` thresholds for each step. Whenever a steps exceeds on of these values, its result will change from `OK` to `WARNING` or `CRITICAL`.
+3. With Sakuli it's really easy to interact with web elements. In our current example we want to `_click` a `_link` which is identified by some given text. Once again, we do not have to take care of many details, Sakuli will do most of the heavy lifting for us. We're just passing the link text to Sakuli, which will search for our desired element using multiple identifiers. This way we do not have to worry about whether to use an id, a CSS selector or something else to identify our element. As we have already seen in our first test action, `await` will wait until our testaction has completed.
+4. In some cases it is really helpful to visually verify testexecution. Sakuli comes with a buil-in `_highlight` function, which will highlight an element with a bright red border. Altough being useful, `_highlight` should be used carefully since it will increase the overall test runtime.
 
-Run your test with 
+## Execute your first test
+
+Since Sakuli 2 is built with node, there are at least three different ways to execute a Sakuli test. We will take a look at each on of them.
+
+### [npx](https://www.npmjs.com/package/npx)
+
+The way we set up and configured our project in this guide, Sakuli is only available to this particular project. `npx` is a really handy tool which allows us to execute our Sakuli CLI directly from the command line, even though it is not in our PATH.
+
+In order to run our first test, we just have to execute `npx sakuli run my-sut` inside our project folder (e.g. `/tmp/sakuli_starter` on *nix).
+By default, Sakuli will pick up the browser configured in the `testsuite.properties` file, but with npx its possible to change the browser on the fly:
+<img src="/images/gettingstarted/simple_sakuli_test.png" alt="Successfull Sakuli test execution" style="max-width: 400px; float:right" />
+
+{{< highlight bash >}}`npx sakuli run my-sut --browser=chrome`{{< /highlight >}}
+will execute our test in Chrome, while
+{{< highlight bash >}}`npx sakuli run my-sut --browser=firefox`{{< /highlight >}}
+will run the test in FireFox.
+
+Regardless of browser choice, as long as our site didn't slow down, you should see a successfull test result, similar to the image on the right.
+
+### npm test
+
+As mentioned earlier, we installed Sakuli local to our test project.
+An alternative way to execute a Sakuli test are [npm scripts](https://docs.npmjs.com/misc/scripts).
+
+In our project folder we can find a file named [package.json](https://docs.npmjs.com/files/package.json), the central configuration file for npm projects.
+This file contains a section called `scripts`, a collection of package local scripts which can be executed via npm.
+
+A default project contains a dummy script to execute tests, similar to the following snippet:
 {{< highlight bash >}}
-
-npm test
-
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
 {{< /highlight >}}
-<img src="/images/gettingstarted/simple_sakuli_test.png" alt="" style="max-width: 400px; float:right" />
-As long as our website is stable and fast, you should get a result like this:
 
-Congratulations, you wrote your first Sakuli test!
+The `test` script is the perfect place for us to execute our Sakuli test:
+{{< highlight bash >}}
+"scripts": {
+  "test": "sakuli run my-sut --browser=chrome"
+},
+{{< /highlight >}}
+
+To run the test, just execute
+{{< highlight bash >}}
+npm test
+{{< /highlight >}}
+inside your project folder.
+
+Many modern IDEs support npm scripts, so its possible to trigger testexecution directly from within your IDE!
+
+### Global installation
+
+If you do not want to create separate npm projects for your test suites, it is also possible to install Sakuli system-wide.
+When installed with the additional flag `-g`, Sakuli will be installed system-wide and added to the PATH. (To accomplish this, you'll need the respective privileges on your machine.)
+
+{{< highlight bash >}}
+npm i -g @sakuli/cli
+{{< /highlight >}}
+
+Once the installtion has completed, you can run your Sakuli tests from anywhere on your system by simply executing
+{{< highlight bash >}}
+sakuli run $PATH_TO_TESTSUITE
+{{< /highlight >}}
+
+### Congratulations!
+You wrote and executed your first Sakuli test! May there be many more to come!
 
 ## Getting started with native interactions
