@@ -21,5 +21,14 @@ To install Node.js on your system, you can either go the node website, or you co
 Initialisation This guide will get you started with writing Sakuli tests from scratch.</description>
     </item>
     
+    <item>
+      <title>Legacy API</title>
+      <link>/docs/legacy-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/legacy-api/</guid>
+      <description> Common Classes and Utils Web Testing Native Testign </description>
+    </item>
+    
   </channel>
 </rss>
