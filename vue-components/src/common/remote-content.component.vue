@@ -1,5 +1,7 @@
 <template>
-    <div v-if="error"></div>
+    <div v-if="error">
+      Unable to load remote content. Please visit <a :href="href" target="_blank">{{href}}</a>
+    </div>
     <div v-else-if="loading" class="loading">
       <spinner></spinner>
       <div>Loading content</div>
@@ -9,8 +11,6 @@
 <script lang="ts">
 import Vue from "vue";
 import spinner from "../common/spinner.component.vue";
-
-const wait = (ms: number = 2000) => new Promise(res => setTimeout(res, ms));
 
 export default Vue.extend({
   components: {
@@ -41,8 +41,11 @@ export default Vue.extend({
             ? this.parseContent
             : (e: HTMLElement) => e.innerHTML;
         this.content = parse(htmlContent);
+        console.log(this.content);
       } catch (e) {
         this.error = true;
+        console.log('error', e);
+        debugger;
       } finally {
         this.loading = false;
       }

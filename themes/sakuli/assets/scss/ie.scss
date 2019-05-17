@@ -2,8 +2,10 @@ body,
 main,
 .key-features,
 .key-features__feature p,
+#modal .overlay,
+#modal .overlay article,
 .story {
-    display: block;
+    display: block !important;
 }
 
 .key-features__feature {
@@ -13,6 +15,14 @@ main,
     }
 }
 
+#modal .overlay > section {
+    height: 80%;
+    display: block;
+}
+
+#modal .overlay article {
+    height: 70%;
+}
 
 ul#price-table {
     li {

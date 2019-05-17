@@ -19,9 +19,12 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
     "portal-vue": "^2.1.4",
     "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.3"
+    "vue-hot-reload-api": "^2.3.3",
+    "whatwg-fetch": "^3.0.0"
   },
   "browserslist": [
     "IE 11"

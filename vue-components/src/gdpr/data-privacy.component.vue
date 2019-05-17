@@ -32,7 +32,7 @@ export default Vue.extend({
 
         const sourceLens = (e: HTMLImageElement | HTMLSourceElement) => ({
             get() {
-                return e instanceof HTMLImageElement ? e.src : e.srcset;
+                return (e instanceof HTMLImageElement ? e.src : e.srcset) || "";
             },
             set(value: string) {
                 if(e instanceof HTMLImageElement ) {
