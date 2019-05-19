@@ -71,25 +71,9 @@ yarn add @sakuli/cli
 This will install Sakuli and its required dependencies.
 
 One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js), requires OpenCV.
-As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs).
+Sakuli ships a pre-built version of OpenCV, nonetheless, the installation still requires some 3rd-party dependencies.
 
-Building OpenCV from scratch requires a [cmake](https://cmake.org/) installation.
-
-In case you already have an OpenCV installation (version 3.x.x required, e.g. via `brew install opencv@3` or [else](https://docs.opencv.org/3.4/df/d65/tutorial_table_of_content_introduction.html)), you can disable the build process via environment variable:
-
-{{< highlight bash >}}
-export OPENCV4NODEJS_DISABLE_AUTOBUILD=1
-{{< /highlight >}}
-
-on *nix systems, or
-
-{{< highlight bash >}}
-set OPENCV4NODEJS_DISABLE_AUTOBUILD=1
-{{< /highlight >}}
-
-on Windows.
-
-Please make sure to also install all required peer dependencies:
+Please make sure to install all required peer dependencies:
 
 - [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs#how-to-install)
 - [robotjs](http://robotjs.io/docs/building)
@@ -137,6 +121,10 @@ npm i chromedriver@73.0.0
 
 Sakuli is not limited to work with only a single browser.
 When installing multiple WebDriver packages, you can easily switch between multiple browsers.
+
+**Regarding Windows Users:** On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you'll be prompted with its installation path, so you can easily add it to your `%PATH%` variable.
+
+*Sample path:* `%USERPROFILE%\AppData\Roaming\npm\node_modules\chromedriver\lib\chromedriver\`
 
 ## Setup your first test
 
@@ -243,7 +231,9 @@ Let´s write a simple test using the Sakuli.io homepage. This test will verify t
 
 ## Execute your first test
 
-Since Sakuli 2 is built with node, there are at least three different ways to execute a Sakuli test. We will take a look at each on of them.
+Since Sakuli 2 is built with node, there are at least two different ways to execute a Sakuli test. We will take a look at each on of them.
+Organizing tests as npm projects makes it easier for you to distribute test code.
+Everything required to execute the test is described in a project config, so tests should be ready to use after running `npm install` inside a project. 👍
 
 ### [npx](https://www.npmjs.com/package/npx)
 
@@ -259,6 +249,7 @@ will execute our test in Chrome, while
 will run the test in FireFox.
 
 Regardless of browser choice, as long as our site didn't slow down, you should see a successfull test result, similar to the image on the right.
+The nice thing about running your tests with `npx` is the flexibility to easily customize your test runs without having to edit files.
 
 ### npm test
 
@@ -289,20 +280,6 @@ npm test
 inside your project folder.
 
 Many modern IDEs support npm scripts, so its possible to trigger testexecution directly from within your IDE!
-
-### Global installation
-
-If you do not want to create separate npm projects for your test suites, it is also possible to install Sakuli system-wide.
-When installed with the additional flag `-g`, Sakuli will be installed system-wide and added to the PATH. (To accomplish this, you'll need the respective privileges on your machine.)
-
-{{< highlight bash >}}
-npm i -g @sakuli/cli
-{{< /highlight >}}
-
-Once the installtion has completed, you can run your Sakuli tests from anywhere on your system by simply executing
-{{< highlight bash >}}
-sakuli run $PATH_TO_TESTSUITE
-{{< /highlight >}}
 
 ### Congratulations!
 You wrote and executed your first Sakuli test! May there be many more to come!
