@@ -70,6 +70,11 @@ main {
 
     &:hover {
         box-shadow: $shadow-l2;
+        color: $color-gray-dark;
+    }
+
+    &:visited {
+        color: $color-gray-dark;
     }
 
     text-shadow: none;
