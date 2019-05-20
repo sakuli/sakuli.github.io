@@ -98,3 +98,15 @@ article {
         margin: 0;
     }
 }
+
+a {
+    color: $color-gray-very-dark;
+
+    &:hover {
+        color: $color-green;
+    }
+
+    &:visited {
+        color: $color-gray-dark;
+    }
+}
