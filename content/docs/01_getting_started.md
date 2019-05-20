@@ -8,7 +8,7 @@ slug: getting-started
 Sakuli is built and tested against the current LTS version of Node.js.
 So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.
 
-To install Node.js on your system, you can either go the [node website](https://nodejs.org/en/), or you could use [node version manager](https://github.com/nvm-sh/nvm), a utility to manage various node versions.
+To install Node.js on your system, you can either go to the [node website](https://nodejs.org/en/), or you could use tools like [node version manager](https://github.com/nvm-sh/nvm), a utility to manage various node versions on a per-user basis. In general, a per-user installation is the prefered way since it runs in unpriviledged mode.
 
 ## Initialisation
 
@@ -54,7 +54,56 @@ After confirming the prompt, an empty project has been initialized.
 The following steps are required to set up Sakuli to work with a multitude of browsers.
 Once the initial setup is done, we will dive right into our first test.
 
-### Sakuli Installation
+#### 3rd-party dependencies
+
+One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js), requires OpenCV.
+Sakuli ships a pre-built version of OpenCV, nonetheless, the installation still requires some 3rd-party dependencies.
+
+#### Windows
+
+In order to install Sakuli on Windows, [Windows Build Tools](https://www.microsoft.com/en-us/download/details.aspx?id=48159) and [Python 2](https://www.python.org/downloads/windows/) are required.
+You can either set them up manually, or install them via npm:
+
+{{< highlight bash >}}
+npm install --global windows-build-tools
+{{< /highlight >}}
+
+or
+
+{{< highlight bash >}}
+yarn global add windows-build-tools
+{{< /highlight >}}
+
+#### macOS
+
+On macOS, Xcode command line tools are required.
+You can install them by running
+{{< highlight bash >}}
+xcode-select --install
+{{< /highlight >}}
+
+#### Linux
+
+Depending on your distribution, Linux setups may differ.
+
+In general, Sakuli requires
+
+- Python 2
+- g++
+- make
+- libXtst
+- libPng
+
+Installation on *buntu:
+{{< highlight bash >}}
+sudo apt-get install build-essential python libxtst-dev libpng++-dev
+{{< /highlight >}}
+
+Setups on other distributions might differ.
+
+The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!
+
+#### Sakuli Installation
 
 Still in our newly created project, we will install Sakuli by running
 
@@ -70,15 +119,10 @@ yarn add @sakuli/cli
 
 This will install Sakuli and its required dependencies.
 
-One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js), requires OpenCV.
-Sakuli ships a pre-built version of OpenCV, nonetheless, the installation still requires some 3rd-party dependencies.
-
-Please make sure to install all required peer dependencies:
+#### Reference
 
 - [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs#how-to-install)
 - [robotjs](http://robotjs.io/docs/building)
-
-The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!
 
 ### WebDriver Installation
 
@@ -124,11 +168,14 @@ When installing multiple WebDriver packages, you can easily switch between multi
 
 **Regarding Windows Users:** On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you'll be prompted with its installation path, so you can easily add it to your `%PATH%` variable.
 
-*Sample path:* `%USERPROFILE%\AppData\Roaming\npm\node_modules\chromedriver\lib\chromedriver\`
+Sample path:
+{{< highlight bash >}}
+%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\chromedriver\\lib\\chromedriver\\
+{{< /highlight >}}
 
 ## Setup your first test
 
-Since we wanted to keep Sakuli compatible to V1 the file layout looks basically the same for test suites.
+Since we wanted to keep Sakuli mostly compatible to V1 the file layout looks basically the same for test suites.
 
 Each Testsuite is located in a dedicated folder. A common practice is that a testsuite represents the system you want to test, so you need to create that folder in your project root (where the package.json file is located):
 
@@ -281,7 +328,31 @@ inside your project folder.
 
 Many modern IDEs support npm scripts, so its possible to trigger testexecution directly from within your IDE!
 
+### Global installation
+
+If you do not want to create separate npm projects for your test suites, it is also possible to install Sakuli `global`.
+When installed with the additional flag `-g`, Sakuli will be installed and added to your PATH.
+
+{{< highlight bash >}}
+npm i -g @sakuli/cli
+{{< /highlight >}}
+
+Once the installtion has completed, you can run your Sakuli tests from your command line by simply executing
+{{< highlight bash >}}
+sakuli run $PATH_TO_TESTSUITE
+{{< /highlight >}}
+
+**Attention:** Installing packages globally on a system wide installation of node via `sudo` is considered bad practice and might run into permission problems. Working with per-user installations is recommended!
+
 ### Congratulations!
 You wrote and executed your first Sakuli test! May there be many more to come!
 
 ## Getting started with native interactions
+
+When it comes to OS native interaction, Sakuli provides three main classes, **Application**, **Region** and **Environment**.
+
+### Application
+
+### Environment
+
+### Region
