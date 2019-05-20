@@ -16,7 +16,9 @@
         padding-top: 1rem;
 
         h2 {
-            text-align: center
+            text-align: center;
+            margin: 0;
+            border-color: $color-green-light;
         }
 
         img {
