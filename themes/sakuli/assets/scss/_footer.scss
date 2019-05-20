@@ -32,6 +32,9 @@ footer {
                     &:hover {
                         text-decoration: underline;
                     }
+                    &:visited {
+                        color: $color-green !important;
+                    }
                 }
             }
         }
