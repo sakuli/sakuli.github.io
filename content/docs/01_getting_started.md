@@ -54,6 +54,55 @@ After confirming the prompt, an empty project has been initialized.
 The following steps are required to set up Sakuli to work with a multitude of browsers.
 Once the initial setup is done, we will dive right into our first test.
 
+### WebDriver Installation
+
+Sakuli utilizes the [WebDriver protocol](https://www.w3.org/TR/webdriver1/) to remote control browsers during test execution.
+In addition to the browser itself, you need to install the corresponding WebDriver as well.
+Several wrapper packages can be found on [npmjs.com](https://npmjs.com), which allow to install the required binaries via `npm`.
+
+To run tests on Chrome, a suitable WebDriver can be installed via
+
+{{< highlight bash >}}
+npm i chromedriver
+{{< /highlight >}}
+
+or
+
+{{< highlight bash >}}
+yarn add chromedriver
+{{< /highlight >}}
+
+Alternatively, to run tests on FireFox:
+
+{{< highlight bash >}}
+npm i geckodriver
+{{< /highlight >}}
+
+or
+
+{{< highlight bash >}}
+yarn add geckodriver
+{{< /highlight >}}
+
+There are also WebDriver packages for [IE](https://www.npmjs.com/package/iedriver) and [Edge](https://www.npmjs.com/package/edgedriver).
+macOS already ships a WebDriver for Safari, so there's no need to install an additional package.
+
+**Attention:** Be careful to install the correct version of a WebDriver package for your installed browser version. To install e.g. ChromeDriver for Chrome 73 you have to install
+
+{{< highlight bash >}}
+npm i chromedriver@73.0.0
+{{< /highlight >}}
+
+Sakuli is not limited to work with only a single browser.
+When installing multiple WebDriver packages, you can easily switch between multiple browsers.
+
+**Regarding Windows Users:** On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you'll be prompted with its installation path, so you can easily add it to your `%PATH%` variable.
+
+Sample path:
+{{< highlight bash >}}
+%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\chromedriver\\lib\\chromedriver\\
+{{< /highlight >}}
+
 #### 3rd-party dependencies
 
 One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js), requires OpenCV.
@@ -123,55 +172,6 @@ This will install Sakuli and its required dependencies.
 
 - [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs#how-to-install)
 - [robotjs](http://robotjs.io/docs/building)
-
-### WebDriver Installation
-
-Sakuli utilizes the [WebDriver protocol](https://www.w3.org/TR/webdriver1/) to remote control browsers during test execution.
-In addition to the browser itself, you need to install the corresponding WebDriver as well.
-Several wrapper packages can be found on [npmjs.com](https://npmjs.com), which allow to install the required binaries via `npm`.
-
-To run tests on Chrome, a suitable WebDriver can be installed via
-
-{{< highlight bash >}}
-npm i chromedriver
-{{< /highlight >}}
-
-or
-
-{{< highlight bash >}}
-yarn add chromedriver
-{{< /highlight >}}
-
-Alternatively, to run tests on FireFox:
-
-{{< highlight bash >}}
-npm i geckodriver
-{{< /highlight >}}
-
-or
-
-{{< highlight bash >}}
-yarn add geckodriver
-{{< /highlight >}}
-
-There are also WebDriver packages for [IE](https://www.npmjs.com/package/iedriver) and [Edge](https://www.npmjs.com/package/edgedriver).
-macOS already ships a WebDriver for Safari, so there's no need to install an additional package.
-
-**Attention:** Be careful to install the correct version of a WebDriver package for your installed browser version. To install e.g. ChromeDriver for Chrome 73 you have to install
-
-{{< highlight bash >}}
-npm i chromedriver@73.0.0
-{{< /highlight >}}
-
-Sakuli is not limited to work with only a single browser.
-When installing multiple WebDriver packages, you can easily switch between multiple browsers.
-
-**Regarding Windows Users:** On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you'll be prompted with its installation path, so you can easily add it to your `%PATH%` variable.
-
-Sample path:
-{{< highlight bash >}}
-%USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\chromedriver\\lib\\chromedriver\\
-{{< /highlight >}}
 
 ## Setup your first test
 
@@ -346,13 +346,3 @@ sakuli run $PATH_TO_TESTSUITE
 
 ### Congratulations!
 You wrote and executed your first Sakuli test! May there be many more to come!
-
-## Getting started with native interactions
-
-When it comes to OS native interaction, Sakuli provides three main classes, **Application**, **Region** and **Environment**.
-
-### Application
-
-### Environment
-
-### Region
