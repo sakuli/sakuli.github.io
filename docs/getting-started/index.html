@@ -264,8 +264,15 @@
 <li><a href="#initialisation">Initialisation</a></li>
 <li><a href="#installation">Installation</a>
 <ul>
+<li><a href="#webdriver-installation">WebDriver Installation</a>
+<ul>
+<li><a href="#3rd-party-dependencies">3rd-party dependencies</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#linux">Linux</a></li>
 <li><a href="#sakuli-installation">Sakuli Installation</a></li>
-<li><a href="#webdriver-installation">WebDriver Installation</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#setup-your-first-test">Setup your first test</a></li>
 <li><a href="#write-your-first-test">Write your first Test</a></li>
@@ -276,7 +283,6 @@
 <li><a href="#global-installation">Global installation</a></li>
 <li><a href="#congratulations">Congratulations!</a></li>
 </ul></li>
-<li><a href="#getting-started-with-native-interactions">Getting started with native interactions</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -289,7 +295,7 @@
 <p>Sakuli is built and tested against the current LTS version of Node.js.
 So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.</p>
 
-<p>To install Node.js on your system, you can either go the <a href="https://nodejs.org/en/">node website</a>, or you could use <a href="https://github.com/nvm-sh/nvm">node version manager</a>, a utility to manage various node versions.</p>
+<p>To install Node.js on your system, you can either go to the <a href="https://nodejs.org/en/">node website</a>, or you could use tools like <a href="https://github.com/nvm-sh/nvm">node version manager</a>, a utility to manage various node versions on a per-user basis. In general, a per-user installation is the prefered way since it runs in unpriviledged mode.</p>
 
 <h2 id="initialisation">Initialisation</h2>
 
@@ -331,42 +337,6 @@ Is this OK? <span style="color:#f92672">(</span>yes<span style="color:#f92672">)
 <p>The following steps are required to set up Sakuli to work with a multitude of browsers.
 Once the initial setup is done, we will dive right into our first test.</p>
 
-<h3 id="sakuli-installation">Sakuli Installation</h3>
-
-<p>Still in our newly created project, we will install Sakuli by running</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/cli</code></pre></div>
-
-<p>or</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add @sakuli/cli</code></pre></div>
-
-<p>This will install Sakuli and its required dependencies.</p>
-
-<p>One of Sakulis core components, <a href="https://github.com/nut-tree/nut-js">nut.js</a>, requires OpenCV.
-As of now the installation process assumes you do not have an existing OpenCV installation and will try to build it from source via <a href="https://github.com/justadudewhohacks/opencv4nodejs">opencv4nodejs</a>.</p>
-
-<p>Building OpenCV from scratch requires a <a href="https://cmake.org/">cmake</a> installation.</p>
-
-<p>In case you already have an OpenCV installation (version 3.x.x required, e.g. via <code>brew install opencv@3</code> or <a href="https://docs.opencv.org/3.4/df/d65/tutorial_table_of_content_introduction.html">else</a>), you can disable the build process via environment variable:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export OPENCV4NODEJS_DISABLE_AUTOBUILD<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span></code></pre></div>
-
-<p>on *nix systems, or</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set OPENCV4NODEJS_DISABLE_AUTOBUILD<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span></code></pre></div>
-
-<p>on Windows.</p>
-
-<p>Please make sure to also install all required peer dependencies:</p>
-
-<ul>
-<li><a href="https://github.com/justadudewhohacks/opencv4nodejs#how-to-install">opencv4nodejs</a></li>
-<li><a href="http://robotjs.io/docs/building">robotjs</a></li>
-</ul>
-
-<p>The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!</p>
-
 <h3 id="webdriver-installation">WebDriver Installation</h3>
 
 <p>Sakuli utilizes the <a href="https://www.w3.org/TR/webdriver1/">WebDriver protocol</a> to remote control browsers during test execution.
@@ -399,9 +369,76 @@ macOS already ships a WebDriver for Safari, so there&rsquo;s no need to install 
 <p>Sakuli is not limited to work with only a single browser.
 When installing multiple WebDriver packages, you can easily switch between multiple browsers.</p>
 
+<p><strong>Regarding Windows Users:</strong> On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you&rsquo;ll be prompted with its installation path, so you can easily add it to your <code>%PATH%</code> variable.</p>
+
+<p>Sample path:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">%USERPROFILE%<span style="color:#ae81ff">\\</span>AppData<span style="color:#ae81ff">\\</span>Roaming<span style="color:#ae81ff">\\</span>npm<span style="color:#ae81ff">\\</span>node_modules<span style="color:#ae81ff">\\</span>chromedriver<span style="color:#ae81ff">\\</span>lib<span style="color:#ae81ff">\\</span>chromedriver<span style="color:#ae81ff">\\</span></code></pre></div></p>
+
+<h4 id="3rd-party-dependencies">3rd-party dependencies</h4>
+
+<p>One of Sakulis core components, <a href="https://github.com/nut-tree/nut-js">nut.js</a>, requires OpenCV.
+Sakuli ships a pre-built version of OpenCV, nonetheless, the installation still requires some 3rd-party dependencies.</p>
+
+<h4 id="windows">Windows</h4>
+
+<p>In order to install Sakuli on Windows, <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48159">Windows Build Tools</a> and <a href="https://www.python.org/downloads/windows/">Python 2</a> are required.
+You can either set them up manually, or install them via npm:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --global windows-build-tools</code></pre></div>
+
+<p>or</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn global add windows-build-tools</code></pre></div>
+
+<h4 id="macos">macOS</h4>
+
+<p>On macOS, Xcode command line tools are required.
+You can install them by running
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xcode-select --install</code></pre></div></p>
+
+<h4 id="linux">Linux</h4>
+
+<p>Depending on your distribution, Linux setups may differ.</p>
+
+<p>In general, Sakuli requires</p>
+
+<ul>
+<li>Python 2</li>
+<li>g++</li>
+<li>make</li>
+<li>libXtst</li>
+<li>libPng</li>
+</ul>
+
+<p>Installation on *buntu:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install build-essential python libxtst-dev libpng++-dev</code></pre></div></p>
+
+<p>Setups on other distributions might differ.</p>
+
+<p>The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!</p>
+
+<h4 id="sakuli-installation">Sakuli Installation</h4>
+
+<p>Still in our newly created project, we will install Sakuli by running</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/cli</code></pre></div>
+
+<p>or</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add @sakuli/cli</code></pre></div>
+
+<p>This will install Sakuli and its required dependencies.</p>
+
+<h4 id="reference">Reference</h4>
+
+<ul>
+<li><a href="https://github.com/justadudewhohacks/opencv4nodejs#how-to-install">opencv4nodejs</a></li>
+<li><a href="http://robotjs.io/docs/building">robotjs</a></li>
+</ul>
+
 <h2 id="setup-your-first-test">Setup your first test</h2>
 
-<p>Since we wanted to keep Sakuli compatible to V1 the file layout looks basically the same for test suites.</p>
+<p>Since we wanted to keep Sakuli mostly compatible to V1 the file layout looks basically the same for test suites.</p>
 
 <p>Each Testsuite is located in a dedicated folder. A common practice is that a testsuite represents the system you want to test, so you need to create that folder in your project root (where the package.json file is located):</p>
 
@@ -527,7 +564,9 @@ touch my-testcase/testcase.js</code></pre></div>
 
 <h2 id="execute-your-first-test">Execute your first test</h2>
 
-<p>Since Sakuli 2 is built with node, there are at least three different ways to execute a Sakuli test. We will take a look at each on of them.</p>
+<p>Since Sakuli 2 is built with node, there are at least two different ways to execute a Sakuli test. We will take a look at each on of them.
+Organizing tests as npm projects makes it easier for you to distribute test code.
+Everything required to execute the test is described in a project config, so tests should be ready to use after running <code>npm install</code> inside a project. 👍</p>
 
 <h3 id="npx-https-www-npmjs-com-package-npx"><a href="https://www.npmjs.com/package/npx">npx</a></h3>
 
@@ -542,7 +581,8 @@ will execute our test in Chrome, while
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">`</span>npx sakuli run my-sut --browser<span style="color:#f92672">=</span>firefox<span style="color:#e6db74">`</span></code></pre></div>
 will run the test in FireFox.</p>
 
-<p>Regardless of browser choice, as long as our site didn&rsquo;t slow down, you should see a successfull test result, similar to the image on the right.</p>
+<p>Regardless of browser choice, as long as our site didn&rsquo;t slow down, you should see a successfull test result, similar to the image on the right.
+The nice thing about running your tests with <code>npx</code> is the flexibility to easily customize your test runs without having to edit files.</p>
 
 <h3 id="npm-test">npm test</h3>
 
@@ -570,19 +610,19 @@ inside your project folder.</p>
 
 <h3 id="global-installation">Global installation</h3>
 
-<p>If you do not want to create separate npm projects for your test suites, it is also possible to install Sakuli system-wide.
-When installed with the additional flag <code>-g</code>, Sakuli will be installed system-wide and added to the PATH. (To accomplish this, you&rsquo;ll need the respective privileges on your machine.)</p>
+<p>If you do not want to create separate npm projects for your test suites, it is also possible to install Sakuli <code>global</code>.
+When installed with the additional flag <code>-g</code>, Sakuli will be installed and added to your PATH.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -g @sakuli/cli</code></pre></div>
 
-<p>Once the installtion has completed, you can run your Sakuli tests from anywhere on your system by simply executing
+<p>Once the installtion has completed, you can run your Sakuli tests from your command line by simply executing
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sakuli run $PATH_TO_TESTSUITE</code></pre></div></p>
+
+<p><strong>Attention:</strong> Installing packages globally on a system wide installation of node via <code>sudo</code> is considered bad practice and might run into permission problems. Working with per-user installations is recommended!</p>
 
 <h3 id="congratulations">Congratulations!</h3>
 
 <p>You wrote and executed your first Sakuli test! May there be many more to come!</p>
-
-<h2 id="getting-started-with-native-interactions">Getting started with native interactions</h2>
 
     </article>
 </div>
