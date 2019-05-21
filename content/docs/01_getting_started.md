@@ -229,11 +229,10 @@ after this setup you can add the actual testcode to `my-testcase/testcase.js`:
     try {
         // actual test code goes here
     } catch (e) {
-        testCase.handleException(e); // 3
+        await testCase.handleException(e); // 3
     } finally {
-        testCase.saveResult(); // 4
+        await testCase.saveResult(); // 4
     }
-
 })().then(done); // 5
 
 {{< /highlight >}}
@@ -262,11 +261,10 @@ Let´s write a simple test using the Sakuli.io homepage. This test will verify t
         await _highlight(_code("npm init"));                     // 4
         testCase.endOfStep("Find npm init code sample");
     } catch (e) {
-        testCase.handleException(e);
+        await testCase.handleException(e);
     } finally {
-        testCase.saveResult();
+        await testCase.saveResult();
     }
-
 })().then(done);
 
 {{< /highlight >}}
