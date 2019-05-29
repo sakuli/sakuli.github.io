@@ -114,6 +114,9 @@ or
 yarn global add windows-build-tools
 {{< /highlight >}}
 
+In case of errors when installing the `npm` package, please make sure that PowerShell is available on your system `PATH`.
+See [this issue](https://github.com/felixrieseberg/windows-build-tools/issues/20#issuecomment-373885943) for reference.
+
 #### macOS
 
 On macOS, Xcode command line tools are required.
