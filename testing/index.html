@@ -269,6 +269,113 @@
 <li>Testing every browser with a webdriver implementation</li>
 </ul>
 
+<p>The following comparison between Selenium and Sakuli scripts shows the difference in lines of code and complexity.<br />
+This small test basically only opens-up &lsquo;Google&rsquo;, tries to find the &lsquo;About&rsquo; link and highlights the result:</p>
+
+<h1 id="selenium-test">Selenium Test</h1>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#e6db74">&#34;use strict&#34;</span>
+
+<span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">Builder</span>, <span style="color:#a6e22e">By</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;selenium-webdriver&#39;</span>);
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">driver</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">highlight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> (<span style="color:#a6e22e">driver</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">duration</span>) <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">oldBorder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">executeScript</span>(<span style="color:#e6db74">`const oldBorder = arguments[0].style.border; arguments[0].style.border = &#39;2px solid red&#39;; return oldBorder;`</span>, <span style="color:#a6e22e">element</span>);
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">sleep</span>(<span style="color:#a6e22e">duration</span>);
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">executeScript</span>(<span style="color:#e6db74">`const oldBorder = arguments[1]; arguments[0].style.border = oldBorder`</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">oldBorder</span>);
+}
+
+(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">driver</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Builder</span>()
+            .<span style="color:#a6e22e">forBrowser</span>(<span style="color:#e6db74">&#34;chrome&#34;</span>)
+            .<span style="color:#a6e22e">build</span>();
+
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">manage</span>().window().<span style="color:#a6e22e">maximize</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;https://www.google.de&#34;</span>);
+
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">findElement</span>(<span style="color:#a6e22e">By</span>.<span style="color:#a6e22e">xpath</span>(<span style="color:#e6db74">&#34;//*/a[contains(text(), &#39;About&#39;)]&#34;</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">highlight</span>(<span style="color:#a6e22e">driver</span>, <span style="color:#a6e22e">link</span>, <span style="color:#ae81ff">200</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
+    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">driver</span>) {
+            <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">driver</span>.<span style="color:#a6e22e">quit</span>();
+        }
+    }
+})();</code></pre></td></tr></table>
+</div>
+</div>
+
+<h1 id="sakuli-test">Sakuli Test</h1>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;demo_testcase&#34;</span>);
+
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://google.de&#34;</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;About&#34;</span>), <span style="color:#ae81ff">200</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>();
+    }
+})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+</div>
+</div>
+
 <h2 id="screenshot-based-testing">Screenshot based Testing</h2>
 
 <p>A lot of end-to-end scenarios exceed the borders of your browser and the capabilities of webdriver. This might include common use cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In these cases, your webbased tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.</p>
