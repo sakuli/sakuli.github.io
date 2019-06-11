@@ -41,6 +41,60 @@ Key features are
 - Easy to use but still expressive syntax
 - Testing every browser with a webdriver implementation
 
+The following comparison between Selenium and Sakuli scripts shows the difference in lines of code and complexity.  
+This small test basically only opens-up 'Google', tries to find the 'About' link and highlights the result:
+
+# Selenium Test
+{{< highlight typescript "linenos=table" >}}
+"use strict"
+
+const {Builder, By} = require('selenium-webdriver');
+
+let driver = null;
+
+const highlight = async (driver, element, duration) => {
+    const oldBorder = await driver.executeScript(`const oldBorder = arguments[0].style.border; arguments[0].style.border = '2px solid red'; return oldBorder;`, element);
+    await driver.sleep(duration);
+    await driver.executeScript(`const oldBorder = arguments[1]; arguments[0].style.border = oldBorder`, element, oldBorder);
+}
+
+(async () => {
+    try {
+        driver = await new Builder()
+            .forBrowser("chrome")
+            .build();
+
+        await driver.manage().window().maximize();
+        await driver.get("https://www.google.de");
+
+        const link = await driver.findElement(By.xpath("//*/a[contains(text(), 'About')]"));
+        await highlight(driver, link, 200);
+    } catch (e) {
+        console.log(e);
+    } finally {
+        if (driver) {
+            await driver.quit();
+        }
+    }
+})();
+{{< /highlight >}}
+
+# Sakuli Test
+{{< highlight typescript "linenos=table" >}}
+(async () => {
+    const tc = new TestCase("demo_testcase");
+
+    try {
+        await _navigateTo("https://google.de");
+        await _highlight(_link("About"), 200);
+    } catch (e) {
+        await tc.handleException(e);
+    } finally {
+        tc.saveResult();
+    }
+})().then(done);
+{{< /highlight >}}
+
 ## Screenshot based Testing
 
 A lot of end-to-end scenarios exceed the borders of your browser and the capabilities of webdriver. This might include common use cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In these cases, your webbased tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.
