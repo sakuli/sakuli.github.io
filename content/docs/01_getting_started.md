@@ -336,3 +336,5 @@ sakuli run $PATH_TO_TESTSUITE
 
 ### Congratulations!
 You wrote and executed your first Sakuli test! May there be many more to come!
+
+If you want to learn more about native testactions, head over to the [testing](https://sakuli.io/testing/) section!
