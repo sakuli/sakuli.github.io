@@ -118,6 +118,30 @@
     margin-bottom: 4rem;
 }
 
+
+
+
+.information-layout {
+    font-size: .7em;
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+        .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+    }
+    @media screen and (min-width: 820px) {
+        .column {
+            flex: 1
+        }
+    }
+}
+
+
 #enterprise-contact-form {
     display: flex;
     flex-direction: column;

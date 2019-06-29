@@ -89,57 +89,69 @@
     </li>
     {{end}}
 </ul>
+<div class="information-layout">
+    <div class="row">
+        {{if isset $priceList "MaintenanceDescription"}}
+        <div class="column">
+            <dl>
+                <dt>
+                    <a id="maintenance">
+                        <h2>Maintenance</h2>
+                    </a>
+                </dt>
+                <dd>
+                    {{$priceList.MaintenanceDescription}}
+                </dd>
+            </dl>
+        </div>
+        {{end}}
 
-{{if isset $priceList "MaintenanceDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="maintenance">
-            <h2>What does <i>Maintenance</i> mean?</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.MaintenanceDescription}}
-    </dd>
-</dl>
-{{end}}
-
-{{if isset $priceList "SlaDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="sla-time">
-            <h2>What does <i>Support</i> mean?</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.SlaDescription}}
-    </dd>
-</dl>
-{{end}}
-
+        {{if isset $priceList "SlaDescription"}}
+        <div class="column">
+            <dl>
+                <dt>
+                    <a id="sla-time">
+                        <h2>Professional Support</h2>
+                    </a>
+                </dt>
+                <dd>
+                    {{$priceList.SlaDescription}}
+                </dd>
+            </dl>
+        </div>
+        {{end}}
+    </div>
 {{if isset $priceList "InstanceDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="instances">
-            <h2>What does <i>Instances</i> mean?</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.InstanceDescription}}
-    </dd>
-</dl>
-{{end}}
+    <div class="row 2">
+        <div class="column">
+            <dl>
+                <dt>
+                    <a id="instances">
+                        <h2>How to count Instances</h2>
+                    </a>
+                </dt>
+                <dd>
+                    {{$priceList.InstanceDescription}}
+                </dd>
+            </dl>
+        </div>
+        {{end}}
 
-{{if isset $priceList "PriceDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="price">
-            <h2>Price information:</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.PriceDescription}}
-    </dd>
-</dl>
-{{end}}
+        {{if isset $priceList "PriceDescription"}}
+        <div class="column">
+            <dl>
+                <dt>
+                    <a id="price">
+                        <h2>Price information</h2>
+                    </a>
+                </dt>
+                <dd>
+                    {{$priceList.PriceDescription}}
+                </dd>
+            </dl>
+        </div>
+        {{end}}
+    </div>
+</div>
 <!-- Footer -->
 {{ partial "footer.html" . }}
