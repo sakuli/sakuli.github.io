@@ -119,58 +119,6 @@
             </dl>
         </div>
         {{end}}
-
-{{if isset $priceList "MaintenanceDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="maintenance">
-            <h2>Maintenance</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.MaintenanceDescription}}
-    </dd>
-</dl>
-{{end}}
-
-{{if isset $priceList "SlaDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="sla-time">
-            <h2>Professional Support</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.SlaDescription}}
-    </dd>
-</dl>
-{{end}}
-
-{{if isset $priceList "InstanceDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="instances">
-            <h2>How to count Instances</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.InstanceDescription}}
-    </dd>
-</dl>
-{{end}}
-
-{{if isset $priceList "PriceDescription"}}
-<dl class="price-list-description shrink-content">
-    <dt>
-        <a id="price">
-            <h2>Price Information</h2>
-        </a>
-    </dt>
-    <dd>
-        {{$priceList.PriceDescription}}
-    </dd>
-</dl>
-{{end}}
         {{if isset $priceList "SlaDescription"}}
         <div class="column">
             <dl>
