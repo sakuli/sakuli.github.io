@@ -1,6 +1,10 @@
 <!-- Header -->
 {{ partial "header.html" . }}
 {{ $priceList := .Site.Data.enterprise.price_table }}
+<h1>Workshops</h1>
+<article class="shrink-content text-center">
+    {{.Content}}
+</article>
 <h1>{{.Title}}</h1>
 <article class="shrink-content text-center">
     {{.Content}}
@@ -42,6 +46,16 @@
                 <span>
                     Professional Support<br />initial reaction time<br />
                     <strong>{{.sla}}</strong>
+                </span>
+                <a href="#sla-time" class="info">
+                </a>
+            </li>
+            {{end}}
+            {{ if isset . "cases"}}
+            <li class="meta-info">
+                <span>
+                    Support cases: <br />
+                    <strong>{{.cases}}</strong>
                 </span>
                 <a href="#sla-time" class="info">
                 </a>
@@ -94,7 +108,7 @@
 <dl class="price-list-description shrink-content">
     <dt>
         <a id="maintenance">
-            <h2>What does <i>Maintenance</i> mean?</h2>
+            <h2>Maintenance</h2>
         </a>
     </dt>
     <dd>
@@ -107,7 +121,7 @@
 <dl class="price-list-description shrink-content">
     <dt>
         <a id="sla-time">
-            <h2>What does <i>Support</i> mean?</h2>
+            <h2>Professional Support</h2>
         </a>
     </dt>
     <dd>
@@ -120,7 +134,7 @@
 <dl class="price-list-description shrink-content">
     <dt>
         <a id="instances">
-            <h2>What does <i>Instances</i> mean?</h2>
+            <h2>How to count Instances</h2>
         </a>
     </dt>
     <dd>
@@ -133,7 +147,7 @@
 <dl class="price-list-description shrink-content">
     <dt>
         <a id="price">
-            <h2>Price information:</h2>
+            <h2>Price Information</h2>
         </a>
     </dt>
     <dd>
