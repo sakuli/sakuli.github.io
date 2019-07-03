@@ -1,6 +1,7 @@
 SlaDescription="""
-    Sakuli Core and Sakuli add-ons are supported on a business impact prioritization.  
-    Consulting and setup are not included. Initial reaction time is from Monday to Friday during German business hours 08:00 - 17:00 – excluding German public holidays. Support is offered via email. Customer channels are only supported within the XL package.
+    Sakuli Core and Sakuli add-ons are supported on a business impact prioritization. This prioritization is performed by our experts in respect to Security > Function without Workaround > Function with Workaround. Support is restricted on Bugs of Sakuli and its Features (Consulting and Setup are not included) and limited to the amount of cases specified in the respective Subscription Package.  
+    Support inquiries need to be in a structured form (Please use the provided template) with all necessary information about the system environment, configuration and a detailed report. Customers need to ensure reproducibility of the issue by offering remote accessibility or an appropriate system to reproduce on.  
+    SLA times are defined as initial reaction time from Monday to Friday during German business hours 08:00 - 17:00 – excluding German public holidays. Support is offered via email. Customer channels are only supported within the XL package.
 """
 
 InstanceDescription="""
@@ -12,7 +13,8 @@ PriceDescription="""
     Prices per month and not including VAT. Contract period of 1 year with a 30 days' notice in writing to the end of the subscription lifetime.
 """
 MaintenanceDescription="""
-    You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.
+    You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.  
+    The Sakuli DEV team tracks security incidents of underlying software components regularly and updates Sakuli components with the latest security fix releases shortly after appearance.
 """
 
 [[plans]]
@@ -33,6 +35,7 @@ code="M"
 instances="< 4"
 maintenance=true
 sla="Two business days"
+cases="1 / month"
 customerchannel=false
 forwarder=true
 container=true
@@ -46,6 +49,7 @@ code="L"
 instances="< 20"
 maintenance=true
 sla="next business day"
+cases="3 / month"
 customerchannel=false
 forwarder=true
 container=true
@@ -60,6 +64,7 @@ code="XL"
 instances="∞"
 maintenance=true
 sla="4 hours"
+cases="up to 20 / month"
 customerchannel=true
 forwarder=true
 container=true
