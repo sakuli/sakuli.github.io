@@ -5,12 +5,13 @@ SlaDescription="""
 """
 
 InstanceDescription="""
-    Number of Sakuli instances installed and running.  
-    For example: If you use Sakuli in two different docker containers with different Test-Scenarios and if you additionally installed Sakuli on a Windows VM, you are using three Sakuli instances.  
-    Running container multiple times in parallel, executing identical Test-Scenarios, only counts as one instance.
+    Number of Sakuli installations.  
+    For example: If you use Sakuli in two different docker containers and if you additionally installed Sakuli on two Windows VMs and on one OSX Laptop, you are using five Sakuli instances.  
+    An exception is running identical containers multiple times in parallel, executing identical Test-Scenarios - this only counts as one instance.
 """
 PriceDescription="""
-    Prices per month and not including VAT. Contract period of 1 year with a 30 days' notice in writing to the end of the subscription lifetime.
+    Prices per month and not including VAT. Contract period of 1 year with a 30 days' notice in writing to the end of the subscription lifetime. 
+    The payment for the entire subscription period is due when the contract is concluded with a term of payment of 30 days.
 """
 MaintenanceDescription="""
     You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.  
