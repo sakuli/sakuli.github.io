@@ -19,14 +19,14 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Legal Notice
+        Sakuli End-to-End Testing + Monitoring | Features
     </title>
-    <meta property="og:title" content="Sakuli | Legal Notice" />
+    <meta property="og:title" content="Sakuli | Features" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="/images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Legal Notice" />
+    <meta name="twitter:title" content="Sakuli | Features" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="/images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -230,54 +230,123 @@
     <main>
 
 
-<h1>Legal Notice</h1>
+<h1>Features</h1>
 <article class="shrink-content">
     
 
-<h2 id="address">Address</h2>
+<ul>
+<li><p>OS (Core)</p>
 
-<p>ConSol Consulting &amp; Solutions Software GmbH</p>
+<ul>
+<li>Testing based on Selenium and Nut.js</li>
+<li>Browser with Webdriver Implementation</li>
+<li>Usual Screensizes / Resolution with a single Monitor</li>
+<li>No built-In support on CI but should work properly on every System which supports Docker (see Container) or within one of the supported OSes</li>
+<li><a href="#webdriver-support">Webdrivers supported</a> by <a href="https://www.npmjs.com/package/selenium-webdriver">selenium-webdriver</a>
 
-<p>St.-Cajetan-Straße 43<br />
-D-81669 Munich<br />
-Telefon: +49-89-45841-100<br />
-Telefax: +49-89-45841-111<br />
-E-Mail: info@consol.de</p>
+<ul>
+<li>What can be done with selenium can be done with sakuli</li>
+</ul></li>
+<li>No (Multi-) Touch events</li>
+<li>Screenshot-based Interactions 
 
-<h3 id="commercial-register">Commercial register</h3>
+<ul>
+<li>Scaleinvariant pattern matching</li>
+<li>Fuzzy image matching</li>
+</ul></li>
+<li>Native control</li>
+<li>Mouse and Keyboard interactions</li>
+<li>Write and Read Clipboard</li>
+<li>Drag&amp;Drop </li>
+<li>Reliable Web-Automation with multi-selector matching </li>
+<li>Rare &ldquo;StaleElementReferenceError&rdquo; </li>
+<li>Abstraction of Seleniums complexity </li>
+<li>Error-screenshots </li>
+<li>Secrets: encryption of sensitive data (no plaintext in logs or outputs)</li>
+<li>Architecture</li>
+<li>Generic integration of target system </li>
+<li> Debugging with Node</li>
+<li>Supported OS (others may also work but without warranty)</li>
+<li>Windows 10+</li>
+<li>OSX &gt;= V. 10.10</li>
+<li>Linux Systems (requires X-Window-System &gt;= V. 1.18)
 
-<p>Registration court: Munich District Court<br />
-HRB 97371</p>
+<ul>
+<li>Linux Ubuntu &gt;=  V. 16.04 in Kombination mit</li>
+<li>RHEL &gt;= 7</li>
+</ul></li>
+</ul></li>
 
-<h3 id="sales-tax-identification-number-in-accordance-with-27-a-of-the-sales-tax-law">Sales tax identification number (in accordance with § 27 a of the Sales Tax Law)</h3>
+<li><p>Enterprise</p>
 
-<p>DE 129318612</p>
+<ul>
+<li>Supported Monitoring</li>
+<li>OMD (Gearman) &gt;= 3</li>
+<li>Icinga2 mit konfigurierter API</li>
+<li>Check_MK &gt;= 1.5</li>
+<li>SQL Databases supported by Typeorm</li>
+<li>Docker-Image</li>
+<li>Ready to use Browsers</li>
+<li>Installed Sakuli</li>
+<li>configured VNC-server and NoVNC
+-</li>
+<li>No warranty when you change
 
-<h3 id="authorized-company-officers">Authorized company officers</h3>
+<ul>
+<li>Window Manager</li>
+<li>VNC server and NoVNC config</li>
+<li>OS</li>
+<li>Installed Browsers or verisons</li>
+<li>Sakuli installation</li>
+</ul></li>
+</ul></li>
+</ul>
 
-<p>Dr. Ulrich Schwanengel<br />
-Michael Beutner – Technology<br />
-Andrea Stellwag – Finances<br />
-Bernd Wiserner – Resources</p>
+<h3 id="webdriver-support">Webdriver Support</h3>
 
-<h3 id="responsible-for-content-in-accordance-with-6-mdstv">Responsible for content (in accordance with § 6 MDStV)</h3>
+<p>You will need to download additional components to work with each of the major browsers. The drivers for Chrome, Firefox, and Microsoft&rsquo;s IE and Edge web browsers are all standalone executables that should be placed on your system <a href="http://en.wikipedia.org/wiki/PATH_(variable)">PATH</a> or by adding it to your <code>package.json</code>. Apple&rsquo;s safaridriver is shipped with Safari 10 for OS X El Capitan and macOS Sierra. You will need to enable Remote Automation in the Develop menu of Safari 10 before testing.</p>
 
-<p>Nico Zellner</p>
+<table>
+<thead>
+<tr>
+<th align="left">Browser</th>
+<th align="left">Installable Driver</th>
+<th>NPM Package</th>
+</tr>
+</thead>
 
-<h3 id="liability-insurance-in-accordance-with-2-abs-1-dl-infov">Liability Insurance (in accordance with § 2 Abs. 1 DL-InfoV)</h3>
+<tbody>
+<tr>
+<td align="left">Chrome</td>
+<td align="left"><a href="http://chromedriver.storage.googleapis.com/index.html">chromedriver(.exe)</a></td>
+<td><a href="https://www.npmjs.com/package/chromedriver">https://www.npmjs.com/package/chromedriver</a></td>
+</tr>
 
-<p>Hiscox AG<br />
-Oberanger 28<br />
-D-80331 Munich<br />
-(worldwide coverage)</p>
+<tr>
+<td align="left">Internet Explorer</td>
+<td align="left"><a href="http://selenium-release.storage.googleapis.com/index.html">IEDriverServer.exe</a></td>
+<td><a href="https://www.npmjs.com/package/iedriver">https://www.npmjs.com/package/iedriver</a></td>
+</tr>
 
-<h3 id="legal-notice">Legal notice</h3>
+<tr>
+<td align="left">Edge</td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/?LinkId=619687">MicrosoftWebDriver.msi</a></td>
+<td><a href="https://www.npmjs.com/package/edgedriver">https://www.npmjs.com/package/edgedriver</a></td>
+</tr>
 
-<p>Despite careful review, we assume no liability for the content of external links. The operators of sites linked to are exclusively responsible for their content.</p>
+<tr>
+<td align="left">Firefox</td>
+<td align="left"><a href="https://github.com/mozilla/geckodriver/releases/">geckodriver(.exe)</a></td>
+<td><a href="https://www.npmjs.com/package/geckodriver">https://www.npmjs.com/package/geckodriver</a></td>
+</tr>
 
-<h3 id="copyright">Copyright</h3>
-
-<p>ConSol GmbH 2019</p>
+<tr>
+<td align="left">Safari</td>
+<td align="left"><a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28">safaridriver</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 </article>
 
