@@ -18,9 +18,9 @@ Sakuli makes it easy to write tests that act like real-world users. It automatic
 
         testCase.endOfStep('Login');
     } catch (e) {
-        tc.handleException(e);
+        await testCase.handleException(e);
     } finally {
-        tc.saveResult();
+        await testCase.saveResult();
     }
 
 }).then(done);
@@ -82,15 +82,15 @@ const highlight = async (driver, element, duration) => {
 ### Sakuli Test
 {{< highlight typescript "linenos=table" >}}
 (async () => {
-    const tc = new TestCase("demo_testcase");
+    const testCase = new TestCase("demo_testcase");
 
     try {
         await _navigateTo("https://google.de");
         await _highlight(_link("About"), 200);
     } catch (e) {
-        await tc.handleException(e);
+        await testCase.handleException(e);
     } finally {
-        tc.saveResult();
+        await testCase.saveResult();
     }
 })().then(done);
 {{< /highlight >}}
@@ -119,7 +119,7 @@ In this demo scenario, both source and target are located on screen via template
     } catch (e) {
         await testCase.handleException(e);
     } finally {
-        testCase.saveResult();
+        await testCase.saveResult();
     }
 })().then(done);
 {{< /highlight >}}
@@ -143,7 +143,7 @@ Afterwards, it locates the target image, moves the mouse there while still holdi
     } catch (e) {
         await testCase.handleException(e);
     } finally {
-        testCase.saveResult();
+        await testCase.saveResult();
     }
 })().then(done);
 {{< /highlight >}}
@@ -177,7 +177,7 @@ We can accept the file dialog by simply pressing the `Enter` key.
     } catch (e) {
         await testCase.handleException(e);
     } finally {
-        testCase.saveResult();
+        await testCase.saveResult();
     }
 })().then(done);
 {{< /highlight >}}
