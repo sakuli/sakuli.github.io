@@ -3,53 +3,55 @@ title: Features
 slug: features
 ---
 
-- OS (Core)
-  - Testing based on Selenium and Nut.js
-    - Browser with Webdriver Implementation
-    - Usual Screensizes / Resolution with a single Monitor
-    - No built-In support on CI but should work properly on every System which supports Docker (see Container) or within one of the supported OSes
-    - [Webdrivers supported](#webdriver-support) by [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)
-      - What can be done with selenium can be done with sakuli
-    - No (Multi-) Touch events
-    - Screenshot-based Interactions 
-      - Scaleinvariant pattern matching
-      - Fuzzy image matching
-    - Native control
-    - Mouse and Keyboard interactions
-    - Write and Read Clipboard
-    - Drag&Drop 
-    - Reliable Web-Automation with multi-selector matching 
-    - Rare "StaleElementReferenceError" 
-    - Abstraction of Seleniums complexity 
-    - Error-screenshots 
+# OS (Core)
+### Testing based on Selenium and Nut.js
+  - Suitable for Browsers with Webdriver Implementation
+  - Works with commonly used Screensizes / Resolution with a single Monitor setup
+  - No built-in CI support but should work properly on every system which supports Docker (see Container) or within one of the supported OSes
+  - [Webdrivers supported](#webdriver-support) by [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)
+    - What can be done with Selenium can be done with Sakuli
+  - No (Multi-) Touch events
+  - Screenshot-based Interactions
+    - Scaleinvariant pattern matching
+    - Fuzzy image matching
+  - Native control
+  - Mouse and Keyboard interactions
+  - Write and Read Clipboard
+  - Drag&Drop
+  - Reliable Web-Automation with multi-selector matching
+  - Rare "StaleElementReferenceError"
+  - Abstraction of Seleniums complexity
+  - Error-screenshots
   - Secrets: encryption of sensitive data (no plaintext in logs or outputs)
   - Architecture
-    - Generic integration of target system 
-  -  Debugging with Node
-  - Supported OS (others may also work but without warranty)
-    - Windows 10+
-    - OSX >= V. 10.10
-    - Linux Systems (requires X-Window-System >= V. 1.18)
-      - Linux Ubuntu >=  V. 16.04 in Kombination mit
-      - RHEL >= 7
+    - Generic integration of target systems
+  - Debugging with Node
 
-- Enterprise
-  - Supported Monitoring
-    - OMD (Gearman) >= 3
-    - Icinga2 mit konfigurierter API
-    - Check_MK >= 1.5
-    - SQL Databases supported by Typeorm
-  - Docker-Image
-    - Ready to use Browsers
-    - Installed Sakuli
-    - configured VNC-server and NoVNC
-    -
-    - No warranty when you change
-      - Window Manager
-      - VNC server and NoVNC config
-      - OS
-      - Installed Browsers or verisons
-      - Sakuli installation
+### Supported OS (others may also work but without warranty)
+  - Windows 10+
+  - OSX >= V. 10.10
+  - Linux Systems (requires X-Window-System >= V. 1.18)
+    - Linux Ubuntu >=  V. 16.04 in Kombination mit
+    - RHEL >= 7
+
+# Enterprise Features
+### Supported Monitoring
+  - OMD (Gearman) >= 3
+  - Icinga2 mit konfigurierter API
+  - Check_MK >= 1.5
+  - SQL Databases supported by Typeorm
+
+### Docker-Image
+  - Ready to use Browsers (Firefox and Chrome)
+  - Installed Chrome- and Gecko-WebDriver
+  - Installed Sakuli
+  - Configured VNC-server and NoVNC
+  - No warranty when you change
+    - Window Manager
+    - VNC server and NoVNC config
+    - OS
+    - Installed Browsers or verisons
+    - Sakuli installation
 
 ### Webdriver Support
 
