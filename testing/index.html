@@ -247,9 +247,9 @@
 
         <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#39;Login&#39;</span>);
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
 
 }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></div></p>
@@ -363,15 +363,15 @@ This small test basically only opens-up &lsquo;Google&rsquo;, tries to find the 
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;demo_testcase&#34;</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;demo_testcase&#34;</span>);
 
     <span style="color:#66d9ef">try</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://google.de&#34;</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;About&#34;</span>), <span style="color:#ae81ff">200</span>);
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">tc</span>.<span style="color:#a6e22e">saveResult</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
 })().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
 </div>
@@ -417,7 +417,7 @@ In this demo scenario, both source and target are located on screen via template
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
 })().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
 </div>
@@ -461,7 +461,7 @@ Afterwards, it locates the target image, moves the mouse there while still holdi
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
 })().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
 </div>
@@ -517,7 +517,7 @@ We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
 })().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
 </div>
