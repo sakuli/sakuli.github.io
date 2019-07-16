@@ -36,8 +36,8 @@ Sakuli Forwarder package ships with:
 
 Supported Monitoring Systems:
 
-  - OMD (Nagios, Gearman)
-  - Icinga
+  - <a href="https://labs.consol.de/omd/" target="_blank">OMD (Nagios, Gearman)</a>
+  - Icinga 2
   - check_mk
   - SQL Databases
    - MySQL
