@@ -4,8 +4,8 @@
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
         <h1>
-          <span class="hide-mobile">Your request for</span>
-          Sakuli package {{code}}
+          <span class="hide-mobile">{{contactText}}</span>
+            {{name}} {{code}}
         </h1>
       </template>
       <template v-slot:footer>
@@ -13,7 +13,7 @@
         <button v-if="!formDisabled" class="button" @click.prevent="sendFormData">Send</button>
       </template>
       <div v-if="success">
-        <h2>Thank your for the request. Our sales team will contact you shortly.</h2>
+        <h2>Thank your for the request. Our team will contact you shortly.</h2>
       </div>
       <div v-if="isLoading" style="text-align: center">
         <spinner></spinner>
@@ -146,7 +146,6 @@ export default Vue.extend({
   cursor: pointer;
   border: 0;
   margin: 1rem;
-
   @media screen and (max-width: 820px) {
     margin: 0.5rem;
   }

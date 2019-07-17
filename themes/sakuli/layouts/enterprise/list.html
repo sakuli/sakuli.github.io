@@ -89,7 +89,7 @@
         </ul>
 
         {{ $isContactLink := or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
-        <a class="button" href="{{ .priceLink }}" target="_blank" {{ if $isContactLink }} data-contactform="{{ .code }}"{{ end }}>
+        <a class="button" href="{{ .priceLink }}" target="_blank" {{ if $isContactLink }} data-contactform="{{ .contactText }} {{ .name }} {{ .code }}"{{ end }}>
             {{ if $isContactLink }}
             Contact
             {{else}}
@@ -99,7 +99,6 @@
     </li>
     {{end}}
 </ul>
-
 {{if isset $priceList "MaintenanceDescription"}}
 <dl class="price-list-description shrink-content">
     <dt>
