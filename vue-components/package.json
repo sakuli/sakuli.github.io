@@ -19,9 +19,12 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "gumshoejs": "^5.1.1",
     "install": "^0.12.2",
     "npm": "^6.9.0",
     "portal-vue": "^2.1.4",
+    "smooth-scroll": "^16.1.0",
+    "toggles": "^1.0.0",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3",
     "whatwg-fetch": "^3.0.0"

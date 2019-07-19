@@ -8,6 +8,8 @@
 @import 'atomic.scss';
 @import 'page.scss';
 @import 'breadcrumb.scss';
+@import 'docs_page.scss';
+@import 'section-navigation.scss';
 
 body,
 html {
@@ -28,6 +30,8 @@ html {
 main {
     background-color: hsl(89, 1%, 95%);
     flex: 1;
+    flex-direction: column;
+
     >section {
         margin-bottom: 5rem;
     }

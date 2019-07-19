@@ -12,7 +12,7 @@
         display: inline;
     }
     li{
-        @include nav-list-item();
+        @include chevron();
         margin-left: 2rem;
     }
 }
