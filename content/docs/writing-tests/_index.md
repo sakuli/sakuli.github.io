@@ -39,16 +39,16 @@ if you totally want to avoid this construct you can still use the then function 
 
 {{< highlight javascript "linenos=table,linenostart=1" >}}
 
-    const testCase = new TestCase();
+const testCase = new TestCase();
 
-    _navigateTo("https://sakuli.io")
-        .then(_ => testCase.endOfStep("Open Landing Page", 5, 10))
-        .then(_ => _click(_link("Getting started")))
-        .then(_ => _highlight(_code("npm init")))
-        .then(_ => testCase.endOfStep("Find npm init code sample"))
-        .catch(e => await testCase.handleException(e))
-        .then(_ => testCase.saveResult())
-        .then(done);
+_navigateTo("https://sakuli.io")
+    .then(_ => testCase.endOfStep("Open Landing Page", 5, 10))
+    .then(_ => _click(_link("Getting started")))
+    .then(_ => _highlight(_code("npm init")))
+    .then(_ => testCase.endOfStep("Find npm init code sample"))
+    .catch(e => await testCase.handleException(e))
+    .then(_ => testCase.saveResult())
+    .then(done);
 
 {{< / highlight >}}
 
@@ -69,12 +69,12 @@ Sakuli has some classes - especially these for native interactions - which imple
 
 {{< highlight javascript "linenos=table,linenostart=1" >}}
 
-    // With Thenable classes; Assuming we are in the context of an async function
-    await screen.find('button.png').click();
+// With Thenable classes; Assuming we are in the context of an async function
+await screen.find('button.png').click();
 
-    // Without Thenable class
-    screen.find('button.jpg')
-        .then(screen => screen.click());
+// Without Thenable class
+screen.find('button.jpg')
+    .then(screen => screen.click());
 
 {{< / highlight >}}
 
@@ -127,7 +127,7 @@ Two interesting things can be observed here:
 
 Sakuli now introduces support for [ES-module syntax](https://2ality.com/2014/09/es6-modules-final.html). So the example above have to be rewritten to:
 
-<i class="fas fa-file"></i>  `<TESTSUITE>/common/login.js`:
+<i class="fas fa-file"></i>  `<TESTSUITE>/common/login.js`
 {{< highlight javascript "linenos=table,hl_lines=1,linenostart=1" >}}
 
 export async function login($user, $password) {
@@ -136,7 +136,7 @@ export async function login($user, $password) {
 
 {{< / highlight >}}
 
-<i class="fas fa-file"></i> `<TESTSUITE>/testcase/case.js`
+<i class="fas fa-file"></i> `<TESTSUITE>/testcase/case.js`
 {{< highlight javascript "linenos=table,hl_lines=1,linenostart=1" >}}
 
 import {login} from './../commons/login';
@@ -155,7 +155,7 @@ try {
 
 {{< / highlight >}}
 
-Beside the added async / await keywords. We see that the first line of each script changed. In the first script all functions (or classes, enums, constants, etc) have to be explicitly exported by the script (module would be the more accurate term) if they should be used in other scripts. In the actual testcase script the `_include` function is removed and replaced by an `import`. The import ensures that we only import symbols that are required in the current script and its *global* namespace. Each function which is required in the testcase script have to be imported explicitly. An alternative syntax is to import everything within an own namespace:
+Beside the added async / await keywords. We see that the first line of each script changed. In the first script all functions (or classes, enums, constants, etc) have to be explicitly exported by the script (module would be the more accurate term) if they should be used in other scripts. In the actual testcase script the `_include` function is removed and replaced by an `import`. The import ensures that we only import symbols that are required in the current script and its *global* namespace. Each function which is required in the testcase script have to be imported explicitly. An alternative syntax is to import everything within an own namespace:
 
 {{< highlight javascript "linenos=table,linenostart=1" >}}
 

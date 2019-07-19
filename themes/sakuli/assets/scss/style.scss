@@ -28,7 +28,7 @@ html {
 }
 
 main {
-    background-color: hsl(89, 1%, 95%);
+    background-color: $color-background;
     flex: 1;
     flex-direction: column;
     display: flex;
@@ -106,6 +106,7 @@ h5 {
     color: $color-green-pale;
     font-weight: 100;
     margin-left: 0;
+    line-height: 3.5rem;
 }
 
 h1 {

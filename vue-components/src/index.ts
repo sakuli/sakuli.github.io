@@ -2,6 +2,7 @@ import 'whatwg-fetch';
 import './docs-nav-enhancer';
 import './scroll-spy-enhancer';
 import './toggles'
+import './enhance-mobile-main-nav';
 import Vue from 'vue';
 import PortalVue from 'portal-vue';
 Vue.use(PortalVue);
@@ -12,7 +13,8 @@ import ContactForm from "./enterprise/contact-form.component.vue";
 import { syncSize } from './dom-utils';
 
 syncSize('#main-nav', 'nav');
-syncSize('#secondary-nav', '#TableOfContents')
+syncSize('#secondary-nav', '#TableOfContents');
+
 
 // Mounting gdpr info to an dynamicly created element
 const gdprInfo = document.createElement('div');
