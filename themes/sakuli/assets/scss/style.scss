@@ -8,17 +8,19 @@
 @import 'atomic.scss';
 @import 'page.scss';
 @import 'breadcrumb.scss';
+@import 'docs_page.scss';
+@import 'section-navigation.scss';
 
 body,
 html {
     padding: 0;
     margin: 0;
-    height: 100%;
-    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1.0rem;
+    font-size: 100%;
 }
 
 :focus {
@@ -26,20 +28,17 @@ html {
 }
 
 main {
-    background-color: hsl(89, 1%, 95%);
+    background-color: $color-background;
     flex: 1;
+    flex-direction: column;
+    display: flex;
+
     >section {
         margin-bottom: 5rem;
     }
 
     margin-top: 70px;
     line-height: 1.75rem;
-
-    pre {
-        line-height: initial;
-        overflow: auto;
-        padding: .5rem;
-    }
 
     article {
         img {
@@ -48,6 +47,12 @@ main {
             margin: 1rem
         }
     }
+}
+
+pre {
+    line-height: initial;
+    overflow: auto;
+    padding: .5rem;
 }
 
 .fork-me-link {
@@ -84,24 +89,28 @@ main {
     }
 }
 
+h1 {font-size: 2.5rem;}
+h2 {font-size: 1.8rem;}
+h3 {font-size: 1.6rem;}
+h4 {font-size: 1.4rem;}
+h5 {font-size: 1.2rem;}
+h6 {font-size: 1rem;}
+
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-    color: $color-gray-dark;
-    border-bottom: 1px solid $color-green;
-    text-align: center;
-    margin: 1rem;
-    //padding-bottom: 1rem;
+h5 {
+    border: none;
+    text-align: left;
+    color: $color-green-pale;
+    font-weight: 100;
+    margin-left: 0;
     line-height: 3.5rem;
 }
 
-article {
-    h1, h2, h3, h4, h5, h6 {
-        margin: 0;
-    }
+h1 {
+    text-align: center;
 }
 
 a {

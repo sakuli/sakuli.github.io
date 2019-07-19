@@ -118,6 +118,12 @@
     margin-bottom: 4rem;
 }
 
+.price-list-description {
+    dd {
+        margin-left: 0;
+    }
+}
+
 #enterprise-contact-form {
     display: flex;
     flex-direction: column;

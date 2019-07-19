@@ -1,0 +1,29 @@
+.section-navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    .search-field {
+        flex: 1;
+        position: relative;
+
+        .search-field--input {
+            $paddingLeft: 1rem;
+            $paddingRight: 2.5rem;
+            $paddingHorizontal: $paddingLeft + $paddingRight;
+            border: 0;
+            border-radius: 1rem;
+            width: calc(100% - #{$paddingHorizontal});
+            background: lighten($color-green-pale, 50%);
+            padding: .5rem $paddingRight .5rem $paddingLeft;
+            font-size: 1rem;
+            box-shadow: $shadow-l1;
+        }
+
+        .search-field--icon {
+            position: absolute;
+            right: 1rem;
+            top: .5rem;
+        }
+    }
+
+}

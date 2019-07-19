@@ -1,0 +1,25 @@
+<section class="section-navigation">
+    <div class="search-field" style="display: none">
+        <input type="text" class="search-field--input" />
+        <i class="fas fa-search search-field--icon"></i>
+    </div>
+    {{ template "sectionnav" (dict "section" .section "currentUrl" .currentUrl) }}
+</section>
+{{ define "sectionnav" }}
+    {{$currentUrl := .currentUrl}}
+    {{$pages := .section.Pages | lang.Merge .section.Sections }}
+    <ul>
+        {{ range sort $pages}}
+            {{ template "sectionEntry" (dict "page" . "currentUrl" $currentUrl)}}
+        {{ end }}
+    </ul>
+{{ end }}
+{{ define "sectionEntry" }}
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="{{.page.RelPermalink}}" class="{{if eq .currentUrl .page.RelPermalink}} active {{end}}">
+            {{.page.Title}}
+    </a>
+    {{ template "sectionnav" (dict "section" .page "currentUrl" .currentUrl)}}
+</li>
+{{ end }}
