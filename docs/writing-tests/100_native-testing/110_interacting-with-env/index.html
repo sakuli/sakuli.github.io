@@ -16,18 +16,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Sakuli is a End-to-End testing and monitoring frameworks this page lists all currently available docs">
+    <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Sakuli Docs
+        Sakuli End-to-End Testing + Monitoring | Interacting with the environment
     </title>
-    <meta property="og:title" content="Sakuli | Sakuli Docs" />
-    <meta property="og:description" content="Sakuli is a End-to-End testing and monitoring frameworks this page lists all currently available docs" />
+    <meta property="og:title" content="Sakuli | Interacting with the environment" />
+    <meta property="og:description" content="" />
     <meta property="og:image" content="/images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Sakuli Docs" />
-    <meta name="twitter:description" content="Sakuli is a End-to-End testing and monitoring frameworks this page lists all currently available docs" />
+    <meta name="twitter:title" content="Sakuli | Interacting with the environment" />
+    <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="/images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
 
@@ -294,7 +294,7 @@
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/100_native-testing/110_interacting-with-env/" class="">
+    <a href="/docs/writing-tests/100_native-testing/110_interacting-with-env/" class=" active ">
             Interacting with the environment
     </a>
     
@@ -383,11 +383,136 @@
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>Sakuli Docs</h1>
+            <h1>Interacting with the environment</h1>
             
+
+<p>In addition to screenshot based testactions, Sakuli is able to utilize your keyboard, clipboard and environment variables.
+All these features are incorporated in the <code>Environment</code> class.</p>
+
+<h3 id="keyboard-actions">Keyboard actions</h3>
+
+<p>The following snippet shows a possible use-case for native keyboard actions.
+When initiating the download in FireFox, a native file download dialog opens.
+To start the download, we need to accept the file dialog, which is not possible with the capabilities of Selenium.
+With Sakuli it&rsquo;s possible to work around this problem just like a real user would do.
+We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;test&#34;</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nodejs.org/en/&#34;</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;ABOUT&#34;</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Releases&#34;</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Dubnium&#34;</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;node-v10.16.0.tar.gz&#34;</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyDown</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyUp</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+    }
+})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>It&rsquo;s even possible to change the download location dynamically by entering a new save path via</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;/new/path/to/file&#34;</span>);</code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="secrets">Secrets</h3>
+
+<p>Many E2E tests require some kind of login.
+While is no problem in general, it still requires some mechanism to handle credentials.
+Providing credentials via environment variable is a common practice, but it still is cumbersome when deploying the testcase to another system, since every single environment variable has to be migratet, too.</p>
+
+<p>Sakuli comes with a built-in mechanism to deal with sensitive data in testcases.
+It uses a single masterkey, generated by Sakuli, and uses this key to de- / encrypt secrets to be used in testcases.</p>
+
+<p>Running</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">sakuli</span> <span style="color:#a6e22e">create</span> <span style="color:#a6e22e">masterkey</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>will generate a new masterkey, which should be exported as environment variable <code>SAKULI_ENCRYPTION_KEY</code>.</p>
+
+<p>Once the masterkey has been exported, secrets can be encrypted by running</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">sakuli</span> <span style="color:#a6e22e">encrypt</span> <span style="color:#e6db74">&#34;super secret string&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>These encrypted secrets can now safely be stored inside your testfile, because the <code>Environment</code> class provides methods to decrypt these secrets during test execution.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">typeAndDecrypt</span>(<span style="color:#e6db74">&#34;$ENCRYPTED_SECRET&#34;</span>);
+<span style="color:#75715e">// alternatively, via clipboard
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">pasteAndDecrypt</span>(<span style="color:#e6db74">&#34;$ENCRYPTED_SECRET&#34;</span>);</code></pre></td></tr></table>
+</div>
+</div>
+
         </article>
         <aside id="secondary-nav">
-            
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#keyboard-actions">Keyboard actions</a></li>
+<li><a href="#secrets">Secrets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </aside>
     </div>
     <a class="navbutton left" href="#docs-page">
@@ -416,4 +541,3 @@
 <script src="/vue/index.js"></script>
 </body>
 </html>
-

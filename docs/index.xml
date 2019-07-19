@@ -20,16 +20,5 @@
 To install Node.js on your system, you can either go to the node website, or you could use tools like node version manager, a utility to manage various node versions on a per-user basis.</description>
     </item>
     
-    <item>
-      <title>Legacy API</title>
-      <link>/docs/legacy-api/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/legacy-api/</guid>
-      <description>Sakulis runs its Tests in an isolated node.js vm script runner and injects its own global scope. The legacy preset adds the most common Classes and functions which where available in Sakuli V1.x.
-Common Classes and Utils TestCase The TestCase class - obviously - represents a testcase. It&amp;rsquo;s API doesn&amp;rsquo;t differ much from the former version.
-Web Testing For the webtesting most of the functions from sahi tests could be used (please note that Sakuli only implements the Open Soure APIs).</description>
-    </item>
-    
   </channel>
 </rss>

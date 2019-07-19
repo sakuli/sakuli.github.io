@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/docs/writing-tests/000_anatomy-project/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
@@ -20,7 +24,7 @@
   </url>
   
   <url>
-    <loc>/docs/legacy-api/</loc>
+    <loc>/docs/writing-tests/100_native-testing/110_interacting-with-env/</loc>
   </url>
   
   <url>
@@ -65,12 +69,24 @@
   </url>
   
   <url>
+    <loc>/docs/writing-tests/100_native-testing/100_screenshot-based/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/testing/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/writing-tests/000_web-testing/</loc>
+  </url>
+  
+  <url>
+    <loc>/docs/writing-tests/</loc>
   </url>
   
 </urlset>

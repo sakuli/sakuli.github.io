@@ -221,7 +221,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/docs">Docs</a></li>
+                <li><a href="/docs/getting-started/">Docs</a></li>
                 <li><a href="/features">Features</a></li>
                 <li><a href="/enterprise">Enterprise</a></li>
             </ul>
@@ -230,66 +230,161 @@
     <main>
 
 
-<h1 class="shrink-content">Getting started</h1>
-<div class="shrink-content hide-mobile"><ul class="nav navbar-nav breadcrumbnav">
+<div id="docs-page">
+    <aside id="main-nav">
+        <a class="navbutton right" id="hide-menu-button">
+            <i class="fas fa-times"></i>
+        </a>
+        <nav>
+            
+            
+            <section class="section-navigation">
+    <div class="search-field" style="display: none">
+        <input type="text" class="search-field--input" />
+        <i class="fas fa-search search-field--icon"></i>
+    </div>
     
-
-
-
-
-
-<li>
-    <a href="/">Sakuli E2E and Monitoring</a>
-    </li>
-
-
-<li>
-    <a href="/docs/">Sakuli Docs</a>
-    </li>
-
-
-<li class="active" >
-    <a href="/docs/getting-started/">Getting started</a>
-    </li>
-
-</ul>
-
-</div>
-<div class="page shrink-content">
-    <aside>
-        <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#initialisation">Initialisation</a></li>
-<li><a href="#installation">Installation</a>
-<ul>
-<li><a href="#webdriver-installation">WebDriver Installation</a>
-<ul>
-<li><a href="#3rd-party-dependencies">3rd-party dependencies</a></li>
-<li><a href="#windows">Windows</a></li>
-<li><a href="#macos">macOS</a></li>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#sakuli-installation">Sakuli Installation</a></li>
-<li><a href="#reference">Reference</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#setup-your-first-test">Setup your first test</a></li>
-<li><a href="#write-your-first-test">Write your first Test</a></li>
-<li><a href="#execute-your-first-test">Execute your first test</a>
-<ul>
-<li><a href="#npx-https-www-npmjs-com-package-npx"><a href="https://www.npmjs.com/package/npx">npx</a></a></li>
-<li><a href="#npm-test">npm test</a></li>
-<li><a href="#global-installation">Global installation</a></li>
-<li><a href="#congratulations">Congratulations!</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-    </aside>
-    <article>
+    
+    
+    <ul>
         
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/getting-started/" class=" active ">
+            Getting started
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/writing-tests/" class="">
+            Writing Tests
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/writing-tests/000_anatomy-project/" class="">
+            Anatomy of a Project
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/writing-tests/100_native-testing/110_interacting-with-env/" class="">
+            Interacting with the environment
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/writing-tests/100_native-testing/100_screenshot-based/" class="">
+            Screenshot based Testing
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/writing-tests/000_web-testing/" class="">
+            Web tests
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</section>
+
+
+
+            <section class="section-navigation">
+                <strong>API Docs</strong>
+                <ul>
+                    <li>
+                        <a href="/apidoc/sakuli-legacy" target="_blank" rel="noopener">@sakuli/legacy</a>
+                    </li>
+                    <li>
+
+                        <a href="/apidoc/sakuli-core" target="_blank" rel="noopener">
+                            @sakuli/core
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-cli" target="_blank" rel="noopener">
+                            @sakuli/cli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-commons" target="_blank" rel="noopener">
+                            @sakuli/commons
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-rollup-hooks" target="_blank" rel="noopener">
+                            @sakuli/rollup-hooks
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </aside>
+    <div class="page">
+        <article class="shrink-content">
+            <h1>Getting started</h1>
+            
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -618,7 +713,46 @@ When installed with the additional flag <code>-g</code>, Sakuli will be installe
 
 <p>If you want to learn more about native testactions, head over to the <a href="https://sakuli.io/testing/">testing</a> section!</p>
 
-    </article>
+        </article>
+        <aside id="secondary-nav">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#initialisation">Initialisation</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#webdriver-installation">WebDriver Installation</a>
+<ul>
+<li><a href="#3rd-party-dependencies">3rd-party dependencies</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#sakuli-installation">Sakuli Installation</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#setup-your-first-test">Setup your first test</a></li>
+<li><a href="#write-your-first-test">Write your first Test</a></li>
+<li><a href="#execute-your-first-test">Execute your first test</a>
+<ul>
+<li><a href="#npx-https-www-npmjs-com-package-npx"><a href="https://www.npmjs.com/package/npx">npx</a></a></li>
+<li><a href="#npm-test">npm test</a></li>
+<li><a href="#global-installation">Global installation</a></li>
+<li><a href="#congratulations">Congratulations!</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </aside>
+    </div>
+    <a class="navbutton left" href="#docs-page">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <a class="navbutton right" id="show-menu-button">
+        <i class="fas fa-bars"></i>
+    </a>
 </div>
 
 
