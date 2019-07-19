@@ -16,6 +16,7 @@ if ($('#TableOfContents ')) {
         offset
     })
 
+    /*
     const gumshoeEventHandler = (event: any) => {
         // The list item
         //var li = event.target;
@@ -34,7 +35,7 @@ if ($('#TableOfContents ')) {
     }
     document.addEventListener('gumshoeActivate', gumshoeEventHandler, false);
     document.addEventListener('gumshoeDeactivate', gumshoeEventHandler, false);
-
+    */
     var scroll = new SmoothScroll('a[href*="#"]', {
         offset
     });

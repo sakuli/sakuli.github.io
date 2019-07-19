@@ -15,8 +15,8 @@ body,
 html {
     padding: 0;
     margin: 0;
-    height: 100%;
-    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -31,6 +31,7 @@ main {
     background-color: hsl(89, 1%, 95%);
     flex: 1;
     flex-direction: column;
+    display: flex;
 
     >section {
         margin-bottom: 5rem;
@@ -39,12 +40,6 @@ main {
     margin-top: 70px;
     line-height: 1.75rem;
 
-    pre {
-        line-height: initial;
-        overflow: auto;
-        padding: .5rem;
-    }
-
     article {
         img {
             max-height: 400px;
@@ -52,6 +47,12 @@ main {
             margin: 1rem
         }
     }
+}
+
+pre {
+    line-height: initial;
+    overflow: auto;
+    padding: .5rem;
 }
 
 .fork-me-link {
@@ -88,21 +89,6 @@ main {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: $color-gray-dark;
-    border-bottom: 1px solid $color-green;
-    text-align: center;
-    margin: 1rem;
-    //padding-bottom: 1rem;
-    line-height: 3.5rem;
-}
-
-
 h1 {font-size: 2.5rem;}
 h2 {font-size: 1.8rem;}
 h3 {font-size: 1.6rem;}
@@ -125,13 +111,6 @@ h5 {
 h1 {
     text-align: center;
 }
-/*
-article {
-    h1, h2, h3, h4, h5, h6 {
-       // margin: 0;
-    }
-}
-*/
 
 a {
     color: $color-gray-very-dark;

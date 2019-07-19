@@ -12,6 +12,7 @@ import ContactForm from "./enterprise/contact-form.component.vue";
 import { syncSize } from './dom-utils';
 
 syncSize('#main-nav', 'nav');
+syncSize('#secondary-nav', '#TableOfContents')
 
 // Mounting gdpr info to an dynamicly created element
 const gdprInfo = document.createElement('div');
