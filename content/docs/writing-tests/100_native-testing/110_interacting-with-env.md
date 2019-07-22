@@ -1,7 +1,7 @@
 ---
 title: Interacting with the environment
 ---
-In addition to screenshot based testactions, Sakuli is able to utilize your keyboard, clipboard and environment variables.
+In addition to screenshot based test-actions, Sakuli is able to utilize your keyboard, clipboard and environment variables.
 All these features are incorporated in the `Environment` class.
 
 ### Keyboard actions
