@@ -4,7 +4,7 @@ title: Web tests
 
 For DOM based testing most of the functions from [sahi tests](https://sahipro.com/docs/sahi-apis/) can be used (please note that Sakuli only implements the Open Soure APIs).
 
-The main difference in the new DSL is the usage of [Promises](https://developers.google.com/web/fundamentals/primers/promises) in the action API. That means you have to `await` a click e.g.
+The main difference in since Sakuli v2 is the usage of [Promises](https://developers.google.com/web/fundamentals/primers/promises) in the action API. That means you have to `await` a click e.g.
 
 On the other hand element selectors remain sync functions but won't do the actual DOM fetching anymore. While something like `var $e = _link('Sakuli')` did an actual DOM-access in Sakuli V1.x, it now returns a kind of abstract query for an element. So action can fetch this element whenever it is required.
 
