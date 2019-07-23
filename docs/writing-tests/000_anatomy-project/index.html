@@ -386,10 +386,10 @@
             <h1>Anatomy of a Project</h1>
             
 
-<p>This guide assumes that you have finished the getting started guide or experience with Sakuli v1.</p>
+<p>This guide assumes, that you finished the getting started guide or you are experienced with Sakuli v1.</p>
 
 <blockquote>
-<p>The most of the complexity and conventions comes due to the backwards compatibility to V1 which requires such a folder and file layout for various reasons (the biggest is Sahi). Sakuli now offers various ways to reduce this complexity dramatically. This features will come eventually in upcomming releases.</p>
+<p>The most of the complexity and conventions comes due to the backwards compatibility to V1 which requires such a folder and file layout for various reasons (the biggest is Sahi). Sakuli now offers various ways to reduce this complexity dramatically. This features will come eventually in upcoming releases.</p>
 </blockquote>
 
 <h2 id="setup-and-configuration">Setup and configuration</h2>
@@ -423,12 +423,12 @@
 
 <h3 id="testsuite-suite">testsuite.suite</h3>
 
-<p>This file is a relic from Sahi where you define test cases and there respective start url are defined in this file. It has a simple own format:</p>
+<p>This file is a relict from Sahi where you define test cases and their respective start urls. It has a simple own format:</p>
 
 <pre><code>&lt;CASE-PATH&gt;/&lt;CASE-FILE&gt; &lt;START-URL&gt;
 </code></pre>
 
-<p><code>&lt;CASE-PATH&gt;</code> is a path within the testsuite file which have to contain the file <code>&lt;CASE_FILE&gt;</code>. The <code>&lt;START-URL&gt;</code> is not longer used by Sakuli (but required to fulfill the file format). The format also supports comments (<code>//</code> at the beginn of a line). Comments are the usual way to activate or deactive testcases.</p>
+<p><code>&lt;CASE-PATH&gt;</code> is a path within the testsuite file which have to contain the file <code>&lt;CASE_FILE&gt;</code>. The <code>&lt;START-URL&gt;</code> is not longer used by Sakuli (but required to fulfill the file format). The format also supports comments (<code>//</code> at the beginning of a line). Comments are the usual way to activate or deactivate testcases.</p>
 
 <blockquote>
 <p>The configured start-url is omitted to force test authors to write explicit navigation to the url in the testcases using <code>_navigateTo</code>.</p>
@@ -441,10 +441,10 @@
 <pre><code>testsuite.id=SomeName
 </code></pre>
 
-<p>It &ldquo;inherits&rdquo; its values from <code>../sakuli.properties</code> (which also means, that the same property from sakuli.properties is overriden). </p>
+<p>It &ldquo;inherits&rdquo; its values from <code>../sakuli.properties</code> (which also means, that the same property from sakuli.properties is overridden). </p>
 
 <blockquote>
-<p>Property files are a common way to store configuration in Java the former runtime for Sakuli. It is a simple key value format (<code>&lt;KEY&gt;=&lt;VALUE&gt;</code>) where every line defines a key-value pair. To organize the keys it is a common - but not required - pattern to seperate names by dots (similar to Java namespaces)</p>
+<p>Property files are a common way to store configuration in Java the former runtime for Sakuli. It is a simple key value format (<code>&lt;KEY&gt;=&lt;VALUE&gt;</code>) where every line defines a key-value pair. To organize the keys it is a common - but not required - pattern to separate names by dots (similar to Java namespaces)</p>
 </blockquote>
 
 <p>There are several predefined properties to configure the behavior of Sakuli (* indicates a required property):</p>
