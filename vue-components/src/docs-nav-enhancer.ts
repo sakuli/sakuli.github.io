@@ -8,10 +8,13 @@ import { $$, createToggle } from "./dom-utils";
             const isActive = !!(e.querySelector('a.active'));
             const toggleInit: [string, string] = isActive ? ['block', 'none'] : ['none', 'block'];
             const toggleDisplay = createToggle(childList.style, 'display', toggleInit)
-            e.querySelector('i').addEventListener('click', evt => {
-                toggleDisplay();
-                evt.stopPropagation();
-            })
+            const icon = e.querySelector('i');
+            if (icon) {
+                icon.addEventListener('click', evt => {
+                    toggleDisplay();
+                    evt.stopPropagation();
+                })
+            }
         })
     })
 
