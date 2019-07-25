@@ -52,7 +52,7 @@ After confirming the prompt, the empty project has been initialized.
 
 ## Installation
 
-The following steps are required to set up Sakuli with multiple browsers.
+The following steps are required to set up Sakuli to work with multiple browsers.
 Once the initial setup is done, we will dive right into our first test.
 
 ### WebDriver Installation
@@ -61,7 +61,7 @@ Sakuli utilizes the [WebDriver protocol](https://www.w3.org/TR/webdriver1/) to r
 In addition to the browser itself, you need to install the corresponding WebDriver as well.
 Several wrapper packages can be found on [npmjs.com](https://npmjs.com), which allow the  installation of the required binaries via `npm`.
 
-Since some users encountered issues with geckodriver on Firefox, we recommend using chromedriver at the moment. We are working on fixtures and workarounds for geckodriver.
+Since some users encountered issues with geckodriver on Firefox, we recommend using chromedriver at the moment. We are working on fixes and workarounds for geckodriver.
 
 At the moment, the preferred browser to run Sakuli tests is Chrome. A suitable WebDriver can be installed via
 
@@ -84,7 +84,7 @@ macOS already ships a WebDriver for Safari, so there is no need to install an ad
 npm i chromedriver@73.0.0
 {{< /highlight >}}
 
-Sakuli is not limited to any specific browser.
+Sakuli is not limited to work with only a single browser.
 When installing multiple WebDriver packages, you can easily switch between different browsers.
 
 **Regarding Windows Users:** On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you will be prompted with its installation path, so you can easily add it to your `%PATH%` variable.
@@ -97,7 +97,7 @@ Sample path:
 #### 3rd-party dependencies
 
 One of Sakulis core components, [nut.js](https://github.com/nut-tree/nut-js), requires OpenCV.
-Sakuli ships a pre-built version of OpenCV. Nonetheless, the installation still requires certain 3rd-party dependencies.
+Sakuli ships a pre-built version of OpenCV. Nonetheless, the installation still requires some 3rd-party dependencies.
 
 #### Windows
 
