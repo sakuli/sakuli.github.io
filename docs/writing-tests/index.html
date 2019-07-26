@@ -386,7 +386,7 @@
             <h1>Writing Tests</h1>
             
 
-<p>With Sakuli v2+ we changed a lot under the hood of Sakuli and completely replaced the technology-stack. A more flexible and future-ready architecture as well as a maximum of backward compatibility.</p>
+<p>With Sakuli v2+ we changed a lot under the hood of Sakuli and completely replaced the technology-stack. This resulted in a more flexible and future-ready architecture while remaining a maximum of backward compatibility.</p>
 
 <h2 id="major-changes-to-sakuli1-migration">Major Changes to Sakuli1 (Migration)</h2>
 
@@ -394,32 +394,32 @@
 
 <h3 id="async-await">Async / Await</h3>
 
-<p>You might wonder where the <code>await</code> keyword came from when you see Sakuli v2+ code. This is caused by the decision to use NodeJs as the new Runtime for Sakuli. the following section will describe the background of async / await syntax and its use in Sakuli. If you are familiar with JavaScript you might skip this section since it contains a lot of background information.</p>
+<p>You might have wondered where the <code>await</code> keyword came from when you saw the Sakuli v2+ code. It is caused by the decision to use NodeJs as the new Runtime for Sakuli. The following section will describe the background of async / await syntax and its use in Sakuli. If you are already familiar with JavaScript, you can skip this section since it contains a lot of background information.</p>
 
 <h4 id="why-we-need-it">Why we need it</h4>
 
 <p><strong><em>TL;DR;</em></strong></p>
 
 <ul>
-<li>Due to the runtime and core libraries, asynchronous operations are required (and can&rsquo;t be turned into synchronous operations)</li>
+<li>Due to the runtime and core libraries, asynchronous operations are required (and cannot be turned into synchronous operations)</li>
 <li>Async/Await is the most idiomatic way to handle asynchronous code in JavaScript</li>
 </ul>
 
-<p>If you ever worked with Sakuli and followed our <a href="/docs/getting-started">Getting Started</a> guide you may have noticed one of the most obvious paradigm changes in the test syntax: The wrapping <code>(async () =&gt; /*...*/)().then(done)</code> and the extensive use of <code>await</code>. This is due to the new runtime <a href="https://nodejs.org">NodeJs</a> and its asynchronous nature. NodeJs executes scripts in a single-thread and therefore makes heavy use of asynchronous operations to not block the execution within this thread. The underlying JavaScript engine is <a href="https://v8.dev/">V8</a> (which also powers the JavaScript execution in <a href="https://www.chromium.org/Home">Chromium Browsers</a>). To make this asynchronous behavior happen, V8 uses a so called &ldquo;Event-Loop&rdquo; with a &ldquo;Call-Stack&rdquo; of all deferred operations (like: reading a file, making a web-request, do heavy computation and so on). <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">This talk</a> explains the behavior in a short and entertaining way. A good mental model for the event loop is a (fast-food) restaurant where you place an order at the counter and get an receipt which informs you when your food is ready, so you can do anything else in the meantime and you are not blocked until you get your food and can do further operations (e.g. eat your meal).</p>
+<p>If you ever worked with Sakuli and followed our <a href="/docs/getting-started">&ldquo;Getting started&rdquo;</a> guide,you might have noticed one of the most obvious paradigm changes in the test syntax: The wrapping <code>(async () =&gt; /*...*/)().then(done)</code> and the extensive use of <code>await</code>. This is due to the new runtime <a href="https://nodejs.org">NodeJs</a> and its asynchronous nature. NodeJs executes scripts in a single-thread and therefore makes heavy use of asynchronous operations to not block the execution within this thread. The underlying JavaScript engine is <a href="https://v8.dev/">V8</a> (which also powers the JavaScript execution in <a href="https://www.chromium.org/Home">Chromium Browsers</a>). To make this asynchronous behaviour happen, V8 uses a so called &ldquo;Event-Loop&rdquo; with a &ldquo;Call-Stack&rdquo; of all deferred operations (like: reading a file, making a web-request, doing heavy computation and so on). <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">This talk</a> explains the behaviour in a short and entertaining way. A good mental model for the event loop is a (fast-food) restaurant where you place an order at the counter, get a receiver which informs you when your food is ready, so you can do something else in the meantime and you are not blocked until you get your food and can do further operations (e.g. eat your meal).</p>
 
-<p>But how does all this effects Sakuli? Sakuli V1 was running within a Java Virtual Machine and the test-scripts where executed in the <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino-Engine</a> (JavaScript Runtime for the JVM) - its fundamental treatment of asynchronous operations completely differs compared to NodeJs. Simply said, everything in Java is blocking until you make it non-blocking while in NodeJs (many) operations are non-blocking by default. In Java for example it is a kind of common pattern to run while loop until the asynchronous operation sets its condition to false. This repl shows the basic idea: <a href="https://repl.it/@tnobody/non-blocking-vs-blockingjava">Java verison</a>.</p>
+<p>But how does all this effect Sakuli? Sakuli V1 was running within a Java Virtual Machine and the test-scripts were executed in the <a href="https://developer.mozilla.org/de/docs/Rhino">Rhino-Engine</a> (JavaScript Runtime for the JVM) - its fundamental treatment of asynchronous operations completely differs compared to NodeJs. Simply said, everything in Java is blocking until you make it non-blocking, while in NodeJs (many) operations are non-blocking by default. In Java, for example, it is a rather common pattern to run while loop until the asynchronous operation sets its condition to false. This repl shows the basic idea: <a href="https://repl.it/@tnobody/non-blocking-vs-blockingjava">Java version</a>.</p>
 
-<p>&ldquo;Unfortunately&rdquo; it is not (easily) possible to turn non-blocking operations into blocking operations in NodeJs (<a href="https://repl.it/@tnobody/non-blocking-vs-blockingjs">have a look at this repl</a>) and Sakulis core technologies (selenium-webdriver adn Nut.Js) make heavy use of asynchronous operations. There are projects like <a href="https://www.npmjs.com/package/fibers">fibers</a> but they rely on native (OS-dependent) libraries and therefore we decided to avoid another OS specific library in Sakuli.</p>
+<p>&ldquo;Unfortunately&rdquo;, it is not (easily) possible to turn non-blocking operations into blocking operations in NodeJs (<a href="https://repl.it/@tnobody/non-blocking-vs-blockingjs">have a look at this repl</a>) and Sakulis core technologies (selenium-webdriver and Nut.Js) make heavy use of asynchronous operations. There are projects like <a href="https://www.npmjs.com/package/fibers">fibers</a>, but they rely on native (OS-dependent) libraries and therefore we have decided to avoid another OS specific library in Sakuli.</p>
 
-<p>Last but not least: Using and writing asynchronous code is the most idiomatic way to write JavaScript nowadays. Using async/await is a kind of syntactic sugar which let us write asynchronous code like it would be synchronous just by using the <code>await</code> keyword. A short look back in the days makes clear how JavaScript landed there:</p>
+<p>Last but not least: Using and writing asynchronous code is the most idiomatic way to write JavaScript nowadays. Using async/await is a kind of syntactic sugar which lets us write asynchronous code like it would be synchronous just by using the <code>await</code> keyword. A short look back in the old days makes clear, how JavaScript landed there:</p>
 
-<p>Back in the days the most common way to handle async code was via callbacks which are passed to the async operation and where executed when the operation finished. This approach was useful and good enough for the usual JavaScript use-case in these days: Handling events in the DOM. But when NodeJs was released and also Browser applications became more and more complex the developers ended up the so called <a href="http://callbackhell.com/">&ldquo;callback-hell&rdquo;</a>. To exit the callback hell ES6 introduced the <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code> class</a>. The advantage of a promise is its ability to chain with other promises. Which made it way more elegant to write subsequent, dependent asynchronous operations. A good read on this topic can be found in the chapter VIII of <a href="https://exploringjs.com/impatient-js/toc.html">JavaScript for impatient programmers</a></p>
+<p>Back in those days, the most common way to handle async code was via callbacks which were passed to the async operation and where they were executed when the operation was finished. This approach was useful and acceptable for the usual JavaScript use-case in those days: Handling events in the DOM. But when NodeJs was released and also Browser applications became more and more complex the developers ended up in the so called <a href="http://callbackhell.com/">&ldquo;callback-hell&rdquo;</a>. To exit the callback hell ES6 introduced the <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code> class</a>. The advantage of a promise is its ability to chain with other promises. This makes it way more elegant to write subsequent, dependent asynchronous operations. A good read on this topic can be found in the chapter VIII of <a href="https://exploringjs.com/impatient-js/toc.html">JavaScript for impatient programmers</a></p>
 
 <h4 id="the-async-wrapper">The async wrapper</h4>
 
-<p>You might have noticed, that a testcase in Sakuli v2 is wrapped within <code>(async () =&gt; /*...*/)().then(done)</code> this construct is called  <em>immediately invoked function expression</em> (IIFE). It is basically a function definition which is immediately invoked. This pattern was widely used in JavaScript to preserve scopes and namespaces, since every symbol which is defined at the top level of a script is in global namespace an may potentially collide with other scripts. In the era of <a href="https://medium.com/fusebox/beginner-web-developers-use-a-bundler-31ab0c91d2f5">web bundler</a> and <a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES-modules</a> this use-case became more and more irrelevant but the IIFE still remains relevant with the introduction of async / await in JavaScript. One caveat of this syntax is that the <code>await</code> keyword is only available within a async function - because the engine will wrap the whole body of this function with a Promise. That means you need your code to be executed within a async function in order to make use of the <code>await</code> keyword. In the top level IIFE we declare the actual function as <code>async</code> and can make use of <code>await</code>. Since the result of this function is automatically turned into a Promise we can invoke the <code>then</code> and pass the <code>done</code> function to it. <code>done</code> is a Sakuli specific function which indicates Sakuli that the testcase script is finished. There is currently a discussion on the JavaScript <a href="https://github.com/tc39/proposal-top-level-await">proposal in stage 3</a> which would introduce a <em>top level await</em> in JavaScript.</p>
+<p>You might have noticed, that if a testcase in Sakuli v2 is wrapped within <code>(async () =&gt; /*...*/)().then(done)</code> this construct, it is called  <em>immediately invoked function expression</em> (IIFE). It is basically a function definition which is immediately invoked. This pattern is widely used in JavaScript to preserve scopes and namespaces, since every symbol which is defined at the top level of a script is in global namespace and may potentially collide with other scripts. In the era of <a href="https://medium.com/fusebox/beginner-web-developers-use-a-bundler-31ab0c91d2f5">web bundler</a> and <a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES-modules</a> this use-case became more and more irrelevant, but the IIFE still remains relevant with the introduction of async / await in JavaScript. One caveat of this syntax is that the <code>await</code> keyword is only available within an async function - because the engine will wrap the whole body of this function with a Promise. That means you need your code to be executed within an async function in order to make use of the <code>await</code> keyword. In the top level IIFE we declare the actual function as <code>async</code> and can make use of <code>await</code>. Since the result of this function is automatically turned into a Promise we can invoke the <code>then</code> and pass the <code>done</code> function to it. <code>done</code> is a Sakuli specific function which indicates Sakuli that the testcase script is finished. There is currently a discussion on the JavaScript <a href="https://github.com/tc39/proposal-top-level-await">proposal in stage 3</a> which would introduce a <em>top level await</em> in JavaScript.</p>
 
-<p>If you totally want to avoid this construct you can still use the then function of a Promise. The example code of the <a href="/docs/getting-started">Getting started guide</a> would look like this:</p>
+<p>If you want to avoid this construct completely, you can use the then function of a Promise. The example code of the <a href="/docs/getting-started">&ldquo;Getting started&rdquo; guide</a> would look like this:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -450,22 +450,22 @@
 </div>
 </div>
 
-<p>This is also a totally valid use of Sakuli. But this approach has two downsides:</p>
+<p>This is also a totally valid use of Sakuli. However, this approach has two downsides:</p>
 
 <ul>
-<li>If you are less familiar with JavaScript it could be harder to read and understand</li>
+<li>If you are less familiar with JavaScript, it could be harder to read and understand</li>
 <li>The Sakuli documentation will mostly use the await / async syntax in the examples</li>
 </ul>
 
-<p>So we would advise to not use the <code>.then(...)</code> syntax until you are completely sure what you do.</p>
+<p>For these reasons, we would advise you not to use the <code>.then(...)</code> syntax, unless you are completely sure that you know what you are doing.</p>
 
 <h4 id="async-functions">Async Functions</h4>
 
-<p>The most functions which implements the <a href="https://sahipro.com/docs/sahi-apis/index.html">Sahi DSL</a> - recognizable by prefixed underscore - return a Promise. That means you should put an <code>await</code> in front of it. An exception from this pattern are the <a href="/apidoc/sakuli-legacy/interfaces/accessorapi.html">Accesor functions</a> which creates query objects to access elements in the dom. Yiu can check if the function returns a Promise in the <a href="apidoc/sakuli-legacy/interfaces/sahiapi.html">API docs of SahiApi</a>. If you are not sure if you need an <code>await</code> you can put it any way since it will execute the function anyway as expected. Since this is not a good practice we are working on tooling which help you to identify async function like <a href="https://github.com/sakuli/sakuli/tree/feature/ts-support">Typescript support</a>.</p>
+<p>The most functions which implement the <a href="https://sahipro.com/docs/sahi-apis/index.html">Sahi DSL</a> - recognizable by prefixed underscore - return a Promise. That means you should put an <code>await</code> in front of it. An exception from this pattern, are the <a href="/apidoc/sakuli-legacy/interfaces/accessorapi.html">Accesor functions</a> which create query objects to access elements in the dom. You can check if the function returns a Promise in the <a href="apidoc/sakuli-legacy/interfaces/sahiapi.html">API docs of SahiApi</a>. If you are not sure if you need an <code>await</code>, you can put it any way since it will execute the function as expected. Since this is not a good practice, we are working on tooling which will help you identify async functions like <a href="https://github.com/sakuli/sakuli/tree/feature/ts-support">Typescript support</a>.</p>
 
 <h4 id="thenable-classes">Thenable Classes</h4>
 
-<p>Sakuli has some classes - especially these for native interactions - which implements the <a href="https://de.wikipedia.org/wiki/Fluent_Interface">Fluent Interface pattern</a> where you can chain method invocations on the same object. Unfortunately this doesn&rsquo;t really play nice with async operations. Methods of a fluent api always return the object itself or at least an instance of the same class todo an async (and awaitable) method we rather need to return a Promise. To still accomplish the goal of backward compatibility all classes which implement a fluent interface but have async methods are wrapped in an <code>Thenable&lt;ClassName&gt;</code> form of itself. This concept is highly inspired by selenium-webdrivers <a href="https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index_exports_ThenableWebDriver.html"><code>ThenableWebdriver</code></a>. From an end-user perspective you can use the fluent interface nearly as before, besides a little <code>await</code> at the beginning:</p>
+<p>Sakuli has some classes - especially these for native interactions - which implement the <a href="https://de.wikipedia.org/wiki/Fluent_Interface">Fluent Interface pattern</a> where you can chain method invocations on the same object. Unfortunately, this does not really play nice with async operations. Methods of a Fluent API always return the object itself or at least an instance of the same class. An async (and awaitable) method rather needs to return a Promise. To still accomplish the goal of backward compatibility all classes which implement a fluent interface but have async methods are wrapped in a <code>Thenable&lt;ClassName&gt;</code> form of itself. This concept is highly inspired by selenium-webdrivers <a href="https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index_exports_ThenableWebDriver.html"><code>ThenableWebdriver</code></a>. From an end-user perspective you can use the fluent interface almost like before, besides a little <code>await</code> at the beginning:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -496,15 +496,15 @@
 <li><a href="/apidoc/sakuli-legacy/interfaces/thenableregion.html">Region</a></li>
 </ul>
 
-<p>The technical trick behind this is that there are two implementations: The actual class with the async functions and a <em>thenable</em>-class which implements the PromiseLike interface which basically forces to implement a <code>then</code> function and is therefore &ldquo;awaitable&rdquo;. The wrapper class also holds a Promise with the instance to the <em>actual</em> class. When a method of the thenable class is invoked it delegates the call to the same method of the actual class and returns itself with the promise returned by the actual method. Since the thenable class itself is a promise it will resolve to an instance of the actual class.</p>
+<p>The technical trick behind this is that there are two implementations: The actual class with the async functions and a <em>thenable</em>-class which implements the PromiseLike interface which basically forces to implement a <code>then</code> function and is therefore &ldquo;awaitable&rdquo;. The wrapper class also holds a Promise with the instance to the <em>actual</em> class. When a method of the thenable class is invoked it delegates the call to the same method of the actual class and returns itself with the promise returned by the actual method. Since the thenable class itself is a promise, it will resolve to an instance of the actual class.</p>
 
 <h3 id="include-and-includedynamic">_include and _includeDynamic</h3>
 
-<p>If you ever wrote larger testcases or different testcases on the same system you might came up with modularisation of common functions. For example the login to a system is always the same in all testcases so you put it into a separate file.</p>
+<p>If you ever wrote larger testcases or different testcases on the same system, you might have come up with a modularisation of common functions. For example, the login to a system is always the same in all testcases, so you put it into a separate file.</p>
 
-<p>In Sakuli v1 there were functions to load this files into your actual testcase: <code>_include</code> or <code>_includeDynamic</code>. The code usually looked like this:</p>
+<p>In Sakuli v1 there were functions to load these files into your actual testcase: <code>_include</code> or <code>_includeDynamic</code>. The code usually looked like this:</p>
 
-<p><code>&lt;TESTSUITE&gt;/common/login.js</code>:
+<p><code>&lt;TESTSUITE&gt;/common/login.js</code>:
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
@@ -520,7 +520,7 @@
 </div>
 </div></p>
 
-<p><code>&lt;TESTSUITE&gt;/testcase/case.js</code>
+<p><code>&lt;TESTSUITE&gt;/testcase/case.js</code>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
@@ -556,14 +556,14 @@
 </div>
 </div></p>
 
-<p>Two interesting things can be observed here:</p>
+<p>Two interesting aspects can be observed here:</p>
 
 <ul>
-<li>Functions defined in the include script were put to the global namespace</li>
-<li>It isn&rsquo;t an idiomatic way to require dependent code in JavaScript (nowadays)</li>
+<li>Functions defined in the include script, were put to the global namespace</li>
+<li>It is not an idiomatic way to require dependent code in JavaScript (nowadays)</li>
 </ul>
 
-<p>Sakuli now introduces support for <a href="https://2ality.com/2014/09/es6-modules-final.html">ES-module syntax</a>. So the example above have to be rewritten to:</p>
+<p>Sakuli now introduces support for <a href="https://2ality.com/2014/09/es6-modules-final.html">ES-module syntax</a>. So, the example above has to be rewritten to:</p>
 
 <p><i class="fas fa-file"></i>  <code>&lt;TESTSUITE&gt;/common/login.js</code>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -617,7 +617,7 @@
 </div>
 </div></p>
 
-<p>Beside the added async / await keywords. We see, that the first line of each script changed. In the first script all functions (or classes, enums, constants, etc) have to be explicitly exported by the script (module would be the more accurate term) if they should be used in other scripts. In the actual testcase script the <code>_include</code> function is removed and replaced by an <code>import</code>. The import ensures, that we only import symbols that are required in the current script and its <em>global</em> namespace. Each function which is required in the testcase script have to be imported explicitly. An alternative syntax is to import everything within an own namespace:</p>
+<p>Besides the added async / await keywords, we can see that the first line of each script changed. In the first script, all functions (or classes, enums, constants, etc) have to be explicitly exported by the script (module would be the more accurate term) if they should be used in other scripts. In the actual testcase script the <code>_include</code> function is removed and replaced by an <code>import</code>. The import ensures, that we only import symbols that are required in the current script and its <em>global</em> namespace. Each function which is required in the testcase script, has to be imported explicitly. An alternative syntax is to import everything within an own namespace:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

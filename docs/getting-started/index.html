@@ -389,16 +389,16 @@
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p>Sakuli is built and tested against the current LTS version of Node.js.
-So in order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.</p>
+In order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.</p>
 
-<p>To install Node.js on your system, you can either go to the <a href="https://nodejs.org/en/">node website</a>, or you could use tools like <a href="https://github.com/nvm-sh/nvm">node version manager</a>, a utility to manage various node versions on a per-user basis. In general, a per-user installation is the preferred way since it runs in unprivileged mode.</p>
+<p>To install Node.js on your system, you can either go to the <a href="https://nodejs.org/en/">node website</a>, or you can use tools like <a href="https://github.com/nvm-sh/nvm">node version manager</a>, a utility to manage various node versions on a per-user basis. In general, a per-user installation is the preferred way since it runs in an unprivileged mode.</p>
 
 <h2 id="initialisation">Initialisation</h2>
 
 <p>This guide will get you started with writing Sakuli tests from scratch.
 To follow the tutorial, you should create a new npm project in an empty folder.</p>
 
-<p>For this guide, we will assume that our working directory is <code>/tmp/sakuli_starter</code> on a *nix system, or <code>%Temp%\sakuli_starter</code> on a Windows machine, respectively.</p>
+<p>For this guide, we will assume that our working directory is <code>/tmp/sakuli_starter</code> on a *nix system, or <code>%Temp%\sakuli_starter</code> on a Windows machine.</p>
 
 <p>To create a new, empty project, first run:</p>
 
@@ -426,22 +426,22 @@ You can either modify these fields to your needs, or just accept the defaults.</
 
 Is this OK? <span style="color:#f92672">(</span>yes<span style="color:#f92672">)</span></code></pre></div>
 
-<p>After confirming the prompt, an empty project has been initialized.</p>
+<p>After confirming the prompt, the empty project has been initialized.</p>
 
 <h2 id="installation">Installation</h2>
 
-<p>The following steps are required to set up Sakuli to work with a multitude of browsers.
+<p>The following steps are required to set up Sakuli to work with multiple browsers.
 Once the initial setup is done, we will dive right into our first test.</p>
 
 <h3 id="webdriver-installation">WebDriver Installation</h3>
 
-<p>Sakuli utilizes the <a href="https://www.w3.org/TR/webdriver1/">WebDriver protocol</a> to remote control browsers during test execution.
+<p>Sakuli utilizes the <a href="https://www.w3.org/TR/webdriver1/">WebDriver protocol</a> to remote control browsers during the test execution.
 In addition to the browser itself, you need to install the corresponding WebDriver as well.
-Several wrapper packages can be found on <a href="https://npmjs.com">npmjs.com</a>, which allow to install the required binaries via <code>npm</code>.</p>
+Several wrapper packages can be found on <a href="https://npmjs.com">npmjs.com</a>, which allow the  installation of the required binaries via <code>npm</code>.</p>
 
 <p>Since some users encountered issues with geckodriver on Firefox, we recommend using chromedriver at the moment. We are working on fixes and workarounds for geckodriver.</p>
 
-<p>At the moment, the preferred browser to run Sakuli tests is Chrome, a suitable WebDriver can be installed via</p>
+<p>At the moment, the preferred browser to run Sakuli tests is Chrome. A suitable WebDriver can be installed via</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i chromedriver</code></pre></div>
 
@@ -450,16 +450,16 @@ Several wrapper packages can be found on <a href="https://npmjs.com">npmjs.com</
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add chromedriver</code></pre></div>
 
 <p>There are also WebDriver packages for <a href="https://www.npmjs.com/package/iedriver">IE</a> and <a href="https://www.npmjs.com/package/edgedriver">Edge</a>.
-macOS already ships a WebDriver for Safari, so there&rsquo;s no need to install an additional package.</p>
+macOS already ships a WebDriver for Safari, so there is no need to install an additional package.</p>
 
 <p><strong>Attention:</strong> Be careful to install the correct version of a WebDriver package for your installed browser version. To install e.g. ChromeDriver for Chrome 73 you have to install</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i chromedriver@73.0.0</code></pre></div>
 
 <p>Sakuli is not limited to work with only a single browser.
-When installing multiple WebDriver packages, you can easily switch between multiple browsers.</p>
+When installing multiple WebDriver packages, you can easily switch between different browsers.</p>
 
-<p><strong>Regarding Windows Users:</strong> On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you&rsquo;ll be prompted with its installation path, so you can easily add it to your <code>%PATH%</code> variable.</p>
+<p><strong>Regarding Windows Users:</strong> On Windows machines, you will have to manually add the respective WebDriver location to your path, otherwise Sakuli will not be able to find it. Once you installed a WebDriver package via npm, you will be prompted with its installation path, so you can easily add it to your <code>%PATH%</code> variable.</p>
 
 <p>Sample path:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">%USERPROFILE%<span style="color:#ae81ff">\\</span>AppData<span style="color:#ae81ff">\\</span>Roaming<span style="color:#ae81ff">\\</span>npm<span style="color:#ae81ff">\\</span>node_modules<span style="color:#ae81ff">\\</span>chromedriver<span style="color:#ae81ff">\\</span>lib<span style="color:#ae81ff">\\</span>chromedriver<span style="color:#ae81ff">\\</span></code></pre></div></p>
@@ -467,7 +467,7 @@ When installing multiple WebDriver packages, you can easily switch between multi
 <h4 id="3rd-party-dependencies">3rd-party dependencies</h4>
 
 <p>One of Sakulis core components, <a href="https://github.com/nut-tree/nut-js">nut.js</a>, requires OpenCV.
-Sakuli ships a pre-built version of OpenCV, nonetheless, the installation still requires some 3rd-party dependencies.</p>
+Sakuli ships a pre-built version of OpenCV. Nonetheless, the installation still requires some 3rd-party dependencies.</p>
 
 <h4 id="windows">Windows</h4>
 
@@ -481,7 +481,7 @@ You can either set them up manually, or install them via npm:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn global add windows-build-tools</code></pre></div>
 
 <p>In case of errors when installing the <code>npm</code> package, please make sure that PowerShell is available on your system <code>PATH</code>.
-See <a href="https://github.com/felixrieseberg/windows-build-tools/issues/20#issuecomment-373885943">this issue</a> for reference.</p>
+See <a href="https://github.com/felixrieseberg/windows-build-tools/issues/20#issuecomment-373885943">this issue</a> for further reference.</p>
 
 <h4 id="macos">macOS</h4>
 
@@ -506,13 +506,12 @@ You can install them by running
 <p>Installation on *buntu:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install build-essential python libxtst-dev libpng++-dev</code></pre></div></p>
 
-<p>Setups on other distributions might differ.</p>
-
-<p>The installation process is an open issue and will be enhanced in the near future, so using Sakuli becomes even more enjoyable!</p>
+<p>Setups on other distributions might differ.
+The installation process is an open issue and will be enhanced in the near future, so using Sakuli will become even more enjoyable!</p>
 
 <h4 id="sakuli-installation">Sakuli Installation</h4>
 
-<p>Still in our newly created project, we will install Sakuli by running</p>
+<p>In our newly created project, we will now install Sakuli by running</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/cli</code></pre></div>
 
@@ -533,21 +532,21 @@ You can install them by running
 
 <p>Since we wanted to keep Sakuli mostly compatible to V1 the file layout looks basically the same for test suites.</p>
 
-<p>Each Testsuite is located in a dedicated folder. A common practice is that a testsuite represents the system you want to test, so you need to create that folder in your project root (where the package.json file is located):</p>
+<p>Each testsuite is located in its own particular folder. A common practice is that a testsuite represents the system you want to test, so you need to create that folder in your project root (where the package.json file is located):</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-sut</code></pre></div>
 
-<p>To describe the testsuite with its testcases two additional files are required: <code>testsuite.properties</code> and <code>testsuite.suite</code>. These files are required for backwards compatibility (they might not be necessary in the future but will at least be supported). These files should be added to the <code>my-sut</code> folder.</p>
+<p>To describe the testsuite with its testcases, two additional files are required: <code>testsuite.properties</code> and <code>testsuite.suite</code>. These files are required for backwards compatibility (they might not be necessary in the future but will at least be supported). These files should be added to the <code>my-sut</code> folder.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd my-sut
 touch testsuite.suite
 touch testsuite.properties</code></pre></div>
 
-<p>we can add the following contents to <code>testsuite.properties</code>:</p>
+<p>We can add the following contents to <code>testsuite.properties</code>:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;testsuite.id=my-sut&#34;</span> &gt;&gt; testsuite.properties</code></pre></div>
 
-<p>This is the minimum configuration for Sakuli. The .properties files adds some metainformation for the Sakuli-Runtime and can further be used to configure other things like forwarder or the default browser of the execution.</p>
+<p>This is the minimum configuration for Sakuli. The .properties files add some metainformation for the Sakuli-Runtime and can further be used to configure other things like forwarder or the default browser of the execution.</p>
 
 <p>The <code>testsuite.suite</code> file tells Sakuli which testcases take place in this testsuite. The format is:</p>
 
@@ -560,11 +559,11 @@ touch testsuite.properties</code></pre></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-testcase
 touch my-testcase/testcase.js</code></pre></div>
 
-<p>and add this information to the <code>testsuite.suite</code> file:</p>
+<p>And add this information to the <code>testsuite.suite</code> file:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;my-testcase/testcase.js https://sakuli.io&#34;</span> &gt;&gt; testsuite.suite</code></pre></div>
 
-<p>after this setup you can add the actual testcode to <code>my-testcase/testcase.js</code>:</p>
+<p>After this setup you can add the actual testcode to <code>my-testcase/testcase.js</code>:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -593,19 +592,19 @@ touch my-testcase/testcase.js</code></pre></div>
 </div>
 </div>
 
-<p>Let´s examine this piece of code:</p>
+<p>Let us examine this piece of code:</p>
 
 <ol>
-<li>The whole test is wrapped in an async immediate invoked function, it allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations it makes your code more readable.</li>
-<li>To provide Sakuli information about our actual testcase we create a TestCase object, which handles the execution of a testcase.</li>
-<li>If any error occurred during your testcode this error is redirected to the Testcase object. It triggers Sakulis internal error handling e.g. taking a screenshot in the actual errored situation</li>
-<li>Regardless of a failed or passed test execution Sakuli saves its results. This is more like legacy artifact and will be removed in the future.</li>
+<li>The whole test is wrapped in an async immediate invoked function. It allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations, it makes your code more readable.</li>
+<li>To provide Sakuli information about our actual testcase, we create a TestCase object, which handles the execution of a testcase.</li>
+<li>If any error occurs during your testcode, it will be redirected to the Testcase object. It triggers Sakulis internal error handling e.g. taking a screenshot in the actual errored situation</li>
+<li>Regardless of a failed or passed test execution, Sakuli saves its results. This is more like legacy artifact and will be removed in the future.</li>
 <li>When the async code within the main function (see 1.) is completed, a callback passed to the <code>then</code> function is invoked. <code>done</code> is a global function which is injected by Sakuli and tells the engine that the testexecution is over (in theory you could call this function <code>done()</code> but this syntax above is recommended).</li>
 </ol>
 
 <h2 id="write-your-first-test">Write your first Test</h2>
 
-<p>Let´s write a simple test using the Sakuli.io homepage. This test will verify that our &ldquo;Getting Started&rdquo; guide you are reading at the very moment is still accessible.</p>
+<p>Let us write a simple test using the Sakuli.io homepage. This test will verify that our &ldquo;Getting Started&rdquo; guide you are reading at this very moment is still accessible.</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -645,10 +644,10 @@ touch my-testcase/testcase.js</code></pre></div>
 </div>
 
 <ol>
-<li>Since we&rsquo;re dealing with a web test, the first thing we want to do is to <code>_navigateTo</code> our target page. Instead of manually setting up the correct WebDriver instance, we just have to provide a target URL, Sakuli will take care of the rest for us. <code>await</code> indicates that we are patiently waiting for our page to load, before we continue with our next teststep.</li>
-<li>Once our initial page load has completed, it&rsquo;s of great interest for us how long it took to render. When it comes to runtime, Sakuli not only measures execution time of testcases, but also allows to split a single testcase into several logical steps. This way it&rsquo;s possible to accurately measure the runtime of certain processes like e.g. <em>login</em>, <em>shopping cart</em>, <em>checkout</em> and so on. By calling <code>testCase.endOfStep(&quot;Open Landing Page&quot;, 5, 10);</code>, we&rsquo;re ending our first step, the initial page load. In addition, it&rsquo;s also possible to specify <code>warning</code> and <code>critical</code> thresholds for each step. Whenever a step exceeds on of these values, its result will change from <code>OK</code> to <code>WARNING</code> or <code>CRITICAL</code>.</li>
-<li>With Sakuli it&rsquo;s really easy to interact with web elements. In our current example we want to <code>_click</code> a <code>_link</code> which is identified by some given text. Once again, we do not have to take care of many details, Sakuli will do most of the heavy lifting for us. We&rsquo;re just passing the link text to Sakuli, which will search for our desired element using multiple identifiers. This way we do not have to worry about whether to use an id, a CSS selector or something else to identify our element. As we have already seen in our first test action, <code>await</code> will wait until our testaction has completed.</li>
-<li>In some cases it is really helpful to visually verify testexecution. Sakuli comes with a built-in <code>_highlight</code> function, which will highlight an element with a bright red border. Although being useful, <code>_highlight</code> should be used carefully since it will increase the overall test runtime.</li>
+<li>Since we are dealing with a web test, the first thing we want to do is to <code>_navigateTo</code> our target page. Instead of manually setting up the correct WebDriver instance, we just have to provide a target URL. Sakuli will take care of the rest for us. <code>await</code> indicates that we are patiently waiting for our page to load, before we continue with our next teststep.</li>
+<li>Once our initial page load has been completed, it is of our great interest to know how long it took to render. When it comes to runtime, Sakuli does not only measure the execution time of testcases, but also allows to split a single testcase into several logical steps. This way it is possible to accurately measure the runtime of certain processes like e.g. <em>login</em>, <em>shopping cart</em>, <em>checkout</em> and so on. By calling <code>testCase.endOfStep(&quot;Open Landing Page&quot;, 5, 10);</code>, we are ending our first step, the initial page load. In addition, it is also possible to specify <code>warning</code> and <code>critical</code> thresholds for each step. Whenever a step exceeds one of these values, its result will change from <code>OK</code> to <code>WARNING</code> or <code>CRITICAL</code>.</li>
+<li>With Sakuli it is really easy to interact with web elements. In our current example we want to <code>_click</code> a <code>_link</code> which is identified by some given text. Once again, we do not have to take care of many details, as Sakuli will do most of the heavy lifting for us. We are just passing the link text to Sakuli, which will search for our desired element using multiple identifiers. This way we do not have to worry about using an id, a CSS selector or something else to identify our element. As we have already seen in our first test action, <code>await</code> will wait until our testaction has been completed.</li>
+<li>In some cases, it is really helpful to visually verify testexecution. Sakuli comes with a built-in <code>_highlight</code> function, which will highlight an element with a bright red border. Although being useful, <code>_highlight</code> should be used carefully since it will increase the overall test runtime.</li>
 </ol>
 
 <h2 id="execute-your-first-test">Execute your first test</h2>
@@ -662,22 +661,22 @@ Everything required to execute the test is described in a project config, so tes
 <p>The way we set up and configured our project in this guide, Sakuli is only available to this particular project. <code>npx</code> is a really handy tool which allows us to execute our Sakuli CLI directly from the command line, even though it is not in our PATH.</p>
 
 <p>In order to run our first test, we just have to execute <code>npx sakuli run my-sut</code> inside our project folder (e.g. <code>/tmp/sakuli_starter</code> on *nix).
-By default, Sakuli will pick up the browser configured in the <code>testsuite.properties</code> file, but with npx its possible to change the browser on the fly:
+By default, Sakuli will pick up the browser configured in the <code>testsuite.properties</code> file, but with npx it is possible to change the browser on the fly:
 <img src="/images/gettingstarted/simple_sakuli_test.png" alt="Successful Sakuli test execution" style="max-width: 400px; float:right" /></p>
 
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">`</span>npx sakuli run my-sut --browser<span style="color:#f92672">=</span>chrome<span style="color:#e6db74">`</span></code></pre></div>
-will execute our test in Chrome.</p>
+This command will execute our test in Chrome.</p>
 
-<p>Regardless of browser choice, as long as our site didn&rsquo;t slow down, you should see a successful test result, similar to the image on the right.
-The nice thing about running your tests with <code>npx</code> is the flexibility to easily customize your test runs without having to edit files.</p>
+<p>Regardless of the browser choice, as long as our site did not slow down, you should see a successful test result, similar to the image on the right.
+The advantage of running your tests with <code>npx</code> is the flexibility to easily customize your testruns without having to edit files.</p>
 
 <h3 id="npm-test">npm test</h3>
 
-<p>As mentioned earlier, we installed Sakuli local to our test project.
+<p>As mentioned earlier, we installed Sakuli locally to our test project.
 An alternative way to execute a Sakuli test are <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a>.</p>
 
 <p>In our project folder we can find a file named <a href="https://docs.npmjs.com/files/package.json">package.json</a>, the central configuration file for npm projects.
-This file contains a section called <code>scripts</code>, a collection of package local scripts which can be executed via npm.</p>
+This file contains a section called <code>scripts</code>, a collection of scripts that belong to this package and can be executed via npm.</p>
 
 <p>A default project contains a dummy script to execute tests, similar to the following snippet:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;scripts&#34;</span>: <span style="color:#f92672">{</span>
@@ -693,7 +692,7 @@ This file contains a section called <code>scripts</code>, a collection of packag
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm test</code></pre></div>
 inside your project folder.</p>
 
-<p>Many modern IDEs support npm scripts, so it&rsquo;s possible to trigger testexecution directly from within your IDE!</p>
+<p>Many modern IDEs support npm scripts, so it is possible to trigger testexecution directly from within your IDE!</p>
 
 <h3 id="global-installation">Global installation</h3>
 
@@ -702,10 +701,10 @@ When installed with the additional flag <code>-g</code>, Sakuli will be installe
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -g @sakuli/cli</code></pre></div>
 
-<p>Once the installation has completed, you can run your Sakuli tests from your command line by simply executing
+<p>Once the installation has been completed, you can run your Sakuli tests from your command line by simply executing
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sakuli run $PATH_TO_TESTSUITE</code></pre></div></p>
 
-<p><strong>Attention:</strong> Installing packages globally on a system wide installation of node via <code>sudo</code> is considered bad practice and might run into permission problems. Working with per-user installations is recommended!</p>
+<p><strong>Attention:</strong> Installing packages globally on a system wide installation of node via <code>sudo</code> is considered a bad practice and might run into permission problems. Working with per-user installations is recommended!</p>
 
 <h3 id="congratulations">Congratulations!</h3>
 
