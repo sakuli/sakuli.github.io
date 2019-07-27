@@ -72,11 +72,13 @@
         line-height: 2.5rem;
 
         h1 {
+            text-align: center;
             border-bottom: 1px solid $color-green;
             padding-bottom: 1.5rem;
             color: $color-green;
             animation: fromTop 1s;
             margin: 0;
+
         }
 
         p {

@@ -20,13 +20,17 @@
         <div>Forwarding your request</div>
       </div>
       <div v-if="reponseError">
-        <h3>Please fill all required fields: </h3>
+        <h3>Please fill all required fields:</h3>
         <ul v-html="reponseError"></ul>
       </div>
       <div v-if="error" class="error">
         Oops something went wrong. Please contact
         <a href="mailto:sales@consol.de">sales@consol.de</a>, reload the page or visit our
-        <a target="_blank" rel="noopener" :href="formUrl">company page form</a>
+        <a
+          target="_blank"
+          rel="noopener"
+          :href="formUrl"
+        >company page form</a>
       </div>
       <form
         v-if="!formDisabled"
@@ -35,7 +39,7 @@
         @submit.prevent="sendFormData"
       >
         <keep-alive>
-          <remote-content :href="formUrl" selector="main form" :parseContent="parseForm"/>
+          <remote-content :href="formUrl" selector="main form" :parseContent="parseForm" />
         </keep-alive>
       </form>
     </modal>
@@ -46,6 +50,12 @@ import Vue from "vue";
 import modal from "../common/modal.component.vue";
 import remoteContent from "../common/remote-content.component.vue";
 import spinner from "../common/spinner.component.vue";
+
+function ifPresent<T>(v: T | null | undefined, then: (o: T) => void) {
+  if (v != null) {
+    then(v);
+  }
+}
 
 export default Vue.extend({
   components: {
@@ -94,19 +104,23 @@ export default Vue.extend({
     parseForm(formElement: HTMLFormElement) {
       console.log("parsing", this.code);
       this.action = formElement.action;
-      formElement
-        .querySelector("#powermail_field_package")
-        .setAttribute("value", this.code);
+      ifPresent(formElement.querySelector("#powermail_field_package"), e => {
+        e.setAttribute("value", this.code);
+      });
 
-      formElement
-        .querySelector("[data-fancybox]")
-        .setAttribute("target", "_blank");
-      formElement
-        .querySelector("[data-fancybox]")
-        .setAttribute("href", "https://www.consol.com/data-privacy");
+      ifPresent(formElement.querySelector("[data-fancybox]"), e => {
+        e.setAttribute("target", "_blank");
+      })
+
+      ifPresent(formElement.querySelector("[data-fancybox]"), e => {
+          e.setAttribute("href", "https://www.consol.com/data-privacy");
+        })
+
       const submitButton = formElement.querySelector('input[type="submit"]');
-      submitButton.classList.remove("btn", "btn-primary");
-      submitButton.classList.add("button");
+      if (submitButton) {
+        submitButton.classList.remove("btn", "btn-primary");
+        submitButton.classList.add("button");
+      }
       return formElement.innerHTML;
     },
     setLoading(loading: boolean) {

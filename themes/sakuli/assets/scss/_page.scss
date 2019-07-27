@@ -6,35 +6,52 @@
         flex-direction: column;
     }
 
-    aside {
-        flex: .25;
-        margin-bottom: 2rem;
-        border-radius: 1rem;
+        article {
+        flex: 1;
+        margin-left: 2rem;
+    }
+}
 
-        ul {
-            li {
-                margin-bottom: .5rem;
+aside {
+    flex: .25;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: .5rem;
+        }
+
+        list-style: none;
+        padding-left: 1rem;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
             }
-            list-style: none;
-            padding-left: 1rem;
-            ul li {
-                @include nav-list-item()
-            }
 
-            a {
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-
-                color: darken($color-green, 30%);
-            }
+            color: darken($color-green, 30%);
         }
     }
 
-    article {
-        flex: 1;
-        margin-left: 2rem;
+    nav#TableOfContents>ul {
+
+        ul li {
+            @include chevron();
+
+            &::before {
+                width: 1em;
+                margin-left: -1em;
+            }
+
+            &.active > a {
+                font-weight: bold;
+            }
+        }
+
+
     }
 }
