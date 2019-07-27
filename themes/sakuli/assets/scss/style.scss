@@ -124,3 +124,11 @@ a {
         color: $color-gray-dark;
     }
 }
+td {
+    word-wrap:break-word;
+}
+table {
+  width:100%;
+    table-layout:fixed;
+
+}
