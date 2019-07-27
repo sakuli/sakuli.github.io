@@ -19,6 +19,8 @@ MaintenanceDescription="""
 """
 
 [[plans]]
+contactText="Your Request for"
+name="Sakuli package"
 code="S"
 instances="∞"
 #maintenance=""
@@ -32,6 +34,8 @@ price=0
 priceLink="https://www.github.com/sakuli/sakuli"
 
 [[plans]]
+contactText="Your Request for"
+name="Sakuli package"
 code="M"
 instances="< 4"
 maintenance=true
@@ -46,6 +50,8 @@ price=100.00
 priceLink="https://www.consol.com/request-sakuli-enterprise"
 
 [[plans]]
+contactText="Your Request for"
+name="Sakuli package"
 code="L"
 instances="< 20"
 maintenance=true
@@ -61,6 +67,8 @@ priceLink="https://www.consol.com/request-sakuli-enterprise"
 
 
 [[plans]]
+contactText="Your Request for"
+name="Sakuli package"
 code="XL"
 instances="∞"
 maintenance=true
