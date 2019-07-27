@@ -157,7 +157,9 @@ export default Vue.extend({
     }
   }
 }
-
+.a {
+  border: 1px;
+}
 .error {
   text-align: center;
   margin-bottom: 1rem;

@@ -22,7 +22,7 @@ Array.from(document.querySelectorAll('[data-contactform]')).forEach((e, i) => {
         formUrl: e.getAttribute('href')
     }
     new Vue({
-        el: e,
+        el: e, a,
         render(h) {
             return h(ContactForm, {props: {...props}})
         }
