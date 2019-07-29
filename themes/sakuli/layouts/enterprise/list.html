@@ -1,12 +1,15 @@
 <!-- Header -->
 {{ partial "header.html" . }}
 {{ $priceList := .Site.Data.enterprise.price_table }}
+<h1>Demo</h1>
+<article class="shrink-content text-center">
+    Whether you are interested in a guided tour with our development team, lay back for a demo of the features and power of Sakuli </br>or if you just want to get some information:
+</br></br>
+    <a href="https://www.consol.com/request-sakuli/" data-contactform="">Contact us</a>
+</article>
 <h1>{{.Title}}</h1>
 <article class="shrink-content text-center">
     {{.Content}}
-    <a href="https://www.consol.com/request-sakuli/" data-contactform="Request">
-        Request Demo
-    </a>
 </article>
 <ul id="price-table" class="shrink-content">
     {{ range $priceList.plans }}
@@ -94,7 +97,7 @@
         {{ $isContactLink := or (and (isset . "price")  (gt .price 0)) (not (isset . "price")) }}
         <a class="button" href="{{ .priceLink }}" target="_blank" {{ if $isContactLink }} data-contactform="{{ .contactText }} {{ .name }} {{ .code }}"{{ end }}>
             {{ if $isContactLink }}
-            Contact
+            Request
             {{else}}
             Github
             {{end}}
