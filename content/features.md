@@ -31,13 +31,13 @@ slug: features
   - Windows 10+
   - OSX >= V. 10.10
   - Linux Systems (requires X-Window-System >= V. 1.18)
-    - Linux Ubuntu >=  V. 16.04 in Kombination mit
+    - Linux Ubuntu >=  V. 16.04
     - RHEL >= 7
 
 # Enterprise Features
 ### Supported Monitoring
   - OMD (Gearman) >= 3
-  - Icinga2 mit konfigurierter API
+  - Icinga2 with configured API
   - Check_MK >= 1.5
   - SQL Databases supported by Typeorm
 
