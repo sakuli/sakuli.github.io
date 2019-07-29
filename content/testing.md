@@ -218,3 +218,6 @@ await env.typeAndDecrypt("$ENCRYPTED_SECRET");
 // alternatively, via clipboard
 await env.pasteAndDecrypt("$ENCRYPTED_SECRET");
 {{< /highlight >}}
+
+## Learn more
+[Learn more](https://sakuli.io/docs/writing-tests) about writing Sakuli tests within our documentation
