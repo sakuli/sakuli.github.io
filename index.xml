@@ -79,7 +79,7 @@ Responsible for content (in accordance with § 6 MDStV) Nico Zellner</descriptio
       
       <guid>/monitoring/</guid>
       <description>Aside from the correct behavior of your system, you may also be interested in the actual performance of user interactions with the system.
-First to Know, First to Act Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such real-world performance analysis in an automated way. To achieve this, Sakuli provides a generic forwarder interface which receives the latest results of a test run.</description>
+First to Know, First to Act Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such real-world performance analysis in an automated way. To achieve this, Sakuli provides a generic API.</description>
     </item>
     
     <item>
