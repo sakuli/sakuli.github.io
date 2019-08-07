@@ -11,6 +11,9 @@
 @import 'docs_page.scss';
 @import 'section-navigation.scss';
 
+@import "../../../../vue-components/node_modules/bootstrap/scss/bootstrap.scss";
+
+
 body,
 html {
     padding: 0;

@@ -1,0 +1,16 @@
+<div class="card shadow m-4 bg-light">
+    {{with .Get "icon"}}
+    <div class="card-img-top text-center p-4">
+        <i class="{{.}} fa-5x"></i>
+    </div>
+    {{end}}
+    {{if .Get "image"}}
+    <img {{if .Get "maxHeight"}}style="max-height: {{.Get "maxHeight"}};"{{end}} class="card-img-top m-0 p-4" src="{{.Get "image"}}" alt="Logo" />
+    {{end}}
+    <div class="card-body bg-white" style="border-top: 1px solid #d2ed8c">
+        {{with .Get "title"}}
+            <h3 class="card-title text-center">{{.}}</h3>
+        {{end}}
+        <div class="card-text">{{- .Inner | markdownify -}}</div>
+    </div>
+</div>

@@ -26,9 +26,10 @@ header {
     background-color: rgba(255,255,255, .9);
     position: fixed;
 
+    /*
     div  {
 
-        justify-content: center;
+
         padding: 0.4rem;
         align-self: center;
 
@@ -38,25 +39,26 @@ header {
             width: 100%;
         }
     }
+    */
 
-    nav {
+    .navbar-collapse {
         display: flex;
         justify-content: flex-end;
         flex: 1;
         margin-right: 50px;
-        ul {
+        .navbar-nav {
             align-self: center;
             display: flex;
             flex-direction: row;
             list-style: none;
-            li {
+            .nav-item {
                 margin-right: 1rem;
                 border-left: 1px solid $color-green;
+                padding: 0 0 0 1rem;
                 &:nth-child(1) {
                     border: none;
                 }
-                padding-left: 1rem;
-                a {
+                &a {
                     color: $color-gray-dark;
                     text-decoration: none;
 

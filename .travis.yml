@@ -4,11 +4,11 @@ cache: npm
 node_js:
   - "10"
 
-services: 
+services:
   - docker
 
 before_install:
-  - docker pull jojomi/hugo:0.53
+  - docker pull jojomi/hugo:0.55
 
 install: false
 # script - run the build script
@@ -19,7 +19,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure  
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
   verbose: true
   keep-history: true
   local-dir: public

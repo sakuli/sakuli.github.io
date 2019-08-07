@@ -3,8 +3,31 @@ title: Features
 slug: features
 ---
 
-# OS (Core)
-### Testing based on Selenium and Nut.js
+## Core Features (Open Source)
+
+{{<card-deck>}}
+{{%feature-card title="Testing based on Selenium and Nut.js" image="/images/how_it_works.svg" maxHeight="200px"%}}
+{{%/feature-card%}}
+{{</card-deck>}}
+
+{{<card-deck>}}
+{{%feature-card title="Screenshot based interaction" image="/images/screen-shotbased.svg" maxHeight="200px" %}}{{%/feature-card%}}
+{{%feature-card title="DOM based interaction" image="/images/dom-based.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Screen Sizes" image="/images/screen-sizes.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{</card-deck>}}
+{{<card-deck>}}
+{{%feature-card title="Drag and Drop" image="/images/drag-and-drop.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Native Control" image="/images/native-interactions.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Clipboard integration" image="/images/clipboard.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Secrets" image="/images/secrets.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{</card-deck>}}
+{{<card-deck>}}
+{{%feature-card title="Simplifying Selenium" image="/images/complexity.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Node debugging" image="/images/debugging.svg" maxHeight="200px" %}}{{%/feature-card%}}
+{{%feature-card title="No more Staleelements" image="/images/no-stale.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{</card-deck>}}
+
+<!--
   - Suitable for Browsers with Webdriver Implementation
   - Works with commonly used Screensizes / Resolution with a single Monitor setup
   - No built-in CI support but should work properly on every system which supports Docker (see Container) or within one of the supported OSes
@@ -27,31 +50,80 @@ slug: features
     - Generic integration of target systems
   - Debugging with Node
 
+-->
+
 ### Supported OS (others may also work but without warranty)
-  - Windows 10+
-  - OSX >= V. 10.10
-  - Linux Systems (requires X-Window-System >= V. 1.18)
-    - Linux Ubuntu >=  V. 16.04
-    - RHEL >= 7
+
+{{< card-deck >}}
+{{< feature-card title="Windows" icon="fab fa-windows" >}}
+Windows 10 and above
+{{</feature-card>}}
+{{< feature-card title="Mac OS" icon="fab fa-apple" >}}
+OSX V.10.10 and above
+{{</feature-card>}}
+{{% feature-card title="Linux" icon="fab fa-linux" %}}
+Linux Systems (requires X-Window-System >= V. 1.18)
+
+- Linux Ubuntu >= V. 16.04
+- easy
+{{%/feature-card%}}
+{{< /card-deck >}}
 
 # Enterprise Features
+
 ### Supported Monitoring
-  - OMD (Gearman) >= 3
-  - Icinga2 with configured API
-  - Check_MK >= 1.5
-  - SQL Databases supported by Typeorm
+
+{{< card-deck >}}
+{{% feature-card title="OMD" image="/images/omd.svg"  %}}
+OMD (Gearman) version 3 and above
+{{% /feature-card %}}
+{{% feature-card title="Icinga2" image="/images/icinga.svg"  %}}
+<!-- Von unbekannt - Vektordaten: https://www.icinga.com/wp-content/uploads/2013/10/Icinga_OSMC2013_Presentation.pdfFarbinfo: von Weiß auf Schwarz umgesetzt, Logo, https://de.wikipedia.org/w/index.php?curid=10452845 -->
+Icinga2 with configured API
+{{% /feature-card %}}
+{{% feature-card title="Check_MK" image="/images/check_mk.svg" %}}
+Check_MK version 1.5 ad above
+{{% /feature-card %}}
+{{% feature-card title="Databases" image="/images/database.svg" %}}
+SQL Databases supported by [Typeorm](https://typeorm.io)
+{{% /feature-card %}}
+{{< /card-deck >}}
 
 ### Docker-Image
-  - Ready to use Browsers (Firefox and Chrome)
-  - Installed Chrome- and Gecko-WebDriver
-  - Installed Sakuli
-  - Configured VNC-server and NoVNC
-  - No warranty when you change
-    - Window Manager
-    - VNC server and NoVNC config
-    - OS
-    - Installed Browsers or verisons
-    - Sakuli installation
+
+{{<card-deck>}}
+{{% feature-card title="All in one Docker image" image="/images/content/container.svg" %}}
+{{% /feature-card %}}
+{{</card-deck>}}
+
+{{<card-deck>}}
+{{% feature-card title="Browsers" image="/images/external_logos/chrome.svg" maxHeight="200px" %}}
+Ready to use Browsers (Firefox and Chrome)
+{{% /feature-card %}}
+{{% feature-card title="Webdrivers" image="/images/external_logos/logo_selenium.svg" maxHeight="200px" %}}
+Installed Chrome- and Gecko-WebDriver
+{{% /feature-card %}}
+{{% feature-card title="Sakuli" image="/images/sakuli_header_logo.svg" maxHeight="200px" %}}
+Installed Sakuli
+{{% /feature-card %}}
+{{% feature-card title="VNC" image="/images/external_logos/vnc.svg"  maxHeight="200px" %}}
+<!-- By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=30428313 -->
+Configured VNC-server and NoVNC
+{{% /feature-card %}}
+{{</card-deck>}}
+
+{{% alert %}}
+<i class="fas fa-exclamation-triangle"></i> <strong> No warranty when you change:</strong>
+
+{{% unstyled-list %}}
+- <span>&times;</span> Window Manager
+- <span>&times;</span> VNC server and NoVNC config
+- <span>&times;</span> Operating System or its version
+- <span>&times;</span> Installed Browsers or versions
+- <span>&times;</span> Sakuli installation
+{{% /unstyled-list %}}
+{{% /alert %}}
+
 
 ### Webdriver Support
 
