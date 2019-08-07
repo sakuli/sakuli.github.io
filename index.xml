@@ -27,7 +27,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/features/</guid>
-      <description>OS (Core) Testing based on Selenium and Nut.js  Suitable for Browsers with Webdriver Implementation Works with commonly used Screensizes / Resolution with a single Monitor setup No built-in CI support but should work properly on every system which supports Docker (see Container) or within one of the supported OSes Webdrivers supported by selenium-webdriver  What can be done with Selenium can be done with Sakuli  No (Multi-) Touch events Screenshot-based Interactions  Scaleinvariant pattern matching Fuzzy image matching  Native control Mouse and Keyboard interactions Write and Read Clipboard Drag&amp;amp;Drop Reliable Web-Automation with multi-selector matching Rare &amp;ldquo;StaleElementReferenceError&amp;rdquo; Abstraction of Seleniums complexity Error-screenshots Secrets: encryption of sensitive data (no plaintext in logs or outputs) Architecture  Generic integration of target systems  Debugging with Node  Supported OS (others may also work but without warranty)  Windows 10+ OSX &amp;gt;= V.</description>
+      <description>Core Features (Open Source) Testing based on Selenium and Nut.js     Screenshot based interaction    DOM based interaction    Screen Sizes     Drag and Drop    Native Control    Clipboard integration    Secrets     Simplifying Selenium    Node debugging    No more Staleelements     Supported OS (others may also work but without warranty)   Windows Windows 10 and above     Mac OS OSX V.</description>
     </item>
     
     <item>
