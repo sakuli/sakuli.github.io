@@ -19,21 +19,21 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Interacting with the environment
+        Sakuli End-to-End Testing + Monitoring | Screenshot based Testing
     </title>
-    <meta property="og:title" content="Sakuli | Interacting with the environment" />
+    <meta property="og:title" content="Sakuli | Screenshot based Testing" />
     <meta property="og:description" content="" />
-    <meta property="og:image" content="/images/sakuli_hero.png" />
+    <meta property="og:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Interacting with the environment" />
+    <meta name="twitter:title" content="Sakuli | Screenshot based Testing" />
     <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="/images/sakuli_hero.png" />
+    <meta name="twitter:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
 
     
     
-    <link rel="stylesheet" href="/style.css" integrity="" />
+    <link rel="stylesheet" href="http://something-fresh.org/style.css" integrity="" />
     <link rel="stylesheet" href="/vue/index.css" />
     <link href="/fontawesome/css/all.min.css" rel="stylesheet">
     
@@ -47,7 +47,7 @@
         var version = ieVersion(ua);
         if (version && version >= 10 && version <= 11) {
             document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CArray.from%2CPromise%2CString.prototype.startsWith"><\/script>');
-            document.write('<link rel="stylesheet" href="\/ie.css" integrity="" />')
+            document.write('<link rel="stylesheet" href="http:\/\/something-fresh.org\/ie.css" integrity="" />')
         }
         function ieVersion(uaString) {
             uaString = uaString || navigator.userAgent;
@@ -107,10 +107,14 @@
             }
         }
     </style>
-    
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-none" style="height: 100%;">
-            <a class="navbar-brand" href="/">
+
+    <header class="navbar navbar-expand-lg sticky-top navbar-light bg-none" style="height: 100%;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="collapse navbar-collapse" id="navBar">
+            <a class="navbar-brand flex-grow-1 d-none d-sm-block" href="/">
                 <svg width="50px" height="50px" version="1.1" id="el_33VhVOlhh" xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 283 283"
 enable-background="new 0 0 283.46 283.46" xml:space="preserve">
@@ -217,13 +221,17 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 </svg>
 
             </a>
-            <div class="navbar-collapse text-right">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/docs/getting-started">Docs</a>
-                    <a class="nav-item nav-link" href="/features">Features</a>
-                    <a class="nav-item nav-link" href="/enterprise">Enterprise</a>
-                </div>
-            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/docs/getting-started">Docs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/enterprise">Enterprise</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -266,7 +274,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/" class="">
+    <a href="/docs/100_writing-tests/" class="">
             Writing Tests
     </a>
     
@@ -277,7 +285,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/000_anatomy-project/" class="">
+    <a href="/docs/100_writing-tests/000_anatomy-project/" class="">
             Anatomy of a Project
     </a>
     
@@ -293,7 +301,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/100_native-testing/110_interacting-with-env/" class=" active ">
+    <a href="/docs/100_writing-tests/100_native-testing/110_interacting-with-env/" class="">
             Interacting with the environment
     </a>
     
@@ -309,7 +317,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/100_native-testing/100_screenshot-based/" class="">
+    <a href="/docs/100_writing-tests/100_native-testing/100_screenshot-based/" class=" active ">
             Screenshot based Testing
     </a>
     
@@ -325,8 +333,72 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/000_web-testing/" class="">
+    <a href="/docs/100_writing-tests/000_web-testing/" class="">
             Web tests
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/" class="">
+            Enterprise Features
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/icinga/" class="">
+            Icinga2 Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/check_mk/" class="">
+            Check_MK Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/omd/" class="">
+            OMD / Gearman Forwarder
     </a>
     
     
@@ -382,54 +454,42 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>Interacting with the environment</h1>
-            
+            <h1>Screenshot based Testing</h1>
+            <p>A lot of end-to-end scenarios exceed the capabilities of browsers and webdrivers. This might include common use-cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In these cases, your web-based tests can be extended to also validate behaviour and invoke interactions outside the browser, all within a single test.</p>
 
-<p>In addition to screenshot-based test-actions, Sakuli is able to utilize your keyboard, clipboard and environment variables.
-All these features are incorporated in the <code>Environment</code> class.</p>
+<p>Of course, you can also use Sakuli’s native testing power on its own, e.g. rich-client testing of SAP, Office or proprietary software systems. Sakuli accomplishes its native capabilities by scanning the whole screen (or a dedicated region) on a stand-alone computer or in headless container screens, searching for provided image patterns.</p>
 
-<h3 id="keyboard-actions">Keyboard actions</h3>
+<p>Screenshot based actions are relying on an abstract <code>Region</code> class, which represents an abstract region on the desktop.
+When creating a new instance without parameters, a <code>Region</code> spans over the whole desktop.
+But, it is also possible to create new regions by specifying <code>left</code>, <code>top</code>, <code>width</code> and <code>height</code> parameters.</p>
 
-<p>The following snippet shows a possible use-case for native keyboard actions.
-When initiating the download in Firefox, a native file download dialog opens.
-To start the download, we need to accept the file dialog, which is not possible with the capabilities of Selenium.
-With Sakuli it is possible to work around this problem, just like a real user would do.
-We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
+<p>The following example showcases a test which drags a source element to a target region.
+In this demo scenario, both source and target are both located on screen via template image.</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;test&#34;</span>);
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nodejs.org/en/&#34;</span>;
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;native_keyboard_demo&#34;</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://codepen.io/akifo/pen/LGraWZ&#34;</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">screen</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>();
     <span style="color:#66d9ef">try</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;ABOUT&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Releases&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Dubnium&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;node-v10.16.0.tar.gz&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyDown</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyUp</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;drag.png&#34;</span>).<span style="color:#a6e22e">mouseMove</span>().<span style="color:#a6e22e">dragAndDropTo</span>(<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;target.png&#34;</span>));
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
@@ -439,79 +499,53 @@ We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
 </div>
 </div>
 
-<p>It is even possible to change the download location dynamically, by entering a new save path via</p>
+<p>The <code>dragAndDropTo(...)</code> methods always move straight to the target region.
+In order to follow a more complex path, it is also possible to perform the drag gesture manually.
+Once the source image has been located on screen, Sakuli moves the mouse to its location, presses and holds the left mouse button.
+Afterwards, it locates the target image, moves the mouse there while still holding the mouse button and releases it, once it reaches the target location.</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;/new/path/to/file&#34;</span>);</code></pre></td></tr></table>
-</div>
-</div>
-
-<h3 id="secrets">Secrets</h3>
-
-<p>Many E2E tests require some kind of login.
-While there is no problem in general, it still requires some mechanism to handle credentials.
-Providing credentials via environment variable is a common practice, but it still is cumbersome when deploying the testcase to another system, since every single environment variable has to be migratet too.</p>
-
-<p>Sakuli comes with a built-in mechanism to deal with sensitive data in testcases.
-It uses a single masterkey, generated by Sakuli, and uses this key to de- / encrypt secrets to be used in testcases.</p>
-
-<p>Running</p>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">sakuli</span> <span style="color:#a6e22e">create</span> <span style="color:#a6e22e">masterkey</span></code></pre></td></tr></table>
-</div>
-</div>
-
-<p>will generate a new masterkey, which should be exported as an environment variable <code>SAKULI_ENCRYPTION_KEY</code>.</p>
-
-<p>Once the masterkey has been exported, secrets can be encrypted by running</p>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">sakuli</span> <span style="color:#a6e22e">encrypt</span> <span style="color:#e6db74">&#34;super secret string&#34;</span></code></pre></td></tr></table>
-</div>
-</div>
-
-<p>These encrypted secrets can now safely be stored inside your testfile, because the <code>Environment</code> class provides methods to decrypt these secrets during test execution.</p>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">typeAndDecrypt</span>(<span style="color:#e6db74">&#34;$ENCRYPTED_SECRET&#34;</span>);
-<span style="color:#75715e">// alternatively, via clipboard
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">pasteAndDecrypt</span>(<span style="color:#e6db74">&#34;$ENCRYPTED_SECRET&#34;</span>);</code></pre></td></tr></table>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;native_demo&#34;</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://codepen.io/akifo/pen/LGraWZ&#34;</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">screen</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>();
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;source.png&#34;</span>).<span style="color:#a6e22e">mouseMove</span>().<span style="color:#a6e22e">mouseDown</span>(<span style="color:#a6e22e">MouseButton</span>.<span style="color:#a6e22e">LEFT</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">mouseMove</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>(<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">100</span>).<span style="color:#a6e22e">mouseMove</span>();
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;target.png&#34;</span>).<span style="color:#a6e22e">mouseMove</span>().<span style="color:#a6e22e">mouseUp</span>(<span style="color:#a6e22e">MouseButton</span>.<span style="color:#a6e22e">LEFT</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+    }
+})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
 </div>
 </div>
 
         </article>
         <aside id="secondary-nav">
-            <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#keyboard-actions">Keyboard actions</a></li>
-<li><a href="#secrets">Secrets</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+            
         </aside>
     </div>
     <a class="navbutton left" href="#docs-page">
@@ -536,6 +570,9 @@ It uses a single masterkey, generated by Sakuli, and uses this key to de- / encr
     </nav>
 </footer>
 <div id="modal"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/vue/index.js"></script>
 </body>
 </html>

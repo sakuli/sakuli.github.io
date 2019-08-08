@@ -19,14 +19,14 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Sakuli CLI Tools
+        Sakuli End-to-End Testing + Monitoring | Anatomy of a Project
     </title>
-    <meta property="og:title" content="Sakuli | Sakuli CLI Tools" />
+    <meta property="og:title" content="Sakuli | Anatomy of a Project" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Sakuli CLI Tools" />
+    <meta name="twitter:title" content="Sakuli | Anatomy of a Project" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -237,10 +237,350 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     <main>
 
 
-<h1>Sakuli CLI Tools</h1>
-<article class="shrink-content">
+<div id="docs-page">
+    <aside id="main-nav">
+        <a class="navbutton right" id="hide-menu-button">
+            <i class="fas fa-times"></i>
+        </a>
+        <nav>
+            
+            
+            <section class="section-navigation">
+    <div class="search-field" style="display: none">
+        <input type="text" class="search-field--input" />
+        <i class="fas fa-search search-field--icon"></i>
+    </div>
     
-</article>
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/getting-started/" class="">
+            Getting started
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/" class="">
+            Writing Tests
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/000_anatomy-project/" class=" active ">
+            Anatomy of a Project
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/100_native-testing/110_interacting-with-env/" class="">
+            Interacting with the environment
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/100_native-testing/100_screenshot-based/" class="">
+            Screenshot based Testing
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/000_web-testing/" class="">
+            Web tests
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/" class="">
+            Enterprise Features
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/icinga/" class="">
+            Icinga2 Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/check_mk/" class="">
+            Check_MK Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/omd/" class="">
+            OMD / Gearman Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</section>
+
+
+
+            <section class="section-navigation">
+                <strong>API Docs</strong>
+                <ul>
+                    <li>
+                        <a href="/apidoc/sakuli-legacy" target="_blank" rel="noopener">@sakuli/legacy</a>
+                    </li>
+                    <li>
+
+                        <a href="/apidoc/sakuli-core" target="_blank" rel="noopener">
+                            @sakuli/core
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-cli" target="_blank" rel="noopener">
+                            @sakuli/cli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-commons" target="_blank" rel="noopener">
+                            @sakuli/commons
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-rollup-hooks" target="_blank" rel="noopener">
+                            @sakuli/rollup-hooks
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </aside>
+    <div class="page">
+        <article class="shrink-content">
+            <h1>Anatomy of a Project</h1>
+            
+
+<p>This guide assumes, that you have finished the &ldquo;Getting started&rdquo; guide or that you are experienced with Sakuli v1.</p>
+
+<blockquote>
+<p>Most of the complexity and conventions come due to the backwards compatibility to V1 which requires such a folder and file layout for various reasons (the biggest is Sahi). Sakuli now offers various ways to reduce this complexity dramatically. These features will eventually come  in upcoming releases.</p>
+</blockquote>
+
+<h2 id="setup-and-configuration">Setup and configuration</h2>
+
+<p>The minimum setup of a Sakuli project looks like this:</p>
+
+<section class="unstyled-list-section">
+    
+- <i class="fas fa-folder"></i> **your-sakuli-project** *Homefolder of the project*
+  - <i class="far fa-file"></i> **package.json** *All dependencies and setup for NodeJs*
+  - <i class="far fa-file"></i> **sakuli.properties** *(optional: Configuration for all Testsuites)*
+  - <i class="fas fa-folder"></i> **testsuite-a** *Homefolder of a testsuite*
+     - <i class="far fa-file"></i> **testsuite.suite** *Defines which testcases belongs to the testsuite*
+     - <i class="far fa-file"></i> **testsuite.properties** *Configuration for the testsuite (overrides configuration from '../sakuli.properties')*
+     - <i class="fas fa-folder"></i> **testcase** *Home of the testcase*
+         - <i class="far fa-file"></i> **testcase.js** *The actual testcase*
+
+
+</section>
+
+<p>This file layout also represents the logical structure of Sakuli which consists of a <em>testsuite</em> with one or more <em>testcase(s)</em>. Sakulis <code>run</code> command takes a path to a testsuite folder and runs all testcases defined in <code>testsuite.suite</code> from the given path.</p>
+
+<h3 id="testsuite-suite">testsuite.suite</h3>
+
+<p>This file is a relic from Sahi where you define testcases and their respective starturls. It has a simple own format:</p>
+
+<pre><code>&lt;CASE-PATH&gt;/&lt;CASE-FILE&gt; &lt;START-URL&gt;
+</code></pre>
+
+<p><code>&lt;CASE-PATH&gt;</code> is a path within the testsuite file which has to contain the file <code>&lt;CASE_FILE&gt;</code>. The <code>&lt;START-URL&gt;</code> is no longer used by Sakuli (but required to fulfil the file format). The format also supports comments (<code>//</code> at the beginning of a line). Comments are the usual way to activate or deactivate testcases.</p>
+
+<blockquote>
+<p>The configured start-url is omitted to force test authors to write explicit navigation to the url in the testcases using <code>_navigateTo</code>.</p>
+</blockquote>
+
+<h3 id="properties-files">Properties Files</h3>
+
+<p>Each testsuite requires a <code>testsuite.properties</code> file with at least one entry:</p>
+
+<pre><code>testsuite.id=SomeName
+</code></pre>
+
+<p>It &ldquo;inherits&rdquo; its values from <code>../sakuli.properties</code> (which also means, that the same property from sakuli.properties is overridden).</p>
+
+<blockquote>
+<p>Property files are a common way to store configuration in Java, the former runtime for Sakuli. It is a simple key value format (<code>&lt;KEY&gt;=&lt;VALUE&gt;</code>) where every line defines a key-value pair. To organize the keys, it is a common - but not required - pattern to separate names by dots (similar to Java namespaces)</p>
+</blockquote>
+
+<p>There are several predefined properties to configure the behavior of Sakuli (* indicates a required property):</p>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type: Default</th>
+<th>Comment / Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>testsuite.id</code></td>
+<td>String*: /</td>
+<td>Name of the Suite shown in the output and used by the forwarder</td>
+</tr>
+
+<tr>
+<td><code>testsuite.browser</code></td>
+<td>String: &lsquo;firefox&rsquo;</td>
+<td>Browser which is started by the webdriver (It can be overridden by <code>--browser</code> commandline argument)</td>
+</tr>
+</tbody>
+</table>
+
+<p>You can also define own properties and use them in your testcases. Just put your custom property key with its value in one of the <code>.property</code> files and in your test case you are able to retrieve this value with the <a href="/apidoc/sakuli-legacy/interfaces/thenableenvironment.html#getproperty">Environment Class</a>:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// omitting boilerplate 
+</span><span style="color:#75715e">// assuming you have added 
+</span><span style="color:#75715e">// user.name=Tester 
+</span><span style="color:#75715e">// in one of the property files
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
+<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">_setValue</span>(<span style="color:#a6e22e">_textbox</span>(<span style="color:#e6db74">&#39;username&#39;</span>), <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#39;user.name&#39;</span>)); 
+</code></pre></td></tr></table>
+</div>
+</div>
+
+        </article>
+        <aside id="secondary-nav">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#setup-and-configuration">Setup and configuration</a>
+<ul>
+<li><a href="#testsuite-suite">testsuite.suite</a></li>
+<li><a href="#properties-files">Properties Files</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </aside>
+    </div>
+    <a class="navbutton left" href="#docs-page">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <a class="navbutton right" id="show-menu-button">
+        <i class="fas fa-bars"></i>
+    </a>
+</div>
+
 
 
 </main>

@@ -19,21 +19,21 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Anatomy of a Project
+        Sakuli End-to-End Testing + Monitoring | Icinga2 Forwarder
     </title>
-    <meta property="og:title" content="Sakuli | Anatomy of a Project" />
+    <meta property="og:title" content="Sakuli | Icinga2 Forwarder" />
     <meta property="og:description" content="" />
-    <meta property="og:image" content="/images/sakuli_hero.png" />
+    <meta property="og:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Anatomy of a Project" />
+    <meta name="twitter:title" content="Sakuli | Icinga2 Forwarder" />
     <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="/images/sakuli_hero.png" />
+    <meta name="twitter:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
 
     
     
-    <link rel="stylesheet" href="/style.css" integrity="" />
+    <link rel="stylesheet" href="http://something-fresh.org/style.css" integrity="" />
     <link rel="stylesheet" href="/vue/index.css" />
     <link href="/fontawesome/css/all.min.css" rel="stylesheet">
     
@@ -47,7 +47,7 @@
         var version = ieVersion(ua);
         if (version && version >= 10 && version <= 11) {
             document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CArray.from%2CPromise%2CString.prototype.startsWith"><\/script>');
-            document.write('<link rel="stylesheet" href="\/ie.css" integrity="" />')
+            document.write('<link rel="stylesheet" href="http:\/\/something-fresh.org\/ie.css" integrity="" />')
         }
         function ieVersion(uaString) {
             uaString = uaString || navigator.userAgent;
@@ -107,10 +107,14 @@
             }
         }
     </style>
-    
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-none" style="height: 100%;">
-            <a class="navbar-brand" href="/">
+
+    <header class="navbar navbar-expand-lg sticky-top navbar-light bg-none" style="height: 100%;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="collapse navbar-collapse" id="navBar">
+            <a class="navbar-brand flex-grow-1 d-none d-sm-block" href="/">
                 <svg width="50px" height="50px" version="1.1" id="el_33VhVOlhh" xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 283 283"
 enable-background="new 0 0 283.46 283.46" xml:space="preserve">
@@ -217,13 +221,17 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 </svg>
 
             </a>
-            <div class="navbar-collapse text-right">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/docs/getting-started">Docs</a>
-                    <a class="nav-item nav-link" href="/features">Features</a>
-                    <a class="nav-item nav-link" href="/enterprise">Enterprise</a>
-                </div>
-            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/docs/getting-started">Docs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/enterprise">Enterprise</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -266,7 +274,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/" class="">
+    <a href="/docs/100_writing-tests/" class="">
             Writing Tests
     </a>
     
@@ -277,7 +285,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/000_anatomy-project/" class=" active ">
+    <a href="/docs/100_writing-tests/000_anatomy-project/" class="">
             Anatomy of a Project
     </a>
     
@@ -293,7 +301,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/100_native-testing/110_interacting-with-env/" class="">
+    <a href="/docs/100_writing-tests/100_native-testing/110_interacting-with-env/" class="">
             Interacting with the environment
     </a>
     
@@ -309,7 +317,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/100_native-testing/100_screenshot-based/" class="">
+    <a href="/docs/100_writing-tests/100_native-testing/100_screenshot-based/" class="">
             Screenshot based Testing
     </a>
     
@@ -325,8 +333,72 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/writing-tests/000_web-testing/" class="">
+    <a href="/docs/100_writing-tests/000_web-testing/" class="">
             Web tests
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/" class="">
+            Enterprise Features
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/icinga/" class=" active ">
+            Icinga2 Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/check_mk/" class="">
+            Check_MK Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/omd/" class="">
+            OMD / Gearman Forwarder
     </a>
     
     
@@ -382,118 +454,126 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>Anatomy of a Project</h1>
+            <h1>Icinga2 Forwarder</h1>
             
 
-<p>This guide assumes, that you have finished the &ldquo;Getting started&rdquo; guide or that you are experienced with Sakuli v1.</p>
+<p>Add the forwarder to your project with:</p>
 
-<blockquote>
-<p>Most of the complexity and conventions come due to the backwards compatibility to V1 which requires such a folder and file layout for various reasons (the biggest is Sahi). Sakuli now offers various ways to reduce this complexity dramatically. These features will eventually come  in upcoming releases.</p>
-</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;PERSONAL_NPM_ACCESS_TOKEN&gt; npm i @sakuli/forwarder-icinga2</code></pre></div>
 
-<h2 id="setup-and-configuration">Setup and configuration</h2>
+<p>To register the forwarder in your project you have edit the <code>package.json</code> file and add the preset to the sakuli configuration key:</p>
 
-<p>The minimum setup of a Sakuli project looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;sakuli&#34;</span>: {
+        <span style="color:#f92672">&#34;presetProvider: [
+</span><span style="color:#f92672">            &#34;</span><span style="color:#960050;background-color:#1e0010">@sakuli/legacy</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">            &#34;</span><span style="color:#960050;background-color:#1e0010">@sakuli/forwarder-icinga</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+        <span style="color:#960050;background-color:#1e0010">]</span>
+    }
+}</code></pre></div>
 
-<section class="unstyled-list-section">
-    <ul>
-<li><i class="fas fa-folder"></i> <strong>your-sakuli-project</strong> <em>Homefolder of the project</em>
+<h2 id="enable-the-icinga2-api">Enable the Icinga2 API</h2>
 
-<ul>
-<li><i class="far fa-file"></i> <strong>package.json</strong> <em>All dependencies and setup for NodeJs</em></li>
-<li><i class="far fa-file"></i> <strong>sakuli.properties</strong> <em>(optional: Configuration for all Testsuites)</em></li>
-<li><i class="fas fa-folder"></i> <strong>testsuite-a</strong> <em>Homefolder of a testsuite</em>
+<p>The steps to enable the Icinga2 API are described in the <a href="http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api">REST API documentation</a>.</p>
 
-<ul>
-<li><i class="far fa-file"></i> <strong>testsuite.suite</strong> <em>Defines which testcases belongs to the testsuite</em></li>
-<li><i class="far fa-file"></i> <strong>testsuite.properties</strong> <em>Configuration for the testsuite (overrides configuration from &lsquo;../sakuli.properties&rsquo;)</em></li>
-<li><i class="fas fa-folder"></i> <strong>testcase</strong> <em>Home of the testcase</em>
+<h2 id="create-a-icings2-service">Create a Icings2 service</h2>
 
-<ul>
-<li><i class="far fa-file"></i> <strong>testcase.js</strong> <em>The actual testcase</em></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+<p>Create a <code>check_command</code>, which will be executed only if Icinga did not receive a Sakuli result within a certain time. This ensures that you get a notification even if no passive check results arrive in Icinga at all:</p>
 
-</section>
+<p><code>/etc/icinga2/conf.d/commands.conf</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object CheckCommand &#34;check_dummy&#34; {
+   import &#34;plugin-check-command&#34;
+   command = [
+     PluginDir + &#34;/check_dummy&#34;,&#34;$dummy_state$&#34;,&#34;$dummy_text$&#34;
+   ]
+   vars.dummy_state = 0
+   vars.dummy_text = &#34;Check was successful.&#34;
+}
 
-<p>This file layout also represents the logical structure of Sakuli which consists of a <em>testsuite</em> with one or more <em>testcase(s)</em>. Sakulis <code>run</code> command takes a path to a testsuite folder and runs all testcases defined in <code>testsuite.suite</code> from the given path.</p>
+object CheckCommand &#34;check_sakuli&#34; {
+   import &#34;check_dummy&#34;
+   vars.dummy_state = 3
+   vars.dummy_text = &#34;No passive Sakuli check result received.&#34;
+}</code></pre></div></p>
 
-<h3 id="testsuite-suite">testsuite.suite</h3>
+<p><code>/etc/incinga2/conf.d/hosts.conf</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object Host &#34;sakuliclient01&#34; {
+   import &#34;generic-host&#34;
+   address = &#34;&lt;IP&gt;&#34;
+}</code></pre></div></p>
 
-<p>This file is a relic from Sahi where you define testcases and their respective starturls. It has a simple own format:</p>
+<p>Create the following service object for the first test case. freshness_threshold should be slightly higher than the interval Sakuli tests are planned.</p>
 
-<pre><code>&lt;CASE-PATH&gt;/&lt;CASE-FILE&gt; &lt;START-URL&gt;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object Service &#34;sakuli_demo&#34; {
+  import &#34;generic-service&#34;
+  host_name = &#34;sakuliclient01&#34;
+  check_command = &#34;check_sakuli&#34;
+  enable_active_checks = 0
+  enable_passive_checks = 1
+  enable_flapping = 0
+  volatile = 1
+  enable_perfdata = 1
+}</code></pre></div>
 
-<p><code>&lt;CASE-PATH&gt;</code> is a path within the testsuite file which has to contain the file <code>&lt;CASE_FILE&gt;</code>. The <code>&lt;START-URL&gt;</code> is no longer used by Sakuli (but required to fulfil the file format). The format also supports comments (<code>//</code> at the beginning of a line). Comments are the usual way to activate or deactivate testcases.</p>
+<p>Reload Icinga2:</p>
 
-<blockquote>
-<p>The configured start-url is omitted to force test authors to write explicit navigation to the url in the testcases using <code>_navigateTo</code>.</p>
-</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service icinga2 reload</code></pre></div>
 
-<h3 id="properties-files">Properties Files</h3>
+<p>Now open Icingaweb2; you should see the Sakuli host with the service &ldquo;sakuli_demo&rdquo; attached.</p>
 
-<p>Each testsuite requires a <code>testsuite.properties</code> file with at least one entry:</p>
+<p>The check is waiting now for check results from a Sakuli client.</p>
 
-<pre><code>testsuite.id=SomeName
-</code></pre>
+<h2 id="sakuli-client-configuration">Sakuli Client Configuration</h2>
 
-<p>It &ldquo;inherits&rdquo; its values from <code>../sakuli.properties</code> (which also means, that the same property from sakuli.properties is overridden).</p>
-
-<blockquote>
-<p>Property files are a common way to store configuration in Java, the former runtime for Sakuli. It is a simple key value format (<code>&lt;KEY&gt;=&lt;VALUE&gt;</code>) where every line defines a key-value pair. To organize the keys, it is a common - but not required - pattern to separate names by dots (similar to Java namespaces)</p>
-</blockquote>
-
-<p>There are several predefined properties to configure the behavior of Sakuli (* indicates a required property):</p>
+<p>On the Sakuli client you must set the global properties for the Icinga2 receiver. For this, edit <code>sakuli.properties</code> in the folder containing the test suites:</p>
 
 <table>
 <thead>
 <tr>
 <th>Property</th>
-<th>Type: Default</th>
-<th>Comment / Example</th>
+<th>Default</th>
+<th>Effect</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>testsuite.id</code></td>
-<td>String*: /</td>
-<td>Name of the Suite shown in the output and used by the forwarder</td>
+<td><code>sakuli.forwarder.icinga2.enabled</code></td>
+<td><code>false</code></td>
+<td>Enables result forwarding to Icinga2</td>
 </tr>
 
 <tr>
-<td><code>testsuite.browser</code></td>
-<td>String: &lsquo;firefox&rsquo;</td>
-<td>Browser which is started by the webdriver (It can be overridden by <code>--browser</code> commandline argument)</td>
+<td><code>sakuli.forwarder.icinga2.api.host</code></td>
+<td></td>
+<td>The hostname or ip of the Icinga API-Endpoints</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.api.port</code></td>
+<td><code>5665</code></td>
+<td>The port or ip of the Icinga API-Endpoints</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.api.username</code></td>
+<td></td>
+<td>API user name</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.api.password</code></td>
+<td></td>
+<td>API user password</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.hostname</code></td>
+<td></td>
+<td>The name of the host object configured in Icinga2</td>
 </tr>
 </tbody>
 </table>
-
-<p>You can also define own properties and use them in your testcases. Just put your custom property key with its value in one of the <code>.property</code> files and in your test case you are able to retrieve this value with the <a href="/apidoc/sakuli-legacy/interfaces/thenableenvironment.html#getproperty">Environment Class</a>:</p>
-
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// omitting boilerplate 
-</span><span style="color:#75715e">// assuming you have added 
-</span><span style="color:#75715e">// user.name=Tester 
-</span><span style="color:#75715e">// in one of the property files
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
-<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">_setValue</span>(<span style="color:#a6e22e">_textbox</span>(<span style="color:#e6db74">&#39;username&#39;</span>), <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#39;user.name&#39;</span>)); 
-</code></pre></td></tr></table>
-</div>
-</div>
 
         </article>
         <aside id="secondary-nav">
@@ -501,11 +581,9 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 <ul>
 <li>
 <ul>
-<li><a href="#setup-and-configuration">Setup and configuration</a>
-<ul>
-<li><a href="#testsuite-suite">testsuite.suite</a></li>
-<li><a href="#properties-files">Properties Files</a></li>
-</ul></li>
+<li><a href="#enable-the-icinga2-api">Enable the Icinga2 API</a></li>
+<li><a href="#create-a-icings2-service">Create a Icings2 service</a></li>
+<li><a href="#sakuli-client-configuration">Sakuli Client Configuration</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -533,6 +611,9 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </nav>
 </footer>
 <div id="modal"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/vue/index.js"></script>
 </body>
 </html>

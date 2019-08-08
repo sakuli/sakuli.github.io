@@ -3,90 +3,106 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/docs/writing-tests/000_anatomy-project/</loc>
+    <loc>http://something-fresh.org/docs/200_enterprise/icinga/</loc>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>http://something-fresh.org/docs/200_enterprise/check_mk/</loc>
+  </url>
+  
+  <url>
+    <loc>http://something-fresh.org/docs/200_enterprise/omd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://something-fresh.org/docs/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>http://something-fresh.org/docs/100_writing-tests/</loc>
+  </url>
+  
+  <url>
+    <loc>http://something-fresh.org/docs/200_enterprise/</loc>
+  </url>
+  
+  <url>
+    <loc>http://something-fresh.org/docs/100_writing-tests/000_anatomy-project/</loc>
+  </url>
+  
+  <url>
+    <loc>http://something-fresh.org/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/enterprise/</loc>
+    <loc>http://something-fresh.org/enterprise/</loc>
   </url>
   
   <url>
-    <loc>/features/</loc>
+    <loc>http://something-fresh.org/features/</loc>
   </url>
   
   <url>
-    <loc>/docs/getting-started/</loc>
+    <loc>http://something-fresh.org/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</loc>
   </url>
   
   <url>
-    <loc>/docs/writing-tests/100_native-testing/110_interacting-with-env/</loc>
+    <loc>http://something-fresh.org/legalnotice/</loc>
   </url>
   
   <url>
-    <loc>/legalnotice/</loc>
+    <loc>http://something-fresh.org/monitoring/</loc>
   </url>
   
   <url>
-    <loc>/monitoring/</loc>
+    <loc>http://something-fresh.org/enterprise/forwarder/</loc>
   </url>
   
   <url>
-    <loc>/enterprise/forwarder/</loc>
+    <loc>http://something-fresh.org/enterprise/container/</loc>
   </url>
   
   <url>
-    <loc>/enterprise/container/</loc>
+    <loc>http://something-fresh.org/rpa/</loc>
   </url>
   
   <url>
-    <loc>/rpa/</loc>
+    <loc>http://something-fresh.org/enterprise/cli/</loc>
   </url>
   
   <url>
-    <loc>/enterprise/cli/</loc>
+    <loc>http://something-fresh.org/enterprise/core/</loc>
   </url>
   
   <url>
-    <loc>/enterprise/core/</loc>
+    <loc>http://something-fresh.org/docs/</loc>
   </url>
   
   <url>
-    <loc>/docs/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
+    <loc>http://something-fresh.org/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/enterprise/hub/</loc>
+    <loc>http://something-fresh.org/enterprise/hub/</loc>
   </url>
   
   <url>
-    <loc>/docs/writing-tests/100_native-testing/100_screenshot-based/</loc>
+    <loc>http://something-fresh.org/docs/100_writing-tests/100_native-testing/100_screenshot-based/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>http://something-fresh.org/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/testing/</loc>
+    <loc>http://something-fresh.org/testing/</loc>
   </url>
   
   <url>
-    <loc>/docs/writing-tests/000_web-testing/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/writing-tests/</loc>
+    <loc>http://something-fresh.org/docs/100_writing-tests/000_web-testing/</loc>
   </url>
   
 </urlset>

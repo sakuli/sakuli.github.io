@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sakuli Docs on Sakuli E2E and Monitoring</title>
-    <link>/docs/</link>
+    <link>http://something-fresh.org/docs/</link>
     <description>Recent content in Sakuli Docs on Sakuli E2E and Monitoring</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://something-fresh.org/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Getting started</title>
-      <link>/docs/getting-started/</link>
+      <link>http://something-fresh.org/docs/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/getting-started/</guid>
+      <guid>http://something-fresh.org/docs/getting-started/</guid>
       <description>Prerequisites Sakuli is built and tested against the current LTS version of Node.js. In order to run Sakuli on your system, we will assume that you have a node v10.15.3 (lts/dubnium) installed on your system.
 To install Node.js on your system, you can either go to the node website, or you can use tools like node version manager, a utility to manage various node versions on a per-user basis. In general, a per-user installation is the preferred way since it runs in an unprivileged mode.</description>
     </item>

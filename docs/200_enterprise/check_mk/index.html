@@ -19,14 +19,14 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Sakuli CLI Tools
+        Sakuli End-to-End Testing + Monitoring | Check_MK Forwarder
     </title>
-    <meta property="og:title" content="Sakuli | Sakuli CLI Tools" />
+    <meta property="og:title" content="Sakuli | Check_MK Forwarder" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Sakuli CLI Tools" />
+    <meta name="twitter:title" content="Sakuli | Check_MK Forwarder" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="http://something-fresh.org//images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -237,10 +237,327 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     <main>
 
 
-<h1>Sakuli CLI Tools</h1>
-<article class="shrink-content">
+<div id="docs-page">
+    <aside id="main-nav">
+        <a class="navbutton right" id="hide-menu-button">
+            <i class="fas fa-times"></i>
+        </a>
+        <nav>
+            
+            
+            <section class="section-navigation">
+    <div class="search-field" style="display: none">
+        <input type="text" class="search-field--input" />
+        <i class="fas fa-search search-field--icon"></i>
+    </div>
     
-</article>
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/getting-started/" class="">
+            Getting started
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/" class="">
+            Writing Tests
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/000_anatomy-project/" class="">
+            Anatomy of a Project
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/100_native-testing/110_interacting-with-env/" class="">
+            Interacting with the environment
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/100_native-testing/100_screenshot-based/" class="">
+            Screenshot based Testing
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/100_writing-tests/000_web-testing/" class="">
+            Web tests
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/" class="">
+            Enterprise Features
+    </a>
+    
+    
+    
+    <ul>
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/icinga/" class="">
+            Icinga2 Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/check_mk/" class=" active ">
+            Check_MK Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+            
+<li class="no-chevron">
+    <i class="chevron">&nbsp;</i>
+    <a href="/docs/200_enterprise/omd/" class="">
+            OMD / Gearman Forwarder
+    </a>
+    
+    
+    
+    <ul>
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</li>
+
+        
+    </ul>
+
+</section>
+
+
+
+            <section class="section-navigation">
+                <strong>API Docs</strong>
+                <ul>
+                    <li>
+                        <a href="/apidoc/sakuli-legacy" target="_blank" rel="noopener">@sakuli/legacy</a>
+                    </li>
+                    <li>
+
+                        <a href="/apidoc/sakuli-core" target="_blank" rel="noopener">
+                            @sakuli/core
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-cli" target="_blank" rel="noopener">
+                            @sakuli/cli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-commons" target="_blank" rel="noopener">
+                            @sakuli/commons
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apidoc/sakuli-rollup-hooks" target="_blank" rel="noopener">
+                            @sakuli/rollup-hooks
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </aside>
+    <div class="page">
+        <article class="shrink-content">
+            <h1>Check_MK Forwarder</h1>
+            
+
+<p>Add the forwarder to your project with:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;PERSONAL_NPM_ACCESS_TOKEN&gt; npm i @sakuli/forwarder-check_mk</code></pre></div>
+
+<p>To register the forwarder in your project you have edit the <code>package.json</code> file and add the preset to the sakuli configuration key:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;sakuli&#34;</span>: {
+        <span style="color:#f92672">&#34;presetProvider: [
+</span><span style="color:#f92672">            &#34;</span><span style="color:#960050;background-color:#1e0010">@sakuli/legacy</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">            &#34;</span><span style="color:#960050;background-color:#1e0010">@sakuli/forwarder-check_mk&#34;</span>
+        <span style="color:#960050;background-color:#1e0010">]</span>
+    }
+}</code></pre></div>
+
+<h2 id="sakuli-client-configuration">Sakuli Client Configuration</h2>
+
+<p>It is assumed that the client is already monitored by Check_MK and a agent is installed and running on it.</p>
+
+<h3 id="spool-folder">Spool folder</h3>
+
+<p>Create a new folder spool in the installation path of the Check_MK agent. This is the folder where the results will be written to. The user which is used to run Sakuli checks must be given write access to this folder.</p>
+
+<h3 id="forwarder-configuration">Forwarder configuration</h3>
+
+<p>Now set the properties for the check_mk receiver. For this, edit sakuli.properties in the folder containing the test suites:</p>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Effect</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>sakuli.forwarder.check_mk.enabled</code></td>
+<td><code>false</code></td>
+<td>Enables writign to spool file</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.check_mk.spooldir</code></td>
+<td><code>/var/lib/check_mk_agent/spool</code>(Linux)<br/><code>&lt;CMK_installation_path&gt;\\spool</code>(Windows)</td>
+<td>Path to the spool folder as defined above. On Windows, the backslashes have to be escaped with . Check_MK is expecting the result files from Sakuli here.</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.check_mk.freshness</code></td>
+<td><code>600</code></td>
+<td>Defines the maximal age in seconds in which the result is still valid. If the last modification of the result file is older than this property, the result file will be ignored. The check_mk service will turn into UNKNOWN.</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.check_mk.spoolfile_prefix</code></td>
+<td><code>sakuli_suite_</code></td>
+<td>Defines the result file prefix. It can be used to change the default naming convention for the Check_MK output files</td>
+</tr>
+
+<tr>
+<td><code>akuli.forwarder.check_mk.service_description</code></td>
+<td><code>${testsuite.id}</code></td>
+<td>Defines the service description, which is used within the check result</td>
+</tr>
+</tbody>
+</table>
+
+<p>An example configuration could look like this</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-properties" data-lang="properties">sakuli.forwarder.check_mk.enabled=true
+sakuli.forwarder.check_mk.spooldir=/var/lib/check_mk_agent/spool
+sakuli.forwarder.check_mk.freshness=600
+sakuli.forwarder.check_mk.spoolfile_prefix=sakuli_suite_
+sakuli.forwarder.check_mk.service_description=My_Custom_Service</code></pre></div>
+
+        </article>
+        <aside id="secondary-nav">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#sakuli-client-configuration">Sakuli Client Configuration</a>
+<ul>
+<li><a href="#spool-folder">Spool folder</a></li>
+<li><a href="#forwarder-configuration">Forwarder configuration</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </aside>
+    </div>
+    <a class="navbutton left" href="#docs-page">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <a class="navbutton right" id="show-menu-button">
+        <i class="fas fa-bars"></i>
+    </a>
+</div>
+
 
 
 </main>
