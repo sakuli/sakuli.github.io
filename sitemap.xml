@@ -3,106 +3,106 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://something-fresh.org/docs/200_enterprise/icinga/</loc>
+    <loc>https://sakuli.io/docs/200_enterprise/icinga/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/200_enterprise/check_mk/</loc>
+    <loc>https://sakuli.io/docs/200_enterprise/check_mk/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/200_enterprise/omd/</loc>
+    <loc>https://sakuli.io/docs/200_enterprise/omd/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/getting-started/</loc>
+    <loc>https://sakuli.io/docs/getting-started/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/100_writing-tests/</loc>
+    <loc>https://sakuli.io/docs/100_writing-tests/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/200_enterprise/</loc>
+    <loc>https://sakuli.io/docs/200_enterprise/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/100_writing-tests/000_anatomy-project/</loc>
+    <loc>https://sakuli.io/docs/100_writing-tests/000_anatomy-project/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/categories/</loc>
+    <loc>https://sakuli.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/enterprise/</loc>
+    <loc>https://sakuli.io/enterprise/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/features/</loc>
+    <loc>https://sakuli.io/features/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</loc>
+    <loc>https://sakuli.io/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/legalnotice/</loc>
+    <loc>https://sakuli.io/legalnotice/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/monitoring/</loc>
+    <loc>https://sakuli.io/monitoring/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/enterprise/forwarder/</loc>
+    <loc>https://sakuli.io/enterprise/forwarder/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/enterprise/container/</loc>
+    <loc>https://sakuli.io/enterprise/container/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/rpa/</loc>
+    <loc>https://sakuli.io/rpa/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/enterprise/cli/</loc>
+    <loc>https://sakuli.io/enterprise/cli/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/enterprise/core/</loc>
+    <loc>https://sakuli.io/enterprise/core/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/</loc>
+    <loc>https://sakuli.io/docs/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/</loc>
+    <loc>https://sakuli.io/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/enterprise/hub/</loc>
+    <loc>https://sakuli.io/enterprise/hub/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/100_writing-tests/100_native-testing/100_screenshot-based/</loc>
+    <loc>https://sakuli.io/docs/100_writing-tests/100_native-testing/100_screenshot-based/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/tags/</loc>
+    <loc>https://sakuli.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/testing/</loc>
+    <loc>https://sakuli.io/testing/</loc>
   </url>
   
   <url>
-    <loc>http://something-fresh.org/docs/100_writing-tests/000_web-testing/</loc>
+    <loc>https://sakuli.io/docs/100_writing-tests/000_web-testing/</loc>
   </url>
   
 </urlset>

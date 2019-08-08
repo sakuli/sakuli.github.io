@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web tests on Sakuli E2E and Monitoring</title>
-    <link>http://something-fresh.org/docs/100_writing-tests/000_web-testing/</link>
-    <description>Recent content in Web tests on Sakuli E2E and Monitoring</description>
+    <title>Web tests on Sakuli E2E Testing and Monitoring</title>
+    <link>https://sakuli.io/docs/100_writing-tests/000_web-testing/</link>
+    <description>Recent content in Web tests on Sakuli E2E Testing and Monitoring</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://something-fresh.org/docs/100_writing-tests/000_web-testing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sakuli.io/docs/100_writing-tests/000_web-testing/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
