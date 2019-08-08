@@ -59,7 +59,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .overlay {
   position: fixed;
-  z-index: 999;
+  z-index: 1021 !important;
   top: 0;
   left: 0;
   width: 100%;

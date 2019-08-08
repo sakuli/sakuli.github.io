@@ -2,6 +2,7 @@
 title: Getting started
 slug: getting-started
 description: "Learn how to install Sakuli on your system and write your first test."
+weight: 1000
 ---
 
 ## Prerequisites

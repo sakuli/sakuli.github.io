@@ -9,7 +9,7 @@
     {{$currentUrl := .currentUrl}}
     {{$pages := .section.Pages | lang.Merge .section.Sections }}
     <ul>
-        {{ range sort $pages}}
+        {{ range sort $pages.ByWeight }}
             {{ template "sectionEntry" (dict "page" . "currentUrl" $currentUrl)}}
         {{ end }}
     </ul>

@@ -1,7 +1,7 @@
 ---
 title: Writing Tests
 slug: writing-tests
-
+weight: 2000
 ---
 
 With Sakuli v2+ we changed a lot under the hood of Sakuli and completely replaced the technology-stack. This resulted in a more flexible and future-ready architecture while remaining a maximum of backward compatibility.
