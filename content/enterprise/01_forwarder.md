@@ -44,3 +44,5 @@ Supported Monitoring Systems:
    - Any other DB system --> __*on request*__
   - ElasticSearch --> __*coming soon*__
   - Nagios native --> __*coming soon*__
+
+A NPM token is necessary to retrieve the respective NPM package.

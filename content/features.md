@@ -62,10 +62,11 @@ Windows 10 and above
 OSX V.10.10 and above
 {{</feature-card>}}
 {{% feature-card title="Linux" icon="fab fa-linux" %}}
-Linux Systems (requires X-Window-System >= V. 1.18)
+Requires X-Window-System >= V. 1.18
 
-- Linux Ubuntu >= V. 16.04
-- easy
+- Ubuntu >= V. 16.04
+- RHEL >= V. 7
+
 {{%/feature-card%}}
 {{< /card-deck >}}
 
@@ -75,14 +76,15 @@ Linux Systems (requires X-Window-System >= V. 1.18)
 
 {{< card-deck >}}
 {{% feature-card title="OMD" image="/images/omd.svg"  %}}
-OMD (Gearman) version 3 and above
+OMD (Gearman)<br/> 
+Version 3 and above
 {{% /feature-card %}}
 {{% feature-card title="Icinga2" image="/images/icinga.svg"  %}}
 <!-- Von unbekannt - Vektordaten: https://www.icinga.com/wp-content/uploads/2013/10/Icinga_OSMC2013_Presentation.pdfFarbinfo: von Weiß auf Schwarz umgesetzt, Logo, https://de.wikipedia.org/w/index.php?curid=10452845 -->
 Icinga2 with configured API
 {{% /feature-card %}}
 {{% feature-card title="Check_MK" image="/images/check_mk.svg" %}}
-Check_MK version 1.5 ad above
+Version 1.5 and above
 {{% /feature-card %}}
 {{% feature-card title="Databases" image="/images/database.svg" %}}
 SQL Databases supported by [Typeorm](https://typeorm.io)
@@ -92,7 +94,7 @@ SQL Databases supported by [Typeorm](https://typeorm.io)
 ### Docker-Image
 
 {{<card-deck>}}
-{{% feature-card title="All in one Docker image" image="/images/content/container.svg" %}}
+{{% feature-card title="All in one Docker image ships with:" image="/images/content/container.svg" %}}
 {{% /feature-card %}}
 {{</card-deck>}}
 

@@ -30,3 +30,5 @@ Each Sakuli docker image includes the following components in their respective l
 - Mozilla Firefox
 - Google Chrome
 - Sakuli
+
+A docker-hub account is necessary to retrieve the respective image.
