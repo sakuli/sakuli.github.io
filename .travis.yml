@@ -14,7 +14,7 @@ install: false
 # script - run the build script
 script:
     - (cd vue-components && npm ci && npm run build)
-    - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo:0.53
+    - docker run -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo:0.55
 
 deploy:
   provider: pages
