@@ -1,3 +1,4 @@
+@import "../../../../vue-components/node_modules/bootstrap/scss/bootstrap.scss";
 @import 'variables.scss';
 @import 'story.scss';
 @import 'features.scss';
@@ -11,7 +12,6 @@
 @import 'docs_page.scss';
 @import 'section-navigation.scss';
 
-@import "../../../../vue-components/node_modules/bootstrap/scss/bootstrap.scss";
 
 
 body,
@@ -40,7 +40,6 @@ main {
         margin-bottom: 5rem;
     }
 
-    margin-top: 70px;
     line-height: 1.75rem;
 
     article {

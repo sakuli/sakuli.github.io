@@ -15,7 +15,6 @@ import { syncSize } from './dom-utils';
 syncSize('#main-nav', 'nav');
 syncSize('#secondary-nav', '#TableOfContents');
 
-
 // Mounting gdpr info to an dynamicly created element
 const gdprInfo = document.createElement('div');
 document.body.appendChild(gdprInfo);
@@ -31,7 +30,7 @@ Array.from(document.querySelectorAll('[data-contactform]')).forEach((e, i) => {
         formUrl: e.getAttribute('href')
     }
     new Vue({
-        el: e, 
+        el: e,
         render(h) {
             return h(ContactForm, {props: {...props}})
         }
