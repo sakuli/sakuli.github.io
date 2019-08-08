@@ -1,5 +1,5 @@
-baseURL: http://something-fresh.org/
+baseURL: https://sakuli.io/
 languageCode: en-us
-title: Sakuli E2E and Monitoring
+title: Sakuli E2E Testing and Monitoring
 theme: sakuli
 sectionPagesMenu: "main"
