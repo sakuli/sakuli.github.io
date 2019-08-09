@@ -9,7 +9,7 @@ Add the forwarder to your project with:
 SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-icinga2
 {{</highlight>}}
 
-To register the forwarder in your project you have edit the `package.json` file and add the preset to the sakuli configuration key:
+To register the forwarder in your project you have edit the `package.json` file and add the preset to the Sakuli configuration key:
 
 {{<highlight json>}}
 {
@@ -23,9 +23,9 @@ To register the forwarder in your project you have edit the `package.json` file 
 {{</highlight>}}
 
 ## Enable the Icinga2 API
-The steps to enable the Icinga2 API are described in the [REST API documentation](http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api).
+The steps to enable the Icinga2 API are described in the [**REST API documentation**](http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api).
 
-## Create a Icings2 service
+## Create a Icinga2 service
 
 Create a `check_command`, which will be executed only if Icinga did not receive a Sakuli result within a certain time. This ensures that you get a notification even if no passive check results arrive in Icinga at all:
 
@@ -55,7 +55,7 @@ object Host "sakuliclient01" {
 }
 {{</highlight>}}
 
-Create the following service object for the first test case. freshness_threshold should be slightly higher than the interval Sakuli tests are planned.
+Create the following service object for the first test case. The freshness_threshold should be slightly higher than the interval Sakuli tests are planned.
 
 {{<highlight conf>}}
 object Service "sakuli_demo" {
@@ -76,19 +76,19 @@ Reload Icinga2:
 service icinga2 reload
 {{</highlight>}}
 
-Now open Icingaweb2; you should see the Sakuli host with the service "sakuli_demo" attached.
+Now open Icingaweb2, you should see the Sakuli host with the service "sakuli_demo" attached.
 
 The check is waiting now for check results from a Sakuli client.
 
 ## Sakuli Client Configuration
 
-On the Sakuli client you must set the global properties for the Icinga2 receiver. For this, edit `sakuli.properties` in the folder containing the test suites:
+You must set the global properties for the Icinga2 receiver on the Sakuli client by editing the `sakuli.properties`. You can find them in the folder containing the test suites:
 
 | Property | Default | Effect |
 |----------|---------|--------|
 |`sakuli.forwarder.icinga2.enabled` | `false`| Enables result forwarding to Icinga2 |
-|`sakuli.forwarder.icinga2.api.host`| | The hostname or ip of the Icinga API-Endpoints|
-|`sakuli.forwarder.icinga2.api.port`| `5665` | The port or ip of the Icinga API-Endpoints|
+|`sakuli.forwarder.icinga2.api.host`| | The hostname or ip of the Icinga2 API-Endpoints|
+|`sakuli.forwarder.icinga2.api.port`| `5665` | The port or ip of the Icinga2 API-Endpoints|
 |`sakuli.forwarder.icinga2.api.username` | | API user name |
 |`sakuli.forwarder.icinga2.api.password` | | API user password |
 |`sakuli.forwarder.icinga2.hostname`| | The name of the host object configured in Icinga2 |
