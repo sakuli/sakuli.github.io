@@ -457,21 +457,21 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             <h1>Enterprise Features</h1>
             
 
-<p>Some Features of Sakuli requires an enterprice license. Please consult our <a href="/enterprise">overview</a> to see and request packages and prices. After you registered for an enterprise subscription, you will get a license key and an npm access token which are required to use enterprise features.</p>
+<p>Some features of Sakuli require an enterprise license. Please consult our <strong><a href="/enterprise">overview</a></strong> to see and request packages and prices. After you registered for an enterprise subscription, you will get a license-key and an NPM access token which are required to use enterprise features.</p>
 
 <h2 id="using-npm-token">Using NPM-Token</h2>
 
-<p>All enterprice plugins are published on NPM. In contrast to the core packages they are not publicly accessible. So you need the provided access token in order to install this packages in your Sakuli projects. The most easiest way is to add it as an environment variable when running the installation command:</p>
+<p>All enterprise plugins are published on NPM. In contrast to the core packages they are not publicly accessible. Therefore you need the provided access token in order to install these packages into your Sakuli projects. The easiest way is to add the token as an environment variable when running the installation command:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;PERSONAL-TOKEN&gt; npm i @sakuli/&lt;ENTERPRICE-PACKAGE-NAME&gt;</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;PERSONAL-TOKEN&gt; npm i @sakuli/&lt;ENTERPRISE-PACKAGE-NAME&gt;</code></pre></div>
 
-<p>It is usually not nesseccary to persist the token since you will seldom run <code>npm install</code> that often. If it is some how required to set the token permanently on a system consult the official <a href="https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow#set-the-token-as-an-environment-variable-on-the-cicd-server">npm guid for CI/CD integration</a> (even useful outside CI/CD contexts).</p>
+<p>It is usually not necessary to persist the token since you will seldomly run <code>npm install</code> that often. If it is required to set the token permanently on a system consult the official <strong><a href="https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow#set-the-token-as-an-environment-variable-on-the-cicd-server">npm guid for CI/CD integration</a></strong> (even useful outside CI/CD contexts).</p>
 
 <h2 id="using-the-license-key">Using the License-Key</h2>
 
-<p>The license-key contains information about your subscription which cwill be checked by the enterprise components on before they are executed. In order to provide this information to sakuli you also have to set the license as an environment variable. Because the is read on every single test execution it is useful to store it persitently on your system or set it in a script where the actual test is also called.</p>
+<p>The license-key contains information about your subscription which will be checked by enterprise components before they are executed. In order to provide this information to Sakuli you also have to set the license-key as an environment variable. Because the license-key is read on every single test execution it is useful to store it persistently on your system or set it in a script where the actual test is also called.</p>
 
-<p>The name of the environment variable for the license is <code>SAKULI_LICENSE_KEY</code></p>
+<p>The name of the environment variable for the license-key is <code>SAKULI_LICENSE_KEY</code>.</p>
 
 <h2 id="environment-variables">Environment Variables</h2>
 
@@ -483,34 +483,34 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>- <a href="https://en.wikipedia.org/wiki/Environment_variable">Wikipedia, 08/2019</a></p>
 
-<p>So basically a environment variable is just a simple key-value pair provided to a certain process e.g. <code>VAR_NAME=VALUE</code>. They can be set per process or system-wide - so that they are accessible in each upcoming process.</p>
+<p>So basically an environment variable is just a simple key-value pair provided to a certain process e.g. <code>VAR_NAME=VALUE</code>. They can be set for each process or system-wide - so that they become accessible for each upcoming process.</p>
 
-<p>The method to set a environment variable can depends on your system.</p>
+<p>The approach for integrating an environment variable depends on the respective operating system.</p>
 
 <h3 id="on-windows">On Windows</h3>
 
-<p>To set a environment variable on Windows you have to:</p>
+<p>To set an environment variable on Windows you have to:</p>
 
 <ul>
-<li>Open <em>Start-Menu</em> and type <kbd>env</kbd>
+<li>Open <em>Start-Menu</em> and type <kbd>env</kbd> into the search mask
 
 <ul>
-<li>An entry <strong>Edit the system environment variables</strong> should appear (click it)</li>
+<li>An entry <strong>&lsquo;Edit the system environment variables&rsquo;</strong> should appear (click on it)</li>
 </ul></li>
-<li>A <em>System Properties</em> dialog should open.
+<li>After the <em>System Properties</em> dialog showed up
 
 <ul>
-<li>Go to tab <em>Advanced</em></li>
-<li>Click the button <em>Environment Variables</em> (on the bottom of this dialog)</li>
+<li>Go to the <em>Advanced</em> tab</li>
+<li>Click on the button <em>Environment Variables</em> (at the bottom of the dialog)</li>
 </ul></li>
-<li>You should see two tables with <em>Variable</em> and <em>Value</em> columns for <em>User Variables</em> and <em>System variables</em></li>
+<li>You should see two tables including <em>Variable</em> and <em>Value</em> columns for <em>User Variables</em> and <em>System variables</em></li>
 </ul>
 
-<p>Thats it there you can set, edit or delete Envrionment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">here</a></p>
+<p>There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/"><strong>here</strong></a></p>
 
-<p>Alternativly you can use <a href="https://www.rapidee.com/en/about">Rapid Environemnt Editor</a> which is just a nice tool edit  system configuration on Windows.</p>
+<p>Alternatively you can use <strong><a href="https://www.rapidee.com/en/about">Rapid Environemnt Editor</a></strong> which is a nice tool for editing environment variables on Windows.</p>
 
-<p>In case of a more restritive environemnt - where it is not possible to edit environment variables - you can set them in a batch script:</p>
+<p>In case of a more restrictive environment - where it is not possible to edit environment variables that easily - you can set them in a batch script:</p>
 
 <p><code>run-sakuli.bat</code>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch"><span style="color:#66d9ef">SET</span> SAKULI_LICENSE_KEY=&lt;PERSONAL_LICENSE&gt;
@@ -518,20 +518,20 @@ sakuli run .</code></pre></div></p>
 
 <h3 id="on-linux-or-osx">On Linux or OSX</h3>
 
-<p>On Linux or OSX is usually a file wihch sets up the environment for certain processes.</p>
+<p>On Linux or OSX it is usually a file which sets up the environment for certain processes.</p>
 
 <ul>
 <li><code>~/.bashrc</code> on Linux</li>
 <li><code>~/.profile</code> on OSX</li>
 </ul>
 
-<p>This files can be edited with every texteditor to add, edit or remove environment variables. An environemnt variable is defined with:</p>
+<p>These files can be edited with every text editor to add, edit or remove environment variables. An environment variable is defined by:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export VARIABLE_NAME<span style="color:#f92672">=</span>VALUE</code></pre></div>
 
-<p>A new variable can be added with a command:</p>
+<p>A new variable can be added with the command:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;export VARIABLE_NAME=VALUE&#34;</span> &gt;&gt; ~/.bashrc <span style="color:#75715e"># Linux</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;export VARIABLE_NAME=VALUE&#34;</span> &gt;&gt; ~/.bashrc  <span style="color:#75715e"># Linux</span>
 echo <span style="color:#e6db74">&#34;export VARIABLE_NAME=VALUE&#34;</span> &gt;&gt; ~/.profile <span style="color:#75715e"># OSX</span></code></pre></div>
 
         </article>

@@ -461,7 +461,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;PERSONAL_NPM_ACCESS_TOKEN&gt; npm i @sakuli/forwarder-icinga2</code></pre></div>
 
-<p>To register the forwarder in your project you have edit the <code>package.json</code> file and add the preset to the sakuli configuration key:</p>
+<p>To register the forwarder in your project you have edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sakuli&#34;</span>: {
@@ -474,9 +474,9 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <h2 id="enable-the-icinga2-api">Enable the Icinga2 API</h2>
 
-<p>The steps to enable the Icinga2 API are described in the <a href="http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api">REST API documentation</a>.</p>
+<p>The steps to enable the Icinga2 API are described in the <a href="http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api"><strong>REST API documentation</strong></a>.</p>
 
-<h2 id="create-a-icings2-service">Create a Icings2 service</h2>
+<h2 id="create-a-icinga2-service">Create a Icinga2 service</h2>
 
 <p>Create a <code>check_command</code>, which will be executed only if Icinga did not receive a Sakuli result within a certain time. This ensures that you get a notification even if no passive check results arrive in Icinga at all:</p>
 
@@ -502,7 +502,7 @@ object CheckCommand &#34;check_sakuli&#34; {
    address = &#34;&lt;IP&gt;&#34;
 }</code></pre></div></p>
 
-<p>Create the following service object for the first test case. freshness_threshold should be slightly higher than the interval Sakuli tests are planned.</p>
+<p>Create the following service object for the first test case. The freshness_threshold should be slightly higher than the interval Sakuli tests are planned.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object Service &#34;sakuli_demo&#34; {
   import &#34;generic-service&#34;
@@ -519,13 +519,13 @@ object CheckCommand &#34;check_sakuli&#34; {
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service icinga2 reload</code></pre></div>
 
-<p>Now open Icingaweb2; you should see the Sakuli host with the service &ldquo;sakuli_demo&rdquo; attached.</p>
+<p>Now open Icingaweb2, you should see the Sakuli host with the service &ldquo;sakuli_demo&rdquo; attached.</p>
 
 <p>The check is waiting now for check results from a Sakuli client.</p>
 
 <h2 id="sakuli-client-configuration">Sakuli Client Configuration</h2>
 
-<p>On the Sakuli client you must set the global properties for the Icinga2 receiver. For this, edit <code>sakuli.properties</code> in the folder containing the test suites:</p>
+<p>You must set the global properties for the Icinga2 receiver on the Sakuli client by editing the <code>sakuli.properties</code>. You can find them in the folder containing the test suites:</p>
 
 <table>
 <thead>
@@ -546,13 +546,13 @@ object CheckCommand &#34;check_sakuli&#34; {
 <tr>
 <td><code>sakuli.forwarder.icinga2.api.host</code></td>
 <td></td>
-<td>The hostname or ip of the Icinga API-Endpoints</td>
+<td>The hostname or ip of the Icinga2 API-Endpoints</td>
 </tr>
 
 <tr>
 <td><code>sakuli.forwarder.icinga2.api.port</code></td>
 <td><code>5665</code></td>
-<td>The port or ip of the Icinga API-Endpoints</td>
+<td>The port or ip of the Icinga2 API-Endpoints</td>
 </tr>
 
 <tr>
@@ -582,7 +582,7 @@ object CheckCommand &#34;check_sakuli&#34; {
 <li>
 <ul>
 <li><a href="#enable-the-icinga2-api">Enable the Icinga2 API</a></li>
-<li><a href="#create-a-icings2-service">Create a Icings2 service</a></li>
+<li><a href="#create-a-icinga2-service">Create a Icinga2 service</a></li>
 <li><a href="#sakuli-client-configuration">Sakuli Client Configuration</a></li>
 </ul></li>
 </ul>
