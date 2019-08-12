@@ -9,7 +9,7 @@ Add the forwarder to your project with:
 SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-gearman
 {{</highlight>}}
 
-To register the forwarder in your project you have edit the `package.json` file and add the preset to the sakuli configuration key:
+To register the forwarder in your project you have edit the `package.json` file and add the preset to the Sakuli configuration key:
 
 {{<highlight json>}}
 {
@@ -24,16 +24,16 @@ To register the forwarder in your project you have edit the `package.json` file 
 
 ## Configure OMD
 
-Sakuli transmits performance data to a **Gearman result queue** rather than to OMD directly. So a gearman-enabled monitoring system in a OMD environment is required.
+Sakuli transmits performance data to a **Gearman result queue** rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.
 
-It takes a few steps in the monitoring system in order to process Sakulis performance data correctly.
+It takes a few steps to set up the monitoring system in order to process Sakuli's performance data correctly.
 
-### Enable and configure mod-gearman
+### Enable and configure mod_gearman
 
 Use the Makefile located in `OMD_ROOT/share/sakuli/omd/` to configure mod_gearman:
 
 - enable all services for mod_gearman
-- set the bind IP and port (default: `0.0.0.0:4730`; overwrite with e.g. `export GEARMAND_PORT=192.168.130.10:4731`)
+- set the bind IP and port (default: `0.0.0.0:4730`; overwrite with e.g. `export GEARMAN_PORT=192.168.130.10:4731`)
 - set the encryption key (default: `sakuli_secret`; overwrite with e.g. `export GEARMAN_SECRET=mykey`)
 
 Then run:
@@ -45,13 +45,13 @@ make gearman
 {{</highlight>}}
 
 {{%alert%}}
-For security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the steps carefully and execute the steps by hand.
+For security reasons, the Makefile will only configure mod_gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the steps carefully and execute the steps by hand.
 {{%/alert%}}
 {{% alert %}}
-For **PRODUCTION** usage please use individual encryption key!
+For **PRODUCTION** usage please use individual encryption keys!
 {{% /alert %}}
 
-If you do not want to use encryption at all enable accept_clear_results and disable sakuli.forwarder.gearman.encryption:
+If you do not want to use encryption at all enable `accept_clear_results` and disable `sakuli.forwarder.gearman.encryption`:
 
 {{<highlight bash>}}
 vim ~/etc/mod-gearman/server.cfg
@@ -66,12 +66,12 @@ sakuli.forwarder.gearman.encryption=false
 
 ### Gearman proxy (optional)
 
-Use the Sakuli gearman proxy script if you want to intervene into the communication between Sakuli and Naemon/Nagios.
+Use the Sakuli gearman proxy script if you want to intervene between the communication of Sakuli and Naemon/Nagios.
 
 Possible use cases:
 
 - Change parts of the messages Sakuli sends to the monitoring system ⇒ there are some examples contained already
-- Getting notified when Sakuli sends results to services which do not exists
+- Getting notified when Sakuli sends results to services which do not exist
 - Auto-create services for incoming results (not yet implemented)
 
 Use the Makefile located in `$OMD_ROOT/share/sakuli/` to enable the feature:
@@ -82,7 +82,7 @@ cd n/share/sakuli/setup/omd
 make gearman_proxy
 {{</highlight>}}
 
-Edit `etc/mod-gearman/sakuli_gearman_proxy.cfg`
+Edit `etc/mod-gearman/sakuli_gearman_proxy.cfg` :
 
 {{<highlight cfg>}}
 $remoteHost="172.17.0.2"; #1
@@ -98,12 +98,12 @@ $err_s = 'eror_svc';
 $err_r = '2'; #6
 {{</highlight>}}
 
-1. Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless gearman_proxy.pl is running on another system.
-2. Gearman IP/Port of the monitoring system
-3. check_results_sakuli ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property sakuli.forwarder.gearman.server.queue on all Sakuli clients (see Sakuli Client Configuration)
-4. check_results ⇒ default queue of mod-gearman where gearman workers write back their results. (no need to change that)
-5. The proxy does a livestatus query for each incoming package to ensure that the receiving host/service exists. Provide a special "error host/service" pair where the proxy can send a message when there are results coming in for non-existent services.
-6. Status of messages for non-existent services (2=CRITICAL)
+1. Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless `gearman_proxy.pl` is running on another system
+2. Gearman IP/Port for the monitoring system
+3. `check_results_sakuli` ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property `sakuli.forwarder.gearman.server.queue` on all Sakuli clients (see Sakuli Client Configuration)
+4. `check_results` ⇒ default queue of mod_gearman where gearman workers write back their results (no need to change that)
+5. The proxy does a live status query for each incoming package to ensure that the receiving host/service exists. It provides a special "error host/service" pair where the proxy can send a message in case of results coming back for non-existent services
+6. Status of the messages for non-existent services (2=CRITICAL)
 
 {{<highlight bash>}}
 su - <SITE_USER>
@@ -126,14 +126,14 @@ OMD[demo]:~$ gearman_top
 {{</highlight>}}
 
 {{% alert %}}
-This change does affect other monitoring checks executed with mod-gearman, because only Sakuli will send results into the queue check_results_sakuli.
+This change does affect other monitoring checks executed with mod_gearman, because only Sakuli will send results into the queue `check_results_sakuli`.
 {{% /alert %}}
 
 ### Create a Nagios service
 
 Create a service which should receive Sakuli test results. Host/service names derive from the following properties:
 
-- **host**: `sakuli.forwarder.gearman.nagios.hostname` (defined globally or per suite)
+- **host**: `sakuli.forwarder.gearman.nagios.hostname` (defined globally or via suite)
 - **service**: `testsuite.id` (defined in `testsuite.properties`)
 
 OMD Configuration:
@@ -154,19 +154,19 @@ define service {
 }
 {{</highlight>}}
 
-> freshness_threshold should be slightly higher than the interval Sakuli tests are executed
+> `freshness_threshold` should be slightly higher than the interval Sakuli tests are executed
 
 The check is waiting now for check results from a Sakuli client.
 
 ## Sakuli Configuration
 
-On the Sakuli client you must set the global properties for the gearman receiver. For this, edit sakuli.properties in the folder containing the test suites:
+You must set the global properties for the gearman receiver on the Sakuli client. For this, edit `sakuli.properties` in the folder containing the test suites:
 
 | Property   |      Default      |  Effect |
 |----------|-------------|------|
-| `sakuli.forwarder.gearman.enabled` | `false` | Enables forwarding to OMD |
-| `sakuli.forwarder.gearman.encryption` | `true` | Enable encryption and set the key only if you did not activate accept_clear_results in mod_gearman. Otherwise, set encryption to false. |
-| `sakuli.forwarder.gearman.secret.key`| `secret-password` | The password configured in [Enable and configure mod-gearman](#enable-and-configure mod-gearman) |
+| `sakuli.forwarder.gearman.enabled` | `false` | Enable forwarding to OMD |
+| `sakuli.forwarder.gearman.encryption` | `true` | Enable encryption and set the key only if you did not activate `accept_clear_results` in mod_gearman. Otherwise, set encryption to false. |
+| `sakuli.forwarder.gearman.secret.key`| `secret-password` | The password configured in [**enable and configure mod_gearman**](#enable-and-configure mod-gearman) |
 | `sakuli.forwarder.gearman.server.host`| | The host where OMD is running |
-| `sakuli.forwarder.gearman.server.port`| `4730` | The port where Gearman is listing (configured in [Enable and configure mod-gearman](#enable-and-configure mod-gearman)) |
-| `sakuli.forwarder.gearman.server.queue`| `check_results` | The default queue for sakuli |
+| `sakuli.forwarder.gearman.server.port`| `4730` | The port where Gearman is listing (configured in [**enable and configure mod_gearman**](#enable-and-configure mod-gearman)) |
+| `sakuli.forwarder.gearman.server.queue`| `check_results` | The default queue for Sakuli |
