@@ -7,10 +7,23 @@ Some features of Sakuli require an enterprise license. Please consult our **[ove
 
 ## Using NPM-Token
 
-All enterprise plugins are published on NPM. In contrast to the core packages they are not publicly accessible. Therefore you need the provided access token in order to install these packages into your Sakuli projects. The easiest way is to add the token as an environment variable when running the installation command:
+All enterprise plugins are published on NPM. In contrast to the core packages they are not publicly accessible. Therefore you need the provided access token in order to install these packages into your Sakuli projects. The easiest way is to add the token in a `.npmrc`-file in the root of your project directory:
 
 {{<highlight bash>}}
-NPM_TOKEN=<PERSONAL-TOKEN> npm i @sakuli/<ENTERPRISE-PACKAGE-NAME>
+# cd to/your/project
+echo "//registry.npmjs.org/:_authToken=<PERSONAL-TOKEN>" >> .npmrc
+{{</highlight>}}
+
+This command will create an `.npmrc` file with the neccessary token configuration. Every upcoming `npm install` will use this configuration. If you dont like to save the token in a file (because this file might be shared) you can configure it to use an [environment variable](environment-variables):
+
+{{<highlight bash>}}
+echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
+{{</highlight>}}
+
+In this case you have to provide the token via an environemnt variable `NPM_TOKEN` or set it per installation of an enterprise package:
+
+{{<highlight bash>}}
+NPM_TOKEN=<PERSONAL-TOKEN> npm i <ENTERPISE-PACKAGE>
 {{</highlight>}}
 
 It is usually not necessary to persist the token since you will seldomly run `npm install` that often. If it is required to set the token permanently on a system consult the official **[npm guid for CI/CD integration](https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow#set-the-token-as-an-environment-variable-on-the-cicd-server)** (even useful outside CI/CD contexts).
