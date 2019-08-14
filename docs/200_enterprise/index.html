@@ -461,9 +461,18 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <h2 id="using-npm-token">Using NPM-Token</h2>
 
-<p>All enterprise plugins are published on NPM. In contrast to the core packages they are not publicly accessible. Therefore you need the provided access token in order to install these packages into your Sakuli projects. The easiest way is to add the token as an environment variable when running the installation command:</p>
+<p>All enterprise plugins are published on NPM. In contrast to the core packages they are not publicly accessible. Therefore you need the provided access token in order to install these packages into your Sakuli projects. The easiest way is to add the token in a <code>.npmrc</code>-file in the root of your project directory:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;PERSONAL-TOKEN&gt; npm i @sakuli/&lt;ENTERPRISE-PACKAGE-NAME&gt;</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cd to/your/project</span>
+echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;PERSONAL-TOKEN&gt;&#34;</span> &gt;&gt; .npmrc</code></pre></div>
+
+<p>This command will create an <code>.npmrc</code> file with the neccessary token configuration. Every upcoming <code>npm install</code> will use this configuration. If you dont like to save the token in a file (because this file might be shared) you can configure it to use an <a href="environment-variables">environment variable</a>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=\${NPM_TOKEN}&#34;</span> &gt;&gt; .npmrc</code></pre></div>
+
+<p>In this case you have to provide the token via an environemnt variable <code>NPM_TOKEN</code> or set it per installation of an enterprise package:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;PERSONAL-TOKEN&gt; npm i &lt;ENTERPISE-PACKAGE&gt;</code></pre></div>
 
 <p>It is usually not necessary to persist the token since you will seldomly run <code>npm install</code> that often. If it is required to set the token permanently on a system consult the official <strong><a href="https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow#set-the-token-as-an-environment-variable-on-the-cicd-server">npm guid for CI/CD integration</a></strong> (even useful outside CI/CD contexts).</p>
 
