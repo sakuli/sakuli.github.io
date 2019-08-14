@@ -29,8 +29,8 @@ Create a Icinga2 service Create a check_command, which will be executed only if 
       
       <guid>https://sakuli.io/docs/200_enterprise/check_mk/</guid>
       <description>Add the forwarder to your project with:
-SAKULI_LICENSE_KEY=&amp;lt;PERSONAL_NPM_ACCESS_TOKEN&amp;gt; npm i @sakuli/forwarder-check_mk To register the forwarder in your project you have to edit the package.json file and add the preset to the sakuli configuration key:
-{ &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-check_mk&amp;#34; ] } } Sakuli Client Configuration It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.
+SAKULI_LICENSE_KEY=&amp;lt;PERSONAL_NPM_ACCESS_TOKEN&amp;gt; npm i @sakuli/forwarder-checkmk To register the forwarder in your project you have to edit the package.json file and add the preset to the sakuli configuration key:
+{ &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-checkmk&amp;#34; ] } } Sakuli Client Configuration It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.
 Spool folder Create a new folder spool in the installation path of the Check_MK agent.</description>
     </item>
     
