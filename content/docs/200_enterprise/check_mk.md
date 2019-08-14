@@ -14,7 +14,7 @@ To register the forwarder in your project you have to edit the `package.json` fi
 {{<highlight json>}}
 {
     "sakuli": {
-        "presetProvider: [
+        "presetProvider": [
             "@sakuli/legacy",
             "@sakuli/forwarder-check_mk"
         ]

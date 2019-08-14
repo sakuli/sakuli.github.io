@@ -14,7 +14,7 @@ To register the forwarder in your project you have edit the `package.json` file 
 {{<highlight json>}}
 {
     "sakuli": {
-        "presetProvider: [
+        "presetProvider": [
             "@sakuli/legacy",
             "@sakuli/forwarder-gearman"
         ]
