@@ -92,3 +92,5 @@ You must set the global properties for the Icinga2 receiver on the Sakuli client
 |`sakuli.forwarder.icinga2.api.username` | | API user name |
 |`sakuli.forwarder.icinga2.api.password` | | API user password |
 |`sakuli.forwarder.icinga2.hostname`| | The name of the host object configured in Icinga2 |
+|`sakuli.forwarder.icinga2.service_description`| `${testsuite.id}` | The name of the service in icinga2 |
+|`sakuli.forwarder.icinga2.allow_insecure_connection`| `false` | Disable SSL checks. **Never** use this in production environments! |
