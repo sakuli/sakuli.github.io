@@ -467,19 +467,25 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>The minimum setup of a Sakuli project looks like this:</p>
 
-<section class="unstyled-list-section">
-    
-- <i class="fas fa-folder"></i> **your-sakuli-project** *Homefolder of the project*
-  - <i class="far fa-file"></i> **package.json** *All dependencies and setup for NodeJs*
-  - <i class="far fa-file"></i> **sakuli.properties** *(optional: Configuration for all Testsuites)*
-  - <i class="fas fa-folder"></i> **testsuite-a** *Homefolder of a testsuite*
-     - <i class="far fa-file"></i> **testsuite.suite** *Defines which testcases belongs to the testsuite*
-     - <i class="far fa-file"></i> **testsuite.properties** *Configuration for the testsuite (overrides configuration from '../sakuli.properties')*
-     - <i class="fas fa-folder"></i> **testcase** *Home of the testcase*
-         - <i class="far fa-file"></i> **testcase.js** *The actual testcase*
+<section class="unstyled-list-section"><ul>
+<li><i class="fas fa-folder"></i> <strong>your-sakuli-project</strong> <em>Homefolder of the project</em>
 
+<ul>
+<li><i class="far fa-file"></i> <strong>package.json</strong> <em>All dependencies and setup for NodeJs</em></li>
+<li><i class="far fa-file"></i> <strong>sakuli.properties</strong> <em>(optional: Configuration for all Testsuites)</em></li>
+<li><i class="fas fa-folder"></i> <strong>testsuite-a</strong> <em>Homefolder of a testsuite</em>
 
-</section>
+<ul>
+<li><i class="far fa-file"></i> <strong>testsuite.suite</strong> <em>Defines which testcases belongs to the testsuite</em></li>
+<li><i class="far fa-file"></i> <strong>testsuite.properties</strong> <em>Configuration for the testsuite (overrides configuration from &lsquo;../sakuli.properties&rsquo;)</em></li>
+<li><i class="fas fa-folder"></i> <strong>testcase</strong> <em>Home of the testcase</em>
+
+<ul>
+<li><i class="far fa-file"></i> <strong>testcase.js</strong> <em>The actual testcase</em></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></section>
 
 <p>This file layout also represents the logical structure of Sakuli which consists of a <em>testsuite</em> with one or more <em>testcase(s)</em>. Sakulis <code>run</code> command takes a path to a testsuite folder and runs all testcases defined in <code>testsuite.suite</code> from the given path.</p>
 
