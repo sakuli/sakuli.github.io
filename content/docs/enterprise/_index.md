@@ -1,17 +1,51 @@
 ---
 title: Enterprise Features
+slug: enterprise
 weight: 3000
 ---
 
 Some features of Sakuli require an enterprise license. Please consult our **[overview](/enterprise)** to see and request packages and prices. After you registered for an enterprise subscription, you will get a license-key and an NPM access token which are required to use enterprise features.
 
-## Using NPM-Token
+## Using Licences Information
 
-All enterprise plugins are published on NPM. In contrast to the core packages they are not publicly accessible. Therefore you need the provided access token in order to install these packages into your Sakuli projects. The easiest way is to add the token in a `.npmrc`-file in the root of your project directory:
+After you subscribed to a _Sakuli enterprise_ subscription you will receive an email with
+
+- _Sakuli License key_ - Contains information about your subscription and is used by Sakuli itself
+- and a _NPM-Token_ - Allows access to the private enterprise packages on NPM
+
+There are several ways to deal with this information. The most simple way to get your enterprise features to work is the following (_substitute the placeholders between the chevrons with its appropriate value_):
+
+_On Unix_
+{{<highlight bash>}}
+echo "//registry.npmjs.org/:_authToken=<NPM-TOKEN>" >> ~/.npmrc
+echo "export SAKULI_LICENSE_KEY=<SAKULI-LICENSE-KEY>" >> ~/.bashrc
+{{</highlight>}}
+
+_On Windows_
+{{<highlight bash>}}
+echo "//registry.npmjs.org/:_authToken=<NPM-TOKEN>" >> %USERPROFILE%\.npmrc
+setx SAKULI_LICENSE_KEY=<SAKULI-LICENSE-KEY>
+{{</highlight>}}
+
+_On OSX_
+{{<highlight bash>}}
+echo "//registry.npmjs.org/:_authToken=<NPM-TOKEN>" >> ~/.npmrc
+echo "export SAKULI_LICENSE_KEY=<SAKULI-LICENSE-KEY>" >> ~/.profile
+{{</highlight>}}
+
+{{<alert>}}
+The Environment varaibles might not take effect in the command-line window where the commadns above are entered. So you might need to open a new commandline when running the Sakuli command.
+{{</alert>}}
+
+This commands will set the license key and token globally. This is good for a first setup on your machine but might have some shortcomings in some situations. The folloing paragrpahs describe alternative ways to provide license/token information to your Sakuli installation.
+
+## Alternative using NPM-Token
+
+You can set the NPM-Token per project by adding a `.npmrc` file to your projects root directory.
 
 {{<highlight bash>}}
-# cd to/your/project
-echo "//registry.npmjs.org/:_authToken=<PERSONAL-TOKEN>" >> .npmrc
+# cd path/to/project
+echo "//registry.npmjs.org/:_authToken=<NPM-TOKEN>" >> .npmrc
 {{</highlight>}}
 
 This command will create an `.npmrc` file with the neccessary token configuration. Every upcoming `npm install` will use this configuration. If you dont like to save the token in a file (because this file might be shared) you can configure it to use an [environment variable](environment-variables):
@@ -23,8 +57,10 @@ echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
 In this case you have to provide the token via an environemnt variable `NPM_TOKEN` or set it per installation of an enterprise package:
 
 {{<highlight bash>}}
-NPM_TOKEN=<PERSONAL-TOKEN> npm i <ENTERPISE-PACKAGE>
+NPM_TOKEN=<NPM-TOKEN> npm i <ENTERPISE-PACKAGE>
 {{</highlight>}}
+
+This approach is usually used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).
 
 It is usually not necessary to persist the token since you will seldomly run `npm install` that often. If it is required to set the token permanently on a system consult the official **[npm guid for CI/CD integration](https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow#set-the-token-as-an-environment-variable-on-the-cicd-server)** (even useful outside CI/CD contexts).
 
@@ -34,10 +70,9 @@ The license-key contains information about your subscription which will be check
 
 The name of the environment variable for the license-key is `SAKULI_LICENSE_KEY`.
 
-## Environment Variables
+## More about Environment Variables
 
 > An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer.
-
 > They are part of the environment in which a process runs. For example, a running process can query the value of the TEMP environment variable to discover a suitable location to store temporary files, or the HOME or USERPROFILE variable to find the directory structure owned by the user running the process.
 
 \- [Wikipedia, 08/2019](https://en.wikipedia.org/wiki/Environment_variable)

@@ -3,10 +3,10 @@ title: OMD / Gearman Forwarder
 weight: 300
 ---
 
-Add the forwarder to your project with:
+Install the forwarder to your project with:
 
 {{<highlight bash>}}
-SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-gearman
+npm i @sakuli/forwarder-gearman
 {{</highlight>}}
 
 To register the forwarder in your project you have edit the `package.json` file and add the preset to the Sakuli configuration key:
@@ -21,6 +21,10 @@ To register the forwarder in your project you have edit the `package.json` file 
     }
 }
 {{</highlight>}}
+
+{{<alert>}}
+Installation of any enterprise feature requires a proper setup of the license information. You find further information in the [enterpise section](/docs/enterprise#using-licences-information)
+{{</alert>}}
 
 ## Configure OMD
 

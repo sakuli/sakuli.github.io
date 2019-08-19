@@ -1,12 +1,13 @@
 ---
 title: Icinga2 Forwarder
+slug: icinga2-forwarder
 weight: 100
 ---
 
 Add the forwarder to your project with:
 
 {{<highlight bash>}}
-SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-icinga2
+npm i @sakuli/forwarder-icinga2
 {{</highlight>}}
 
 To register the forwarder in your project you have edit the `package.json` file and add the preset to the Sakuli configuration key:
@@ -21,6 +22,10 @@ To register the forwarder in your project you have edit the `package.json` file 
     }
 }
 {{</highlight>}}
+
+{{<alert>}}
+Installation of any enterprise feature requires a proper setup of the license information. You find further information in the [enterpise section](/docs/enterprise#using-licences-information)
+{{</alert>}}
 
 ## Enable the Icinga2 API
 The steps to enable the Icinga2 API are described in the [**REST API documentation**](http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api).
