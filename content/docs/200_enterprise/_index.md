@@ -33,7 +33,7 @@ So basically an environment variable is just a simple key-value pair provided to
 
 The approach for integrating an environment variable depends on the respective operating system.
 
-### On Windows
+### On Windows 
 
 To set an environment variable on Windows you have to:
 
@@ -46,7 +46,7 @@ To set an environment variable on Windows you have to:
 
 There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found [**here**](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
 
-Alternatively you can use **[Rapid Environemnt Editor](https://www.rapidee.com/en/about)** which is a nice tool for editing environment variables on Windows.
+Alternatively you can use **[Rapid Environment Editor](https://www.rapidee.com/en/about)** which is a nice tool for editing environment variables on Windows.
 
 In case of a more restrictive environment - where it is not possible to edit environment variables that easily - you can set them in a batch script:
 
@@ -63,7 +63,7 @@ On Linux or OSX it is usually a file which sets up the environment for certain p
 - `~/.bashrc` on Linux
 - `~/.profile` on OSX
 
-These files can be edited with every text editor to add, edit or remove environment variables. An environment variable is defined by:
+These files can be changed with every text editor to add, edit or remove environment variables. An environment variable is defined by:
 
 {{<highlight bash>}}
 export VARIABLE_NAME=VALUE

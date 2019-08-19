@@ -9,7 +9,7 @@ Add the forwarder to your project with:
 SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-gearman
 {{</highlight>}}
 
-To register the forwarder in your project you have edit the `package.json` file and add the preset to the Sakuli configuration key:
+To register the forwarder into your project you have to edit the `package.json` file and add the preset to the Sakuli configuration key:
 
 {{<highlight json>}}
 {
@@ -24,15 +24,15 @@ To register the forwarder in your project you have edit the `package.json` file 
 
 ## Configure OMD
 
-Sakuli transmits performance data to a **Gearman result queue** rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.
+Sakuli transmits performance data to a Gearman result queue rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.
 
-It takes a few steps to set up the monitoring system in order to process Sakuli's performance data correctly.
+It takes a few steps to set up the monitoring system in order to process Sakulis performance data correctly.
 
-### Enable and configure mod_gearman
+### Enable and configure mod-gearman
 
-Use the Makefile located in `OMD_ROOT/share/sakuli/omd/` to configure mod_gearman:
+Use the Makefile located in `OMD_ROOT/share/sakuli/omd/` to configure mod-gearman:
 
-- enable all services for mod_gearman
+- enable all services for mod-gearman
 - set the bind IP and port (default: `0.0.0.0:4730`; overwrite with e.g. `export GEARMAN_PORT=192.168.130.10:4731`)
 - set the encryption key (default: `sakuli_secret`; overwrite with e.g. `export GEARMAN_SECRET=mykey`)
 
@@ -45,7 +45,7 @@ make gearman
 {{</highlight>}}
 
 {{%alert%}}
-For security reasons, the Makefile will only configure mod_gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the steps carefully and execute the steps by hand.
+For security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the instruction carefully and execute the steps by hand.
 {{%/alert%}}
 {{% alert %}}
 For **PRODUCTION** usage please use individual encryption keys!
@@ -70,8 +70,8 @@ Use the Sakuli gearman proxy script if you want to intervene between the communi
 
 Possible use cases:
 
-- Change parts of the messages Sakuli sends to the monitoring system ⇒ there are some examples contained already
-- Getting notified when Sakuli sends results to services which do not exist
+- Changes parts of the messages Sakuli sends to the monitoring system ⇒ there are some examples contained already
+- Getting notified when Sakuli sends results to services that do not exist
 - Auto-create services for incoming results (not yet implemented)
 
 Use the Makefile located in `$OMD_ROOT/share/sakuli/` to enable the feature:
@@ -101,7 +101,7 @@ $err_r = '2'; #6
 1. Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless `gearman_proxy.pl` is running on another system
 2. Gearman IP/Port for the monitoring system
 3. `check_results_sakuli` ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property `sakuli.forwarder.gearman.server.queue` on all Sakuli clients (see Sakuli Client Configuration)
-4. `check_results` ⇒ default queue of mod_gearman where gearman workers write back their results (no need to change that)
+4. `check_results` ⇒ default queue of mod-gearman where gearman workers write back their results (no need to change that)
 5. The proxy does a live status query for each incoming package to ensure that the receiving host/service exists. It provides a special "error host/service" pair where the proxy can send a message in case of results coming back for non-existent services
 6. Status of the messages for non-existent services (2=CRITICAL)
 
@@ -126,7 +126,7 @@ OMD[demo]:~$ gearman_top
 {{</highlight>}}
 
 {{% alert %}}
-This change does affect other monitoring checks executed with mod_gearman, because only Sakuli will send results into the queue `check_results_sakuli`.
+This change does affect other monitoring checks executed with mod-gearman, because only Sakuli will send results into the queue `check_results_sakuli`.
 {{% /alert %}}
 
 ### Create a Nagios service
@@ -160,13 +160,13 @@ The check is waiting now for check results from a Sakuli client.
 
 ## Sakuli Configuration
 
-You must set the global properties for the gearman receiver on the Sakuli client. For this, edit `sakuli.properties` in the folder containing the test suites:
+You must set the global properties for the gearman receiver on the Sakuli client. For this, edit `sakuli.properties` in the folder containing the testsuites:
 
 | Property   |      Default      |  Effect |
 |----------|-------------|------|
 | `sakuli.forwarder.gearman.enabled` | `false` | Enable forwarding to OMD |
-| `sakuli.forwarder.gearman.encryption` | `true` | Enable encryption and set the key only if you did not activate `accept_clear_results` in mod_gearman. Otherwise, set encryption to false. |
-| `sakuli.forwarder.gearman.secret.key`| `secret-password` | The password configured in [**enable and configure mod_gearman**](#enable-and-configure mod-gearman) |
+| `sakuli.forwarder.gearman.encryption` | `true` | Enable encryption and set the key only if you did not activate `accept_clear_results` in mod-gearman. Otherwise, set encryption to false |
+| `sakuli.forwarder.gearman.secret.key`| `secret-password` | The password configured in [**enable and configure mod-gearman**](#enable-and-configure mod-gearman) |
 | `sakuli.forwarder.gearman.server.host`| | The host where OMD is running |
-| `sakuli.forwarder.gearman.server.port`| `4730` | The port where Gearman is listing (configured in [**enable and configure mod_gearman**](#enable-and-configure mod-gearman)) |
+| `sakuli.forwarder.gearman.server.port`| `4730` | The port where gearman is listing (configured in [**enable and configure mod-gearman**](#enable-and-configure mod-gearman)) |
 | `sakuli.forwarder.gearman.server.queue`| `check_results` | The default queue for Sakuli |

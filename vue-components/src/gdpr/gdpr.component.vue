@@ -2,7 +2,7 @@
     <transition name="fade">
         <div class="gdpr-info-box" v-if="show">
             <div>
-            You like <abbr title="cookies">🍪🍪🍪</abbr>? We also like them and we are aware that a few can be sweet and delicous while too much will become unhealthy. So we keep the amount of cookies as low as possible while remaining a sweet snack for your user experience.
+            You like <abbr title="cookies">🍪🍪🍪</abbr>? We also like them and we are aware that a few can be sweet and delicious while too much will become unhealthy. So we keep the amount of cookies as low as possible while remaining a sweet snack for your user experience.
             <data-privacy linkText="Learn more"></data-privacy>
             </div>
         <button @click="onAgree" class="button">I agree</button>
