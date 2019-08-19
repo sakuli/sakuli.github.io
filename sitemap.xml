@@ -3,15 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sakuli.io/docs/200_enterprise/icinga/</loc>
+    <loc>https://sakuli.io/docs/enterprise/icinga2-forwarder/</loc>
   </url>
   
   <url>
-    <loc>https://sakuli.io/docs/200_enterprise/check_mk/</loc>
+    <loc>https://sakuli.io/docs/enterprise/check_mk/</loc>
   </url>
   
   <url>
-    <loc>https://sakuli.io/docs/200_enterprise/omd/</loc>
+    <loc>https://sakuli.io/docs/enterprise/omd/</loc>
   </url>
   
   <url>
@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>https://sakuli.io/docs/200_enterprise/</loc>
+    <loc>https://sakuli.io/docs/enterprise/</loc>
   </url>
   
   <url>

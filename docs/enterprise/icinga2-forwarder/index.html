@@ -19,14 +19,14 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | OMD / Gearman Forwarder
+        Sakuli End-to-End Testing + Monitoring | Icinga2 Forwarder
     </title>
-    <meta property="og:title" content="Sakuli | OMD / Gearman Forwarder" />
+    <meta property="og:title" content="Sakuli | Icinga2 Forwarder" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="https://sakuli.io//images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | OMD / Gearman Forwarder" />
+    <meta name="twitter:title" content="Sakuli | Icinga2 Forwarder" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="https://sakuli.io//images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -354,7 +354,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/200_enterprise/" class="">
+    <a href="/docs/enterprise/" class="">
             Enterprise Features
     </a>
     
@@ -365,7 +365,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/200_enterprise/icinga/" class="">
+    <a href="/docs/enterprise/icinga2-forwarder/" class=" active ">
             Icinga2 Forwarder
     </a>
     
@@ -381,7 +381,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/200_enterprise/check_mk/" class="">
+    <a href="/docs/enterprise/check_mk/" class="">
             Check_MK Forwarder
     </a>
     
@@ -397,7 +397,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/200_enterprise/omd/" class=" active ">
+    <a href="/docs/enterprise/omd/" class="">
             OMD / Gearman Forwarder
     </a>
     
@@ -454,12 +454,12 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>OMD / Gearman Forwarder</h1>
+            <h1>Icinga2 Forwarder</h1>
             
 
 <p>Add the forwarder to your project with:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;PERSONAL_NPM_ACCESS_TOKEN&gt; npm i @sakuli/forwarder-gearman</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/forwarder-icinga2</code></pre></div>
 
 <p>To register the forwarder in your project you have edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
 
@@ -467,144 +467,70 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     <span style="color:#f92672">&#34;sakuli&#34;</span>: {
         <span style="color:#f92672">&#34;presetProvider&#34;</span>: [
             <span style="color:#e6db74">&#34;@sakuli/legacy&#34;</span>,
-            <span style="color:#e6db74">&#34;@sakuli/forwarder-gearman&#34;</span>
+            <span style="color:#e6db74">&#34;@sakuli/forwarder-icinga2&#34;</span>
         ]
     }
 }</code></pre></div>
 
-<h2 id="configure-omd">Configure OMD</h2>
-
-<p>Sakuli transmits performance data to a <strong>Gearman result queue</strong> rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.</p>
-
-<p>It takes a few steps to set up the monitoring system in order to process Sakuli&rsquo;s performance data correctly.</p>
-
-<h3 id="enable-and-configure-mod-gearman">Enable and configure mod_gearman</h3>
-
-<p>Use the Makefile located in <code>OMD_ROOT/share/sakuli/omd/</code> to configure mod_gearman:</p>
-
-<ul>
-<li>enable all services for mod_gearman</li>
-<li>set the bind IP and port (default: <code>0.0.0.0:4730</code>; overwrite with e.g. <code>export GEARMAN_PORT=192.168.130.10:4731</code>)</li>
-<li>set the encryption key (default: <code>sakuli_secret</code>; overwrite with e.g. <code>export GEARMAN_SECRET=mykey</code>)</li>
-</ul>
-
-<p>Then run:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - &lt;SITE_USER&gt;
-cd ~/share/sakuli/setup/omd
-make gearman</code></pre></div>
-
 <div class="alert alert-dark" role="alert">
-    For security reasons, the Makefile will only configure mod_gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the steps carefully and execute the steps by hand.
+    Installation of any enterprise feature requires a proper setup of the license information. You find further information in the <a href="/docs/enterprise#using-licences-information">enterpise section</a>
 </div>
 
-<div class="alert alert-dark" role="alert">
-    For <strong>PRODUCTION</strong> usage please use individual encryption keys!
-</div>
 
-<p>If you do not want to use encryption at all enable <code>accept_clear_results</code> and disable <code>sakuli.forwarder.gearman.encryption</code>:</p>
+<h2 id="enable-the-icinga2-api">Enable the Icinga2 API</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/etc/mod-gearman/server.cfg
-...
-accept_clear_results<span style="color:#f92672">=</span>yes</code></pre></div>
+<p>The steps to enable the Icinga2 API are described in the <a href="http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api"><strong>REST API documentation</strong></a>.</p>
 
-<p><code>testsuite.properties</code>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-properties" data-lang="properties">sakuli.forwarder.gearman.encryption=false</code></pre></div></p>
+<h2 id="create-a-icinga2-service">Create a Icinga2 service</h2>
 
-<h3 id="gearman-proxy-optional">Gearman proxy (optional)</h3>
+<p>Create a <code>check_command</code>, which will be executed only if Icinga did not receive a Sakuli result within a certain time. This ensures that you get a notification even if no passive check results arrive in Icinga at all:</p>
 
-<p>Use the Sakuli gearman proxy script if you want to intervene between the communication of Sakuli and Naemon/Nagios.</p>
+<p><code>/etc/icinga2/conf.d/commands.conf</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object CheckCommand &#34;check_dummy&#34; {
+   import &#34;plugin-check-command&#34;
+   command = [
+     PluginDir + &#34;/check_dummy&#34;,&#34;$dummy_state$&#34;,&#34;$dummy_text$&#34;
+   ]
+   vars.dummy_state = 0
+   vars.dummy_text = &#34;Check was successful.&#34;
+}
 
-<p>Possible use cases:</p>
+object CheckCommand &#34;check_sakuli&#34; {
+   import &#34;check_dummy&#34;
+   vars.dummy_state = 3
+   vars.dummy_text = &#34;No passive Sakuli check result received.&#34;
+}</code></pre></div></p>
 
-<ul>
-<li>Change parts of the messages Sakuli sends to the monitoring system ⇒ there are some examples contained already</li>
-<li>Getting notified when Sakuli sends results to services which do not exist</li>
-<li>Auto-create services for incoming results (not yet implemented)</li>
-</ul>
+<p><code>/etc/incinga2/conf.d/hosts.conf</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object Host &#34;sakuliclient01&#34; {
+   import &#34;generic-host&#34;
+   address = &#34;&lt;IP&gt;&#34;
+}</code></pre></div></p>
 
-<p>Use the Makefile located in <code>$OMD_ROOT/share/sakuli/</code> to enable the feature:</p>
+<p>Create the following service object for the first test case. The freshness_threshold should be slightly higher than the interval Sakuli tests are planned.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - &lt;SITE_USER&gt;
-cd n/share/sakuli/setup/omd
-make gearman_proxy</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">object Service &#34;sakuli_demo&#34; {
+  import &#34;generic-service&#34;
+  host_name = &#34;sakuliclient01&#34;
+  check_command = &#34;check_sakuli&#34;
+  enable_active_checks = 0
+  enable_passive_checks = 1
+  enable_flapping = 0
+  volatile = 1
+  enable_perfdata = 1
+}</code></pre></div>
 
-<p>Edit <code>etc/mod-gearman/sakuli_gearman_proxy.cfg</code> :</p>
+<p>Reload Icinga2:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#a6e22e">$remoteHost</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;172.17.0.2&#34;; #1</span>
-<span style="color:#a6e22e">$remotePort</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4730&#34;; #1</span>
-<span style="color:#a6e22e">$localHost</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;172.17.0.2&#34;; #2</span>
-<span style="color:#a6e22e">$localPort</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4730&#34;; #2</span>
-<span style="color:#a6e22e">$queues</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{
-</span><span style="color:#e6db74">    &#34;$remoteHost:$remotePort/check_results_sakuli&#34;  =&gt; &#34;$localHost:$localPort/check_results&#34;,</span>
-<span style="color:#a6e22e">}; # 3 + 4</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service icinga2 reload</code></pre></div>
 
-<span style="color:#a6e22e">$err_h</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;error_host&#39;; #5</span>
-<span style="color:#a6e22e">$err_s</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;eror_svc&#39;;</span>
-<span style="color:#a6e22e">$err_r</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2&#39;; #6</span></code></pre></div>
-
-<ol>
-<li>Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless <code>gearman_proxy.pl</code> is running on another system</li>
-<li>Gearman IP/Port for the monitoring system</li>
-<li><code>check_results_sakuli</code> ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property <code>sakuli.forwarder.gearman.server.queue</code> on all Sakuli clients (see Sakuli Client Configuration)</li>
-<li><code>check_results</code> ⇒ default queue of mod_gearman where gearman workers write back their results (no need to change that)</li>
-<li>The proxy does a live status query for each incoming package to ensure that the receiving host/service exists. It provides a special &ldquo;error host/service&rdquo; pair where the proxy can send a message in case of results coming back for non-existent services</li>
-<li>Status of the messages for non-existent services (2=CRITICAL)</li>
-</ol>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - &lt;SITE_USER&gt;
-omd start sakuli_gearman_proxy
-<span style="color:#75715e"># Starting sakuli_gearman_proxy...OK</span></code></pre></div>
-
-<p>Check that the queue <code>check_results_sakuli</code> is running in addition to the default queue <code>check_results</code>.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">OMD<span style="color:#f92672">[</span>demo<span style="color:#f92672">]</span>:~$ gearman_top
-<span style="color:#ae81ff">2017</span>-06-09 <span style="color:#ae81ff">13</span>:37:28  -  localhost:4730  -  v0.33
-
- Queue Name           | Worker Available | Jobs Waiting | Jobs Running
------------------------------------------------------------------------
- check_results        |               <span style="color:#ae81ff">1</span>  |           <span style="color:#ae81ff">0</span>  |           <span style="color:#ae81ff">0</span>
- check_results_sakuli |               <span style="color:#ae81ff">1</span>  |           <span style="color:#ae81ff">0</span>  |           <span style="color:#ae81ff">0</span>
------------------------------------------------------------------------</code></pre></div>
-
-<div class="alert alert-dark" role="alert">
-    This change does affect other monitoring checks executed with mod_gearman, because only Sakuli will send results into the queue <code>check_results_sakuli</code>.
-</div>
-
-<h3 id="create-a-nagios-service">Create a Nagios service</h3>
-
-<p>Create a service which should receive Sakuli test results. Host/service names derive from the following properties:</p>
-
-<ul>
-<li><strong>host</strong>: <code>sakuli.forwarder.gearman.nagios.hostname</code> (defined globally or via suite)</li>
-<li><strong>service</strong>: <code>testsuite.id</code> (defined in <code>testsuite.properties</code>)</li>
-</ul>
-
-<p>OMD Configuration:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#a6e22e">define host {</span>
-  <span style="color:#a6e22e">host_name                      sakuli_client</span>
-  <span style="color:#a6e22e">alias                          sakuli_client</span>
-  <span style="color:#a6e22e">address                        __SAKULI_CLIENT_IP__</span>
-  <span style="color:#a6e22e">use                            generic-host</span>
-<span style="color:#a6e22e">}</span>
-
-<span style="color:#a6e22e">define service {</span>
-  <span style="color:#a6e22e">service_description            example_xfce</span>
-  <span style="color:#a6e22e">host_name                      sakuli_client</span>
-  <span style="color:#a6e22e">use                            tpl_s_sakuli_gearman</span>
-  <span style="color:#a6e22e">freshness_threshold            180</span>
-<span style="color:#a6e22e">}</span></code></pre></div>
-
-<blockquote>
-<p><code>freshness_threshold</code> should be slightly higher than the interval Sakuli tests are executed</p>
-</blockquote>
+<p>Now open Icingaweb2, you should see the Sakuli host with the service &ldquo;sakuli_demo&rdquo; attached.</p>
 
 <p>The check is waiting now for check results from a Sakuli client.</p>
 
-<h2 id="sakuli-configuration">Sakuli Configuration</h2>
+<h2 id="sakuli-client-configuration">Sakuli Client Configuration</h2>
 
-<p>You must set the global properties for the gearman receiver on the Sakuli client. For this, edit <code>sakuli.properties</code> in the folder containing the test suites:</p>
+<p>You must set the global properties for the Icinga2 receiver on the Sakuli client by editing the <code>sakuli.properties</code>. You can find them in the folder containing the test suites:</p>
 
 <table>
 <thead>
@@ -617,39 +543,51 @@ omd start sakuli_gearman_proxy
 
 <tbody>
 <tr>
-<td><code>sakuli.forwarder.gearman.enabled</code></td>
+<td><code>sakuli.forwarder.icinga2.enabled</code></td>
 <td><code>false</code></td>
-<td>Enable forwarding to OMD</td>
+<td>Enables result forwarding to Icinga2</td>
 </tr>
 
 <tr>
-<td><code>sakuli.forwarder.gearman.encryption</code></td>
-<td><code>true</code></td>
-<td>Enable encryption and set the key only if you did not activate <code>accept_clear_results</code> in mod_gearman. Otherwise, set encryption to false.</td>
-</tr>
-
-<tr>
-<td><code>sakuli.forwarder.gearman.secret.key</code></td>
-<td><code>secret-password</code></td>
-<td>The password configured in <a href="#enable-and-configure mod-gearman"><strong>enable and configure mod_gearman</strong></a></td>
-</tr>
-
-<tr>
-<td><code>sakuli.forwarder.gearman.server.host</code></td>
+<td><code>sakuli.forwarder.icinga2.api.host</code></td>
 <td></td>
-<td>The host where OMD is running</td>
+<td>The hostname or ip of the Icinga2 API-Endpoints</td>
 </tr>
 
 <tr>
-<td><code>sakuli.forwarder.gearman.server.port</code></td>
-<td><code>4730</code></td>
-<td>The port where Gearman is listing (configured in <a href="#enable-and-configure mod-gearman"><strong>enable and configure mod_gearman</strong></a>)</td>
+<td><code>sakuli.forwarder.icinga2.api.port</code></td>
+<td><code>5665</code></td>
+<td>The port or ip of the Icinga2 API-Endpoints</td>
 </tr>
 
 <tr>
-<td><code>sakuli.forwarder.gearman.server.queue</code></td>
-<td><code>check_results</code></td>
-<td>The default queue for Sakuli</td>
+<td><code>sakuli.forwarder.icinga2.api.username</code></td>
+<td></td>
+<td>API user name</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.api.password</code></td>
+<td></td>
+<td>API user password</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.hostname</code></td>
+<td></td>
+<td>The name of the host object configured in Icinga2</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.service_description</code></td>
+<td><code>${testsuite.id}</code></td>
+<td>The name of the service in icinga2</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.icinga2.allow_insecure_connection</code></td>
+<td><code>false</code></td>
+<td>Disable SSL checks. <strong>Never</strong> use this in production environments!</td>
 </tr>
 </tbody>
 </table>
@@ -660,13 +598,9 @@ omd start sakuli_gearman_proxy
 <ul>
 <li>
 <ul>
-<li><a href="#configure-omd">Configure OMD</a>
-<ul>
-<li><a href="#enable-and-configure-mod-gearman">Enable and configure mod_gearman</a></li>
-<li><a href="#gearman-proxy-optional">Gearman proxy (optional)</a></li>
-<li><a href="#create-a-nagios-service">Create a Nagios service</a></li>
-</ul></li>
-<li><a href="#sakuli-configuration">Sakuli Configuration</a></li>
+<li><a href="#enable-the-icinga2-api">Enable the Icinga2 API</a></li>
+<li><a href="#create-a-icinga2-service">Create a Icinga2 service</a></li>
+<li><a href="#sakuli-client-configuration">Sakuli Client Configuration</a></li>
 </ul></li>
 </ul>
 </nav>
