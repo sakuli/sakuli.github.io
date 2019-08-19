@@ -220,4 +220,4 @@ await env.pasteAndDecrypt("$ENCRYPTED_SECRET");
 {{< /highlight >}}
 
 ## Learn more
-[Learn more](https://sakuli.io/docs/writing-tests) about writing Sakuli tests with our documentation.
+[Learn more](https://sakuli.io/docs/writing-tests) about writing Sakuli tests within our documentation.
