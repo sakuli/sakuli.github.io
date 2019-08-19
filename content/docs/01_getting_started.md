@@ -235,7 +235,7 @@ Let us examine this piece of code:
 
 1. The whole test is wrapped in an async immediate invoked function. It allows us to use async / await syntax of ES6. Since Sakuli makes heavy use of async operations, it makes your code more readable.
 2. To provide Sakuli information about our actual testcase, we create a TestCase object, which handles the execution of a testcase.
-3. If any error occurs during your testcode, it will be redirected to the TestCase object. It triggers Sakulis internal error handling e.g. taking a screenshot of the actual failed test execution.
+3. If any error occurs during your testcode, it will be redirected to the TestCase object. It triggers Sakuli's internal error handling e.g. taking a screenshot of the actual failed test execution.
 4. Regardless of a failed or passed test execution, Sakuli saves its results. This is more like a legacy artifact and will be removed in the future.
 5. When the async code within the main function (see 1.) is completed, a callback passed to the `then` function is invoked. `done` is a global function which is injected by Sakuli and which tells the engine that the test execution is over (in theory you could call this function `done()` but the syntax above is recommended).
 

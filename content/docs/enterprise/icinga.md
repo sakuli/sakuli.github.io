@@ -1,12 +1,13 @@
 ---
 title: Icinga2 Forwarder
+slug: icinga2-forwarder
 weight: 100
 ---
 
 Add the forwarder to your project with:
 
 {{<highlight bash>}}
-SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-icinga2
+npm i @sakuli/forwarder-icinga2
 {{</highlight>}}
 
 To register the forwarder into your project you have to edit the `package.json` file and add the preset to the Sakuli configuration key:
@@ -14,13 +15,17 @@ To register the forwarder into your project you have to edit the `package.json` 
 {{<highlight json>}}
 {
     "sakuli": {
-        "presetProvider: [
+        "presetProvider": [
             "@sakuli/legacy",
             "@sakuli/forwarder-icinga2"
         ]
     }
 }
 {{</highlight>}}
+
+{{<alert>}}
+Installation of any enterprise feature requires a proper setup of the license information. You find further information in the [enterpise section](/docs/enterprise#using-licences-information)
+{{</alert>}}
 
 ## Enable the Icinga2 API
 All steps required to enable the Icinga2 API are described in the [**REST API documentation**](http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api).
@@ -92,3 +97,5 @@ You must set the global properties for the Icinga2 receiver on the Sakuli client
 |`sakuli.forwarder.icinga2.api.username` | | API user name  |
 |`sakuli.forwarder.icinga2.api.password` | | API user password  |
 |`sakuli.forwarder.icinga2.hostname`| | The name of the host object configured in Icinga2 |
+|`sakuli.forwarder.icinga2.service_description`| `${testsuite.id}` | The name of the service in icinga2 |
+|`sakuli.forwarder.icinga2.allow_insecure_connection`| `false` | Disable SSL checks. **Never** use this in production environments! |

@@ -6,7 +6,7 @@ weight: 200
 Add the forwarder to your project with:
 
 {{<highlight bash>}}
-SAKULI_LICENSE_KEY=<PERSONAL_NPM_ACCESS_TOKEN> npm i @sakuli/forwarder-check_mk
+npm i @sakuli/forwarder-checkmk
 {{</highlight>}}
 
 To register the forwarder into your project you have to edit the `package.json` file and add the preset to the Sakuli configuration key:
@@ -14,13 +14,17 @@ To register the forwarder into your project you have to edit the `package.json` 
 {{<highlight json>}}
 {
     "sakuli": {
-        "presetProvider: [
+        "presetProvider": [
             "@sakuli/legacy",
-            "@sakuli/forwarder-check_mk"
+            "@sakuli/forwarder-checkmk"
         ]
     }
 }
 {{</highlight>}}
+
+{{<alert>}}
+Installation of any enterprise feature requires a proper setup of the license information. You find further information in the [enterpise section](/docs/enterprise#using-licences-information)
+{{</alert>}}
 
 ## Sakuli Client Configuration
 
