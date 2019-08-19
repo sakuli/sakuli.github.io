@@ -1,6 +1,7 @@
 ---
 title: OMD / Gearman Forwarder
 weight: 300
+slug: omd-forwarder
 ---
 
 Install the forwarder to your project with:
