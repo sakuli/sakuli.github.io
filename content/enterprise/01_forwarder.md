@@ -6,7 +6,7 @@ description: "Combining end-2-end testing with monitoring solutions proves to be
 
 ## End-2-End Application Testing and Monitoring: Your Perfect Combination
 
-Combining end-2-end testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated end-2-end tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
+Combining End-2-End testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated End-2-End tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
 
 <img src="/images/content/monitoring.svg" alt="Test results and data of Sakulis open API can be forwarded to different target systems like OMD, check_mk, databases and propriertary systems." style="max-height: 400px" />
 
@@ -18,10 +18,10 @@ Imagine testing your critical processes and workflows by simulating a real-world
 Sakuli and Sakuli Forwarder are designed to handle this task so you (and your manager) will finally find a good night’s sleep again.
 
 
-## Benefit from Sakuli Forwarder
+## Benefits from Sakuli Forwarder
 
 - Send execution times of test steps to your monitoring system
-- Connect a variety of modern monitoring solutions to your end-2-end tests
+- Connect a variety of modern monitoring solutions to your End-2-End tests
 - Attach screenshots or videos to your monitoring data
 - Monitor your important workflows
 - Define thresholds in Sakuli and let the monitoring system alert you
@@ -37,7 +37,7 @@ Sakuli Forwarder package ships with:
 Supported Monitoring Systems:
 
   - <a href="https://labs.consol.de/omd/" target="_blank">OMD (Nagios, Gearman)</a>
-  - Icinga 2
+  - Icinga2
   - check_mk
   - SQL Databases
    - MySQL

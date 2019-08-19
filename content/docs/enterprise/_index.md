@@ -87,7 +87,7 @@ So basically an environment variable is just a simple key-value pair provided to
 
 The approach for integrating an environment variable depends on the respective operating system.
 
-### On Windows
+### On Windows 
 
 To set an environment variable on Windows you have to:
 
@@ -117,7 +117,7 @@ On Linux or OSX it is usually a file which sets up the environment for certain p
 - `~/.bashrc` on Linux
 - `~/.profile` on OSX
 
-These files can be edited with every text editor to add, edit or remove environment variables. An environment variable is defined by:
+These files can be changed with every text editor to add, edit or remove environment variables. An environment variable is defined by:
 
 {{<highlight bash>}}
 export VARIABLE_NAME=VALUE

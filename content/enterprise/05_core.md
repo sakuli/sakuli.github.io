@@ -5,7 +5,7 @@ slug: core
 
 ## All You Need UI Test Automation
 
-Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, have them run automatically and save a ton of time by dramatically reducing your manual testing.
+Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, run them automatically and save a ton of time by dramatically reducing your manual testing.
 
 
 <img src="/images/content/architecture.svg" alt="Sakuli shown as an open End-2-End Testing Platform" style="max-height: 400px; margin: 1rem" />
@@ -13,7 +13,7 @@ Sakuli combines web testing with testing on native applications. That’s all yo
 
 ## Build Sustainable Tests
 
-Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionality and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel. It was never easier to write sustainable user interface tests.
+Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionalities and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel. It was never easier to write sustainable user interface tests.
 
 ## Integrate UI Tests into CI/CD Pipelines
 
@@ -21,7 +21,7 @@ By integrating your Sakuli UI tests into continuous integration systems, you wil
 
 ## Benefit from Open Platform
 
-Sakuli is designed prioritizing an open and extensible base. Its modular node.js core enables developers to create their own DSL, integrate behavior driven methods like cucumber, adapt Sakuli to new technologies and connect to any kind of downstream application using the comprehensive APIs. Sakuli is an open platform for a variety of end-2-end use-cases.
+Sakulis design prioritizes an open and extensible base. Its modular Node.js core enables developers to create their own DSL, integrate behavior driven methods like Cucumber, adapt Sakuli to new technologies and connect to any kind of downstream application using the comprehensive APIs. Sakuli is an open platform for a variety of End-2-End use-cases.
 
 ## Your Package
 
