@@ -461,7 +461,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/forwarder-checkmk</code></pre></div>
 
-<p>To register the forwarder in your project you have to edit the <code>package.json</code> file and add the preset to the sakuli configuration key:</p>
+<p>To register the forwarder into your project you have to edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sakuli&#34;</span>: {
@@ -487,7 +487,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <h3 id="forwarder-configuration">Forwarder configuration</h3>
 
-<p>Now set the properties for the Check_MK receiver. For this, edit sakuli.properties in the folder containing the test suites:</p>
+<p>Now you have to set the properties for the Check_MK receiver. For this, edit the <code>sakuli.properties</code> in the folder containing the testsuites:</p>
 
 <table>
 <thead>
@@ -502,19 +502,19 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 <tr>
 <td><code>sakuli.forwarder.check_mk.enabled</code></td>
 <td><code>false</code></td>
-<td>Enables writing to spool file</td>
+<td>Enables writing to the spool file</td>
 </tr>
 
 <tr>
 <td><code>sakuli.forwarder.check_mk.spooldir</code></td>
 <td><code>/var/lib/check_mk_agent/spool</code> (Linux)<br/><code>&lt;CMK_installation_path&gt;\\spool</code> (Windows)</td>
-<td>Path to the spool folder as defined above. On Windows, the backslashes have to be escaped with . Check_MK is expecting the result files from Sakuli in here.</td>
+<td>Path to the spool folder as defined above. On Windows, the backslashes have to be escaped with &lsquo;\&lsquo;. Check_MK is expecting the result files from Sakuli in here</td>
 </tr>
 
 <tr>
 <td><code>sakuli.forwarder.check_mk.freshness</code></td>
 <td><code>600</code></td>
-<td>Defines the maximal age in seconds in which the result is still valid. If the last modification of the result file is older than this property, the result file will be ignored. The Check_MK service will turn into UNKNOWN.</td>
+<td>Defines the maximal age in seconds in which the result is still valid. If the last modification of the result file is older than this property, the result file will be ignored. The Check_MK service will turn into UNKNOWN</td>
 </tr>
 
 <tr>

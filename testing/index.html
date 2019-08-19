@@ -241,7 +241,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 <article class="shrink-content">
     
 
-<p>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the systems’s mouse and keyboard. The example below shows a basic login to an imaginary webbased service with login form:
+<p>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system&rsquo;s mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
 
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
@@ -263,13 +263,13 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <h2 id="testing-features">Testing Features</h2>
 
-<p>Sakuli is built to create real end-to-end testing experiences for testers, developers and companies. It enables you to fully automate every user interaction with your system. No system boundaries, no technology boundaries!</p>
+<p>Sakuli is built to create real End-2-End testing experiences for testers, developers and companies. It empowers you to fully automate every user interaction with your system. No system boundaries, no technology boundaries!</p>
 
-<h2 id="webbased-testing-build-on-selenium">Webbased Testing build on Selenium</h2>
+<h2 id="web-based-testing-build-on-selenium">Web-based Testing build on Selenium</h2>
 
-<p>Sakuli implements an easy to use functional syntax for executing real browser automation based on <a href="https://github.com/SeleniumHQ/selenium">selenium-webdriver</a>. This layer hides the complexity of Selenium in a more high-level API, allowing you to focus on what you want to test rather than dealing with timeouts and <code>StaleElementReferenceError</code>.</p>
+<p>Sakuli implements an easy to use functional syntax for executing real browser automation based on <a href="https://github.com/SeleniumHQ/selenium">Selenium webdriver</a>. This layer hides the complexity of Selenium in a more high-level API, allowing you to focus on what you want to test rather than dealing with timeouts and <code>StaleElementReferenceError</code>.</p>
 
-<p>Key features are</p>
+<p>Key features are:</p>
 
 <ul>
 <li>Less fragile element fetching</li>
@@ -278,7 +278,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 </ul>
 
 <p>The following comparison between Selenium and Sakuli scripts shows the difference in lines of code and complexity.
-This small test basically only opens-up &lsquo;Google&rsquo;, tries to find the &lsquo;About&rsquo; link and highlights the result:</p>
+This small test basically opens up &lsquo;Google&rsquo;, tries to find the &lsquo;About&rsquo; link and highlights the result:</p>
 
 <h3 id="selenium-test">Selenium Test</h3>
 
@@ -386,16 +386,16 @@ This small test basically only opens-up &lsquo;Google&rsquo;, tries to find the 
 
 <h2 id="screenshot-based-testing">Screenshot based Testing</h2>
 
-<p>A lot of end-to-end scenarios exceed the borders of your browser and the capabilities of webdriver. This might include common use cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In these cases, your webbased tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.</p>
+<p>A lot of End-2-End scenarios exceed the borders of your browser and the capabilities of webdrivers. This might include common use cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or PDF-format. For these cases, your web-based tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.</p>
 
-<p>Of course, you can also use Sakuli’s native testing power on its own, e.g. rich-client testing of SAP, Office or proprietary software systems. Sakuli accomplishes its native capabilities by scanning the whole screen (or a dedicated region) on a stand-alone computer or in headless container screens, searching for provided image patterns.</p>
+<p>Of course, you can also use Sakuli&rsquo;s native testing power on its own, e.g. rich-client testing of SAP, Office or proprietary software systems. Sakuli accomplishes it&rsquo;s native capabilities by scanning the whole screen (or a dedicated region) on a stand-alone computer or in headless container screens, searching for provided image patterns.</p>
 
 <p>Screenshot based actions are relying on an abstract <code>Region</code> class, which represents an abstract region on the desktop.
 When creating a new instance without parameters, a <code>Region</code> spans the whole desktop.
 But it is also possible to create new regions by specifying <code>left</code>, <code>top</code>, <code>width</code> and <code>height</code> parameters.</p>
 
 <p>The following example showcases a test which drags a source element to a target region.
-In this demo scenario, both source and target are located on screen via template image.</p>
+In this demo scenario, both source and target are located on the screen via template image.</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -430,9 +430,9 @@ In this demo scenario, both source and target are located on screen via template
 </div>
 </div>
 
-<p>The <code>dragAndDropTo(...)</code> methods always moves straight to the target region.
+<p>The <code>dragAndDropTo(...)</code> method always moves straight to the target region.
 In order to follow a more complex path, it is also possible to perform the drag gesture manually.
-Once the source image has been located on screen, Sakuli moves the mouse to its location and presses and holds the left mouse button.
+Once the source image has been located on the screen, Sakuli moves the mouse to it&rsquo;s location and presses while holding the left mouse button.
 Afterwards, it locates the target image, moves the mouse there while still holding the mouse button and releases it, once it reaches the target location.</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -476,14 +476,14 @@ Afterwards, it locates the target image, moves the mouse there while still holdi
 
 <h2 id="interacting-with-the-environment">Interacting with the environment</h2>
 
-<p>In addition to screenshot based testactions, Sakuli is able to utilize your keyboard, clipboard and environment variables.
+<p>In addition to screenshot based test actions, Sakuli is capable of utilizing your keyboard, clipboard and environment variables.
 All these features are incorporated in the <code>Environment</code> class.</p>
 
 <h3 id="keyboard-actions">Keyboard actions</h3>
 
 <p>The following snippet shows a possible use-case for native keyboard actions.
-When initiating the download in FireFox, a native file download dialog opens.
-To start the download, we need to accept the file dialog, which is not possible with the capabilities of Selenium.
+When initiating the download in Firefox, a native file download dialog opens.
+To start the download, we need to accept the file dialog, which is not possible within the capabilities of Selenium.
 With Sakuli it&rsquo;s possible to work around this problem just like a real user would do.
 We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
 
@@ -530,7 +530,7 @@ We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
 </div>
 </div>
 
-<p>It&rsquo;s even possible to change the download location dynamically by entering a new save path via</p>
+<p>It&rsquo;s even possible to change the download location dynamically by entering a new save path via:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -543,12 +543,12 @@ We can accept the file dialog by simply pressing the <code>Enter</code> key.</p>
 
 <h3 id="secrets">Secrets</h3>
 
-<p>Many E2E tests require some kind of login.
-While is no problem in general, it still requires some mechanism to handle credentials.
-Providing credentials via environment variable is a common practice, but it still is cumbersome when deploying the testcase to another system, since every single environment variable has to be migratet, too.</p>
+<p>Many End-2-End tests require some kind of login.
+While it is no problem in general, it still requires some mechanism to handle credentials.
+Providing credentials via environment variables is a common practice, but it still is inconvenient when deploying the testcase to another system, since every single environment variable has to be migrated too.</p>
 
 <p>Sakuli comes with a built-in mechanism to deal with sensitive data in testcases.
-It uses a single masterkey, generated by Sakuli, and uses this key to de- / encrypt secrets to be used in testcases.</p>
+It uses a single masterkey generated by Sakuli and uses this key to de- or encrypt secrets to be used in testcases.</p>
 
 <p>Running</p>
 
@@ -561,9 +561,9 @@ It uses a single masterkey, generated by Sakuli, and uses this key to de- / encr
 </div>
 </div>
 
-<p>will generate a new masterkey, which should be exported as environment variable <code>SAKULI_ENCRYPTION_KEY</code>.</p>
+<p>will generate a new masterkey, which should be exported as an environment variable <code>SAKULI_ENCRYPTION_KEY</code>.</p>
 
-<p>Once the masterkey has been exported, secrets can be encrypted by running</p>
+<p>Once the masterkey has been exported, secrets can be encrypted by running:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -574,7 +574,7 @@ It uses a single masterkey, generated by Sakuli, and uses this key to de- / encr
 </div>
 </div>
 
-<p>These encrypted secrets can now safely be stored inside your testfile, because the <code>Environment</code> class provides methods to decrypt these secrets during test execution.</p>
+<p>These encrypted secrets can now be stored safely inside your testfile, because the <code>Environment</code> class provides methods to decrypt these secrets during test execution:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -591,7 +591,7 @@ It uses a single masterkey, generated by Sakuli, and uses this key to de- / encr
 
 <h2 id="learn-more">Learn more</h2>
 
-<p><a href="https://sakuli.io/docs/writing-tests">Learn more</a> about writing Sakuli tests within our documentation</p>
+<p><a href="https://sakuli.io/docs/writing-tests">Learn more</a> about writing Sakuli tests within our documentation.</p>
 
 </article>
 

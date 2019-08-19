@@ -457,26 +457,26 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             <h1>Anatomy of a Project</h1>
             
 
-<p>This guide assumes, that you have finished the &ldquo;Getting started&rdquo; guide or that you are experienced with Sakuli v1.</p>
+<p>This guide assumes that you have finished the &ldquo;Getting started&rdquo; tutorial or that you are experienced with Sakuli v1.</p>
 
 <blockquote>
-<p>Most of the complexity and conventions come due to the backwards compatibility to V1 which requires such a folder and file layout for various reasons (the biggest is Sahi). Sakuli now offers various ways to reduce this complexity dramatically. These features will eventually come  in upcoming releases.</p>
+<p>Most of the complexity and conventions are due to the backwards compatibility to v1 which requires a specific folder and file structure for various reasons (the biggest is Sahi). Sakuli offers now various ways to reduce this complexity dramatically. These features will eventually become part of upcoming releases.</p>
 </blockquote>
 
 <h2 id="setup-and-configuration">Setup and configuration</h2>
 
-<p>The minimum setup of a Sakuli project looks like this:</p>
+<p>The minimum setup for a Sakuli project looks like this:</p>
 
 <section class="unstyled-list-section"><ul>
 <li><i class="fas fa-folder"></i> <strong>your-sakuli-project</strong> <em>Homefolder of the project</em>
 
 <ul>
-<li><i class="far fa-file"></i> <strong>package.json</strong> <em>All dependencies and setup for NodeJs</em></li>
-<li><i class="far fa-file"></i> <strong>sakuli.properties</strong> <em>(optional: Configuration for all Testsuites)</em></li>
+<li><i class="far fa-file"></i> <strong>package.json</strong> <em>All dependencies and setups for Node.js</em></li>
+<li><i class="far fa-file"></i> <strong>sakuli.properties</strong> <em>(optional: Configuration for all testsuites)</em></li>
 <li><i class="fas fa-folder"></i> <strong>testsuite-a</strong> <em>Homefolder of a testsuite</em>
 
 <ul>
-<li><i class="far fa-file"></i> <strong>testsuite.suite</strong> <em>Defines which testcases belongs to the testsuite</em></li>
+<li><i class="far fa-file"></i> <strong>testsuite.suite</strong> <em>Defines which testcases belong to the testsuite</em></li>
 <li><i class="far fa-file"></i> <strong>testsuite.properties</strong> <em>Configuration for the testsuite (overrides configuration from &lsquo;../sakuli.properties&rsquo;)</em></li>
 <li><i class="fas fa-folder"></i> <strong>testcase</strong> <em>Home of the testcase</em>
 
@@ -487,19 +487,19 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 </ul></li>
 </ul></section>
 
-<p>This file layout also represents the logical structure of Sakuli which consists of a <em>testsuite</em> with one or more <em>testcase(s)</em>. Sakulis <code>run</code> command takes a path to a testsuite folder and runs all testcases defined in <code>testsuite.suite</code> from the given path.</p>
+<p>This file layout also represents the logical structure of Sakuli which consists of a <em>testsuite</em> with one or more <em>testcase(s)</em>. Sakulis <code>run</code> command takes the path to a testsuite folder and runs all testcases defined in <code>testsuite.suite</code> of the given folder.</p>
 
 <h3 id="testsuite-suite">testsuite.suite</h3>
 
-<p>This file is a relic from Sahi where you define testcases and their respective starturls. It has a simple own format:</p>
+<p>This file is a relic from Sahi where you define testcases and their respective start-urls. It has a simple format:</p>
 
 <pre><code>&lt;CASE-PATH&gt;/&lt;CASE-FILE&gt; &lt;START-URL&gt;
 </code></pre>
 
-<p><code>&lt;CASE-PATH&gt;</code> is a path within the testsuite file which has to contain the file <code>&lt;CASE_FILE&gt;</code>. The <code>&lt;START-URL&gt;</code> is no longer used by Sakuli (but required to fulfil the file format). The format also supports comments (<code>//</code> at the beginning of a line). Comments are the usual way to activate or deactivate testcases.</p>
+<p><code>&lt;CASE-PATH&gt;</code> is a path within the testsuite file which has to contain the file <code>&lt;CASE_FILE&gt;</code>. The <code>&lt;START-URL&gt;</code> is no longer used by Sakuli (but required to fulfil the file format). The format also supports comments (<code>//</code> at the beginning of a line). Testcases can be activated or deactivated by using comments.</p>
 
 <blockquote>
-<p>The configured start-url is omitted to force test authors to write explicit navigation to the url in the testcases using <code>_navigateTo</code>.</p>
+<p>The configured start-url is omitted to force test authors to write explicit navigation to the url for testcases using <code>_navigateTo</code>.</p>
 </blockquote>
 
 <h3 id="properties-files">Properties Files</h3>
@@ -509,13 +509,13 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 <pre><code>testsuite.id=SomeName
 </code></pre>
 
-<p>It &ldquo;inherits&rdquo; its values from <code>../sakuli.properties</code> (which also means, that the same property from sakuli.properties is overridden).</p>
+<p>It &ldquo;inherits&rdquo; its values from <code>../sakuli.properties</code> (which also means that the same property from <code>sakuli.properties</code> becomes overridden).</p>
 
 <blockquote>
-<p>Property files are a common way to store configuration in Java, the former runtime for Sakuli. It is a simple key value format (<code>&lt;KEY&gt;=&lt;VALUE&gt;</code>) where every line defines a key-value pair. To organize the keys, it is a common - but not required - pattern to separate names by dots (similar to Java namespaces)</p>
+<p>Property files are a common way to store configuration in Java, the former runtime for Sakuli. It is a simple key-value format (<code>&lt;KEY&gt;=&lt;VALUE&gt;</code>) where every line defines a key-value pair. To organize the keys, it is a common - but not required - practice to separate names by dots (similar to Java namespaces).</p>
 </blockquote>
 
-<p>There are several predefined properties to configure the behavior of Sakuli (* indicates a required property):</p>
+<p>There are several predefined properties that can be configured to influence the behavior of Sakuli (* indicates a required property):</p>
 
 <table>
 <thead>
@@ -530,18 +530,18 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 <tr>
 <td><code>testsuite.id</code></td>
 <td>String*: /</td>
-<td>Name of the Suite shown in the output and used by the forwarder</td>
+<td>Name of the suite shown in the output and used by the forwarder</td>
 </tr>
 
 <tr>
 <td><code>testsuite.browser</code></td>
 <td>String: &lsquo;firefox&rsquo;</td>
-<td>Browser which is started by the webdriver (It can be overridden by <code>--browser</code> commandline argument)</td>
+<td>Browser which is started by the webdriver (it can be overridden by the <code>--browser</code> command line argument)</td>
 </tr>
 </tbody>
 </table>
 
-<p>You can also define own properties and use them in your testcases. Just put your custom property key with its value in one of the <code>.property</code> files and in your test case you are able to retrieve this value with the <a href="/apidoc/sakuli-legacy/interfaces/thenableenvironment.html#getproperty">Environment Class</a>:</p>
+<p>You can also define own properties and use them in your testcases. Just put your custom property key with the corresponding value in one of the <code>.property</code> files and into your testcase. You can retrieve the values with the <a href="/apidoc/sakuli-legacy/interfaces/thenableenvironment.html#getproperty">Environment Class</a>:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

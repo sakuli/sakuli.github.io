@@ -461,7 +461,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/forwarder-gearman</code></pre></div>
 
-<p>To register the forwarder in your project you have edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
+<p>To register the forwarder into your project you have to edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;sakuli&#34;</span>: {
@@ -479,16 +479,16 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <h2 id="configure-omd">Configure OMD</h2>
 
-<p>Sakuli transmits performance data to a <strong>Gearman result queue</strong> rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.</p>
+<p>Sakuli transmits performance data to a Gearman result queue rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.</p>
 
-<p>It takes a few steps to set up the monitoring system in order to process Sakuli&rsquo;s performance data correctly.</p>
+<p>It takes a few steps to set up the monitoring system in order to process Sakulis performance data correctly.</p>
 
-<h3 id="enable-and-configure-mod-gearman">Enable and configure mod_gearman</h3>
+<h3 id="enable-and-configure-mod-gearman">Enable and configure mod-gearman</h3>
 
-<p>Use the Makefile located in <code>OMD_ROOT/share/sakuli/omd/</code> to configure mod_gearman:</p>
+<p>Use the Makefile located in <code>OMD_ROOT/share/sakuli/omd/</code> to configure mod-gearman:</p>
 
 <ul>
-<li>enable all services for mod_gearman</li>
+<li>enable all services for mod-gearman</li>
 <li>set the bind IP and port (default: <code>0.0.0.0:4730</code>; overwrite with e.g. <code>export GEARMAN_PORT=192.168.130.10:4731</code>)</li>
 <li>set the encryption key (default: <code>sakuli_secret</code>; overwrite with e.g. <code>export GEARMAN_SECRET=mykey</code>)</li>
 </ul>
@@ -500,7 +500,7 @@ cd ~/share/sakuli/setup/omd
 make gearman</code></pre></div>
 
 <div class="alert alert-dark" role="alert">
-    For security reasons, the Makefile will only configure mod_gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the steps carefully and execute the steps by hand.
+    For security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the instruction carefully and execute the steps by hand.
 </div>
 
 <div class="alert alert-dark" role="alert">
@@ -523,8 +523,8 @@ accept_clear_results<span style="color:#f92672">=</span>yes</code></pre></div>
 <p>Possible use cases:</p>
 
 <ul>
-<li>Change parts of the messages Sakuli sends to the monitoring system ⇒ there are some examples contained already</li>
-<li>Getting notified when Sakuli sends results to services which do not exist</li>
+<li>Changes parts of the messages Sakuli sends to the monitoring system ⇒ there are some examples contained already</li>
+<li>Getting notified when Sakuli sends results to services that do not exist</li>
 <li>Auto-create services for incoming results (not yet implemented)</li>
 </ul>
 
@@ -552,7 +552,7 @@ make gearman_proxy</code></pre></div>
 <li>Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless <code>gearman_proxy.pl</code> is running on another system</li>
 <li>Gearman IP/Port for the monitoring system</li>
 <li><code>check_results_sakuli</code> ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property <code>sakuli.forwarder.gearman.server.queue</code> on all Sakuli clients (see Sakuli Client Configuration)</li>
-<li><code>check_results</code> ⇒ default queue of mod_gearman where gearman workers write back their results (no need to change that)</li>
+<li><code>check_results</code> ⇒ default queue of mod-gearman where gearman workers write back their results (no need to change that)</li>
 <li>The proxy does a live status query for each incoming package to ensure that the receiving host/service exists. It provides a special &ldquo;error host/service&rdquo; pair where the proxy can send a message in case of results coming back for non-existent services</li>
 <li>Status of the messages for non-existent services (2=CRITICAL)</li>
 </ol>
@@ -573,7 +573,7 @@ omd start sakuli_gearman_proxy
 -----------------------------------------------------------------------</code></pre></div>
 
 <div class="alert alert-dark" role="alert">
-    This change does affect other monitoring checks executed with mod_gearman, because only Sakuli will send results into the queue <code>check_results_sakuli</code>.
+    This change does affect other monitoring checks executed with mod-gearman, because only Sakuli will send results into the queue <code>check_results_sakuli</code>.
 </div>
 
 <h3 id="create-a-nagios-service">Create a Nagios service</h3>
@@ -609,7 +609,7 @@ omd start sakuli_gearman_proxy
 
 <h2 id="sakuli-configuration">Sakuli Configuration</h2>
 
-<p>You must set the global properties for the gearman receiver on the Sakuli client. For this, edit <code>sakuli.properties</code> in the folder containing the test suites:</p>
+<p>You must set the global properties for the gearman receiver on the Sakuli client. For this, edit <code>sakuli.properties</code> in the folder containing the testsuites:</p>
 
 <table>
 <thead>
@@ -630,13 +630,13 @@ omd start sakuli_gearman_proxy
 <tr>
 <td><code>sakuli.forwarder.gearman.encryption</code></td>
 <td><code>true</code></td>
-<td>Enable encryption and set the key only if you did not activate <code>accept_clear_results</code> in mod_gearman. Otherwise, set encryption to false.</td>
+<td>Enable encryption and set the key only if you did not activate <code>accept_clear_results</code> in mod-gearman. Otherwise, set encryption to false</td>
 </tr>
 
 <tr>
 <td><code>sakuli.forwarder.gearman.secret.key</code></td>
 <td><code>secret-password</code></td>
-<td>The password configured in <a href="#enable-and-configure mod-gearman"><strong>enable and configure mod_gearman</strong></a></td>
+<td>The password configured in <a href="#enable-and-configure mod-gearman"><strong>enable and configure mod-gearman</strong></a></td>
 </tr>
 
 <tr>
@@ -648,7 +648,7 @@ omd start sakuli_gearman_proxy
 <tr>
 <td><code>sakuli.forwarder.gearman.server.port</code></td>
 <td><code>4730</code></td>
-<td>The port where Gearman is listing (configured in <a href="#enable-and-configure mod-gearman"><strong>enable and configure mod_gearman</strong></a>)</td>
+<td>The port where gearman is listing (configured in <a href="#enable-and-configure mod-gearman"><strong>enable and configure mod-gearman</strong></a>)</td>
 </tr>
 
 <tr>
@@ -667,7 +667,7 @@ omd start sakuli_gearman_proxy
 <ul>
 <li><a href="#configure-omd">Configure OMD</a>
 <ul>
-<li><a href="#enable-and-configure-mod-gearman">Enable and configure mod_gearman</a></li>
+<li><a href="#enable-and-configure-mod-gearman">Enable and configure mod-gearman</a></li>
 <li><a href="#gearman-proxy-optional">Gearman proxy (optional)</a></li>
 <li><a href="#create-a-nagios-service">Create a Nagios service</a></li>
 </ul></li>

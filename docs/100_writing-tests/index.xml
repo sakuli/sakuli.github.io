@@ -16,9 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/docs/100_writing-tests/000_anatomy-project/</guid>
-      <description>This guide assumes, that you have finished the &amp;ldquo;Getting started&amp;rdquo; guide or that you are experienced with Sakuli v1.
- Most of the complexity and conventions come due to the backwards compatibility to V1 which requires such a folder and file layout for various reasons (the biggest is Sahi). Sakuli now offers various ways to reduce this complexity dramatically. These features will eventually come in upcoming releases.
- Setup and configuration The minimum setup of a Sakuli project looks like this:</description>
+      <description>This guide assumes that you have finished the &amp;ldquo;Getting started&amp;rdquo; tutorial or that you are experienced with Sakuli v1.
+ Most of the complexity and conventions are due to the backwards compatibility to v1 which requires a specific folder and file structure for various reasons (the biggest is Sahi). Sakuli offers now various ways to reduce this complexity dramatically. These features will eventually become part of upcoming releases.
+ Setup and configuration The minimum setup for a Sakuli project looks like this:</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</guid>
-      <description>In addition to screenshot-based test-actions, Sakuli is able to utilize your keyboard, clipboard and environment variables. All these features are incorporated in the Environment class.
-Keyboard actions The following snippet shows a possible use-case for native keyboard actions. When initiating the download in Firefox, a native file download dialog opens. To start the download, we need to accept the file dialog, which is not possible with the capabilities of Selenium.</description>
+      <description>In addition to screenshot-based test actions, Sakuli is capable of utilizing your keyboard, clipboard and environment variables. All these features are incorporated in the Environment class.
+Keyboard actions The following snippet shows a possible use-case for native keyboard actions. When initiating a download in Firefox, a native file download dialog opens. To start the download, we need to accept the file dialog, something that is not possible within the capabilities of Selenium.</description>
     </item>
     
     <item>
@@ -37,8 +37,8 @@ Keyboard actions The following snippet shows a possible use-case for native keyb
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/docs/100_writing-tests/100_native-testing/100_screenshot-based/</guid>
-      <description>A lot of end-to-end scenarios exceed the capabilities of browsers and webdrivers. This might include common use-cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or pdf-format. In these cases, your web-based tests can be extended to also validate behaviour and invoke interactions outside the browser, all within a single test.
-Of course, you can also use Sakuli’s native testing power on its own, e.</description>
+      <description>A lot of E2E scenarios exceed the capabilities of browsers and webdrivers. This might include common use-cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or PDF-format. In these cases, your web-based tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.
+Of course, you can also use Sakulis native testing power on its own, e.</description>
     </item>
     
   </channel>
