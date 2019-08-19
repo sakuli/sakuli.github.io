@@ -381,7 +381,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/enterprise/check_mk/" class="">
+    <a href="/docs/enterprise/check_mk-forwarder/" class="">
             Check_MK Forwarder
     </a>
     
@@ -397,7 +397,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/enterprise/omd/" class="">
+    <a href="/docs/enterprise/omd-forwarder/" class="">
             OMD / Gearman Forwarder
     </a>
     
@@ -459,58 +459,70 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>Some features of Sakuli require an enterprise license. Please consult our <strong><a href="/enterprise">overview</a></strong> to see and request packages and prices. After you registered for an enterprise subscription, you will get a license-key and an NPM access token which are required to use enterprise features.</p>
 
-<h2 id="using-licences-information">Using Licences Information</h2>
+<h2 id="using-license-information">Using License Information</h2>
 
-<p>After you subscribed to a <em>Sakuli enterprise</em> subscription you will receive an email with</p>
+<p>With your active <strong><a href="/enterprise">Sakuli Enterprise</a></strong> subscription you will receive an email with</p>
 
 <ul>
-<li><em>Sakuli License key</em> - Contains information about your subscription and is used by Sakuli itself</li>
-<li>and a <em>NPM-Token</em> - Allows access to the private enterprise packages on NPM</li>
+<li><strong>NPM-Token</strong>: Necessary for downloading your enterprise packages from our private NPM repositories</li>
+<li>and a <strong>Sakuli License key</strong>: Containing information about your subscription and is used by Sakuli itself</li>
 </ul>
 
-<p>There are several ways to deal with this information. The most simple way to get your enterprise features to work is the following (<em>substitute the placeholders between the chevrons with its appropriate value</em>):</p>
+<p>There are several ways to deal with this information.</p>
 
-<p><em>On Unix</em>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;NPM-TOKEN&gt;&#34;</span> &gt;&gt; ~/.npmrc
-echo <span style="color:#e6db74">&#34;export SAKULI_LICENSE_KEY=&lt;SAKULI-LICENSE-KEY&gt;&#34;</span> &gt;&gt; ~/.bashrc</code></pre></div></p>
+<h3 id="global-configuration">Global configuration</h3>
+
+<p>The most simple way to get your enterprise features to work is the following configuration (<em>substitute the placeholders marked by the angle-brackets with its appropriate values</em>):</p>
+
+<p><em>On Unix / OSX</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put your personal NPM-TOKEN here&gt;&#34;</span> &gt; ~/.npmrc
+echo <span style="color:#e6db74">&#34;export SAKULI_LICENSE_KEY=&lt;Put your personal SAKULI-LICENSE-KEY here&gt;&#34;</span> &gt;&gt; ~/.bashrc</code></pre></div></p>
 
 <p><em>On Windows</em>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;NPM-TOKEN&gt;&#34;</span> &gt;&gt; %USERPROFILE%<span style="color:#ae81ff">\.</span>npmrc
-setx SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;SAKULI-LICENSE-KEY&gt;</code></pre></div></p>
-
-<p><em>On OSX</em>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;NPM-TOKEN&gt;&#34;</span> &gt;&gt; ~/.npmrc
-echo <span style="color:#e6db74">&#34;export SAKULI_LICENSE_KEY=&lt;SAKULI-LICENSE-KEY&gt;&#34;</span> &gt;&gt; ~/.profile</code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put your personal NPM-TOKEN here&gt;&#34;</span> &gt; %USERPROFILE%<span style="color:#ae81ff">\.</span>npmrc
+setx SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;Put your personal SAKULI-LICENSE-KEY here&gt;</code></pre></div></p>
 
 <div class="alert alert-dark" role="alert">
-    The Environment varaibles might not take effect in the command-line window where the commadns above are entered. So you might need to open a new commandline when running the Sakuli command.
+    The Environment variables might not take effect in the command-line window where the commands above are entered. So you might need to open a new commandline when running the Sakuli command.
 </div>
 
 
-<p>This commands will set the license key and token globally. This is good for a first setup on your machine but might have some shortcomings in some situations. The folloing paragrpahs describe alternative ways to provide license/token information to your Sakuli installation.</p>
+<p>These commands will set the NPM-Token and License Key globally. This is good for a first setup on your machine but might have some shortcomings in more advanced situations. The following paragraphs describe alternative ways to provide NPM-Token and License information to your Sakuli installation.</p>
 
-<h2 id="alternative-using-npm-token">Alternative using NPM-Token</h2>
+<p>Now you are ready to go for using Sakuli with its enterprise features like</p>
+
+<ul>
+<li><strong><a href="check_mk-forwarder">Check_MK</a></strong></li>
+<li><strong><a href="icinga2-forwarder">Icinga2</a></strong></li>
+<li><strong><a href="omd-forwarder">OMD</a></strong></li>
+</ul>
+
+<h3 id="per-project-configuration-of-npm-token">Per-Project configuration of NPM-Token</h3>
 
 <p>You can set the NPM-Token per project by adding a <code>.npmrc</code> file to your projects root directory.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cd path/to/project</span>
-echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;NPM-TOKEN&gt;&#34;</span> &gt;&gt; .npmrc</code></pre></div>
+echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put your personal NPM-TOKEN here&gt;&#34;</span> &gt; .npmrc</code></pre></div>
 
-<p>This command will create an <code>.npmrc</code> file with the neccessary token configuration. Every upcoming <code>npm install</code> will use this configuration. If you dont like to save the token in a file (because this file might be shared) you can configure it to use an <a href="environment-variables">environment variable</a>:</p>
+<p>This command will create an <code>.npmrc</code> file with the necessary token configuration inside your specific project folder. Every upcoming <code>npm install</code> will use this configuration.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=\${NPM_TOKEN}&#34;</span> &gt;&gt; .npmrc</code></pre></div>
+<h3 id="per-project-configuration-with-environment-variable">Per-Project configuration with environment variable</h3>
 
-<p>In this case you have to provide the token via an environemnt variable <code>NPM_TOKEN</code> or set it per installation of an enterprise package:</p>
+<p>If you don&rsquo;t like to save the token in a file (because this file might be shared) you can configure it to use an <strong><a href="#more-about-environment-variables">environment variable</a></strong>:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;NPM-TOKEN&gt; npm i &lt;ENTERPISE-PACKAGE&gt;</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=\${NPM_TOKEN}&#34;</span> &gt; .npmrc</code></pre></div>
+
+<p>In this case you have to provide the NPM-Token via an environment variable <code>NPM_TOKEN</code> or set it per installation of an enterprise package:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt; npm i &lt;ENTERPRISE-PACKAGE&gt;</code></pre></div>
 
 <p>This approach is usually used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).</p>
 
-<p>It is usually not necessary to persist the token since you will seldomly run <code>npm install</code> that often. If it is required to set the token permanently on a system consult the official <strong><a href="https://docs.npmjs.com/using-private-packages-in-a-ci-cd-workflow#set-the-token-as-an-environment-variable-on-the-cicd-server">npm guid for CI/CD integration</a></strong> (even useful outside CI/CD contexts).</p>
+<p>It is usually not necessary to persist the token since you will seldomly run <code>npm install</code> that often.</p>
 
 <h2 id="using-the-license-key">Using the License-Key</h2>
 
-<p>The license-key contains information about your subscription which will be checked by enterprise components before they are executed. In order to provide this information to Sakuli you also have to set the license-key as an environment variable. Because the license-key is read on every single test execution it is useful to store it persistently on your system or set it in a script where the actual test is also called.</p>
+<p>The license-key contains information about your subscription which will be checked by enterprise components before they are executed. In order to provide this License-Key to Sakuli you also have to set it as an environment variable. Because the license-key is read on every single test execution it is useful to store it persistently on your system or set it in a script where the actual test is also called.</p>
 
 <p>The name of the environment variable for the license-key is <code>SAKULI_LICENSE_KEY</code>.</p>
 
@@ -548,7 +560,7 @@ They are part of the environment in which a process runs. For example, a running
 
 <p>There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/"><strong>here</strong></a></p>
 
-<p>Alternatively you can use <strong><a href="https://www.rapidee.com/en/about">Rapid Environemnt Editor</a></strong> which is a nice tool for editing environment variables on Windows.</p>
+<p>Alternatively you can use <strong><a href="https://www.rapidee.com/en/about">Rapid Environment Editor</a></strong> which is a nice tool for editing environment variables on Windows.</p>
 
 <p>In case of a more restrictive environment - where it is not possible to edit environment variables that easily - you can set them in a batch script:</p>
 
@@ -580,8 +592,12 @@ echo <span style="color:#e6db74">&#34;export VARIABLE_NAME=VALUE&#34;</span> &gt
 <ul>
 <li>
 <ul>
-<li><a href="#using-licences-information">Using Licences Information</a></li>
-<li><a href="#alternative-using-npm-token">Alternative using NPM-Token</a></li>
+<li><a href="#using-license-information">Using License Information</a>
+<ul>
+<li><a href="#global-configuration">Global configuration</a></li>
+<li><a href="#per-project-configuration-of-npm-token">Per-Project configuration of NPM-Token</a></li>
+<li><a href="#per-project-configuration-with-environment-variable">Per-Project configuration with environment variable</a></li>
+</ul></li>
 <li><a href="#using-the-license-key">Using the License-Key</a></li>
 <li><a href="#more-about-environment-variables">More about Environment Variables</a>
 <ul>

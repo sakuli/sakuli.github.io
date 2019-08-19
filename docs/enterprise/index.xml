@@ -23,10 +23,10 @@ npm i @sakuli/forwarder-icinga2 To register the forwarder in your project you ha
     
     <item>
       <title>Check_MK Forwarder</title>
-      <link>https://sakuli.io/docs/enterprise/check_mk/</link>
+      <link>https://sakuli.io/docs/enterprise/check_mk-forwarder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sakuli.io/docs/enterprise/check_mk/</guid>
+      <guid>https://sakuli.io/docs/enterprise/check_mk-forwarder/</guid>
       <description>Add the forwarder to your project with:
 npm i @sakuli/forwarder-checkmk To register the forwarder in your project you have to edit the package.json file and add the preset to the sakuli configuration key:
 { &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-checkmk&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of the license information. You find further information in the enterpise section  Sakuli Client Configuration It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.</description>
@@ -34,10 +34,10 @@ npm i @sakuli/forwarder-checkmk To register the forwarder in your project you ha
     
     <item>
       <title>OMD / Gearman Forwarder</title>
-      <link>https://sakuli.io/docs/enterprise/omd/</link>
+      <link>https://sakuli.io/docs/enterprise/omd-forwarder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sakuli.io/docs/enterprise/omd/</guid>
+      <guid>https://sakuli.io/docs/enterprise/omd-forwarder/</guid>
       <description>Install the forwarder to your project with:
 npm i @sakuli/forwarder-gearman To register the forwarder in your project you have edit the package.json file and add the preset to the Sakuli configuration key:
 { &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-gearman&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of the license information. You find further information in the enterpise section  Configure OMD Sakuli transmits performance data to a Gearman result queue rather than to OMD directly.</description>
