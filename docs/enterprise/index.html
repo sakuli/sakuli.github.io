@@ -479,7 +479,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 echo <span style="color:#e6db74">&#34;export SAKULI_LICENSE_KEY=&lt;Put your personal SAKULI-LICENSE-KEY here&gt;&#34;</span> &gt;&gt; ~/.bashrc</code></pre></div></p>
 
 <p><em>On Windows</em>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put your personal NPM-TOKEN here&gt;&#34;</span> &gt; %USERPROFILE%<span style="color:#ae81ff">\.</span>npmrc
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo //registry.npmjs.org/:_authToken<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt; &gt; %USERPROFILE%<span style="color:#ae81ff">\.</span>npmrc
 setx SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;Put your personal SAKULI-LICENSE-KEY here&gt;</code></pre></div></p>
 
 <div class="alert alert-dark" role="alert">
@@ -501,8 +501,13 @@ setx SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;Put your personal
 
 <p>You can set the NPM-Token per project by adding a <code>.npmrc</code> file to your projects root directory.</p>
 
+<p><em>On Unix / OSX</em>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cd path/to/project</span>
-echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put your personal NPM-TOKEN here&gt;&#34;</span> &gt; .npmrc</code></pre></div>
+echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put your personal NPM-TOKEN here&gt;&#34;</span> &gt; .npmrc</code></pre></div></p>
+
+<p><em>On Windows</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cd path/to/project</span>
+echo //registry.npmjs.org/:_authToken<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt; &gt; .npmrc</code></pre></div></p>
 
 <p>This command will create an <code>.npmrc</code> file with the necessary token configuration inside your specific project folder. Every upcoming <code>npm install</code> will use this configuration.</p>
 
@@ -510,11 +515,20 @@ echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=&lt;Put y
 
 <p>If you don&rsquo;t like to save the token in a file (because this file might be shared) you can configure it to use an <strong><a href="#more-about-environment-variables">environment variable</a></strong>:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=\${NPM_TOKEN}&#34;</span> &gt; .npmrc</code></pre></div>
+<p><em>On Unix / OSX</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;//registry.npmjs.org/:_authToken=\${NPM_TOKEN}&#34;</span> &gt; ~/.npmrc</code></pre></div></p>
+
+<p><em>On Windows</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo //registry.npmjs.org/:_authToken<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>NPM_TOKEN<span style="color:#e6db74">}</span> &gt; %USERPROFILE%<span style="color:#ae81ff">\.</span>npmrc</code></pre></div></p>
 
 <p>In this case you have to provide the NPM-Token via an environment variable <code>NPM_TOKEN</code> or set it per installation of an enterprise package:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt; npm i &lt;ENTERPRISE-PACKAGE&gt;</code></pre></div>
+<p><em>On Unix / OSX</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt; npm i &lt;ENTERPRISE-PACKAGE&gt;</code></pre></div></p>
+
+<p><em>On Windows</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set NPM_TOKEN<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt;
+npm i &lt;ENTERPRISE-PACKAGE&gt;</code></pre></div></p>
 
 <p>This approach is usually used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).</p>
 
