@@ -13,7 +13,7 @@ With your active **[Sakuli Enterprise](/enterprise)** subscription you will rece
 - __NPM-Token__: Necessary for downloading your enterprise packages from our private NPM repositories
 - and a __Sakuli License key__: Containing information about your subscription and is used by Sakuli itself
 
-There are several ways to deal with this information. 
+There are several ways to deal with this information.
 
 ### Global configuration
 The most simple way to get your enterprise features to work is the following configuration (_substitute the placeholders marked by the angle-brackets with its appropriate values_):
@@ -26,7 +26,7 @@ echo "export SAKULI_LICENSE_KEY=<Put your personal SAKULI-LICENSE-KEY here>" >> 
 
 _On Windows_
 {{<highlight bash>}}
-echo "//registry.npmjs.org/:_authToken=<Put your personal NPM-TOKEN here>" > %USERPROFILE%\.npmrc
+echo //registry.npmjs.org/:_authToken=<Put your personal NPM-TOKEN here> > %USERPROFILE%\.npmrc
 setx SAKULI_LICENSE_KEY=<Put your personal SAKULI-LICENSE-KEY here>
 {{</highlight>}}
 
@@ -38,32 +38,52 @@ These commands will set the NPM-Token and License Key globally. This is good for
 
 Now you are ready to go for using Sakuli with its enterprise features like
 
-- **[Check_MK](check_mk-forwarder)** 
-- **[Icinga2](icinga2-forwarder)** 
-- **[OMD](omd-forwarder)** 
+- **[Check_MK](check_mk-forwarder)**
+- **[Icinga2](icinga2-forwarder)**
+- **[OMD](omd-forwarder)**
 
 ### Per-Project configuration of NPM-Token
 
 You can set the NPM-Token per project by adding a `.npmrc` file to your projects root directory.
 
+_On Unix / OSX_
 {{<highlight bash>}}
 # cd path/to/project
 echo "//registry.npmjs.org/:_authToken=<Put your personal NPM-TOKEN here>" > .npmrc
 {{</highlight>}}
 
-This command will create an `.npmrc` file with the necessary token configuration inside your specific project folder. Every upcoming `npm install` will use this configuration. 
+_On Windows_
+{{<highlight bash>}}
+# cd path/to/project
+echo //registry.npmjs.org/:_authToken=<Put your personal NPM-TOKEN here> > .npmrc
+{{</highlight>}}
+
+This command will create an `.npmrc` file with the necessary token configuration inside your specific project folder. Every upcoming `npm install` will use this configuration.
 
 ### Per-Project configuration with environment variable
 If you don't like to save the token in a file (because this file might be shared) you can configure it to use an **[environment variable](#more-about-environment-variables)**:
 
+_On Unix / OSX_
 {{<highlight bash>}}
-echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
+{{</highlight>}}
+
+_On Windows_
+{{<highlight bash>}}
+echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > %USERPROFILE%\.npmrc
 {{</highlight>}}
 
 In this case you have to provide the NPM-Token via an environment variable `NPM_TOKEN` or set it per installation of an enterprise package:
 
+_On Unix / OSX_
 {{<highlight bash>}}
 NPM_TOKEN=<Put your personal NPM-TOKEN here> npm i <ENTERPRISE-PACKAGE>
+{{</highlight>}}
+
+_On Windows_
+{{<highlight bash>}}
+set NPM_TOKEN=<Put your personal NPM-TOKEN here>
+npm i <ENTERPRISE-PACKAGE>
 {{</highlight>}}
 
 This approach is usually used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).
@@ -87,7 +107,7 @@ So basically an environment variable is just a simple key-value pair provided to
 
 The approach for integrating an environment variable depends on the respective operating system.
 
-### On Windows 
+### On Windows
 
 To set an environment variable on Windows you have to:
 
