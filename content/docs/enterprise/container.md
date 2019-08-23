@@ -5,6 +5,12 @@ slug: test-container
 ---
 
 Once you obtained a Sakuli Enterprise license your docker-user will be granted access to the private Sakuli test container image.
+This image is ready to go and ships with already installed:
+
+  - Sakuli
+  - Icinga2 / Check_MK / OMD Forwarder
+  - VNC / noVNC
+  - Chrome / Firefox (incl. webdriver)
 
 ## 1 Obtaining the Image
 
