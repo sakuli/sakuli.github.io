@@ -23,6 +23,10 @@ Containers are tagged according to Sakuli versions, so in order to use Sakuli v2
 docker pull taconsol/sakuli:2.1.2
 {{</highlight>}}
 
+{{<alert>}}
+Sakuli does not support a latest tag. When running a containerized test one always has to specify the exact version to use to ensure consistency. You can find a list of available tags on [**Dockerhub**](https://cloud.docker.com/u/taconsol/repository/docker/taconsol/sakuli)
+{{</alert>}}
+
 ## Running Sakuli Test Containers
 
 Containerized Sakuli tests require a valid Sakuli license token which has to be provided via the `SAKULI_LICENSE_KEY` [environment variable](/docs/enterprise).
@@ -58,7 +62,7 @@ so to run a custom test we have to:
 2. Specify the location of our test project inside the container
 3. Configure what to execute on `npm test`
 
-### Provide the test project to the container
+### 1. Provide the test project to the container
 
 There are two common ways to provide files to a container:
 
@@ -98,7 +102,6 @@ We can do so by creating our own Dockerfile next to our project directory:
 {{<highlight bash>}}
 FROM taconsol/sakuli:2.1.2
 
-### Copy demo testcase
 ADD ./testsuite-a $HOME/sakuli_testsuite
 {{</highlight>}}
 
@@ -120,7 +123,7 @@ docker run -e SAKULI_LICENSE_KEY=<YOUR SAKULI LICENSE KEY> name-of-my-image
 When working with added files and folders inside a container, one has to ensure correct file permissions for added files.
 {{</alert>}}
 
-### Specify the location of our test project inside the container
+### 2. Specify the location of our test project inside the container
 
 Now that our test files are available inside the container, we need to a way to configure where our project is located.
 
@@ -135,12 +138,11 @@ When building new images, this setting can also be added to the Dockerfile:
 {{<highlight bash>}}
 FROM taconsol/sakuli:2.1.2
 
-### Copy demo testcase
 ADD ./testsuite-a $HOME/sakuli_testsuite
 ENV SAKULI_TEST_SUITE=$HOME/sakuli_testsuite
 {{</highlight>}}
 
-### Configure what to execute on `npm test`
+### 3. Configure what to execute on `npm test`
 
 The main configuration file of an npm project is its `package.json` file.
 Within this file it's possible to configure [npm-scripts](https://docs.npmjs.com/misc/scripts), a handy way to execute scripts inside an npm project.
@@ -163,7 +165,17 @@ Our test suites are located within the same folder as our `package.json`, so a t
 {{<highlight js>}}
 ...
   "scripts": {
-    "test": "sakuli run ./test-suite"
+    "test": "sakuli run /path/to/your/test/suite"
   },
 ...
 {{</highlight>}}
+
+## Summary
+
+Once we have
+
+- added our test to the container (via [**bind mount**](#bind-mounts) or [**our own image**](#extending-a-base-image))
+- configured where our test project is located (via [**SAKULI_TEST_SUITE environment variable**](#specify-the-location-of-our-test-project-inside-the-container))
+- set up our [**test script**](#configure-what-to-execute-on-npm-test)
+
+our test will run automatically after the container started.
