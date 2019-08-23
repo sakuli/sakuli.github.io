@@ -39,7 +39,7 @@ docker run --rm -p 5901:5901 -p 6901:6901 -e SAKULI_LICENSE_KEY=<YOUR SAKULI LIC
 
 Parameters:
 
-- **\-\-rm**: The test container is removed after execution, not just stopped
+- **\-\-rm**: The test container will be removed after execution, not just stopped
 - **-p**: Port forwardings. VNC is available on port 5901, the HTML5 webVNC view is exposed on port 6901 on the Docker host
 - **-e**: Environment variable flag which is used to provide the `SAKULI_LICENSE_KEY` to the container
 
@@ -79,7 +79,7 @@ docker run -v /path/to/test/project/on/host:/sakuli_test -e SAKULI_LICENSE_KEY=<
 {{</highlight>}}
 
 By adding the **-v** parameter we're mounting the root folder of our Sakuli test at `/path/to/test/project/on/host` (where the `package.json` file is located) on our host machine at `/sakuli_test` inside our test container.
-Inside the test container we could now run a Sakuli test via `sakuli run /sakuli_test/test_suite_folder`.
+Inside the test container we can now run a Sakuli test via `sakuli run /sakuli_test/test_suite_folder`.
 
 Bind mounts are easy to use and very useful during development.
 
