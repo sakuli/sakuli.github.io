@@ -44,7 +44,7 @@ Parameters:
 - **-e**: Environment variable flag which is used to provide the `SAKULI_LICENSE_KEY` to the container
 
 {{<alert>}}
-Sakuli Test Containers are run as non-root user, the default UID is 1000.
+Sakuli Test Containers run as non-root user, the default UID is 1000.
 {{</alert>}}
 
 ## Anatomy of a Containerized Sakuli Test
@@ -81,7 +81,7 @@ docker run -v /path/to/test/project/on/host:/sakuli_test -e SAKULI_LICENSE_KEY=<
 By adding the **-v** parameter we're mounting the root folder of our Sakuli test at `/path/to/test/project/on/host` (where the `package.json` file is located) on our host machine at `/sakuli_test` inside our test container.
 Inside the test container we could now run a Sakuli test via `sakuli run /sakuli_test/test_suite_folder`.
 
-Bind mounts are easy to use and great during development.
+Bind mounts are easy to use and very useful during development.
 
 For further information, please refer to the [Docker documentation on bind mounts](https://docs.docker.com/storage/bind-mounts/)
 
@@ -125,7 +125,7 @@ When working with added files and folders inside a container, one has to ensure 
 
 ### 2. Specify the location of our test project inside the container
 
-Now that our test files are available inside the container, we need to a way to configure where our project is located.
+Now that our test files are available inside the container, we need to find a way to configure where our project is located.
 
 This can easily be done by setting the `SAKULI_TEST_SUITE` environment variable to the respective path:
 
