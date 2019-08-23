@@ -19,14 +19,14 @@
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <title>
-        Sakuli End-to-End Testing + Monitoring | Check_MK Forwarder
+        Sakuli End-to-End Testing + Monitoring | E2E Test Container
     </title>
-    <meta property="og:title" content="Sakuli | Check_MK Forwarder" />
+    <meta property="og:title" content="Sakuli | E2E Test Container" />
     <meta property="og:description" content="" />
     <meta property="og:image" content="https://sakuli.io//images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
-    <meta name="twitter:title" content="Sakuli | Check_MK Forwarder" />
+    <meta name="twitter:title" content="Sakuli | E2E Test Container" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="https://sakuli.io//images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -381,7 +381,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/enterprise/check_mk-forwarder/" class=" active ">
+    <a href="/docs/enterprise/check_mk-forwarder/" class="">
             Check_MK Forwarder
     </a>
     
@@ -413,7 +413,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/enterprise/test-container/" class="">
+    <a href="/docs/enterprise/test-container/" class=" active ">
             E2E Test Container
     </a>
     
@@ -470,90 +470,181 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>Check_MK Forwarder</h1>
+            <h1>E2E Test Container</h1>
             
 
-<p>Add the forwarder to your project with:</p>
+<p>Once you obtained a Sakuli Enterprise license your docker-user will be granted access to the private Sakuli test container image.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/forwarder-checkmk</code></pre></div>
+<h2 id="1-obtaining-the-image">1. Obtaining the Image</h2>
 
-<p>To register the forwarder into your project you have to edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
+<p>The registered docker-hub user will then be able to pull the private image:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;sakuli&#34;</span>: {
-        <span style="color:#f92672">&#34;presetProvider&#34;</span>: [
-            <span style="color:#e6db74">&#34;@sakuli/legacy&#34;</span>,
-            <span style="color:#e6db74">&#34;@sakuli/forwarder-checkmk&#34;</span>
-        ]
-    }
-}</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull taconsol/sakuli:&lt;IMAGE_TAG&gt;</code></pre></div>
+
+<p>Sakuli test containers do not provide a <code>latest</code> tag.
+You will always have to specify the exact version of Sakuli you intend to use in your containerized tests.</p>
+
+<p>Containers are tagged according to Sakuli versions, so in order to use Sakuli v2.1.2 in a test, one would pull the following image:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull taconsol/sakuli:2.1.2</code></pre></div>
 
 <div class="alert alert-dark" role="alert">
-    Installation of any enterprise feature requires a proper setup of the license information. You find further information in the <a href="/docs/enterprise#using-licences-information">enterpise section</a>
+    Sakuli does not support a latest tag. When running a containerized test one always has to specify the exact version to use to ensure consistency. You can find a list of available tags on <a href="https://cloud.docker.com/u/taconsol/repository/docker/taconsol/sakuli"><strong>Dockerhub</strong></a>
 </div>
 
 
-<h2 id="sakuli-client-configuration">Sakuli Client Configuration</h2>
+<h2 id="2-running-sakuli-test-containers">2. Running Sakuli Test Containers</h2>
 
-<p>It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.</p>
+<p>Containerized Sakuli tests require a valid Sakuli license token which has to be provided via the <code>SAKULI_LICENSE_KEY</code> <a href="/docs/enterprise">environment variable</a>.</p>
 
-<h3 id="spool-folder">Spool folder</h3>
+<p>Docker allows to pass environment variable along other parameters when starting a new container:</p>
 
-<p>Create a new folder <code>spool</code> in the installation path of the Check_MK agent. This is the folder where the results will be written and stored into. Don&rsquo;t forget to grant writing permissions for the folder to the user running Sakuli checks.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 -e SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;YOUR SAKULI LICENSE KEY&gt; taconsol/sakuli:2.1.2</code></pre></div>
 
-<h3 id="forwarder-configuration">Forwarder configuration</h3>
+<p>Parameters:</p>
 
-<p>Now you have to set the properties for the Check_MK receiver. For this, edit the <code>sakuli.properties</code> in the folder containing the testsuites:</p>
+<ul>
+<li><strong>--rm</strong>: The test container will be removed after execution, not just stopped</li>
+<li><strong>-p</strong>: Port forwardings. VNC is available on port 5901, the HTML5 webVNC view is exposed on port 6901 on the Docker host</li>
+<li><strong>-e</strong>: Environment variable flag which is used to provide the <code>SAKULI_LICENSE_KEY</code> to the container</li>
+</ul>
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Default</th>
-<th>Effect</th>
-</tr>
-</thead>
+<div class="alert alert-dark" role="alert">
+    Sakuli Test Containers run as non-root user, the default UID is 1000.
+</div>
 
-<tbody>
-<tr>
-<td><code>sakuli.forwarder.check_mk.enabled</code></td>
-<td><code>false</code></td>
-<td>Enables writing to the spool file</td>
-</tr>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.spooldir</code></td>
-<td><code>/var/lib/check_mk_agent/spool</code> (Linux)<br/><code>&lt;CMK_installation_path&gt;\\spool</code> (Windows)</td>
-<td>Path to the spool folder as defined above. On Windows, the backslashes have to be escaped with &lsquo;\&lsquo;. Check_MK is expecting the result files from Sakuli in here</td>
-</tr>
+<h2 id="3-anatomy-of-a-containerized-sakuli-test">3. Anatomy of a Containerized Sakuli Test</h2>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.freshness</code></td>
-<td><code>600</code></td>
-<td>Defines the maximal age in seconds in which the result is still valid. If the last modification of the result file is older than this property, the result file will be ignored. The Check_MK service will turn into UNKNOWN</td>
-</tr>
+<p>In general, the structure of a containerized Sakuli test does not differ from any other Sakuli test.
+No changes are required when executing a test inside a container.
+The only configuration we have to provide, is information about how and which tests should be executed.</p>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.spoolfile_prefix</code></td>
-<td><code>sakuli_suite_</code></td>
-<td>Defines the result file prefix. It can be used to change the default naming convention for the Check_MK output files</td>
-</tr>
+<h2 id="4-configuring-a-containerized-test">4. Configuring a Containerized Test</h2>
 
-<tr>
-<td><code>akuli.forwarder.check_mk.service_description</code></td>
-<td><code>${testsuite.id}</code></td>
-<td>Defines the service description which is used within the check result</td>
-</tr>
-</tbody>
-</table>
+<p>The default behaviour of a Sakuli Test Container is to run <code>npm test</code> to execute tests,
+so to run a custom test we have to:</p>
 
-<p>An example configuration could look like this:</p>
+<ol>
+<li>Provide the test project to the container (as shown in 4.2.X)</li>
+<li>Specify the location of our test project inside the container</li>
+<li>Configure what to execute on <code>npm test</code></li>
+</ol>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-properties" data-lang="properties">sakuli.forwarder.check_mk.enabled=true
-sakuli.forwarder.check_mk.spooldir=/var/lib/check_mk_agent/spool
-sakuli.forwarder.check_mk.freshness=600
-sakuli.forwarder.check_mk.spoolfile_prefix=sakuli_suite_
-sakuli.forwarder.check_mk.service_description=My_Custom_Service</code></pre></div>
+<h3 id="4-2-provide-the-test-project-to-the-container">4.2 Provide the test project to the container</h3>
+
+<p>There are two common ways to provide files to a container:</p>
+
+<ul>
+<li>Bind mounts</li>
+<li>Extending a base image</li>
+</ul>
+
+<h4 id="4-2-1-bind-mounts">4.2.1 Bind Mounts</h4>
+
+<p>When running a Docker container it is possible to mount a file or directory on the Docker host into a container.
+This mechanism can be used to provide a Sakuli test to a test container:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -v /path/to/test/project/on/host:/sakuli_test -e SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;YOUR SAKULI LICENSE KEY&gt; taconsol/sakuli:2.1.2</code></pre></div>
+
+<p>By adding the <strong>-v</strong> parameter we&rsquo;re mounting the root folder of our Sakuli test at <code>/path/to/test/project/on/host</code> (where the <code>package.json</code> file is located) on our host machine at <code>/sakuli_test</code> inside our test container.
+Inside the test container we can now run a Sakuli test via <code>sakuli run /sakuli_test/test_suite_folder</code>.</p>
+
+<p>Bind mounts are easy to use and very useful during development.</p>
+
+<p>For further information, please refer to the <a href="https://docs.docker.com/storage/bind-mounts/">Docker documentation on bind mounts</a></p>
+
+<h4 id="4-2-2-extending-a-base-image">4.2.2 Extending a Base Image</h4>
+
+<p>Once we finished our test case and are ready to put it to work, bind mounts might become a bit cumbersome.
+Now that the test is done and wont change frequently, it would be feasible to build an explicit Docker image for our test.</p>
+
+<p>We can do so by creating our own Dockerfile next to our project directory:
+<section class="unstyled-list-section"><ul>
+<li><i class="fas fa-folder"></i> <strong>/folder/containing/Dockerfile/and/project</strong></p>
+
+<p><ul>
+<li><i class="far fa-file"></i> <strong>Dockerfile</strong></li>
+<li><i class="fas fa-folder"></i> <strong>testsuite-a</strong></p>
+
+<p><ul>
+<li><i class="far fa-file"></i> <strong>package.json</strong></li>
+<li><i class="far fa-file"></i> <strong>&hellip;</strong></li>
+</ul></li>
+</ul></li>
+</ul></section></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM taconsol/sakuli:2.1.2
+
+ADD ./testsuite-a $HOME/sakuli_testsuite</code></pre></div>
+
+<p>Using this Dockerfile we can now build our own test image by running</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t name-of-my-image .</code></pre></div>
+
+<p>inside the folder where our Dockerfile is located.</p>
+
+<p>We can now run our newly built image via:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -e SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;YOUR SAKULI LICENSE KEY&gt; name-of-my-image</code></pre></div>
+
+<div class="alert alert-dark" role="alert">
+    When working with added files and folders inside a container, one has to ensure correct file permissions for added files.
+</div>
+
+
+<h3 id="4-3-specify-the-location-of-our-test-project-inside-the-container">4.3 Specify the location of our test project inside the container</h3>
+
+<p>Now that our test files are available inside the container, we need to find a way to configure where our project is located.</p>
+
+<p>This can easily be done by setting the <code>SAKULI_TEST_SUITE</code> environment variable to the respective path:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -v /path/to/test/folder:/sakuli_test -e SAKULI_TEST_SUITE<span style="color:#f92672">=</span>/sakuli_test -e SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;YOUR SAKULI LICENSE KEY&gt; taconsol/sakuli:2.1.2</code></pre></div>
+
+<p>When building new images, this setting can also be added to the Dockerfile:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM taconsol/sakuli:2.1.2
+
+ADD ./testsuite-a $HOME/sakuli_testsuite
+ENV SAKULI_TEST_SUITE<span style="color:#f92672">=</span>$HOME/sakuli_testsuite</code></pre></div>
+
+<h3 id="4-4-configure-what-to-execute-on-npm-test">4.4 Configure what to execute on <code>npm test</code></h3>
+
+<p>The main configuration file of a npm project is its <code>package.json</code> file.
+Within this file it&rsquo;s possible to configure <a href="https://docs.npmjs.com/misc/scripts">npm-scripts</a>, a handy way to execute scripts inside an npm project.</p>
+
+<p>An empty project initialised via <code>npm init</code> already contains one script: <code>npm test</code></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
+  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>
+  },
+...
+</code></pre></div>
+
+<p><code>npm test</code> is the default way of executing tests in an npm project, so Sakuli tests should be executed this way, too!</p>
+
+<p>Since Sakuli is available in our project, we can run our test by simply calling <code>sakuli run ...</code> on <code>npm test</code>.
+Our test suites are located within the same folder as our <code>package.json</code>, so a test suite can be run via:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
+  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sakuli run /path/to/your/test/suite&#34;</span>
+  },
+...
+</code></pre></div>
+
+<h2 id="5-summary">5. Summary</h2>
+
+<p>Once we have</p>
+
+<ul>
+<li>added our test to the container (via <a href="#bind-mounts"><strong>bind mount</strong></a> or <a href="#extending-a-base-image"><strong>our own image</strong></a>)</li>
+<li>configured where our test project is located (via <a href="#specify-the-location-of-our-test-project-inside-the-container"><strong>SAKULI_TEST_SUITE environment variable</strong></a>)</li>
+<li>set up our <a href="#configure-what-to-execute-on-npm-test"><strong>test script</strong></a></li>
+</ul>
+
+<p>our test will run automatically after the container started.</p>
 
         </article>
         <aside id="secondary-nav">
@@ -561,11 +652,20 @@ sakuli.forwarder.check_mk.service_description=My_Custom_Service</code></pre></di
 <ul>
 <li>
 <ul>
-<li><a href="#sakuli-client-configuration">Sakuli Client Configuration</a>
+<li><a href="#1-obtaining-the-image">1. Obtaining the Image</a></li>
+<li><a href="#2-running-sakuli-test-containers">2. Running Sakuli Test Containers</a></li>
+<li><a href="#3-anatomy-of-a-containerized-sakuli-test">3. Anatomy of a Containerized Sakuli Test</a></li>
+<li><a href="#4-configuring-a-containerized-test">4. Configuring a Containerized Test</a>
 <ul>
-<li><a href="#spool-folder">Spool folder</a></li>
-<li><a href="#forwarder-configuration">Forwarder configuration</a></li>
+<li><a href="#4-2-provide-the-test-project-to-the-container">4.2 Provide the test project to the container</a>
+<ul>
+<li><a href="#4-2-1-bind-mounts">4.2.1 Bind Mounts</a></li>
+<li><a href="#4-2-2-extending-a-base-image">4.2.2 Extending a Base Image</a></li>
 </ul></li>
+<li><a href="#4-3-specify-the-location-of-our-test-project-inside-the-container">4.3 Specify the location of our test project inside the container</a></li>
+<li><a href="#4-4-configure-what-to-execute-on-npm-test">4.4 Configure what to execute on <code>npm test</code></a></li>
+</ul></li>
+<li><a href="#5-summary">5. Summary</a></li>
 </ul></li>
 </ul>
 </nav>
