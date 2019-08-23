@@ -3,7 +3,7 @@ title: OMD / Gearman Forwarder
 weight: 300
 ---
 
-Install the forwarder to your project with:
+Add the forwarder to your project with:
 
 {{<highlight bash>}}
 npm i @sakuli/forwarder-gearman
@@ -23,22 +23,22 @@ To register the forwarder into your project you have to edit the `package.json` 
 {{</highlight>}}
 
 {{<alert>}}
-Installation of any enterprise feature requires a proper setup of the license information. You find further information in the [enterpise section](/docs/enterprise#using-licences-information)
+Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the [**enterprise section**](/docs/enterprise#using-licences-information).
 {{</alert>}}
 
 ## Configure OMD
 
 Sakuli transmits performance data to a Gearman result queue rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.
 
-It takes a few steps to set up the monitoring system in order to process Sakulis performance data correctly.
+It takes a few steps to set up the monitoring system in order to process Sakuli's performance data correctly.
 
 ### Enable and configure mod-gearman
 
 Use the Makefile located in `OMD_ROOT/share/sakuli/omd/` to configure mod-gearman:
 
-- enable all services for mod-gearman
-- set the bind IP and port (default: `0.0.0.0:4730`; overwrite with e.g. `export GEARMAN_PORT=192.168.130.10:4731`)
-- set the encryption key (default: `sakuli_secret`; overwrite with e.g. `export GEARMAN_SECRET=mykey`)
+- Enable all services for mod-gearman
+- Set the bind IP and port (default: `0.0.0.0:4730`; overwrite with e.g. `export GEARMAN_PORT=192.168.130.10:4731`)
+- Set the encryption key (default: `sakuli_secret`; overwrite with e.g. `export GEARMAN_SECRET=mykey`)
 
 Then run:
 
@@ -49,13 +49,13 @@ make gearman
 {{</highlight>}}
 
 {{%alert%}}
-For security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the instruction carefully and execute the steps by hand.
+Due to security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the instruction carefully and execute the steps by hand.
 {{%/alert%}}
 {{% alert %}}
 For **PRODUCTION** usage please use individual encryption keys!
 {{% /alert %}}
 
-If you do not want to use encryption at all enable `accept_clear_results` and disable `sakuli.forwarder.gearman.encryption`:
+If you do not want to use encryption at all, enable `accept_clear_results` and disable `sakuli.forwarder.gearman.encryption`:
 
 {{<highlight bash>}}
 vim ~/etc/mod-gearman/server.cfg
@@ -89,17 +89,17 @@ make gearman_proxy
 Edit `etc/mod-gearman/sakuli_gearman_proxy.cfg` :
 
 {{<highlight cfg>}}
-$remoteHost="172.17.0.2"; #1
-$remotePort="4730"; #1
-$localHost="172.17.0.2"; #2
-$localPort="4730"; #2
+$remoteHost="172.17.0.2"; // 1
+$remotePort="4730"; // 1
+$localHost="172.17.0.2"; // 2
+$localPort="4730"; // 2
 $queues = {
     "$remoteHost:$remotePort/check_results_sakuli"  => "$localHost:$localPort/check_results",
-}; # 3 + 4
+}; // 3 + 4
 
-$err_h = 'error_host'; #5
+$err_h = 'error_host'; // 5
 $err_s = 'eror_svc';
-$err_r = '2'; #6
+$err_r = '2'; // 6
 {{</highlight>}}
 
 1. Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless `gearman_proxy.pl` is running on another system
@@ -107,7 +107,7 @@ $err_r = '2'; #6
 3. `check_results_sakuli` ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property `sakuli.forwarder.gearman.server.queue` on all Sakuli clients (see Sakuli Client Configuration)
 4. `check_results` ⇒ default queue of mod-gearman where gearman workers write back their results (no need to change that)
 5. The proxy does a live status query for each incoming package to ensure that the receiving host/service exists. It provides a special "error host/service" pair where the proxy can send a message in case of results coming back for non-existent services
-6. Status of the messages for non-existent services (2=CRITICAL)
+6. Status of the messages for non-existent services (2 = CRITICAL)
 
 {{<highlight bash>}}
 su - <SITE_USER>
@@ -137,10 +137,10 @@ This change does affect other monitoring checks executed with mod-gearman, becau
 
 Create a service which should receive Sakuli test results. Host/service names derive from the following properties:
 
-- **host**: `sakuli.forwarder.gearman.nagios.hostname` (defined globally or via suite)
-- **service**: `testsuite.id` (defined in `testsuite.properties`)
+- **Host**: `sakuli.forwarder.gearman.nagios.hostname` (defined globally or via suite)
+- **Service**: `testsuite.id` (defined in `testsuite.properties`)
 
-OMD Configuration:
+OMD configuration:
 
 {{<highlight cfg>}}
 define host {
@@ -158,13 +158,13 @@ define service {
 }
 {{</highlight>}}
 
-> `freshness_threshold` should be slightly higher than the interval Sakuli tests are executed
+>The  `freshness_threshold` should be slightly higher than the interval during which Sakuli tests are executed.
 
 The check is waiting now for check results from a Sakuli client.
 
 ## Sakuli Configuration
 
-You must set the global properties for the gearman receiver on the Sakuli client. For this, edit `sakuli.properties` in the folder containing the testsuites:
+You must set the global properties for the gearman receiver on the Sakuli client. For doing this, edit `sakuli.properties` in the folder containing the testsuites:
 
 | Property   |      Default      |  Effect |
 |----------|-------------|------|
