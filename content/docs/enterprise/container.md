@@ -142,7 +142,7 @@ ADD ./testsuite-a $HOME/sakuli_testsuite
 ENV SAKULI_TEST_SUITE=$HOME/sakuli_testsuite
 {{</highlight>}}
 
-### 4.5 Configure what to execute on `npm test`
+### 4.4 Configure what to execute on `npm test`
 
 The main configuration file of a npm project is its `package.json` file.
 Within this file it's possible to configure [npm-scripts](https://docs.npmjs.com/misc/scripts), a handy way to execute scripts inside an npm project.
@@ -170,7 +170,7 @@ Our test suites are located within the same folder as our `package.json`, so a t
 ...
 {{</highlight>}}
 
-## Summary
+## 5. Summary
 
 Once we have
 
