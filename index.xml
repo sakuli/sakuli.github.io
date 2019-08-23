@@ -50,7 +50,7 @@ npm i @sakuli/forwarder-gearman To register the forwarder into your project you 
       
       <guid>https://sakuli.io/docs/enterprise/test-container/</guid>
       <description>Once you obtained a Sakuli Enterprise license your docker-user will be granted access to the private Sakuli test container image.
-1. Obtaining the Image The registered docker-hub user will then be able to pull the private image:
+1 Obtaining the Image The registered docker-hub user will then be able to pull the private image:
 docker pull taconsol/sakuli:&amp;lt;IMAGE_TAG&amp;gt; Sakuli test containers do not provide a latest tag. You will always have to specify the exact version of Sakuli you intend to use in your containerized tests.
 Containers are tagged according to Sakuli versions, so in order to use Sakuli v2.</description>
     </item>

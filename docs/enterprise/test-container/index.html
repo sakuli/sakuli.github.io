@@ -475,7 +475,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>Once you obtained a Sakuli Enterprise license your docker-user will be granted access to the private Sakuli test container image.</p>
 
-<h2 id="1-obtaining-the-image">1. Obtaining the Image</h2>
+<h2 id="1-obtaining-the-image">1 Obtaining the Image</h2>
 
 <p>The registered docker-hub user will then be able to pull the private image:</p>
 
@@ -493,7 +493,7 @@ You will always have to specify the exact version of Sakuli you intend to use in
 </div>
 
 
-<h2 id="2-running-sakuli-test-containers">2. Running Sakuli Test Containers</h2>
+<h2 id="2-running-sakuli-test-containers">2 Running Sakuli Test Containers</h2>
 
 <p>Containerized Sakuli tests require a valid Sakuli license token which has to be provided via the <code>SAKULI_LICENSE_KEY</code> <a href="/docs/enterprise">environment variable</a>.</p>
 
@@ -514,13 +514,13 @@ You will always have to specify the exact version of Sakuli you intend to use in
 </div>
 
 
-<h2 id="3-anatomy-of-a-containerized-sakuli-test">3. Anatomy of a Containerized Sakuli Test</h2>
+<h2 id="3-anatomy-of-a-containerized-sakuli-test">3 Anatomy of a Containerized Sakuli Test</h2>
 
 <p>In general, the structure of a containerized Sakuli test does not differ from any other Sakuli test.
 No changes are required when executing a test inside a container.
 The only configuration we have to provide, is information about how and which tests should be executed.</p>
 
-<h2 id="4-configuring-a-containerized-test">4. Configuring a Containerized Test</h2>
+<h2 id="4-configuring-a-containerized-test">4 Configuring a Containerized Test</h2>
 
 <p>The default behaviour of a Sakuli Test Container is to run <code>npm test</code> to execute tests,
 so to run a custom test we have to:</p>
@@ -531,7 +531,7 @@ so to run a custom test we have to:</p>
 <li>Configure what to execute on <code>npm test</code></li>
 </ol>
 
-<h3 id="4-2-provide-the-test-project-to-the-container">4.2 Provide the test project to the container</h3>
+<h3 id="4-1-provide-the-test-project-to-the-container">4.1 Provide the test project to the container</h3>
 
 <p>There are two common ways to provide files to a container:</p>
 
@@ -540,7 +540,7 @@ so to run a custom test we have to:</p>
 <li>Extending a base image</li>
 </ul>
 
-<h4 id="4-2-1-bind-mounts">4.2.1 Bind Mounts</h4>
+<h4 id="4-1-1-bind-mounts">4.1.1 Bind Mounts</h4>
 
 <p>When running a Docker container it is possible to mount a file or directory on the Docker host into a container.
 This mechanism can be used to provide a Sakuli test to a test container:</p>
@@ -554,7 +554,7 @@ Inside the test container we can now run a Sakuli test via <code>sakuli run /sak
 
 <p>For further information, please refer to the <a href="https://docs.docker.com/storage/bind-mounts/">Docker documentation on bind mounts</a></p>
 
-<h4 id="4-2-2-extending-a-base-image">4.2.2 Extending a Base Image</h4>
+<h4 id="4-1-2-extending-a-base-image">4.1.2 Extending a Base Image</h4>
 
 <p>Once we finished our test case and are ready to put it to work, bind mounts might become a bit cumbersome.
 Now that the test is done and wont change frequently, it would be feasible to build an explicit Docker image for our test.</p>
@@ -593,7 +593,7 @@ ADD ./testsuite-a $HOME/sakuli_testsuite</code></pre></div>
 </div>
 
 
-<h3 id="4-3-specify-the-location-of-our-test-project-inside-the-container">4.3 Specify the location of our test project inside the container</h3>
+<h3 id="4-2-specify-the-location-of-our-test-project-inside-the-container">4.2 Specify the location of our test project inside the container</h3>
 
 <p>Now that our test files are available inside the container, we need to find a way to configure where our project is located.</p>
 
@@ -608,7 +608,7 @@ ADD ./testsuite-a $HOME/sakuli_testsuite</code></pre></div>
 ADD ./testsuite-a $HOME/sakuli_testsuite
 ENV SAKULI_TEST_SUITE<span style="color:#f92672">=</span>$HOME/sakuli_testsuite</code></pre></div>
 
-<h3 id="4-4-configure-what-to-execute-on-npm-test">4.4 Configure what to execute on <code>npm test</code></h3>
+<h3 id="4-3-configure-what-to-execute-on-npm-test">4.3 Configure what to execute on <code>npm test</code></h3>
 
 <p>The main configuration file of a npm project is its <code>package.json</code> file.
 Within this file it&rsquo;s possible to configure <a href="https://docs.npmjs.com/misc/scripts">npm-scripts</a>, a handy way to execute scripts inside an npm project.</p>
@@ -634,7 +634,7 @@ Our test suites are located within the same folder as our <code>package.json</co
 ...
 </code></pre></div>
 
-<h2 id="5-summary">5. Summary</h2>
+<h2 id="5-summary">5 Summary</h2>
 
 <p>Once we have</p>
 
@@ -652,20 +652,20 @@ Our test suites are located within the same folder as our <code>package.json</co
 <ul>
 <li>
 <ul>
-<li><a href="#1-obtaining-the-image">1. Obtaining the Image</a></li>
-<li><a href="#2-running-sakuli-test-containers">2. Running Sakuli Test Containers</a></li>
-<li><a href="#3-anatomy-of-a-containerized-sakuli-test">3. Anatomy of a Containerized Sakuli Test</a></li>
-<li><a href="#4-configuring-a-containerized-test">4. Configuring a Containerized Test</a>
+<li><a href="#1-obtaining-the-image">1 Obtaining the Image</a></li>
+<li><a href="#2-running-sakuli-test-containers">2 Running Sakuli Test Containers</a></li>
+<li><a href="#3-anatomy-of-a-containerized-sakuli-test">3 Anatomy of a Containerized Sakuli Test</a></li>
+<li><a href="#4-configuring-a-containerized-test">4 Configuring a Containerized Test</a>
 <ul>
-<li><a href="#4-2-provide-the-test-project-to-the-container">4.2 Provide the test project to the container</a>
+<li><a href="#4-1-provide-the-test-project-to-the-container">4.1 Provide the test project to the container</a>
 <ul>
-<li><a href="#4-2-1-bind-mounts">4.2.1 Bind Mounts</a></li>
-<li><a href="#4-2-2-extending-a-base-image">4.2.2 Extending a Base Image</a></li>
+<li><a href="#4-1-1-bind-mounts">4.1.1 Bind Mounts</a></li>
+<li><a href="#4-1-2-extending-a-base-image">4.1.2 Extending a Base Image</a></li>
 </ul></li>
-<li><a href="#4-3-specify-the-location-of-our-test-project-inside-the-container">4.3 Specify the location of our test project inside the container</a></li>
-<li><a href="#4-4-configure-what-to-execute-on-npm-test">4.4 Configure what to execute on <code>npm test</code></a></li>
+<li><a href="#4-2-specify-the-location-of-our-test-project-inside-the-container">4.2 Specify the location of our test project inside the container</a></li>
+<li><a href="#4-3-configure-what-to-execute-on-npm-test">4.3 Configure what to execute on <code>npm test</code></a></li>
 </ul></li>
-<li><a href="#5-summary">5. Summary</a></li>
+<li><a href="#5-summary">5 Summary</a></li>
 </ul></li>
 </ul>
 </nav>
