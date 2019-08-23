@@ -6,7 +6,7 @@ slug: test-container
 
 Once you obtained a Sakuli Enterprise license your docker-user will be granted access to the private Sakuli test container image.
 
-## 1. Obtaining the Image
+## 1 Obtaining the Image
 
 The registered docker-hub user will then be able to pull the private image:
 
@@ -27,7 +27,7 @@ docker pull taconsol/sakuli:2.1.2
 Sakuli does not support a latest tag. When running a containerized test one always has to specify the exact version to use to ensure consistency. You can find a list of available tags on [**Dockerhub**](https://cloud.docker.com/u/taconsol/repository/docker/taconsol/sakuli)
 {{</alert>}}
 
-## 2. Running Sakuli Test Containers
+## 2 Running Sakuli Test Containers
 
 Containerized Sakuli tests require a valid Sakuli license token which has to be provided via the `SAKULI_LICENSE_KEY` [environment variable](/docs/enterprise).
 
@@ -47,13 +47,13 @@ Parameters:
 Sakuli Test Containers run as non-root user, the default UID is 1000.
 {{</alert>}}
 
-## 3. Anatomy of a Containerized Sakuli Test
+## 3 Anatomy of a Containerized Sakuli Test
 
 In general, the structure of a containerized Sakuli test does not differ from any other Sakuli test.
 No changes are required when executing a test inside a container.
 The only configuration we have to provide, is information about how and which tests should be executed.
 
-## 4. Configuring a Containerized Test
+## 4 Configuring a Containerized Test
 
 The default behaviour of a Sakuli Test Container is to run `npm test` to execute tests,
 so to run a custom test we have to:
@@ -62,14 +62,14 @@ so to run a custom test we have to:
 2. Specify the location of our test project inside the container
 3. Configure what to execute on `npm test`
 
-### 4.2 Provide the test project to the container
+### 4.1 Provide the test project to the container
 
 There are two common ways to provide files to a container:
 
 - Bind mounts
 - Extending a base image
 
-#### 4.2.1 Bind Mounts
+#### 4.1.1 Bind Mounts
 
 When running a Docker container it is possible to mount a file or directory on the Docker host into a container.
 This mechanism can be used to provide a Sakuli test to a test container:
@@ -85,7 +85,7 @@ Bind mounts are easy to use and very useful during development.
 
 For further information, please refer to the [Docker documentation on bind mounts](https://docs.docker.com/storage/bind-mounts/)
 
-#### 4.2.2 Extending a Base Image
+#### 4.1.2 Extending a Base Image
 
 Once we finished our test case and are ready to put it to work, bind mounts might become a bit cumbersome.
 Now that the test is done and wont change frequently, it would be feasible to build an explicit Docker image for our test.
@@ -123,7 +123,7 @@ docker run -e SAKULI_LICENSE_KEY=<YOUR SAKULI LICENSE KEY> name-of-my-image
 When working with added files and folders inside a container, one has to ensure correct file permissions for added files.
 {{</alert>}}
 
-### 4.3 Specify the location of our test project inside the container
+### 4.2 Specify the location of our test project inside the container
 
 Now that our test files are available inside the container, we need to find a way to configure where our project is located.
 
@@ -142,7 +142,7 @@ ADD ./testsuite-a $HOME/sakuli_testsuite
 ENV SAKULI_TEST_SUITE=$HOME/sakuli_testsuite
 {{</highlight>}}
 
-### 4.4 Configure what to execute on `npm test`
+### 4.3 Configure what to execute on `npm test`
 
 The main configuration file of a npm project is its `package.json` file.
 Within this file it's possible to configure [npm-scripts](https://docs.npmjs.com/misc/scripts), a handy way to execute scripts inside an npm project.
@@ -170,7 +170,7 @@ Our test suites are located within the same folder as our `package.json`, so a t
 ...
 {{</highlight>}}
 
-## 5. Summary
+## 5 Summary
 
 Once we have
 
