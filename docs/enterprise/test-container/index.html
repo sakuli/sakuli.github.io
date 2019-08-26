@@ -642,7 +642,91 @@ Our test suites are located within the same folder as our <code>package.json</co
 ...
 </code></pre></div>
 
-<h2 id="5-summary">5 Summary</h2>
+<h4 id="4-3-1-troubleshooting">4.3.1 Troubleshooting</h4>
+
+<p>This topic covers possible errors when running containerized Sakuli tests.</p>
+
+<h4 id="4-3-1-1-error-invalid-elf-header">4.3.1.1 Error: Invalid ELF header</h4>
+
+<p>Some parts of Sakuli are platform-dependent, so the <code>node_modules</code> folder of a Sakuli project contains platform specific libs.
+Sakuli containers are running a Linux base image, so when mounting a project which has been developed on a non Linux machine, e.g. macOS, the <code>node_modules</code> folder will contain libs specific to macOS.</p>
+
+<p>Trying to run such a test inside a Sakuli container will therefore fail with an error message similar to this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">UnhandledPromiseRejectionWarning: Error: /test/node_modules/robotjs-node10/build/Release/robotjs.node: invalid ELF header</code></pre></div>
+
+<p>A simple way to resolve the dependency problem is to delete the <code>node_modules</code> folder.
+If your test project does not require libraries other than Sakuli, the correct libraries globally installed in Sakuli containers will be used.</p>
+
+<p>In case your test project requires additional dependencies, it&rsquo;s possible to run <code>npm install</code> before executing the Sakuli test.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
+  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;npm i &amp;&amp; sakuli run /path/to/your/test/suite&#34;</span>
+  },
+...
+</code></pre></div>
+
+<h2 id="5-viewing-configuring-test-execution">5 Viewing / Configuring Test Execution</h2>
+
+<p>Sakuli test containers allow to configure specific details of their runtime environment.</p>
+
+<h3 id="5-1-vnc-access">5.1 VNC Access</h3>
+
+<p>Sakuli containers provide access to running containers via VNC on ports 5901 and 6901.
+By specifying port forwardings (<strong>-p</strong>) it is possible to configure which ports will be used to connect to a running container on the host system.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 -e SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;YOUR SAKULI LICENSE KEY&gt; taconsol/sakuli:2.1.2</code></pre></div>
+
+<p>The example above forwards container ports 5901 and 6901 to the same ports on the host system.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -p <span style="color:#ae81ff">5000</span>:5901 -p <span style="color:#ae81ff">6000</span>:6901 -e SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;YOUR SAKULI LICENSE KEY&gt; taconsol/sakuli:2.1.2</code></pre></div>
+
+<p>In this example container port 5901 is forwarded to port 5000 on the host system, port 6901 is forwarded to port 6000 on the host system.
+<code>localhost:5000</code> would be used to connect to the container via VNC client, on <code>localhost:6000</code> a webVNC view is available in the browser.</p>
+
+<div class="alert alert-dark" role="alert">
+    The default password to access a container via VNC is <code>vncpassword</code>. It is <strong>highly</strong> recommended to change this password in production environments. See section <a href="#5-2-configuring-vnc-access"><strong>#5.2</strong></a> for details
+</div>
+
+
+<h3 id="5-2-configuring-vnc-access">5.2 Configuring VNC Access</h3>
+
+<p>The following VNC environment variables can be overwritten at the docker run phase to customize your desktop environment inside the container:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">VNC_COL_DEPTH, default: <span style="color:#ae81ff">24</span>          // Color depth
+
+VNC_RESOLUTION, default: 1280x1024  // Screen resolution
+
+VNC_PW, default: vncpassword        // VNC password
+
+VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mouse interaction possible</code></pre></div>
+
+<p>For example, the password for VNC could be set like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 -e VNC_PW<span style="color:#f92672">=</span>my-new-password taconsol/sakuli:2.1.2</code></pre></div>
+
+<h3 id="5-2-container-user">5.2 Container User</h3>
+
+<p>Per default all container processes will be executed with user id 1000.</p>
+
+<ul>
+<li><p>Using root (user id 0):</p>
+
+<p>Add the --user flag to your docker run command:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -it -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 --user <span style="color:#ae81ff">0</span> taconsol/sakuli:2.1.2
+    </code></pre></div></li>
+
+<li><p>Using user and group id of host system</p>
+
+<p>Add the --user flag to your docker run command:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -it -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 --user <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> taconsol/sakuli:2.1.2
+    </code></pre></div></li>
+</ul>
+
+<h2 id="6-summary">6 Summary</h2>
 
 <p>Once we have</p>
 
@@ -650,6 +734,7 @@ Our test suites are located within the same folder as our <code>package.json</co
 <li>added our test to the container (via <a href="#bind-mounts"><strong>bind mount</strong></a> or <a href="#extending-a-base-image"><strong>our own image</strong></a>)</li>
 <li>configured where our test project is located (via <a href="#specify-the-location-of-our-test-project-inside-the-container"><strong>SAKULI_TEST_SUITE environment variable</strong></a>)</li>
 <li>set up our <a href="#configure-what-to-execute-on-npm-test"><strong>test script</strong></a></li>
+<li>(optional) configured the container runtime environment</li>
 </ul>
 
 <p>our test will run automatically after the container started.</p>
@@ -671,9 +756,19 @@ Our test suites are located within the same folder as our <code>package.json</co
 <li><a href="#4-1-2-extending-a-base-image">4.1.2 Extending a Base Image</a></li>
 </ul></li>
 <li><a href="#4-2-specify-the-location-of-our-test-project-inside-the-container">4.2 Specify the location of our test project inside the container</a></li>
-<li><a href="#4-3-configure-what-to-execute-on-npm-test">4.3 Configure what to execute on <code>npm test</code></a></li>
+<li><a href="#4-3-configure-what-to-execute-on-npm-test">4.3 Configure what to execute on <code>npm test</code></a>
+<ul>
+<li><a href="#4-3-1-troubleshooting">4.3.1 Troubleshooting</a></li>
+<li><a href="#4-3-1-1-error-invalid-elf-header">4.3.1.1 Error: Invalid ELF header</a></li>
 </ul></li>
-<li><a href="#5-summary">5 Summary</a></li>
+</ul></li>
+<li><a href="#5-viewing-configuring-test-execution">5 Viewing / Configuring Test Execution</a>
+<ul>
+<li><a href="#5-1-vnc-access">5.1 VNC Access</a></li>
+<li><a href="#5-2-configuring-vnc-access">5.2 Configuring VNC Access</a></li>
+<li><a href="#5-2-container-user">5.2 Container User</a></li>
+</ul></li>
+<li><a href="#6-summary">6 Summary</a></li>
 </ul></li>
 </ul>
 </nav>
