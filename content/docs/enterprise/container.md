@@ -176,6 +176,30 @@ Our test suites are located within the same folder as our `package.json`, so a t
 ...
 {{</highlight>}}
 
+#### 4.3.1 Error: Invalid ELF header
+
+Some parts of Sakuli are platform-dependent, so the `node_modules` folder of a Sakuli project contains platform specific libs.
+Sakuli containers are running a Linux base image, so when mounting a project which has been developed on a non Linux machine, e.g. macOS, the `node_modules` folder will contain libs specific to macOS.
+
+Trying to run such a test inside a Sakuli container will therefore fail with an error message similar to this:
+
+{{<highlight bash>}}
+UnhandledPromiseRejectionWarning: Error: /test/node_modules/robotjs-node10/build/Release/robotjs.node: invalid ELF header
+{{</highlight>}}
+
+A simple way to resolve the dependency problem is to delete the `node_modules` folder.
+If your test project does not require libraries other than Sakuli, the correct libraries globally installed in Sakuli containers will be used.
+
+In case your test project requires additional dependencies, it's possible to run `npm install` before executing the Sakuli test.
+
+{{<highlight js>}}
+...
+  "scripts": {
+    "test": "npm i && sakuli run /path/to/your/test/suite"
+  },
+...
+{{</highlight>}}
+
 ## 5 Summary
 
 Once we have
