@@ -176,7 +176,11 @@ Our test suites are located within the same folder as our `package.json`, so a t
 ...
 {{</highlight>}}
 
-#### 4.3.1 Error: Invalid ELF header
+#### 4.3.1 Troubleshooting
+
+This topic covers possible errors when running containerized Sakuli tests.
+
+#### 4.3.1.1 Error: Invalid ELF header
 
 Some parts of Sakuli are platform-dependent, so the `node_modules` folder of a Sakuli project contains platform specific libs.
 Sakuli containers are running a Linux base image, so when mounting a project which has been developed on a non Linux machine, e.g. macOS, the `node_modules` folder will contain libs specific to macOS.
@@ -200,12 +204,79 @@ In case your test project requires additional dependencies, it's possible to run
 ...
 {{</highlight>}}
 
-## 5 Summary
+## 5 Viewing / Configuring Test Execution
+
+Sakuli test containers allow to configure specific details of their runtime environment.
+
+### 5.1 VNC Access
+
+Sakuli containers provide access to running containers via VNC on ports 5901 and 6901.
+By specifying port forwardings (**-p**) it is possible to configure which ports will be used to connect to a running container on the host system.
+
+{{<highlight bash>}}
+docker run --rm -p 5901:5901 -p 6901:6901 -e SAKULI_LICENSE_KEY=<YOUR SAKULI LICENSE KEY> taconsol/sakuli:2.1.2
+{{</highlight>}}
+
+The example above forwards container ports 5901 and 6901 to the same ports on the host system.
+
+{{<highlight bash>}}
+docker run --rm -p 5000:5901 -p 6000:6901 -e SAKULI_LICENSE_KEY=<YOUR SAKULI LICENSE KEY> taconsol/sakuli:2.1.2
+{{</highlight>}}
+
+In this example container port 5901 is forwarded to port 5000 on the host system, port 6901 is forwarded to port 6000 on the host system.
+`localhost:5000` would be used to connect to the container via VNC client, on `localhost:6000` a webVNC view is available in the browser.
+
+{{<alert>}}
+The default password to access a container via VNC is `vncpassword`. It is **highly** recommended to change this password in production environments. See section [**#5.2**](#5-2-configuring-vnc-access) for details
+{{</alert>}}
+
+### 5.2 Configuring VNC Access
+
+The following VNC environment variables can be overwritten at the docker run phase to customize your desktop environment inside the container:
+
+{{<highlight bash>}}
+VNC_COL_DEPTH, default: 24          // Color depth
+
+VNC_RESOLUTION, default: 1280x1024  // Screen resolution
+
+VNC_PW, default: vncpassword        // VNC password
+
+VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mouse interaction possible
+{{</highlight>}}
+
+For example, the password for VNC could be set like this:
+
+{{<highlight bash>}}
+~$ docker run -p 5901:5901 -p 6901:6901 -e VNC_PW=my-new-password taconsol/sakuli:2.1.2
+{{</highlight>}}
+
+### 5.2 Container User
+
+Per default all container processes will be executed with user id 1000.
+
+- Using root (user id 0):
+
+    Add the \-\-user flag to your docker run command:
+
+    {{<highlight bash>}}
+~$ docker run -it -p 5901:5901 -p 6901:6901 --user 0 taconsol/sakuli:2.1.2
+    {{</highlight>}}
+
+- Using user and group id of host system
+
+    Add the \-\-user flag to your docker run command:
+
+    {{<highlight bash>}}
+~$ docker run -it -p 5901:5901 -p 6901:6901 --user $(id -u):$(id -g) taconsol/sakuli:2.1.2
+    {{</highlight>}}
+
+## 6 Summary
 
 Once we have
 
 - added our test to the container (via [**bind mount**](#bind-mounts) or [**our own image**](#extending-a-base-image))
 - configured where our test project is located (via [**SAKULI_TEST_SUITE environment variable**](#specify-the-location-of-our-test-project-inside-the-container))
 - set up our [**test script**](#configure-what-to-execute-on-npm-test)
+- (optional) configured the container runtime environment
 
 our test will run automatically after the container started.
