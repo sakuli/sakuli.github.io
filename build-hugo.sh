@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -e
-ROOT_DIR=$(pwd)
 yum install -y wget
 wget https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz --quiet -O go.tar.gz
 tar -C /usr/local -xzf go.tar.gz
