@@ -1,6 +1,7 @@
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 cd vue-components
 npm ci
 npm run build
 cd -
-$GOPATH/bin/hugo
+hugo
