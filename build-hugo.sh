@@ -8,6 +8,7 @@ tar -C /usr/local -xzf go.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 mkdir -p $HOME/go/src
+go get github.com/wellington/go-libsass/libs
 # Clone the project
 cd $HOME/go/src
 git clone --branch v0.56.3 --depth 1 https://github.com/gohugoio/hugo.git
