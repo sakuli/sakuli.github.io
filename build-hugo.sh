@@ -19,5 +19,3 @@ go install -i --tags extended
 $GOPATH/bin/hugo version
 # Back to the dir with your project source
 cd $CLONE_DIR
-# Build project.
-cd vue-components && npm ci && npm run build && cd - && $GOPATH/bin/hugo
