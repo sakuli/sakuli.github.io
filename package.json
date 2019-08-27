@@ -1,7 +1,7 @@
 {
     "scripts": {
         "install": "curl -L -O https://github.com/gohugoio/hugo/releases/download/v0.56.3/hugo_extended_0.56.3_Linux-64bit.tar.gz && tar -xzf hugo_extended_0.56.3_Linux-64bit.tar.gz",
-        "build": "yum update -y && yum install -y libstdc++ && export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/usr/local/lib64:/usr/lib64 && cd vue-components && npm ci && npm run build && cd - && ./hugo"
+        "build": "yum install -y libstdc++ && export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/usr/local/lib64:/usr/lib64 && cd vue-components && npm ci && npm run build && cd - && ./hugo"
     },
     "engines": {
         "node": "^10"
