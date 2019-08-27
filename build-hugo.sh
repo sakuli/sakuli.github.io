@@ -13,10 +13,7 @@ go get github.com/wellington/go-libsass/libs
 cd $HOME/go/src
 git clone --branch v0.56.3 --depth 1 https://github.com/gohugoio/hugo.git
 cd hugo
-# Install deps. Why doesn't 'go install' do this?
-go get -d .
-# Build hugo.
-go install -i --tags extended
+GO111MODULE=on go install --tags extended
 $GOPATH/bin/hugo version
 # Back to the dir with your project source
 cd $CLONE_DIR
