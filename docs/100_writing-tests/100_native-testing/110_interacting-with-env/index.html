@@ -482,7 +482,8 @@ All these features are incorporated in the <code>Environment</code> class.</p>
 When initiating a download in Firefox, a native file download dialog opens.
 To start the download, we need to accept the file dialog, something that is not possible within the capabilities of Selenium.
 With Sakuli you get the opportunity to work around this problem, just like a real user would do.
-We can accept the file dialog by simply pressing the <code>Enter</code> button.</p>
+We can accept the file dialog by simply pressing the <code>Enter</code> button.
+Use Firefox as a browser for this test to work, as Chrome simply downloads the file without user interaction:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -504,6 +505,7 @@ We can accept the file dialog by simply pressing the <code>Enter</code> button.<
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
@@ -515,7 +517,8 @@ We can accept the file dialog by simply pressing the <code>Enter</code> button.<
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;ABOUT&#34;</span>));
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Releases&#34;</span>));
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Dubnium&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;node-v10.16.0.tar.gz&#34;</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">/node-v10.\d{1,}.\d{1,}.tar.gz/</span>));
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">/node-v10.\d{1,}.\d{1,}.tar.gz/</span>));
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyDown</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyUp</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
@@ -527,7 +530,7 @@ We can accept the file dialog by simply pressing the <code>Enter</code> button.<
 </div>
 </div>
 
-<p>It is even possible to change the download location dynamically, by entering a new save path via:</p>
+<p>It is even possible to change the download location dynamically in some environments, by entering a new save path via:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

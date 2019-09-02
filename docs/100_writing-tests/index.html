@@ -529,7 +529,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">_</span> =&gt; <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Getting started&#34;</span>)))
     .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">_</span> =&gt; <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_code</span>(<span style="color:#e6db74">&#34;npm init&#34;</span>)))
     .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">_</span> =&gt; <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Find npm init code sample&#34;</span>))
-    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>))
+    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>))
     .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">_</span> =&gt; <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>())
     .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);
 </code></pre></td></tr></table>
@@ -567,7 +567,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button.png&#39;</span>).<span style="color:#a6e22e">click</span>();
 
 <span style="color:#75715e">// Without Thenable class
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button.jpg&#39;</span>)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button.png&#39;</span>)
     .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">screen</span> =&gt; <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">click</span>());
 </code></pre></td></tr></table>
 </div>
