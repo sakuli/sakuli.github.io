@@ -4,7 +4,7 @@ title: Interacting with the environment
 In addition to screenshot-based test actions, Sakuli is capable of utilizing your keyboard, clipboard and environment variables.
 All these features are incorporated in the `Environment` class.
 
-### Keyboard actions
+## Keyboard actions
 
 The following snippet shows a possible use-case for native keyboard actions.
 When initiating a download in Firefox, a native file download dialog opens.
@@ -25,6 +25,7 @@ Use Firefox as a browser for this test to work, as Chrome simply downloads the f
         await _click(_link("Dubnium"));
         await _highlight(_link(/node-v10.\d{1,}.\d{1,}.tar.gz/));
         await _click(_link(/node-v10.\d{1,}.\d{1,}.tar.gz/));
+        await _wait(3000); //wait for browser pop-up to activate
         await env.keyDown(Key.ENTER);
         await env.keyUp(Key.ENTER);
     } catch (e) {
@@ -41,7 +42,7 @@ It is even possible to change the download location dynamically in some environm
 await env.type("/new/path/to/file");
 {{< /highlight >}}
 
-### Secrets
+## Secrets
 
 Many E2E tests require some kind of login.
 While there is no problem in general, it still requires some mechanism to handle credentials.

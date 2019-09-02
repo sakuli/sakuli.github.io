@@ -27,7 +27,8 @@ Array.from(document.querySelectorAll('[data-contactform]')).forEach((e, i) => {
     const props = {
         text: e.textContent,
         code: e.getAttribute('data-contactform'),
-        formUrl: e.getAttribute('href')
+        formUrl: e.getAttribute('href'),
+        className: e.className
     }
     new Vue({
         el: e,

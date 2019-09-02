@@ -11,7 +11,7 @@
           </article>
           <footer>
             <slot name="footer">
-              <button class="button" @click="close()">Close</button>
+              <button class="btn" @click="close()">Close</button>
             </slot>
           </footer>
         </section>
@@ -102,9 +102,9 @@ $border-radius: 1rem;
 
   footer {
     background: inherit;
-    padding: initial;
+    padding: 1rem;
     border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;    
   }
 
   @media screen and (max-width: 820px) {
