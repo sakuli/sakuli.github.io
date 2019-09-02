@@ -11,7 +11,9 @@ When creating a new instance without parameters, a `Region` spans over the whole
 But, it is also possible to create new regions by specifying `left`, `top`, `width` and `height` parameters.
 
 The following example represents a test which drags a source element to a target region.
-In this demo scenario, both source and target are both located on screen via template image.
+In this demo scenario, both source and target are both located on screen via template image.  
+To reproduce this scenario, you need to capture screenshots for the two different boxes.
+This demo only works in Chrome, as Firefox does not even manually support this shown drag&drop on codepen.io.
 
 {{< highlight typescript "linenos=table" >}}
 (async () => {
@@ -21,6 +23,7 @@ In this demo scenario, both source and target are both located on screen via tem
     try {
         await _navigateTo(url);
         await screen.find("drag.png").mouseMove().dragAndDropTo(await screen.find("target.png"));
+        await _wait(3000);
     } catch (e) {
         await testCase.handleException(e);
     } finally {
@@ -32,7 +35,9 @@ In this demo scenario, both source and target are both located on screen via tem
 The `dragAndDropTo(...)` methods always move straight to the target region.
 In order to follow a more complex path, it is also possible to perform the drag gesture manually.
 Once the source image has been located on the screen, Sakuli moves the mouse to its location, presses and holds the left mouse button.
-Afterwards, it locates the target image, moves the mouse there while still holding the mouse button and releases it, once it reaches the target location.
+Afterwards, it locates the target image, moves the mouse there while still holding the mouse button and releases it, once it reaches the target location.  
+To reproduce this scenario, you need to capture screenshots for the two different boxes.
+This demo only works in Chrome, as Firefox does not even manually support this shown drag&drop on codepen.io.
 
 {{< highlight typescript "linenos=table" >}}
 (async () => {
@@ -41,10 +46,11 @@ Afterwards, it locates the target image, moves the mouse there while still holdi
     const screen = new Region();
     try {
         await _navigateTo(url);
-        await screen.find("source.png").mouseMove().mouseDown(MouseButton.LEFT);
+        await screen.find("drag.png").mouseMove().mouseDown(MouseButton.LEFT);
         await new Region(0, 0, 10, 10).mouseMove();
         await new Region(500, 300, 50, 100).mouseMove();
         await screen.find("target.png").mouseMove().mouseUp(MouseButton.LEFT);
+        await _wait(3000);
     } catch (e) {
         await testCase.handleException(e);
     } finally {

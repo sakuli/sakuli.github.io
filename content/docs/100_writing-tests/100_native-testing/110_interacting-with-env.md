@@ -11,6 +11,7 @@ When initiating a download in Firefox, a native file download dialog opens.
 To start the download, we need to accept the file dialog, something that is not possible within the capabilities of Selenium.
 With Sakuli you get the opportunity to work around this problem, just like a real user would do.
 We can accept the file dialog by simply pressing the `Enter` button.
+Use Firefox as a browser for this test to work, as Chrome simply downloads the file without user interaction:
 
 {{< highlight typescript "linenos=table" >}}
 (async () => {
@@ -22,7 +23,8 @@ We can accept the file dialog by simply pressing the `Enter` button.
         await _click(_link("ABOUT"));
         await _click(_link("Releases"));
         await _click(_link("Dubnium"));
-        await _click(_link("node-v10.16.0.tar.gz"));
+        await _highlight(_link(/node-v10.\d{1,}.\d{1,}.tar.gz/));
+        await _click(_link(/node-v10.\d{1,}.\d{1,}.tar.gz/));
         await env.keyDown(Key.ENTER);
         await env.keyUp(Key.ENTER);
     } catch (e) {
@@ -33,7 +35,7 @@ We can accept the file dialog by simply pressing the `Enter` button.
 })().then(done);
 {{< /highlight >}}
 
-It is even possible to change the download location dynamically, by entering a new save path via: 
+It is even possible to change the download location dynamically in some environments, by entering a new save path via: 
 
 {{< highlight typescript "linenos=table" >}}
 await env.type("/new/path/to/file");
