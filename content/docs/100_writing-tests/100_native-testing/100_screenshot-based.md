@@ -39,7 +39,7 @@ To reproduce this scenario, you need to capture screenshots of the egg and the p
 {{< /highlight>}}
 {{%/feature-card%}}
 {{%feature-card%}}
-<video width="100%" autoplay loop>
+<video width="100%" autoplay loop controls>
   <source src="/videos/FryAnEgg.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
