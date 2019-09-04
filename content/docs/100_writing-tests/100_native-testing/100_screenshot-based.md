@@ -38,6 +38,9 @@ To reproduce this scenario, you need to capture screenshots of the egg and the p
 })().then(done);
 {{< /highlight>}}
 {{%/feature-card%}}
+{{</card-deck>}}
+
+{{<card-deck>}}
 {{%feature-card%}}
 <video width="100%" autoplay loop controls>
   <source src="/videos/FryAnEgg.mp4" type="video/mp4">

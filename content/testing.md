@@ -120,6 +120,41 @@ const highlight = async (driver, element, duration) => {
 
 A lot of End-2-End scenarios exceed the borders of your browser and the capabilities of webdrivers. This might include common use cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or PDF-format. For these cases, your web-based tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.
 
+The following code shows a drag&drop example in which the source and target areas are identified by screen-matching (of the egg and the pan) and the mouse is being moved accordingly by Sakuli:
+
+{{<card-deck>}}
+{{%feature-card%}}
+{{< highlight typescript "linenos=table" >}}
+(async () => {
+    const testCase = new TestCase("native_keyboard_demo");
+    const url = "https://codepen.io/naturalhanglider/full/jQMWoq";
+    const screen = new Region();
+    try {
+        await _navigateTo(url);
+        await screen
+            .find("source_egg.png")
+            .mouseMove()
+            .dragAndDropTo(
+                await screen.find("target_pan.png")
+            );
+        await _wait(3000);
+    } catch (e) {
+        await testCase.handleException(e);
+    } finally {
+        testCase.saveResult();
+    }
+})().then(done);
+{{< /highlight>}}
+{{%/feature-card%}}
+
+{{%feature-card%}}
+<video width="100%" autoplay loop controls>
+  <source src="/videos/FryAnEgg.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+{{%/feature-card%}}
+{{</card-deck>}}
+
 Of course, you can also use Sakuli's native testing power on its own, e.g. rich-client testing of SAP, Office or proprietary software systems. Sakuli accomplishes it's native capabilities by scanning the whole screen (or a dedicated region) on a stand-alone computer or in headless container screens, searching for provided image patterns.
 
 ## Learn more
