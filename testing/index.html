@@ -442,6 +442,80 @@ This small test basically opens up &lsquo;Google&rsquo;, tries to find the &lsqu
 
 <p>A lot of End-2-End scenarios exceed the borders of your browser and the capabilities of webdrivers. This might include common use cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or PDF-format. For these cases, your web-based tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.</p>
 
+<p>The following code shows a drag&amp;drop example in which the source and target areas are identified by screen-matching (of the egg and the pan) and the mouse is being moved accordingly by Sakuli:</p>
+
+<div class="card-deck">
+    
+<div class="card shadow m-4 bg-light">
+    
+    
+    <div class="card-body bg-white" style="border-top: 1px solid #d2ed8c">
+        
+        <div class="card-text"><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;native_keyboard_demo&#34;</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://codepen.io/naturalhanglider/full/jQMWoq&#34;</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">screen</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>();
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>
+            .<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;source_egg.png&#34;</span>)
+            .<span style="color:#a6e22e">mouseMove</span>()
+            .<span style="color:#a6e22e">dragAndDropTo</span>(
+                <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;target_pan.png&#34;</span>)
+            );
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_wait</span>(<span style="color:#ae81ff">3000</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
+    }
+})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+    </div>
+</div>
+
+
+<div class="card shadow m-4 bg-light">
+    
+    
+    <div class="card-body bg-white" style="border-top: 1px solid #d2ed8c">
+        
+        <div class="card-text"><video width="100%" autoplay loop controls>
+  <source src="/videos/FryAnEgg.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+    </div>
+</div>
+
+
+</div>
+
+
 <p>Of course, you can also use Sakuli&rsquo;s native testing power on its own, e.g. rich-client testing of SAP, Office or proprietary software systems. Sakuli accomplishes it&rsquo;s native capabilities by scanning the whole screen (or a dedicated region) on a stand-alone computer or in headless container screens, searching for provided image patterns.</p>
 
 <h2 id="learn-more">Learn more</h2>
