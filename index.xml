@@ -76,6 +76,15 @@ To install Node.js on your system, you can either go to the node website or you 
     </item>
     
     <item>
+      <title>End to End Monitoring</title>
+      <link>https://sakuli.io/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sakuli.io/monitoring/</guid>
+      <description>First to Know, First to Act Aside from the correct behavior of your system, you may also be interested in the actual performance of user interactions with the system. Sakuli tracks performance data and saves error screenshots of your End-2-End Test and provides it via open APIs.   E2E Application Monitoring Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such real-world performance analysis in an automated way.</description>
+    </item>
+    
+    <item>
       <title>Features</title>
       <link>https://sakuli.io/features/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -114,16 +123,6 @@ Michael Beutner – Technology
 Andrea Stellwag – Finances
 Bernd Wiserner – Resources
 Responsible for content (in accordance with § 6 MDStV) Nico Zellner</description>
-    </item>
-    
-    <item>
-      <title>Monitoring</title>
-      <link>https://sakuli.io/monitoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/monitoring/</guid>
-      <description>Aside from the correct behavior of your system, you may also be interested in the actual performance of user interactions with the system.
-First to Know, First to Act Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such real-world performance analysis in an automated way. To achieve this, Sakuli provides a generic API.</description>
     </item>
     
     <item>
