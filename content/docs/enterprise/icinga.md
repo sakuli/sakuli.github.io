@@ -28,7 +28,7 @@ Installation of any enterprise feature requires a proper setup of your license i
 {{</alert>}}
 
 ## Enable the Icinga2 API
-All steps required to enable the Icinga2 API are described in the [**REST API documentation**](http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api).
+All steps required to enable the Icinga2 API are described in the **[REST API documentation](http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/icinga2-api)**.
 
 ## Create a Icinga2 service
 
