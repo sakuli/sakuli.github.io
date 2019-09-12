@@ -11,7 +11,7 @@ Some features of Sakuli require an enterprise license. Please consult our **[ove
 With your active **[Sakuli Enterprise](/enterprise)** subscription you will receive an email with:
 
 - _Sakuli license-key_ - Contains information about your subscription and is used by Sakuli itself
-- and a _NPM-Token_ - Allows access to private enterprise packages on NPM
+- and a _NPM-Token_ - Allows access to Sakuli's private enterprise packages on NPM
 
 There are several ways to handle these information. The most simple way for setting up your enterprise features is as follows (_substitute the placeholders between the chevrons with the appropriate values_):
 
