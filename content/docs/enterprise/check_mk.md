@@ -1,6 +1,7 @@
 ---
 title: Check_MK Forwarder
 weight: 200
+slug: check_mk-forwarder
 ---
 
 Add the forwarder to your project with:

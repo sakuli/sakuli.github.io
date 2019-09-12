@@ -46,7 +46,7 @@ _navigateTo("https://sakuli.io")
     .then(_ => _click(_link("Getting started")))
     .then(_ => _highlight(_code("npm init")))
     .then(_ => testCase.endOfStep("Find npm init code sample"))
-    .catch(e => await testCase.handleException(e))
+    .catch(e => testCase.handleException(e))
     .then(_ => testCase.saveResult())
     .then(done);
 
@@ -73,7 +73,7 @@ Sakuli has some classes - especially those for native interactions - which imple
 await screen.find('button.png').click();
 
 // Without Thenable class
-screen.find('button.jpg')
+screen.find('button.png')
     .then(screen => screen.click());
 
 {{< / highlight >}}

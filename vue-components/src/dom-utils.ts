@@ -30,14 +30,16 @@ export const syncSize = (selector: string, childSelector: string) => {
     const p = $(selector);
     if (p) {
         const c = p.querySelector(childSelector) as HTMLElement
-        const sync = () => {
-            const { width, height } = p.getBoundingClientRect();
-            if (width > 0 && height > 0) {
-                c.style.width = `${width}px`
-                c.style.height = `${height}px`
+        if(c) {
+            const sync = () => {
+                const { width, height } = p.getBoundingClientRect();
+                if (width > 0 && height > 0) {
+                    c.style.width = `${width}px`
+                    c.style.height = `${height}px`
+                }
             }
+            window.addEventListener('resize', sync);
+            sync();
         }
-        window.addEventListener('resize', sync);
-        sync();
     }
 }
