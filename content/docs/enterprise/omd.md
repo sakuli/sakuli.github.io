@@ -4,7 +4,7 @@ weight: 300
 slug: omd-forwarder
 ---
 
-Add the forwarder to your project with:
+Install the forwarder to your project with:
 
 {{<highlight bash>}}
 npm i @sakuli/forwarder-gearman
