@@ -98,7 +98,7 @@ $queues = {
     "$remoteHost:$remotePort/check_results_sakuli"  => "$localHost:$localPort/check_results",
 }; #3 + 4
 
-$err_h = 'error_host'; /#5
+$err_h = 'error_host'; #5
 $err_s = 'eror_svc';
 $err_r = '2'; #6
 {{</highlight>}}
