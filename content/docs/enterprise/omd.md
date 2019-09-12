@@ -90,17 +90,17 @@ make gearman_proxy
 Edit `etc/mod-gearman/sakuli_gearman_proxy.cfg` :
 
 {{<highlight cfg>}}
-$remoteHost="172.17.0.2"; // 1
-$remotePort="4730"; // 1
-$localHost="172.17.0.2"; // 2
-$localPort="4730"; // 2
+$remoteHost="172.17.0.2"; #1
+$remotePort="4730"; #1
+$localHost="172.17.0.2"; #2
+$localPort="4730"; #2
 $queues = {
     "$remoteHost:$remotePort/check_results_sakuli"  => "$localHost:$localPort/check_results",
-}; // 3 + 4
+}; #3 + 4
 
-$err_h = 'error_host'; // 5
+$err_h = 'error_host'; /#5
 $err_s = 'eror_svc';
-$err_r = '2'; // 6
+$err_r = '2'; #6
 {{</highlight>}}
 
 1. Gearman IP/Port listening for Sakuli results. Set this to the same values as <2> unless `gearman_proxy.pl` is running on another system
