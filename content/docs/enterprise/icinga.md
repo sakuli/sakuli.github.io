@@ -24,7 +24,7 @@ To register the forwarder into your project you have to edit the `package.json` 
 {{</highlight>}}
 
 {{<alert>}}
-Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the [**enterprise section**](/docs/enterprise#using-licences-information).
+Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the **[enterprise section](/docs/enterprise#using-licences-information)**.
 {{</alert>}}
 
 ## Enable the Icinga2 API
