@@ -104,7 +104,7 @@ The name of the environment variable for the license-key is `SAKULI_LICENSE_KEY`
 
 \- [Wikipedia, 08/2019](https://en.wikipedia.org/wiki/Environment_variable)
 
-So basically an environment variable is just a simple key-value pair provided to a certain process e.g. `VAR_NAME=VALUE`. They can be set for each process or system-wide - so that they become accessible for each upcoming action.
+So basically an environment variable is just a simple key-value pair provided to a certain process e.g. `VAR_NAME=VALUE`. They can be set for each process or system-wide - so that they become accessible for each upcoming process.
 
 The approach for integrating an environment variable depends on the respective operating system.
 
