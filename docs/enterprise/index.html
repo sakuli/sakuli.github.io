@@ -478,14 +478,14 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <h2 id="using-license-information">Using License Information</h2>
 
-<p>With your active <strong><a href="/enterprise">Sakuli Enterprise</a></strong> subscription you will receive an email with</p>
+<p>With your active <strong><a href="/enterprise">Sakuli Enterprise</a></strong> subscription you will receive an email with:</p>
 
 <ul>
-<li><strong>NPM-Token</strong>: Necessary for downloading your enterprise packages from our private NPM repositories</li>
-<li>and a <strong>Sakuli License key</strong>: Containing information about your subscription and is used by Sakuli itself</li>
+<li><em>Sakuli license-key</em> - Contains information about your subscription and is used by Sakuli itself</li>
+<li>and a <em>NPM-Token</em> - Allows access to Sakuli&rsquo;s private enterprise packages on NPM</li>
 </ul>
 
-<p>There are several ways to deal with this information.</p>
+<p>There are several ways to handle these information. The most simple way for setting up your enterprise features is as follows (<em>substitute the placeholders between the chevrons with the appropriate values</em>):</p>
 
 <h3 id="global-configuration">Global configuration</h3>
 
@@ -500,7 +500,7 @@ echo <span style="color:#e6db74">&#34;export SAKULI_LICENSE_KEY=&lt;Put your per
 setx SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;Put your personal SAKULI-LICENSE-KEY here&gt;</code></pre></div></p>
 
 <div class="alert alert-dark" role="alert">
-    The Environment variables might not take effect in the command-line window where the commands above are entered. So you might need to open a new commandline when running the Sakuli command.
+    The environment variables might not take effect in the command-line window where the commands above are entered. So you might need to open a new commandline when running the Sakuli command.
 </div>
 
 
@@ -516,7 +516,7 @@ setx SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;Put your personal
 
 <h3 id="per-project-configuration-of-npm-token">Per-Project configuration of NPM-Token</h3>
 
-<p>You can set the NPM-Token per project by adding a <code>.npmrc</code> file to your projects root directory.</p>
+<p>You can set the NPM-Token for each project by adding a <code>.npmrc</code> file to your project&rsquo;s root directory:</p>
 
 <p><em>On Unix / OSX</em>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cd path/to/project</span>
@@ -538,8 +538,6 @@ echo //registry.npmjs.org/:_authToken<span style="color:#f92672">=</span>&lt;Put
 <p><em>On Windows</em>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo //registry.npmjs.org/:_authToken<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>NPM_TOKEN<span style="color:#e6db74">}</span> &gt; %USERPROFILE%<span style="color:#ae81ff">\.</span>npmrc</code></pre></div></p>
 
-<p>In this case you have to provide the NPM-Token via an environment variable <code>NPM_TOKEN</code> or set it per installation of an enterprise package:</p>
-
 <p><em>On Unix / OSX</em>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NPM_TOKEN<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt; npm i &lt;ENTERPRISE-PACKAGE&gt;</code></pre></div></p>
 
@@ -547,7 +545,7 @@ echo //registry.npmjs.org/:_authToken<span style="color:#f92672">=</span>&lt;Put
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set NPM_TOKEN<span style="color:#f92672">=</span>&lt;Put your personal NPM-TOKEN here&gt;
 npm i &lt;ENTERPRISE-PACKAGE&gt;</code></pre></div></p>
 
-<p>This approach is usually used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).</p>
+<p>This approach is frequently used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).</p>
 
 <p>It is usually not necessary to persist the token since you will seldomly run <code>npm install</code> that often.</p>
 
@@ -572,7 +570,7 @@ They are part of the environment in which a process runs. For example, a running
 
 <h3 id="on-windows">On Windows</h3>
 
-<p>To set an environment variable on Windows you have to:</p>
+<p>To set up an environment variable on Windows you have to:</p>
 
 <ul>
 <li>Open <em>Start-Menu</em> and type <kbd>env</kbd> into the search mask
@@ -589,7 +587,7 @@ They are part of the environment in which a process runs. For example, a running
 <li>You should see two tables including <em>Variable</em> and <em>Value</em> columns for <em>User Variables</em> and <em>System variables</em></li>
 </ul>
 
-<p>There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/"><strong>here</strong></a></p>
+<p>There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/"><strong>here</strong></a>.</p>
 
 <p>Alternatively you can use <strong><a href="https://www.rapidee.com/en/about">Rapid Environment Editor</a></strong> which is a nice tool for editing environment variables on Windows.</p>
 
@@ -601,7 +599,7 @@ sakuli run .</code></pre></div></p>
 
 <h3 id="on-linux-or-osx">On Linux or OSX</h3>
 
-<p>On Linux or OSX it is usually a file which sets up the environment for certain processes.</p>
+<p>On Linux or OSX it is usually a file which sets up the environment for certain processes:</p>
 
 <ul>
 <li><code>~/.bashrc</code> on Linux</li>

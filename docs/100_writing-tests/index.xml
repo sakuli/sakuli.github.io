@@ -17,7 +17,7 @@
       
       <guid>https://sakuli.io/docs/100_writing-tests/000_anatomy-project/</guid>
       <description>This guide assumes that you have finished the &amp;ldquo;Getting started&amp;rdquo; tutorial or that you are experienced with Sakuli v1.
- Most of the complexity and conventions are due to the backwards compatibility to v1 which requires a specific folder and file structure for various reasons (the biggest is Sahi). Sakuli offers now various ways to reduce this complexity dramatically. These features will eventually become part of upcoming releases.
+ Most of the complexity and conventions are due to the backwards compatibility to v1, which requires a specific folder and file structure for various reasons (the biggest is Sahi). Sakuli offers now various ways to reduce this complexity dramatically. These features will eventually become part of upcoming releases.
  Setup and configuration The minimum setup for a Sakuli project looks like this:</description>
     </item>
     

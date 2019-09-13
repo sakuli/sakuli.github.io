@@ -490,7 +490,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 }</code></pre></div>
 
 <div class="alert alert-dark" role="alert">
-    Installation of any enterprise feature requires a proper setup of the license information. You find further information in the <a href="/docs/enterprise#using-licences-information">enterpise section</a>
+    Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the <strong><a href="/docs/enterprise#using-licences-information">enterprise section</a></strong>.
 </div>
 
 
@@ -498,16 +498,16 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>Sakuli transmits performance data to a Gearman result queue rather than to OMD directly. For that we require a gearman-enabled monitoring system in an OMD environment.</p>
 
-<p>It takes a few steps to set up the monitoring system in order to process Sakulis performance data correctly.</p>
+<p>It takes a few steps to set up the monitoring system in order to process Sakuli&rsquo;s performance data correctly.</p>
 
 <h3 id="enable-and-configure-mod-gearman">Enable and configure mod-gearman</h3>
 
 <p>Use the Makefile located in <code>OMD_ROOT/share/sakuli/omd/</code> to configure mod-gearman:</p>
 
 <ul>
-<li>enable all services for mod-gearman</li>
-<li>set the bind IP and port (default: <code>0.0.0.0:4730</code>; overwrite with e.g. <code>export GEARMAN_PORT=192.168.130.10:4731</code>)</li>
-<li>set the encryption key (default: <code>sakuli_secret</code>; overwrite with e.g. <code>export GEARMAN_SECRET=mykey</code>)</li>
+<li>Enable all services for mod-gearman</li>
+<li>Set the bind IP and port (default: <code>0.0.0.0:4730</code>; overwrite with e.g. <code>export GEARMAN_PORT=192.168.130.10:4731</code>)</li>
+<li>Set the encryption key (default: <code>sakuli_secret</code>; overwrite with e.g. <code>export GEARMAN_SECRET=mykey</code>)</li>
 </ul>
 
 <p>Then run:</p>
@@ -517,14 +517,14 @@ cd ~/share/sakuli/setup/omd
 make gearman</code></pre></div>
 
 <div class="alert alert-dark" role="alert">
-    For security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the instruction carefully and execute the steps by hand.
+    Due to security reasons, the Makefile will only configure mod-gearman if it is not enabled yet. If it is already enabled inspect the Makefile, read the instruction carefully and execute the steps by hand.
 </div>
 
 <div class="alert alert-dark" role="alert">
     For <strong>PRODUCTION</strong> usage please use individual encryption keys!
 </div>
 
-<p>If you do not want to use encryption at all enable <code>accept_clear_results</code> and disable <code>sakuli.forwarder.gearman.encryption</code>:</p>
+<p>If you do not want to use encryption at all, enable <code>accept_clear_results</code> and disable <code>sakuli.forwarder.gearman.encryption</code>:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/etc/mod-gearman/server.cfg
 ...
@@ -559,7 +559,7 @@ make gearman_proxy</code></pre></div>
 <span style="color:#a6e22e">$localPort</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4730&#34;; #2</span>
 <span style="color:#a6e22e">$queues</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{
 </span><span style="color:#e6db74">    &#34;$remoteHost:$remotePort/check_results_sakuli&#34;  =&gt; &#34;$localHost:$localPort/check_results&#34;,</span>
-<span style="color:#a6e22e">}; # 3 + 4</span>
+<span style="color:#a6e22e">}; #3 + 4</span>
 
 <span style="color:#a6e22e">$err_h</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;error_host&#39;; #5</span>
 <span style="color:#a6e22e">$err_s</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;eror_svc&#39;;</span>
@@ -571,7 +571,7 @@ make gearman_proxy</code></pre></div>
 <li><code>check_results_sakuli</code> ⇒ queue name to receive Sakuli results. Make sure this queue name is defined in property <code>sakuli.forwarder.gearman.server.queue</code> on all Sakuli clients (see Sakuli Client Configuration)</li>
 <li><code>check_results</code> ⇒ default queue of mod-gearman where gearman workers write back their results (no need to change that)</li>
 <li>The proxy does a live status query for each incoming package to ensure that the receiving host/service exists. It provides a special &ldquo;error host/service&rdquo; pair where the proxy can send a message in case of results coming back for non-existent services</li>
-<li>Status of the messages for non-existent services (2=CRITICAL)</li>
+<li>Status of the messages for non-existent services (2 = CRITICAL)</li>
 </ol>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - &lt;SITE_USER&gt;
@@ -598,11 +598,11 @@ omd start sakuli_gearman_proxy
 <p>Create a service which should receive Sakuli test results. Host/service names derive from the following properties:</p>
 
 <ul>
-<li><strong>host</strong>: <code>sakuli.forwarder.gearman.nagios.hostname</code> (defined globally or via suite)</li>
-<li><strong>service</strong>: <code>testsuite.id</code> (defined in <code>testsuite.properties</code>)</li>
+<li><strong>Host</strong>: <code>sakuli.forwarder.gearman.nagios.hostname</code> (defined globally or via suite)</li>
+<li><strong>Service</strong>: <code>testsuite.id</code> (defined in <code>testsuite.properties</code>)</li>
 </ul>
 
-<p>OMD Configuration:</p>
+<p>OMD configuration:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#a6e22e">define host {</span>
   <span style="color:#a6e22e">host_name                      sakuli_client</span>
@@ -619,14 +619,14 @@ omd start sakuli_gearman_proxy
 <span style="color:#a6e22e">}</span></code></pre></div>
 
 <blockquote>
-<p><code>freshness_threshold</code> should be slightly higher than the interval Sakuli tests are executed</p>
+<p>The  <code>freshness_threshold</code> should be slightly higher than the interval during which Sakuli tests are executed.</p>
 </blockquote>
 
 <p>The check is waiting now for check results from a Sakuli client.</p>
 
 <h2 id="sakuli-configuration">Sakuli Configuration</h2>
 
-<p>You must set the global properties for the gearman receiver on the Sakuli client. For this, edit <code>sakuli.properties</code> in the folder containing the testsuites:</p>
+<p>You must set the global properties for the gearman receiver on the Sakuli client. For doing this, edit <code>sakuli.properties</code> in the folder containing the testsuites:</p>
 
 <table>
 <thead>
