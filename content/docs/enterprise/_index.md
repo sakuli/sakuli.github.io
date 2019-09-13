@@ -8,12 +8,13 @@ Some features of Sakuli require an enterprise license. Please consult our **[ove
 
 ## Using License Information
 
-With your active **[Sakuli Enterprise](/enterprise)** subscription you will receive an email with
+With your active **[Sakuli Enterprise](/enterprise)** subscription you will receive an email with:
 
-- __NPM-Token__: Necessary for downloading your enterprise packages from our private NPM repositories
-- and a __Sakuli License key__: Containing information about your subscription and is used by Sakuli itself
+- _Sakuli license-key_ - Contains information about your subscription and is used by Sakuli itself
+- and a _NPM-Token_ - Allows access to Sakuli's private enterprise packages on NPM
 
-There are several ways to deal with this information.
+There are several ways to handle these information. The most simple way for setting up your enterprise features is as follows (_substitute the placeholders between the chevrons with the appropriate values_):
+
 
 ### Global configuration
 The most simple way to get your enterprise features to work is the following configuration (_substitute the placeholders marked by the angle-brackets with its appropriate values_):
@@ -31,7 +32,8 @@ setx SAKULI_LICENSE_KEY=<Put your personal SAKULI-LICENSE-KEY here>
 {{</highlight>}}
 
 {{<alert>}}
-The Environment variables might not take effect in the command-line window where the commands above are entered. So you might need to open a new commandline when running the Sakuli command.
+
+The environment variables might not take effect in the command-line window where the commands above are entered. So you might need to open a new commandline when running the Sakuli command.
 {{</alert>}}
 
 These commands will set the NPM-Token and License Key globally. This is good for a first setup on your machine but might have some shortcomings in more advanced situations. The following paragraphs describe alternative ways to provide NPM-Token and License information to your Sakuli installation.
@@ -44,7 +46,7 @@ Now you are ready to go for using Sakuli with its enterprise features like
 
 ### Per-Project configuration of NPM-Token
 
-You can set the NPM-Token per project by adding a `.npmrc` file to your projects root directory.
+You can set the NPM-Token for each project by adding a `.npmrc` file to your project's root directory:
 
 _On Unix / OSX_
 {{<highlight bash>}}
@@ -73,8 +75,6 @@ _On Windows_
 echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > %USERPROFILE%\.npmrc
 {{</highlight>}}
 
-In this case you have to provide the NPM-Token via an environment variable `NPM_TOKEN` or set it per installation of an enterprise package:
-
 _On Unix / OSX_
 {{<highlight bash>}}
 NPM_TOKEN=<Put your personal NPM-TOKEN here> npm i <ENTERPRISE-PACKAGE>
@@ -86,9 +86,10 @@ set NPM_TOKEN=<Put your personal NPM-TOKEN here>
 npm i <ENTERPRISE-PACKAGE>
 {{</highlight>}}
 
-This approach is usually used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).
+This approach is frequently used in automation scenarios such as CI/CD pipelines and projects that are shared (e.g. via version control systems).
 
 It is usually not necessary to persist the token since you will seldomly run `npm install` that often.
+
 
 ## Using the License-Key
 
@@ -109,7 +110,7 @@ The approach for integrating an environment variable depends on the respective o
 
 ### On Windows
 
-To set an environment variable on Windows you have to:
+To set up an environment variable on Windows you have to:
 
 - Open _Start-Menu_ and type <kbd>env</kbd> into the search mask
   - An entry **'Edit the system environment variables'** should appear (click on it)
@@ -118,7 +119,7 @@ To set an environment variable on Windows you have to:
   - Click on the button _Environment Variables_ (at the bottom of the dialog)
 - You should see two tables including _Variable_ and _Value_ columns for _User Variables_ and _System variables_
 
-There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found [**here**](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+There you can set, edit or delete environment variables permanently on your system (it is recommended to edit the system variables table if possible). A more detailed guide can be found [**here**](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).
 
 Alternatively you can use **[Rapid Environment Editor](https://www.rapidee.com/en/about)** which is a nice tool for editing environment variables on Windows.
 
@@ -132,7 +133,7 @@ sakuli run .
 
 ### On Linux or OSX
 
-On Linux or OSX it is usually a file which sets up the environment for certain processes.
+On Linux or OSX it is usually a file which sets up the environment for certain processes:
 
 - `~/.bashrc` on Linux
 - `~/.profile` on OSX
