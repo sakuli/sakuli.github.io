@@ -76,6 +76,11 @@
                 <i class="check-mark"></i> <a href="container">Pre-Configured Headless Container</a>
             </li>
             {{end}}
+            {{ if .s2i }}
+            <li>
+                <i class="check-mark"></i> <a href="container">S2I OpenShift Images</a>
+            </li>
+            {{end}}
             <!-- {{ if .cli }}
             <li>
                 <i class="check-mark"></i> <a href="cli"> Sakuli CLI Tools</a>
