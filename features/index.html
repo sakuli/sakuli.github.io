@@ -696,6 +696,22 @@ Version 3 and above</div>
 </tbody>
 </table>
 
+<h3 id="support-limitation">Support Limitation</h3>
+
+<p>Sakuli Support basically refers to errors and incidents occurring in Sakuli Core (SC) and Sakuli Enterprise Features (SEF). By definition, SC uses webdriver to run tests in browsers. These browser-specific webdrivers have a range of functions beyond which SC does not perform any actions in the browser. Therefore Sakuli has no influence on errors occurring in webdrivers. With integrated mechanisms, SC offers convenience functions to encapsulate the webdriver and Selenium commands. Sakuli therefore has no direct influence on the Selenium functionalities executed in the browser and transferred via webdriver. Web pages can be built using a variety of technologies, having different levels of testability, and do not consistently conform to W3C standards. Custom implementations of Web elements (e.g. dropdowns, radio buttons, etc.) can therefore lead to unexpected behavior.</p>
+
+<div class="alert alert-dark" role="alert">
+    <i class="fas fa-exclamation-triangle"></i>
+Bugs in webdrivers and browsers (local or in container environments) are not covered by Sakuli Support. The identification of workarounds is understood as consulting services.
+</div>
+
+<ul>
+<li>Support for misbehavior of query, focus, click, interaction, highlight etc. of an element visible in the viewport, implemented as a standard HTML element according to W3C standards, using different selectors (max count / element type: 1000)</li>
+<li>Sakulis DOM based browser control is based on the appropriate webdriver implementation and the browsers used. Unexpected behavior due to the webdriver or browser implementation is not covered by Sakuli Support</li>
+<li>Web components implemented with custom JS can lead to unexpected Sakuli behavior and are not supported</li>
+<li>Native components: Support for standard US keyboard layout / Restriction on MacOS and Windows Meta-Keys</li>
+</ul>
+
 </article>
 
 
