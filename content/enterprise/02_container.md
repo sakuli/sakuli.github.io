@@ -32,3 +32,6 @@ Each Sakuli docker image includes the following components in their latest respe
 - Sakuli
 
 A docker-hub account is necessary to retrieve the respective image.
+
+## S2I OpenShift Image
+Sakuli Container are also available as ready-to-go <a href="https://github.com/openshift/source-to-image" target="_blank">S2I images </a> for OpenShift.
