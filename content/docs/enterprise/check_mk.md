@@ -45,7 +45,8 @@ Now you have to set up the properties for the Check_MK receiver. In order to do 
 |`sakuli.forwarder.check_mk.spooldir`|`/var/lib/check_mk_agent/spool` (Linux)<br/>`<CMK_installation_path>\\spool` (Windows)|Path to the spool folder as defined above. On Windows, the backslashes have to be escaped with '\'. Check_MK is expecting the result files from Sakuli in here |
 |`sakuli.forwarder.check_mk.freshness`|`600`|Defines the maximal age in seconds for which the result is still valid. If the last modification of the result file is older than this property, the result file will be ignored. The Check_MK service will turn into UNKNOWN   |
 |`sakuli.forwarder.check_mk.spoolfile_prefix`|`sakuli_suite_`|Defines the result file prefix. It can be used to change the default naming convention for the Check_MK output files  |
-|`akuli.forwarder.check_mk.service_description`|`${testsuite.id}`|Defines the service description which is used within the check result |
+|`sakuli.forwarder.check_mk.service_description`|`${testsuite.id}`|Defines the service description which is used within the check result |
+|`sakuli.forwarder.check_mk.piggyback_hostname`|`local`|Defines Hostname for check results, configurable for piggyback results |
 
 An example configuration could look like this:
 
@@ -55,4 +56,5 @@ sakuli.forwarder.check_mk.spooldir=/var/lib/check_mk_agent/spool
 sakuli.forwarder.check_mk.freshness=600
 sakuli.forwarder.check_mk.spoolfile_prefix=sakuli_suite_
 sakuli.forwarder.check_mk.service_description=My_Custom_Service
+sakuli.forwarder.check_mk.piggyback_hostname=MyHost
 {{</highlight>}}
