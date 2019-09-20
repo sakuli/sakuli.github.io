@@ -556,9 +556,15 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 </tr>
 
 <tr>
-<td><code>akuli.forwarder.check_mk.service_description</code></td>
+<td><code>sakuli.forwarder.check_mk.service_description</code></td>
 <td><code>${testsuite.id}</code></td>
 <td>Defines the service description which is used within the check result</td>
+</tr>
+
+<tr>
+<td><code>sakuli.forwarder.check_mk.piggyback_hostname</code></td>
+<td><code>local</code></td>
+<td>Defines Hostname for check results, configurable for piggyback results</td>
 </tr>
 </tbody>
 </table>
@@ -569,7 +575,8 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 sakuli.forwarder.check_mk.spooldir=/var/lib/check_mk_agent/spool
 sakuli.forwarder.check_mk.freshness=600
 sakuli.forwarder.check_mk.spoolfile_prefix=sakuli_suite_
-sakuli.forwarder.check_mk.service_description=My_Custom_Service</code></pre></div>
+sakuli.forwarder.check_mk.service_description=My_Custom_Service
+sakuli.forwarder.check_mk.piggyback_hostname=MyHost</code></pre></div>
 
         </article>
         <aside id="secondary-nav">
