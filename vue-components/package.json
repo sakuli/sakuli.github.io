@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.ts --out-dir ../static/vue",
-    "start": "parcel watch src/index.ts --out-dir ../static/vue"
+    "build": "parcel build src/index.ts --out-dir ../assets/vue",
+    "start": "parcel watch src/index.ts --out-dir ../assets/vue"
   },
   "keywords": [],
   "author": "",
