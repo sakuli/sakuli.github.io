@@ -7,3 +7,5 @@ node_modules/
 static/vue/
 
 .DS_Store
+
+.idea
