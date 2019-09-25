@@ -35,7 +35,7 @@ oc import-image sakuli-s2i \
 check for updates automatically.*
 
 ## Creating an S2I build {#create-s2i-build}
-The following buildconfig template is ready to use to create Sakuli S2I builds for various repositories and test suites.
+The following build-config template is ready to use to create Sakuli S2I builds for various repositories and test suites.
 Just copy and save the [S2I build template](#s2i-template) as `sakuli-s2i-build-template.yml`. To process the template
 some additional information is required that are not part of the template. First of all, you have to provide a
 `SAKULI_LICENSE_KEY` to be able to execute the images resulting from the build process and you have to specify the
@@ -67,7 +67,7 @@ contains all available parameters. Additional parameters are specified in the sa
     <tr>
         <td>SAKULI_LICENSE_KEY</td>
         <td>NO</td>
-        <td>akuli2 Licence key.</td>
+        <td>Sakuli2 License key.</td>
         <td></td>
     </tr>
     <tr>
@@ -148,7 +148,7 @@ parameters:
     required: true
     value: latest
 
-  - description: Sakuli2 Licence key.
+  - description: Sakuli2 License key.
     name: SAKULI_LICENSE_KEY
     required: true
 
