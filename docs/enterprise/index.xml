@@ -54,5 +54,15 @@ npm i @sakuli/forwarder-gearman To register the forwarder into your project you 
 docker pull taconsol/sakuli:&amp;lt;IMAGE_TAG&amp;gt; Sakuli test containers do not provide a latest tag.</description>
     </item>
     
+    <item>
+      <title>S2I Image</title>
+      <link>https://sakuli.io/docs/enterprise/s2i-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sakuli.io/docs/enterprise/s2i-image/</guid>
+      <description>Sakuli enterprise comes with ready-to-use source to image (S2I) containers for RedHat OpenShift. Using this builder container, it is easily possible to create deployable Sakuli images shipped with a test suite straight from your code repository.
+Setup To setup the source to image builds on your OpenShift cluster, it is required to import the images from taconsol/sakuli-s2i. To achieve this, you have to create a docker-registry secret with your &amp;lt;docker-username&amp;gt; and &amp;lt;docker-password&amp;gt; to authenticate on docker.</description>
+    </item>
+    
   </channel>
 </rss>

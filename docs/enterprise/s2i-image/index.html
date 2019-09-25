@@ -15,7 +15,7 @@
     
     
     <title>
-        Sakuli End2End Testing and Monitoring | Interacting with the environment
+        Sakuli End2End Testing and Monitoring | S2I Image
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,13 +36,13 @@
     <meta name="DC.Description" content="Behavior and performance validation of every application. DOM and native UI Testing features cover every scenario. Send performance data to monitoring systems.">
     <meta name="DC.Language" content="en">
     
-    <meta property="og:title" content="Sakuli End2End Testing and Monitoring | Interacting with the environment" />
+    <meta property="og:title" content="Sakuli End2End Testing and Monitoring | S2I Image" />
     <meta property="og:description" content="Behavior and performance validation of every application. DOM and native UI Testing features cover every scenario. Send performance data to monitoring systems." />
     <meta property="og:image" content="https://sakuli.io/images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Sakuli E2E | Interacting with the environment" />
+    <meta name="twitter:title" content="Sakuli E2E | S2I Image" />
     <meta name="twitter:description" content="Behavior and performance validation of basically every application. Test like a real-world user. DOM-based and native UI Testing features cover every scenario. Send performance data to monitoring systems. The Pinnacle of Testing!" />
     <meta name="twitter:image" content="https://sakuli.io/images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -317,7 +317,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/100_writing-tests/100_native-testing/110_interacting-with-env/" class=" active ">
+    <a href="/docs/100_writing-tests/100_native-testing/110_interacting-with-env/" class="">
             Interacting with the environment
     </a>
     
@@ -445,7 +445,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/enterprise/s2i-image/" class="">
+    <a href="/docs/enterprise/s2i-image/" class=" active ">
             S2I Image
     </a>
     
@@ -502,126 +502,224 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>Interacting with the environment</h1>
+            <h1>S2I Image</h1>
             
 
-<p>In addition to screenshot-based test actions, Sakuli is capable of utilizing your keyboard, clipboard and environment variables.
-All these features are incorporated in the <code>Environment</code> class.</p>
+<p>Sakuli enterprise comes with ready-to-use <a href="https://github.com/openshift/source-to-image">source to image (S2I)</a>
+containers for RedHat OpenShift. Using this builder container, it is easily possible to create deployable Sakuli images
+shipped with a test suite straight from your code repository.</p>
 
-<h2 id="keyboard-actions">Keyboard actions</h2>
+<h2 id="setup">Setup</h2>
 
-<p>The following snippet shows a possible use-case for native keyboard actions.
-When initiating a download in Firefox, a native file download dialog opens.
-To start the download, we need to accept the file dialog, something that is not possible within the capabilities of Selenium.
-With Sakuli you get the opportunity to work around this problem, just like a real user would do.
-We can accept the file dialog by simply pressing the <code>Enter</code> button.
-Use Firefox as a browser for this test to work, as Chrome simply downloads the file without user interaction:</p>
+<p>To setup the source to image builds on your OpenShift cluster, it is required to import the images from
+<code>taconsol/sakuli-s2i</code>. To achieve this, you have to create a docker-registry secret with your <code>&lt;docker-username&gt;</code> and
+<code>&lt;docker-password&gt;</code> to authenticate on docker.io during import. Once you obtained a Sakuli Enterprise license your
+Docker user will be granted access to the private Sakuli S2I images.</p>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;test&#34;</span>);
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nodejs.org/en/&#34;</span>;
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
-    <span style="color:#66d9ef">try</span> {
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;ABOUT&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Releases&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Dubnium&#34;</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">/node-v10.\d{1,}.\d{1,}.tar.gz/</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">/node-v10.\d{1,}.\d{1,}.tar.gz/</span>));
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_wait</span>(<span style="color:#ae81ff">3000</span>); <span style="color:#75715e">//wait for browser pop-up to activate
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyDown</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">keyUp</span>(<span style="color:#a6e22e">Key</span>.<span style="color:#a6e22e">ENTER</span>);
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
-    } <span style="color:#66d9ef">finally</span> {
-        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
-    }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oc create secret docker-registry dockerhub-sakuli-secret <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --docker-server<span style="color:#f92672">=</span>docker.io <span style="color:#ae81ff">\
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    --docker-username<span style="color:#f92672">=</span>&lt;docker-username&gt; <span style="color:#ae81ff">\
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    --docker-password<span style="color:#f92672">=</span>&lt;docker-password&gt; <span style="color:#ae81ff">\
+</span></span><span style="color:#ae81ff"></span>    --docker-email<span style="color:#f92672">=</span>unused</code></pre></div>
 
-<p>It is even possible to change the download location dynamically in some environments, by entering a new save path via:</p>
+<p>After you&rsquo;ve created the secret, you can import the images from the secured registry.</p>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#34;/new/path/to/file&#34;</span>);</code></pre></td></tr></table>
-</div>
-</div>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oc import-image sakuli-s2i <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --from<span style="color:#f92672">=</span>taconsol/sakuli-s2i <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --confirm <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --scheduled<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --all<span style="color:#f92672">=</span>true</code></pre></div>
+<em>Note: The <code>oc import-image</code> statement is configured to not only import all available Sakuli S2I images but also to
+check for updates automatically.</em></p>
 
-<h2 id="secrets">Secrets</h2>
+<h2 id="create-s2i-build">Creating an S2I build</h2>
 
-<p>Many E2E tests require some kind of login.
-While there is no problem in general, it still requires some mechanism to handle credentials.
-Providing credentials via environment variable is a common practice, but it still is inconvenient when deploying the testcase to another system, since every single environment variable has to be migrated too.</p>
+<p>The following build-config template is ready to use to create Sakuli S2I builds for various repositories and test suites.
+Just copy and save the <a href="#s2i-template">S2I build template</a> as <code>sakuli-s2i-build-template.yml</code>. To process the template
+some additional information is required that are not part of the template. First of all, you have to provide a
+<code>SAKULI_LICENSE_KEY</code> to be able to execute the images resulting from the build process and you have to specify the
+repository to pull the test case from as <code>TESTSUITE_REPOSITORY_URL</code>. To install such a basic setup on your OpenShift
+cluster, just use the following command and replace the placeholder with actual values.</p>
 
-<p>Sakuli comes with a built-in mechanism to deal with sensitive data in testcases.
-It uses a single masterkey, generated by Sakuli itself, to de- or encrypt secrets used in testcases.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oc process -f sakuli-s2i-build-template.yml <span style="color:#ae81ff">\
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    SAKULI_LICENSE_KEY<span style="color:#f92672">=</span>&lt;SAKULI_LICENSE_KEY&gt; <span style="color:#ae81ff">\
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    TESTSUITE_REPOSITORY_URL<span style="color:#f92672">=</span>&lt;TESTSUITE_REPOSITORY_URL&gt; | oc apply -f -</span></code></pre></div>
 
-<p>Running</p>
+<h3 id="advanced-s2i-build-configuration">Advanced S2I build configuration</h3>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">sakuli</span> <span style="color:#a6e22e">create</span> <span style="color:#a6e22e">masterkey</span></code></pre></td></tr></table>
-</div>
-</div>
+<p>The provided template comes with a lot of optional parameter to customize your build process. The following table
+contains all available parameters. Additional parameters are specified in the same way as seen in the
+<a href="#create-s2i-build">Creating an S2I build</a> section.</p>
 
-<p>will generate a new masterkey, which should be exported as an environment variable <code>SAKULI_ENCRYPTION_KEY</code>.</p>
+<table>
+    <col width="80">
+    <col width="30">
+    <col width="130">
+    <col width="50">
+    <tr>
+        <th>Parameter</th>
+        <th>Optional</th>
+        <th>Description</th>
+        <th>Default value</th>
+    </tr>
+    <tr>
+        <td>SAKULI_LICENSE_KEY</td>
+        <td>NO</td>
+        <td>Sakuli2 License key.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TESTSUITE_REPOSITORY_URL</td>
+        <td>NO</td>
+        <td>Git source URL containing the test suite.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TESTSUITE_REPOSITORY_REF</td>
+        <td>YES</td>
+        <td>Git branch/tag reference.</td>
+        <td>master</td>
+    </tr>
+    <tr>
+        <td>IMAGE</td>
+        <td>YES</td>
+        <td>Name for the target image to be build.</td>
+        <td>sakuli-s2i-testsuite</td>
+    </tr>
+    <tr>
+        <td>IMAGE_TAG</td>
+        <td>YES</td>
+        <td>Tag to push build images to.</td>
+        <td>latest</td>
+    </tr>
+    <tr>
+        <td>TESTSUITE_CONTEXT_DIR</td>
+        <td>YES</td>
+        <td>Source folder where the test suite is located.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TESTSUITE_REPOSITORY_SECRET</td>
+        <td>YES</td>
+        <td>Secret to access the testsuite repository.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>BUILDER_IMAGE_KIND</td>
+        <td>YES</td>
+        <td>Kind of source to obtain the builder image from.</td>
+        <td>ImageStream</td>
+    </tr>
+    <tr>
+        <td>BUILDER_IMAGE</td>
+        <td>YES</td>
+        <td>Name of the builder image.</td>
+        <td>sakuli-s2i</td>
+    </tr>
+    <tr>
+        <td>BUILDER_IMAGE_TAG</td>
+        <td>YES</td>
+        <td>Tag of the builder image to use.</td>
+        <td>latest</td>
+    </tr>
+</table>
 
-<p>Once the masterkey has been exported, secrets can be encrypted by running:</p>
+<h2 id="s2i-template">S2I build template</h2>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">sakuli</span> <span style="color:#a6e22e">encrypt</span> <span style="color:#e6db74">&#34;super secret string&#34;</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">apiVersion: v1
+kind: Template
+labels:
+  template: sakuli-s2i-testsuite-image-build
+metadata:
+  annotations:
+    description: Build config to create a ready to run Sakuli2 container with the specified testsuite
+    tags: consol, sakuli2, custom-image, s2i, source-to-image
+  name: sakuli-s2i-testsuite-image-build
+parameters:
+  - description: Name for the target image of the build.
+    name: IMAGE
+    required: <span style="color:#66d9ef">true</span>
+    value: sakuli-s2i-testsuite
 
-<p>These encrypted secrets can now be stored safely inside your testfile. The <code>Environment</code> class provides methods to decrypt these secrets during test execution.</p>
+  - description: Image tag of the target image.
+    name: IMAGE_TAG
+    required: <span style="color:#66d9ef">true</span>
+    value: latest
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">typeAndDecrypt</span>(<span style="color:#e6db74">&#34;$ENCRYPTED_SECRET&#34;</span>);
-<span style="color:#75715e">// alternatively, via clipboard
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">pasteAndDecrypt</span>(<span style="color:#e6db74">&#34;$ENCRYPTED_SECRET&#34;</span>);</code></pre></td></tr></table>
-</div>
-</div>
+  - description: Sakuli2 License key.
+    name: SAKULI_LICENSE_KEY
+    required: <span style="color:#66d9ef">true</span>
+
+  - description: Git source URL containing the test suite.
+    name: TESTSUITE_REPOSITORY_URL
+    required: <span style="color:#66d9ef">true</span>
+
+  - description: Git branch/tag reference.
+    name: TESTSUITE_REPOSITORY_REF
+    value: <span style="color:#e6db74">&#34;master&#34;</span>
+    required: <span style="color:#66d9ef">true</span>
+
+  - description: Source folder where the test suite is located.
+    name: TESTSUITE_CONTEXT_DIR
+
+  - description: Secret to access the testsuite repository.
+    name: TESTSUITE_REPOSITORY_SECRET
+
+  - description: Kind of source to obtain the builder image from.
+    name: BUILDER_IMAGE_KIND
+    required: <span style="color:#66d9ef">true</span>
+    value: ImageStream
+
+  - description: Name of the builder image.
+    name: BUILDER_IMAGE
+    required: <span style="color:#66d9ef">true</span>
+    value: sakuli-s2i
+
+  - description: Tag of the builder image to use.
+    name: BUILDER_IMAGE_TAG
+    required: <span style="color:#66d9ef">true</span>
+    value: latest
+
+objects:
+  - apiVersion: v1
+    kind: ImageStream
+    metadata:
+      labels:
+        application: ${IMAGE}
+      name: ${IMAGE}
+
+  - apiVersion: v1
+    kind: BuildConfig
+    metadata:
+      labels:
+        build: ${IMAGE}
+      name: ${IMAGE}
+    spec:
+      output:
+        to:
+          kind: ImageStreamTag
+          name: ${IMAGE}:${IMAGE_TAG}
+      source:
+        type: Git
+        git:
+          ref: ${TESTSUITE_REPOSITORY_REF}
+          uri: ${TESTSUITE_REPOSITORY_URL}
+        contextDir: ${TESTSUITE_CONTEXT_DIR}
+        sourceSecret:
+          name: ${TESTSUITE_REPOSITORY_SECRET}
+      strategy:
+        type: Source
+        sourceStrategy:
+          from:
+            kind: ${BUILDER_IMAGE_KIND}
+            name: ${BUILDER_IMAGE}:${BUILDER_IMAGE_TAG}
+          env:
+            - name: <span style="color:#e6db74">&#34;SAKULI_LICENSE_KEY&#34;</span>
+              value: ${SAKULI_LICENSE_KEY}
+      triggers:
+        - imageChange: {}
+          type: ImageChange
+        - type: ConfigChange</code></pre></div>
 
         </article>
         <aside id="secondary-nav">
@@ -629,8 +727,12 @@ It uses a single masterkey, generated by Sakuli itself, to de- or encrypt secret
 <ul>
 <li>
 <ul>
-<li><a href="#keyboard-actions">Keyboard actions</a></li>
-<li><a href="#secrets">Secrets</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#create-s2i-build">Creating an S2I build</a>
+<ul>
+<li><a href="#advanced-s2i-build-configuration">Advanced S2I build configuration</a></li>
+</ul></li>
+<li><a href="#s2i-template">S2I build template</a></li>
 </ul></li>
 </ul>
 </nav>
