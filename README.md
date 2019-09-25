@@ -1,5 +1,7 @@
 # Building and developing local
 
+To ensure correct rendering as on travis, please use [Hugo v0.56.3](https://github.com/gohugoio/hugo/releases/tag/v0.56.3)
+
 This page uses vue.js for interactive components in order to run them for local development start the npm build script:
 
 ```bash
