@@ -14,6 +14,7 @@ slug: features
 {{%feature-card title="Screenshot based interaction" image="/images/screen-shotbased.svg" maxHeight="200px" %}}{{%/feature-card%}}
 {{%feature-card title="DOM based interaction" image="/images/dom-based.svg" maxHeight="200px"%}}{{%/feature-card%}}
 {{%feature-card title="Screen Sizes" image="/images/screen-sizes.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Auto-Scroll into View" image="/images/scroll_svg.svg" maxHeight="200px"%}}{{%/feature-card%}}
 {{</card-deck>}}
 {{<card-deck>}}
 {{%feature-card title="Drag and Drop" image="/images/drag-and-drop.svg" maxHeight="200px"%}}{{%/feature-card%}}
