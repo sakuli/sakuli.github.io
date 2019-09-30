@@ -167,11 +167,6 @@ parameters:
   - description: Secret to access the testsuite repository.
     name: TESTSUITE_REPOSITORY_SECRET
 
-  - description: Kind of source to obtain the builder image from.
-    name: BUILDER_IMAGE_KIND
-    required: true
-    value: ImageStream
-
   - description: Name of the builder image.
     name: BUILDER_IMAGE
     required: true
@@ -213,7 +208,7 @@ objects:
         type: Source
         sourceStrategy:
           from:
-            kind: ${BUILDER_IMAGE_KIND}
+            kind: ImageStreamTag
             name: ${BUILDER_IMAGE}:${BUILDER_IMAGE_TAG}
           env:
             - name: "SAKULI_LICENSE_KEY"
