@@ -109,12 +109,6 @@ contains all available parameters. Additional parameters are specified in the sa
         <td></td>
     </tr>
     <tr>
-        <td>BUILDER_IMAGE_KIND</td>
-        <td>YES</td>
-        <td>Kind of source to obtain the builder image from.</td>
-        <td>ImageStream</td>
-    </tr>
-    <tr>
         <td>BUILDER_IMAGE</td>
         <td>YES</td>
         <td>Name of the builder image.</td>
