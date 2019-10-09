@@ -11,8 +11,8 @@ shipped with a test suite straight from your code repository.
 ## Setup
 To setup the source to image builds on your OpenShift cluster, it is required to import the images from 
 `taconsol/sakuli-s2i`. To achieve this, you have to create a docker-registry secret with your `<docker-username>` and
-`<docker-password>` to authenticate on docker.io during import. Once you obtained a Sakuli Enterprise license your
-Docker user will be granted access to the private Sakuli S2I images.
+`<docker-password>` and link it to your `builder` service account to authenticate on docker.io during build.
+Once you obtained a Sakuli Enterprise license your Docker user will be granted access to the private Sakuli S2I images.
 
 {{<highlight bash "hl_lines=3 4">}}
 oc create secret docker-registry dockerhub-sakuli-secret \
@@ -20,13 +20,15 @@ oc create secret docker-registry dockerhub-sakuli-secret \
     --docker-username=<docker-username> \
     --docker-password=<docker-password> \
     --docker-email=unused
+
+oc secrets link builder dockerhub-sakuli-secret
 {{</highlight>}}
 
-After you've created the secret, you can import the images from the secured registry.
+After you've created and linked the secret, you can import the images from the secured registry.
 
 {{<highlight bash>}}
 oc import-image sakuli-s2i \
-    --from=taconsol/sakuli-s2i \
+    --from=docker.io/taconsol/sakuli-s2i \
     --confirm \
     --scheduled=true \
     --all=true
@@ -107,12 +109,6 @@ contains all available parameters. Additional parameters are specified in the sa
         <td></td>
     </tr>
     <tr>
-        <td>BUILDER_IMAGE_KIND</td>
-        <td>YES</td>
-        <td>Kind of source to obtain the builder image from.</td>
-        <td>ImageStream</td>
-    </tr>
-    <tr>
         <td>BUILDER_IMAGE</td>
         <td>YES</td>
         <td>Name of the builder image.</td>
@@ -167,11 +163,6 @@ parameters:
   - description: Secret to access the testsuite repository.
     name: TESTSUITE_REPOSITORY_SECRET
 
-  - description: Kind of source to obtain the builder image from.
-    name: BUILDER_IMAGE_KIND
-    required: true
-    value: ImageStream
-
   - description: Name of the builder image.
     name: BUILDER_IMAGE
     required: true
@@ -213,7 +204,7 @@ objects:
         type: Source
         sourceStrategy:
           from:
-            kind: ${BUILDER_IMAGE_KIND}
+            kind: ImageStreamTag
             name: ${BUILDER_IMAGE}:${BUILDER_IMAGE_TAG}
           env:
             - name: "SAKULI_LICENSE_KEY"
