@@ -514,19 +514,21 @@ shipped with a test suite straight from your code repository.</p>
 
 <p>To setup the source to image builds on your OpenShift cluster, it is required to import the images from
 <code>taconsol/sakuli-s2i</code>. To achieve this, you have to create a docker-registry secret with your <code>&lt;docker-username&gt;</code> and
-<code>&lt;docker-password&gt;</code> to authenticate on docker.io during import. Once you obtained a Sakuli Enterprise license your
-Docker user will be granted access to the private Sakuli S2I images.</p>
+<code>&lt;docker-password&gt;</code> and link it to your <code>builder</code> service account to authenticate on docker.io during build.
+Once you obtained a Sakuli Enterprise license your Docker user will be granted access to the private Sakuli S2I images.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oc create secret docker-registry dockerhub-sakuli-secret <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --docker-server<span style="color:#f92672">=</span>docker.io <span style="color:#ae81ff">\
 </span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    --docker-username<span style="color:#f92672">=</span>&lt;docker-username&gt; <span style="color:#ae81ff">\
 </span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#ae81ff"></span>    --docker-password<span style="color:#f92672">=</span>&lt;docker-password&gt; <span style="color:#ae81ff">\
-</span></span><span style="color:#ae81ff"></span>    --docker-email<span style="color:#f92672">=</span>unused</code></pre></div>
+</span></span><span style="color:#ae81ff"></span>    --docker-email<span style="color:#f92672">=</span>unused
 
-<p>After you&rsquo;ve created the secret, you can import the images from the secured registry.</p>
+oc secrets link builder dockerhub-sakuli-secret</code></pre></div>
+
+<p>After you&rsquo;ve created and linked the secret, you can import the images from the secured registry.</p>
 
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oc import-image sakuli-s2i <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --from<span style="color:#f92672">=</span>taconsol/sakuli-s2i <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --from<span style="color:#f92672">=</span>docker.io/taconsol/sakuli-s2i <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --confirm <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --scheduled<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --all<span style="color:#f92672">=</span>true</code></pre></div>
@@ -606,12 +608,6 @@ contains all available parameters. Additional parameters are specified in the sa
         <td></td>
     </tr>
     <tr>
-        <td>BUILDER_IMAGE_KIND</td>
-        <td>YES</td>
-        <td>Kind of source to obtain the builder image from.</td>
-        <td>ImageStream</td>
-    </tr>
-    <tr>
         <td>BUILDER_IMAGE</td>
         <td>YES</td>
         <td>Name of the builder image.</td>
@@ -666,11 +662,6 @@ parameters:
   - description: Secret to access the testsuite repository.
     name: TESTSUITE_REPOSITORY_SECRET
 
-  - description: Kind of source to obtain the builder image from.
-    name: BUILDER_IMAGE_KIND
-    required: <span style="color:#66d9ef">true</span>
-    value: ImageStream
-
   - description: Name of the builder image.
     name: BUILDER_IMAGE
     required: <span style="color:#66d9ef">true</span>
@@ -712,7 +703,7 @@ objects:
         type: Source
         sourceStrategy:
           from:
-            kind: ${BUILDER_IMAGE_KIND}
+            kind: ImageStreamTag
             name: ${BUILDER_IMAGE}:${BUILDER_IMAGE_TAG}
           env:
             - name: <span style="color:#e6db74">&#34;SAKULI_LICENSE_KEY&#34;</span>
