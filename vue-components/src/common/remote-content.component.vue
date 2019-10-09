@@ -41,7 +41,6 @@ export default Vue.extend({
             ? this.parseContent
             : (e: HTMLElement) => e.innerHTML;
         this.content = parse(htmlContent);
-        console.log(this.content);
       } catch (e) {
         this.error = true;
         console.log('error', e);

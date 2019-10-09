@@ -1,15 +1,14 @@
 <template>
-  <a class="button" @click="modalOpen = true">
+  <a :class="className" :href="formUrl" @click.stop.prevent="modalOpen = true">
     {{text}}
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
-        <h1>
-          <span class="hide-mobile">{{contactText}}</span>
-            {{name}} {{code}}
+        <h1>          
+            {{code}}
         </h1>
       </template>
-      <template v-slot:footer>
-        <button class="button button-secondary" @click.prevent="modalOpen = false">Close</button>
+      <template v-slot:footer> 
+        <button class="btn" @click.prevent="modalOpen = false">&times; Close</button>
         <button v-if="!formDisabled" class="button" @click.prevent="sendFormData">Send</button>
       </template>
       <div v-if="success">
@@ -63,7 +62,7 @@ export default Vue.extend({
     remoteContent,
     spinner
   },
-  props: ["text", "formUrl", "code", "open"],
+  props: ["text", "formUrl", "code", "open", "className"],
   data() {
     return {
       modalOpen: this.open || false,
@@ -101,8 +100,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    parseForm(formElement: HTMLFormElement) {
-      console.log("parsing", this.code);
+    parseForm(formElement: HTMLFormElement) {      
       this.action = formElement.action;
       ifPresent(formElement.querySelector("#powermail_field_package"), e => {
         e.setAttribute("value", this.code);
@@ -156,28 +154,25 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-.button {
-  cursor: pointer;
-  border: 0;
-  margin: 1rem;
-  @media screen and (max-width: 820px) {
-    margin: 0.5rem;
-  }
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    &:hover {
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    }
-  }
-}
 
 .error {
   text-align: center;
   margin-bottom: 1rem;
 }
-
 #sakuli-enterpise-contact-form {
+   .powermail_fieldwrap_senden {
+      display: none !important;
+    }
+    .powermail_fieldwrap_type_submit {
+      text-align: right;
+      div {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+      }
+    }
+}
+/*
   fieldset {
     border: 0;
     display: flex;
@@ -249,5 +244,6 @@ export default Vue.extend({
     }
   }
 }
+*/
 </style>
 

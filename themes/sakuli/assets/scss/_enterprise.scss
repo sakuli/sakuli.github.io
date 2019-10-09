@@ -133,13 +133,13 @@
         display: flex;
         flex-direction: row;
         margin-bottom: 1rem;
-        span {
-            flex: .33;
+        span {            
             text-align: right;
             padding: .5rem;
         }
 
         input, select, textarea {
+            min-width: 50%;
             padding: .5rem;
             border-radius: 1rem;
             flex: 1;

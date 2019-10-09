@@ -5,5 +5,8 @@ node_modules/
 .cache/
 
 static/vue/
+assets/vue/
 
 .DS_Store
+
+.idea

@@ -14,6 +14,7 @@ slug: features
 {{%feature-card title="Screenshot based interaction" image="/images/screen-shotbased.svg" maxHeight="200px" %}}{{%/feature-card%}}
 {{%feature-card title="DOM based interaction" image="/images/dom-based.svg" maxHeight="200px"%}}{{%/feature-card%}}
 {{%feature-card title="Screen Sizes" image="/images/screen-sizes.svg" maxHeight="200px"%}}{{%/feature-card%}}
+{{%feature-card title="Auto-Scroll into View" image="/images/scroll_svg.svg" maxHeight="200px"%}}{{%/feature-card%}}
 {{</card-deck>}}
 {{<card-deck>}}
 {{%feature-card title="Drag and Drop" image="/images/drag-and-drop.svg" maxHeight="200px"%}}{{%/feature-card%}}
@@ -138,3 +139,17 @@ You will need to download additional components to work with each of the major b
 | Edge              | [MicrosoftWebDriver.msi](http://go.microsoft.com/fwlink/?LinkId=619687) | https://www.npmjs.com/package/edgedriver   |
 | Firefox           | [geckodriver(.exe)](https://github.com/mozilla/geckodriver/releases/) | https://www.npmjs.com/package/geckodriver  |
 | Safari            | [safaridriver](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28) |                                            |
+
+### Support Limitation
+
+Sakuli Support basically refers to errors and incidents occurring in Sakuli Core (SC) and Sakuli Enterprise Features (SEF). By definition, SC uses webdriver to run tests in browsers. These browser-specific webdrivers have a range of functions beyond which SC does not perform any actions in the browser. Therefore Sakuli has no influence on errors occurring in webdrivers. With integrated mechanisms, SC offers convenience functions to encapsulate the webdriver and Selenium commands. Sakuli therefore has no direct influence on the Selenium functionalities executed in the browser and transferred via webdriver. Web pages can be built using a variety of technologies, having different levels of testability, and do not consistently conform to W3C standards. Custom implementations of Web elements (e.g. dropdowns, radio buttons, etc.) can therefore lead to unexpected behavior.
+
+{{% alert %}}
+<i class="fas fa-exclamation-triangle"></i>
+Bugs in webdrivers and browsers (local or in container environments) are not covered by Sakuli Support. The identification of workarounds is understood as consulting services.
+{{% /alert %}}
+
+- Support for misbehavior of query, focus, click, interaction, highlight etc. of an element visible in the viewport, implemented as a standard HTML element according to W3C standards, using different selectors (max count / element type: 1000)
+- Sakulis DOM based browser control is based on the appropriate webdriver implementation and the browsers used. Unexpected behavior due to the webdriver or browser implementation is not covered by Sakuli Support
+- Web components implemented with custom JS can lead to unexpected Sakuli behavior and are not supported
+- Native components: Support for standard US keyboard layout / Restriction on MacOS and Windows Meta-Keys
