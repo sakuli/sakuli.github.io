@@ -7,4 +7,6 @@ cd vue-components
 npm ci
 npm run build
 cd -
-hugo
+CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+DEPLOYMENT_ALIAS="https://sakuligithubio-git-${CURRENT_BRANCH//(\/|[^a-zA-Z0-9_]|_)/-}.s1hofmann.now.sh"
+hugo --baseURL $DEPLOYMENT_ALIAS
