@@ -50,7 +50,7 @@
     {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed") }}
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS $options }}
     {{ $css := slice $vueCss $style | resources.Concat "css/bundle.css" }}
-    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" />
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
     <link href="/fontawesome/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
 
@@ -63,7 +63,7 @@
         var version = ieVersion(ua);
         if (version && version >= 10 && version <= 11) {
             document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CArray.from%2CPromise%2CString.prototype.startsWith"><\/script>');
-            document.write('<link rel="stylesheet" href="{{ $ieStyle.Permalink }}" integrity="{{ $ieStyle.Data.Integrity }}" />')
+            document.write('<link rel="stylesheet" href="{{ $ieStyle.RelPermalink }}" integrity="{{ $ieStyle.Data.Integrity }}" />')
         }
         function ieVersion(uaString) {
             uaString = uaString || navigator.userAgent;

@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "install": "bash ./build-hugo.sh",
+        "build": "bash ./build-site.sh"
+    },
+    "engines": {
+        "node": "^10"
+    }
+}
