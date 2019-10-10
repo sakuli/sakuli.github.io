@@ -47,7 +47,7 @@ Now you have to set up the properties for the Check_MK receiver. In order to do 
 |`sakuli.forwarder.check_mk.spoolfile_prefix`|`sakuli_suite_`|Defines the result file prefix. It can be used to change the default naming convention for the Check_MK output files  |
 |`sakuli.forwarder.check_mk.service_description`|`${testsuite.id}`|Defines the service description which is used within the check result |
 |`sakuli.forwarder.check_mk.piggyback_hostname`|`local`|Defines Hostname for check results, configurable for piggyback results |
-|`sakuli.forwarder.check_mk.output.details`|`true`|Dis- / Enables detailed HTML output. Defaults to `true`|
+|`sakuli.forwarder.check_mk.output.details`|`true`|Dis- / Enables detailed HTML output|
 
 An example configuration could look like this:
 
