@@ -15,6 +15,6 @@
 {{ $bsJs := resources.Get "ext/bootstrap.min.js" }}
 {{ $vueJs := resources.Get "vue/index.js" }}
 {{ $js := slice $jqSlimJs $popperJs $bsJs $vueJs | resources.Concat "js/bundle.js" | resources.Minify }}
-<script src="{{ $js.Permalink }}"></script>
+<script src="{{ $js.RelPermalink }}"></script>
 </body>
 </html>
