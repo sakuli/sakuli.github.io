@@ -7,10 +7,9 @@ tar -C /usr/local -xzf go.tar.gz
 
 # Set up paths
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Build Hugo
 git clone --branch v0.56.3 --depth 1 https://github.com/gohugoio/hugo.git
 cd hugo
 GO111MODULE=on go install --tags extended
-hugo version
+$GOPATH/bin/hugo version
