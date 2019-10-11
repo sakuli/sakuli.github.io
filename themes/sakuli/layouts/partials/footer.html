@@ -13,6 +13,7 @@
 {{ $jqSlimJs := resources.Get "ext/jquery-3.3.1.slim.min.js" }}
 {{ $popperJs := resources.Get "ext/popper.min.js" }}
 {{ $bsJs := resources.Get "ext/bootstrap.min.js" }}
+{{ $bsJs := resources.Get "ext/parsley.min.js" }}
 {{ $vueJs := resources.Get "vue/index.js" }}
 {{ $js := slice $jqSlimJs $popperJs $bsJs $vueJs | resources.Concat "js/bundle.js" | resources.Minify }}
 <script src="{{ $js.RelPermalink }}"></script>

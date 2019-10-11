@@ -18,7 +18,7 @@
         <spinner></spinner>
         <div>Forwarding your request</div>
       </div>
-      <div v-if="reponseError">
+      <div class="alert alert-danger" v-if="reponseError">
         <h3>Please fill all required fields:</h3>
         <ul v-html="reponseError"></ul>
       </div>
@@ -32,6 +32,7 @@
         >company page form</a>
       </div>
       <form
+        data-parsley-validate=""
         v-if="!formDisabled"
         id="sakuli-enterprise-contact-form"
         ref="contactForm"
@@ -49,6 +50,8 @@ import Vue from "vue";
 import modal from "../common/modal.component.vue";
 import remoteContent from "../common/remote-content.component.vue";
 import spinner from "../common/spinner.component.vue";
+import 'jquery';
+import * as parsley from 'parsleyjs';
 
 function ifPresent<T>(v: T | null | undefined, then: (o: T) => void) {
   if (v != null) {
@@ -62,7 +65,7 @@ export default Vue.extend({
     remoteContent,
     spinner
   },
-  props: ["text", "formUrl", "code", "open", "className"],
+  props: ["text", "formUrl", "code", "open", "className"],  
   data() {
     return {
       modalOpen: this.open || false,
@@ -71,7 +74,7 @@ export default Vue.extend({
       error: null,
       count: 0,
       success: false,
-      reponseError: ""
+      reponseError: "",      
     };
   },
   computed: {
@@ -101,7 +104,10 @@ export default Vue.extend({
   },
   methods: {
     parseForm(formElement: HTMLFormElement) {
+
       this.action = formElement.action;
+      const id = formElement.getAttribute('id') || 'sakuli-enterprise-form-wrapper'
+      formElement.setAttribute('id', id);
       ifPresent(formElement.querySelector("#powermail_field_package"), e => {
         e.setAttribute("value", this.code);
       });
@@ -119,6 +125,7 @@ export default Vue.extend({
         submitButton.classList.remove("btn", "btn-primary");
         submitButton.classList.add("button");
       }
+      this.parsley = $(this.formElement).parsley();
       return formElement.innerHTML;
     },
     setLoading(loading: boolean) {
@@ -129,25 +136,38 @@ export default Vue.extend({
         method: "POST",
         body: this.formData
       }).then(r => r.text());
-    },
+    },   
     async sendFormData() {
-      this.isLoading = true;
-      try {
-        const responseText = await this.fetch();
-        const parser = new DOMParser();
-        const responseDom = parser.parseFromString(responseText, "text/html");
-        const message = responseDom.querySelector(".powermail_message_error");
-        if (message) {
-          this.reponseError = message.innerHTML;
-          this.success = false;
-        } else {
-          this.success = true;
+      //@ts-ignore
+      console.log(this.formElement, $(this.formElement).parsley());
+      //@ts-ignore
+      $(this.formElement).parsley().refresh();
+      //@ts-ignore
+      $(this.formElement).parsley().on('field:validated', function() {
+        //@ts-ignore
+        console.log($('.parsley-error'));
+      });
+      
+      //console.log('is valid', valid);
+      if(false) {
+          this.isLoading = true;
+          try {
+            const responseText = await this.fetch();
+          const parser = new DOMParser();
+          const responseDom = parser.parseFromString(responseText, "text/html");
+          const message = responseDom.querySelector(".powermail_message_error");
+          if (message) {
+            this.reponseError = message.innerHTML;
+            this.success = false;
+          } else {
+            this.success = true;
+          }
+        } catch (e) {
+          console.error(e);
+          this.error = e;
+        } finally {
+          this.isLoading = false;
         }
-      } catch (e) {
-        console.error(e);
-        this.error = e;
-      } finally {
-        this.isLoading = false;
       }
     }
   }

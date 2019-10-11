@@ -25,6 +25,7 @@
     "install": "^0.12.2",
     "jquery": "^3.4.1",
     "npm": "^6.9.0",
+    "parsleyjs": "^2.9.1",
     "portal-vue": "^2.1.4",
     "smooth-scroll": "^16.1.0",
     "toggles": "^1.0.0",
