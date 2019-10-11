@@ -3,11 +3,11 @@
     {{text}}
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
-        <h1>          
+        <h1>
             {{code}}
         </h1>
       </template>
-      <template v-slot:footer> 
+      <template v-slot:footer>
         <button class="btn" @click.prevent="modalOpen = false">&times; Close</button>
         <button v-if="!formDisabled" class="button" @click.prevent="sendFormData">Send</button>
       </template>
@@ -33,7 +33,7 @@
       </div>
       <form
         v-if="!formDisabled"
-        id="sakuli-enterpise-contact-form"
+        id="sakuli-enterprise-contact-form"
         ref="contactForm"
         @submit.prevent="sendFormData"
       >
@@ -100,7 +100,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    parseForm(formElement: HTMLFormElement) {      
+    parseForm(formElement: HTMLFormElement) {
       this.action = formElement.action;
       ifPresent(formElement.querySelector("#powermail_field_package"), e => {
         e.setAttribute("value", this.code);
@@ -159,7 +159,7 @@ export default Vue.extend({
   text-align: center;
   margin-bottom: 1rem;
 }
-#sakuli-enterpise-contact-form {
+#sakuli-enterprise-contact-form {
    .powermail_fieldwrap_senden {
       display: none !important;
     }
