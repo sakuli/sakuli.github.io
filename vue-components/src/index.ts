@@ -1,3 +1,4 @@
+import { ifPresent } from "@sakuli/commons";
 import 'whatwg-fetch';
 import './docs-nav-enhancer';
 import './scroll-spy-enhancer';
@@ -21,7 +22,9 @@ document.body.appendChild(gdprInfo);
 new Vue(GdprComponent).$mount(gdprInfo);
 
 // Mounting
-new Vue(DataPrivacyComponent).$mount(document.getElementById('data-privacy-link'));
+ifPresent(document.getElementById('data-privacy-link'), dpl => {
+    new Vue(DataPrivacyComponent).$mount(dpl);
+})
 
 Array.from(document.querySelectorAll('[data-contactform]')).forEach((e, i) => {
     const props = {
