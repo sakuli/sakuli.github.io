@@ -144,27 +144,20 @@
     flex-direction: column;
     margin-bottom: 1rem;
 
-    /*
-    label {
+    .parsley-errors-list {
         display: flex;
-        flex-direction: row;
-        margin-bottom: 1rem;
-        span {
-            text-align: right;
-            padding: .5rem;
-        }
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
 
-        input, select, textarea {
-            min-width: 50%;
-            padding: .5rem;
-            border-radius: 1rem;
-            flex: 1;
-            border: 1px solid $color-green;
-            font-size: 1rem;
-
+        li {
+            position: relative;
+            display: block;
+            color: #f00;
+            padding-left: 0;
         }
     }
-    */
+
     .actions {
         display: flex;
         justify-content: flex-end;
@@ -190,7 +183,7 @@
     @media screen and (min-width: 992px) {
 
         .powermail_fieldwrap_salutation {
-            -webkit-flex:0 0 16.6666666667%;
+            -webkit-flex: 0 0 16.6666666667%;
             -ms-flex: 0 0 16.6666666667%;
             flex: 0 0 16.6666666667%;
             max-width: 16.6666666667%;

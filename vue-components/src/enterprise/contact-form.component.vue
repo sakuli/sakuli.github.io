@@ -65,7 +65,7 @@ export default Vue.extend({
     remoteContent,
     spinner
   },
-  props: ["text", "formUrl", "code", "open", "className"],  
+  props: ["text", "formUrl", "code", "open", "className"],
   data() {
     return {
       modalOpen: this.open || false,
@@ -74,7 +74,7 @@ export default Vue.extend({
       error: null,
       count: 0,
       success: false,
-      reponseError: "",      
+      reponseError: "",
     };
   },
   computed: {
@@ -136,20 +136,13 @@ export default Vue.extend({
         method: "POST",
         body: this.formData
       }).then(r => r.text());
-    },   
+    },
     async sendFormData() {
-      //@ts-ignore
-      console.log(this.formElement, $(this.formElement).parsley());
-      //@ts-ignore
-      $(this.formElement).parsley().refresh();
-      //@ts-ignore
-      $(this.formElement).parsley().on('field:validated', function() {
-        //@ts-ignore
-        console.log($('.parsley-error'));
-      });
-      
+      // @ts-ignore
+       const isValid = $(this.formElement).parsley().validate();
+       $(this.formElement).addClass('was-validated');
       //console.log('is valid', valid);
-      if(false) {
+      if(isValid) {
           this.isLoading = true;
           try {
             const responseText = await this.fetch();
