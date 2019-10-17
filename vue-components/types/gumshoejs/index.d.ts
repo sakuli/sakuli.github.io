@@ -1,4 +1,4 @@
-declare module 'gumshowjs' {
+declare module 'gumshoejs' {
 
     export interface GumshoeOptions {
         nested: boolean,

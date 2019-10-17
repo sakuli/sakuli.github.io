@@ -3,11 +3,11 @@
     {{text}}
     <modal :isOpen="modalOpen" @close="modalOpen = false">
       <template v-slot:header>
-        <h1>          
+        <h1>
             {{code}}
         </h1>
       </template>
-      <template v-slot:footer> 
+      <template v-slot:footer>
         <button class="btn" @click.prevent="modalOpen = false">&times; Close</button>
         <button v-if="!formDisabled" class="button" @click.prevent="sendFormData">Send</button>
       </template>
@@ -18,7 +18,7 @@
         <spinner></spinner>
         <div>Forwarding your request</div>
       </div>
-      <div v-if="reponseError">
+      <div class="alert alert-danger" v-if="reponseError">
         <h3>Please fill all required fields:</h3>
         <ul v-html="reponseError"></ul>
       </div>
@@ -32,8 +32,9 @@
         >company page form</a>
       </div>
       <form
+        data-parsley-validate=""
         v-if="!formDisabled"
-        id="sakuli-enterpise-contact-form"
+        id="sakuli-enterprise-contact-form"
         ref="contactForm"
         @submit.prevent="sendFormData"
       >
@@ -49,6 +50,8 @@ import Vue from "vue";
 import modal from "../common/modal.component.vue";
 import remoteContent from "../common/remote-content.component.vue";
 import spinner from "../common/spinner.component.vue";
+import 'jquery';
+import * as parsley from 'parsleyjs';
 
 function ifPresent<T>(v: T | null | undefined, then: (o: T) => void) {
   if (v != null) {
@@ -71,7 +74,7 @@ export default Vue.extend({
       error: null,
       count: 0,
       success: false,
-      reponseError: ""
+      reponseError: "",
     };
   },
   computed: {
@@ -100,8 +103,11 @@ export default Vue.extend({
     }
   },
   methods: {
-    parseForm(formElement: HTMLFormElement) {      
+    parseForm(formElement: HTMLFormElement) {
+
       this.action = formElement.action;
+      const id = formElement.getAttribute('id') || 'sakuli-enterprise-form-wrapper'
+      formElement.setAttribute('id', id);
       ifPresent(formElement.querySelector("#powermail_field_package"), e => {
         e.setAttribute("value", this.code);
       });
@@ -119,6 +125,7 @@ export default Vue.extend({
         submitButton.classList.remove("btn", "btn-primary");
         submitButton.classList.add("button");
       }
+      this.parsley = $(this.formElement).parsley();
       return formElement.innerHTML;
     },
     setLoading(loading: boolean) {
@@ -131,23 +138,29 @@ export default Vue.extend({
       }).then(r => r.text());
     },
     async sendFormData() {
-      this.isLoading = true;
-      try {
-        const responseText = await this.fetch();
-        const parser = new DOMParser();
-        const responseDom = parser.parseFromString(responseText, "text/html");
-        const message = responseDom.querySelector(".powermail_message_error");
-        if (message) {
-          this.reponseError = message.innerHTML;
-          this.success = false;
-        } else {
-          this.success = true;
+      // @ts-ignore
+       const isValid = $(this.formElement).parsley().validate();
+       $(this.formElement).addClass('was-validated');
+      //console.log('is valid', valid);
+      if(isValid) {
+          this.isLoading = true;
+          try {
+            const responseText = await this.fetch();
+          const parser = new DOMParser();
+          const responseDom = parser.parseFromString(responseText, "text/html");
+          const message = responseDom.querySelector(".powermail_message_error");
+          if (message) {
+            this.reponseError = message.innerHTML;
+            this.success = false;
+          } else {
+            this.success = true;
+          }
+        } catch (e) {
+          console.error(e);
+          this.error = e;
+        } finally {
+          this.isLoading = false;
         }
-      } catch (e) {
-        console.error(e);
-        this.error = e;
-      } finally {
-        this.isLoading = false;
       }
     }
   }
@@ -159,7 +172,7 @@ export default Vue.extend({
   text-align: center;
   margin-bottom: 1rem;
 }
-#sakuli-enterpise-contact-form {
+#sakuli-enterprise-contact-form {
    .powermail_fieldwrap_senden {
       display: none !important;
     }
