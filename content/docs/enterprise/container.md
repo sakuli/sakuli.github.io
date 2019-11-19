@@ -280,7 +280,8 @@ Per default all container processes will be executed with user id 1000.
 | VNC_RESOLUTION       | 1280x1024     | Screen resolution of container                                        |
 | VNC_PW               | vncpassword   | Password to access NoVNC/VNC connection                               |
 | VNC_VIEW_ONLY        | false         | Enable/Disable view-only mode                                         |
-                                                |
+| NODE_NO_WARNINGS     | 1             | Enable/Disable node warnings (deprecations etc.)                      |
+| NPM_TOKEN            |               | NPM token to access npmjs.com registry                                |
 
 ## 7 Summary
 
