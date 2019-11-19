@@ -759,7 +759,69 @@ VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mous
     </code></pre></div></li>
 </ul>
 
-<h2 id="6-summary">6 Summary</h2>
+<h3 id="6-overview-environment-variables">6 Overview Environment Variables</h3>
+
+<table>
+<thead>
+<tr>
+<th>Environment Variable</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SAKULI_TEST_SUITE</td>
+<td>$HOME/demo_testcase</td>
+<td>Path to Sakuli testsuite to be executed</td>
+</tr>
+
+<tr>
+<td>SAKULI_LICENSE_KEY</td>
+<td></td>
+<td>Sakuli license to use the container</td>
+</tr>
+
+<tr>
+<td>VNC_COL_DEPTH</td>
+<td>24</td>
+<td>Color depth of container monitor</td>
+</tr>
+
+<tr>
+<td>VNC_RESOLUTION</td>
+<td>1280x1024</td>
+<td>Screen resolution of container</td>
+</tr>
+
+<tr>
+<td>VNC_PW</td>
+<td>vncpassword</td>
+<td>Password to access NoVNC/VNC connection</td>
+</tr>
+
+<tr>
+<td>VNC_VIEW_ONLY</td>
+<td>false</td>
+<td>Enable/Disable view-only mode</td>
+</tr>
+
+<tr>
+<td>NODE_NO_WARNINGS</td>
+<td>1</td>
+<td>Enable/Disable node warnings (deprecations etc.)</td>
+</tr>
+
+<tr>
+<td>NPM_TOKEN</td>
+<td></td>
+<td>NPM token to access npmjs.com registry</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="7-summary">7 Summary</h2>
 
 <p>Once we have</p>
 
@@ -800,8 +862,9 @@ VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mous
 <li><a href="#5-1-vnc-access">5.1 VNC Access</a></li>
 <li><a href="#5-2-configuring-vnc-access">5.2 Configuring VNC Access</a></li>
 <li><a href="#5-2-container-user">5.2 Container User</a></li>
+<li><a href="#6-overview-environment-variables">6 Overview Environment Variables</a></li>
 </ul></li>
-<li><a href="#6-summary">6 Summary</a></li>
+<li><a href="#7-summary">7 Summary</a></li>
 </ul></li>
 </ul>
 </nav>
