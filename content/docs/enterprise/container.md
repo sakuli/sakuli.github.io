@@ -272,16 +272,16 @@ Per default all container processes will be executed with user id 1000.
 
 ### 6 Overview Environment Variables
 
-| Environment Variable | Default Value | Description                                                           |
-|----------------------|---------------|-----------------------------------------------------------------------|
-| SAKULI_TEST_SUITE    |               | Path to Sakuli testsuite to be executed                               |
-| SAKULI_LICENSE_KEY   |               | Sakuli license to use the container                                   |
-| VNC_COL_DEPTH        | 24            | Color depth of container monitor                                      |
-| VNC_RESOLUTION       | 1280x1024     | Screen resolution of container                                        |
-| VNC_PW               | vncpassword   | Password to access NoVNC/VNC connection                               |
-| VNC_VIEW_ONLY        | false         | Enable/Disable view-only mode                                         |
-| NODE_NO_WARNINGS     | 1             | Enable/Disable node warnings (deprecations etc.)                      |
-| NPM_TOKEN            |               | NPM token to access npmjs.com registry                                |
+| Environment Variable | Default Value       | Description                                                           |
+|----------------------|---------------------|-----------------------------------------------------------------------|
+| SAKULI_TEST_SUITE    | $HOME/demo_testcase | Path to Sakuli testsuite to be executed                               |
+| SAKULI_LICENSE_KEY   |                     | Sakuli license to use the container                                   |
+| VNC_COL_DEPTH        | 24                  | Color depth of container monitor                                      |
+| VNC_RESOLUTION       | 1280x1024           | Screen resolution of container                                        |
+| VNC_PW               | vncpassword         | Password to access NoVNC/VNC connection                               |
+| VNC_VIEW_ONLY        | false               | Enable/Disable view-only mode                                         |
+| NODE_NO_WARNINGS     | 1                   | Enable/Disable node warnings (deprecations etc.)                      |
+| NPM_TOKEN            |                     | NPM token to access npmjs.com registry                                |
 
 ## 7 Summary
 
