@@ -1,5 +1,6 @@
 ---
 title: Web tests
+slug: writing-tests/web-testing
 ---
 
 For DOM based testing most of the functions from [Sahi tests](https://sahipro.com/docs/sahi-apis/) can be used (please note that Sakuli only implements the open source APIs).
@@ -107,11 +108,15 @@ await _click(_div('element-in-frame-1'));
 await driver.switchTo().defaultContent();
 {{</highlight>}}
 
+{{<alert>}}
+Since v2.2.0 Sakuli will automatically detect different frames (and iframes) and will search for elements in each frame when the element can not be found in default frame.
+{{</alert>}}
+
 ### WebElement instances
 
 The Fetch API provides the `_fetch` function which returns the native [WebElement](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index_exports_WebElement.html) instance from Seleniums webdriver for a query:
 
 {{<highlight javascript>}}
-const webElement = await _fetch(_image('funny-cat-image.png')); 
+const webElement = await _fetch(_image('funny-cat-image.png'));
 const {width, height} = await webElement.getRect();
 {{</highlight>}}
