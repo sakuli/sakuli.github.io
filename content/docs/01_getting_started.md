@@ -174,7 +174,7 @@ Since v2.2.0 Sakuli provides an easy to use mechanism to initialize testcases an
 npx sakuli create project . my-sut
 {{< /highlight >}}
 
-This will create all necessary files and folders to start writing your first Sakuli test right away. With this you can skip the next section and directly start to [write your frist test](#write-your-first-test)
+This will create all necessary files and folders to start writing your first Sakuli test right away. With this, you can skip the next section and directly start to [write your first test](#write-your-first-test)
 
 ### Setup the Project manually
 
