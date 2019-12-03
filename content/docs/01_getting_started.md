@@ -225,7 +225,7 @@ echo case1/check.js https://sakuli.io > testsuite.suite
 
 ## Write Your First Test
 
-After the setup you can add the actual testcode to `case1/check.js`:
+After the setup you can add the test code to `case1/check.js`:
 
 {{< highlight typescript "linenos=table,hl_lines=1 2 6 8 11" >}}
 
