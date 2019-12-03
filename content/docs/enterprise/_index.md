@@ -36,7 +36,7 @@ Same applies to the NPM access token which can be pasted / entered in the next p
 ? Please enter your npm key:
 {{</highlight>}}
 
-The upcoming prompt asks you about the enterprise features which you want to activate. You can use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate the cursor and <kbd>SPACE</kbd> select or deselect a feature. Pressing <kbd>ENTER</kbd> will submit your selection and starts the setup process.
+The following prompt asks you about the enterprise features which you want to activate. You can use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate the cursor and <kbd>SPACE</kbd>  to select or deselect a feature. Pressing <kbd>ENTER</kbd> will submit your selection and start the setup process.
 
 {{<highlight bash>}}
 ? Please Select Enterprise Features to bootstrap (Press <space> to select, <a> to toggle all, <i> to invert selection)
