@@ -22,7 +22,7 @@ This command starts an assistant which will guide you through the setup of enter
 ? Would you like to enter your Sakuli license information? (Y/n)
 {{</highlight>}}
 
-You can enter `n` when you already entered license information before.
+You can enter `n` when you have already entered the license information before.
 
 You can enter `Y` and than enter / paste the license key in the next prompt:
 
@@ -196,4 +196,3 @@ A new variable can be added with the command:
 echo "export VARIABLE_NAME=VALUE" >> ~/.bashrc  # Linux
 echo "export VARIABLE_NAME=VALUE" >> ~/.profile # OSX
 {{</highlight>}}
-
