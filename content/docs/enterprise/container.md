@@ -270,7 +270,37 @@ Per default all container processes will be executed with user id 1000.
 ~$ docker run -it -p 5901:5901 -p 6901:6901 --user $(id -u):$(id -g) taconsol/sakuli:2.1.2
     {{</highlight>}}
 
-### 6 Overview Environment Variables
+### 6 Custom Certificates
+
+Internal infrastructure often uses custom certificates with own root CAs etc.
+Things like untrusted certificates cause Sakuli tests to fail, since no connection to an seemingly insecure host will be established (`InsecureCertificateError`).
+
+Unfortunately, browsers use their own certificate store, which requires some additional work to add custom certificates to.
+
+#### Adding Custom Certificates
+
+In order to add custom certificates to a Sakuli container, one has to provide two things:
+
+- A directory containing certificates for import (*.crt, *.cer, *.pem)
+- An environment variable called `SAKULI_TRUSTED_CA_DIR` which holds the path to the directory where certificates for import are located inside the container
+
+If the environment variable has been set, a startup script will pick up all certificates contained in the given folder and import each of them to all available browser certificate stores within `$HOME`, supporting both `cert8.db` databases for older browser versions as well as `cert9.db` files for recent browser versions.
+
+If the environment variable is unset, nothing changes and the test container will execute.
+
+#### Sample
+
+```bash
+docker run -v /path/to/certificated/:/certificate_import -e SAKULI_TRUSTED_CA_DIR=/certificate_import/ taconsol/sakuli:2.2.0
+```
+
+#### Firefox
+
+By default, a Firefox test uses a new, blank profile for each test run. In order to pick up the added certificates, a Firefox profile containing the appropriate certificate database has to be specified via `selenium.firefox.profile=/path/to/profile/folder` in `testsuite.properties`. In order to make this process easier, a dedicated Firefox profile for use with certificates is located at `/headless/firefox-certificates` to be used, instead of the generated profiles in `/headless/.mozilla/firefox/long_random_id.default`.
+
+**Attention:** If this property is not set, added certificates will have no effect.
+
+### 7 Overview Environment Variables
 
 | Environment Variable | Default Value       | Description                                                           |
 |----------------------|---------------------|-----------------------------------------------------------------------|
@@ -282,6 +312,7 @@ Per default all container processes will be executed with user id 1000.
 | VNC_VIEW_ONLY        | false               | Enable/Disable view-only mode                                         |
 | NODE_NO_WARNINGS     | 1                   | Enable/Disable node warnings (deprecations etc.)                      |
 | NPM_TOKEN            |                     | NPM token to access npmjs.com registry                                |
+| SAKULI_TRUSTED_CA_DIR|                     | Directory containing custom certificates for import                   |
 
 ## 7 Summary
 
