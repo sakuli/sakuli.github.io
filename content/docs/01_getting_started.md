@@ -223,7 +223,7 @@ And add the following information to the `testsuite.suite` file:
 echo case1/check.js https://sakuli.io > testsuite.suite
 {{< /highlight >}}
 
-## Write your first Test
+## Write Your First Test
 
 After the setup you can add the actual testcode to `case1/check.js`:
 
