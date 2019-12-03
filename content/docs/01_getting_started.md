@@ -248,7 +248,7 @@ Let us examine this piece of code:
 2. To provide Sakuli information about our actual testcase, we create a TestCase object, which handles the execution of a testcase.
 3. If any error occurs during testing, it will be redirected to the TestCase object. It triggers Sakuli's internal error handling e.g. taking a screenshot of the actual failed test execution.
 4. Regardless of a failed or passed test execution, Sakuli saves all results. This is more like a legacy artifact and will be removed in the future.
-5. The `()` at the end of this line will invoke the defined function. Since v2.2.0 Sakuli is able to detect this invocation without explicitly chaining the call of `done` function like in previous versions (it's still possible to add `.then(done)`);
+5. The `()` at the end of this line will invoke the defined function. Since v2.2.0 Sakuli is able to detect this invocation without explicitly chaining the call of `done` function like in previous versions (it is still possible to add `.then(done)`);
 
 Let us write a simple test using the Sakuli.io homepage as test subject. This test will verify if our "Getting Started" guide that you are reading at this very moment is still accessible.
 
