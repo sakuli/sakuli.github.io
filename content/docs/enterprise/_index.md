@@ -24,7 +24,7 @@ This command starts an assistant which will guide you through the setup of enter
 
 You can enter `n` when you have already entered the license information before.
 
-You can enter `Y` and than enter / paste the license key in the next prompt:
+You can enter `Y` and paste the license key in the next prompt:
 
 {{<highlight bash>}}
 ? Please enter your license key:
