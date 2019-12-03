@@ -289,9 +289,9 @@ If the environment variable is unset, nothing changes and the test container wil
 
 #### Sample
 
-```bash
-docker run -v /path/to/certificates/:/certificate_import -e SAKULI_TRUSTED_CERT_DIR=/certificate_import/ taconsol/sakuli:2.2.0
-```
+{{<highlight bash>}}
+~$ docker run -v /path/to/certificates/:/certificate_import -e SAKULI_TRUSTED_CERT_DIR=/certificate_import/ taconsol/sakuli:2.2.0
+{{</highlight>}
 
 #### Firefox
 
