@@ -166,7 +166,7 @@ This will install Sakuli and its required dependencies.
 - [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs#how-to-install)
 - [robotjs](http://robotjs.io/docs/building)
 
-## Setup your first test
+## Setup Your First Test
 
 Since v2.2.0 Sakuli provides an easy to use mechanism to initialize testcases and testsuites.
 
