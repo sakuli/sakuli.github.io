@@ -176,7 +176,7 @@ npx sakuli create project . my-sut
 
 This will create all necessary files and folders to start writing your first Sakuli test right away. With this, you can skip the next section and directly start to [write your first test](#write-your-first-test)
 
-### Setup the Project manually
+### Setup the Project Manually
 
 Since we wanted to keep Sakuli mostly compatible to v1, the file layout looks basically the same for testsuites.
 
