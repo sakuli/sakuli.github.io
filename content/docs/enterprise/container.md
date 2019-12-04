@@ -285,7 +285,6 @@ In order to add custom certificates to a Sakuli container, one has to provide tw
 
 If the environment variable has been set, a startup script will pick up all certificates contained in the given folder and import each of them to all available browser certificate stores within `$HOME`, supporting both `cert8.db` databases for older browser versions as well as `cert9.db` files for recent browser versions.
 
-If the environment variable is unset, nothing changes and the test container will execute.
 
 #### Sample
 
