@@ -274,7 +274,7 @@ Per default all container processes will be executed with user id 1000.
 Internal infrastructure often uses custom certificates with own root CAs etc.
 Things like untrusted certificates cause Sakuli tests to fail, since no connection to an seemingly insecure host will be established (`InsecureCertificateError`).
 
-Unfortunately, browsers use their own certificate store, which requires some additional work to add custom certificates to.
+Unfortunately, browsers use their own certificate store, which requires some additional work to add custom certificates.
 
 #### Adding Custom Certificates
 
@@ -285,7 +285,6 @@ In order to add custom certificates to a Sakuli container, one has to provide tw
 
 If the environment variable has been set, a startup script will pick up all certificates contained in the given folder and import each of them to all available browser certificate stores within `$HOME`, supporting both `cert8.db` databases for older browser versions as well as `cert9.db` files for recent browser versions.
 
-If the environment variable is unset, nothing changes and the test container will execute.
 
 #### Sample
 
