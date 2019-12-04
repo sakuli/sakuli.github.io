@@ -78,7 +78,7 @@ By mounting this volume in our test container we're able to provide the custom c
 
 If one does not want to mount all certificates, certificates can be selected via `subPath`:
 
-{{<highlight bash 7 8 10 11>}}
+{{<highlight bash "hl_lines=7 8 10 11">}}
 spec:
   containers:
   - name: ...
