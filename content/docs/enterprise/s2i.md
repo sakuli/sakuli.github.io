@@ -48,9 +48,9 @@ The following requirements have to be met to add custom certificates to a Sakuli
 
 {{<highlight bash>}}
 oc create secret generic custom-certs \
-    --from-file=my-key-name=/path/to/first/cert.cer \
-    --from-file=another-key-name=/path/to/another/cert.crt \
-    --from-file=last-key-name=/path/to/last/cert.pem
+    --from-file=my-first-cert.cer=/path/to/first/cert.cer \
+    --from-file=another-cert.crt=/path/to/another/cert.crt \
+    --from-file=last-cert.pem=/path/to/last/cert.pem
 {{</highlight>}}
 
 The above snippet will create a new secret called `custom-certs` which holds three key key-value pairs storing our certificates.
@@ -75,6 +75,26 @@ spec:
 
 We are defining a volume `custom-certs` which holds the content of our previously generated secrets.
 By mounting this volume in our test container we're able to provide the custom certificates to the container at runtime.
+
+If does not want to mount all certificates, certificates can be selected via `subPath`:
+
+{{<highlight bash 7 8 10 11>}}
+spec:
+  containers:
+  - name: ...
+    image: ...
+    volumeMounts:
+      - name: custom-certs
+        subPath: first-cert.cer
+        mountPath: /etc/custom-certs/first-cert.cer
+      - name: custom-certs
+        subPath: another-cert.cet
+        mountPath: /etc/custom-certs/another-cert.crt
+  volumes:
+  - name: custom-certs
+    secret:
+        secretName: custom-certs
+{{</highlight>}}
 
 ### SAKULI_TRUSTED_CERT_DIR Variable
 
