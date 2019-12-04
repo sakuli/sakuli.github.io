@@ -76,7 +76,7 @@ spec:
 We are defining a volume `custom-certs` which holds the content of our previously generated secrets.
 By mounting this volume in our test container we're able to provide the custom certificates to the container at runtime.
 
-If does not want to mount all certificates, certificates can be selected via `subPath`:
+If one does not want to mount all certificates, certificates can be selected via `subPath`:
 
 {{<highlight bash 7 8 10 11>}}
 spec:
@@ -88,7 +88,7 @@ spec:
         subPath: first-cert.cer
         mountPath: /etc/custom-certs/first-cert.cer
       - name: custom-certs
-        subPath: another-cert.cet
+        subPath: another-cert.crt
         mountPath: /etc/custom-certs/another-cert.crt
   volumes:
   - name: custom-certs
