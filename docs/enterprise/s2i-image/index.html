@@ -535,6 +535,87 @@ oc secrets link builder dockerhub-sakuli-secret</code></pre></div>
 <em>Note: The <code>oc import-image</code> statement is configured to not only import all available Sakuli S2I images but also to
 check for updates automatically.</em></p>
 
+<h2 id="adding-custom-certificates">Adding Custom Certificates</h2>
+
+<p>The following requirements have to be met to add custom certificates to a Sakuli S2I build:</p>
+
+<ul>
+<li>An OpenShift secret holding custom certificates</li>
+<li>A volume mount for the required certificates</li>
+<li>An environment variable called <code>SAKULI_TRUSTED_CERT_DIR</code> which holds the path to the directory where certificates for import are located inside the container</li>
+</ul>
+
+<h3 id="certificate-secret">Certificate Secret</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oc create secret generic custom-certs <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --from-file<span style="color:#f92672">=</span>my-first-cert.cer<span style="color:#f92672">=</span>/path/to/first/cert.cer <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --from-file<span style="color:#f92672">=</span>another-cert.crt<span style="color:#f92672">=</span>/path/to/another/cert.crt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --from-file<span style="color:#f92672">=</span>last-cert.pem<span style="color:#f92672">=</span>/path/to/last/cert.pem</code></pre></div>
+
+<p>The above snippet will create a new secret called <code>custom-certs</code> which holds three key key-value pairs storing our certificates.</p>
+
+<h3 id="certificate-volume-mount">Certificate Volume Mount</h3>
+
+<p>The next step to include custom certificates is to mount them in a test container.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spec:
+  containers:
+  - name: ...
+    image: ...
+    volumeMounts:
+      - name: custom-certs
+        mountPath: /etc/custom-certs
+  volumes:
+  - name: custom-certs
+    secret:
+        secretName: custom-certs</code></pre></div>
+
+<p>We are defining a volume <code>custom-certs</code> which holds the content of our previously generated secrets.
+By mounting this volume in our test container we&rsquo;re able to provide the custom certificates to the container at runtime.</p>
+
+<p>If one does not want to mount all certificates, certificates can be selected via <code>subPath</code>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spec:
+  containers:
+  - name: ...
+    image: ...
+    volumeMounts:
+      - name: custom-certs
+<span style="display:block;width:100%;background-color:#3c3d38">        subPath: first-cert.cer
+</span><span style="display:block;width:100%;background-color:#3c3d38">        mountPath: /etc/custom-certs/first-cert.cer
+</span>      - name: custom-certs
+<span style="display:block;width:100%;background-color:#3c3d38">        subPath: another-cert.crt
+</span><span style="display:block;width:100%;background-color:#3c3d38">        mountPath: /etc/custom-certs/another-cert.crt
+</span>  volumes:
+  - name: custom-certs
+    secret:
+        secretName: custom-certs</code></pre></div>
+
+<h3 id="sakuli-trusted-cert-dir-variable">SAKULI_TRUSTED_CERT_DIR Variable</h3>
+
+<p>The final step to enable custom certificates is to provide the certificate location via environment variable:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spec:
+  containers:
+  - name: ...
+    image: ...
+<span style="display:block;width:100%;background-color:#3c3d38">    env:
+</span><span style="display:block;width:100%;background-color:#3c3d38">      - name: SAKULI_TRUSTED_CERT_DIR
+</span><span style="display:block;width:100%;background-color:#3c3d38">        value: /etc/custom-certs
+</span>    volumeMounts:
+      - name: custom-certs
+        mountPath: /etc/custom-certs
+  volumes:
+  - name: custom-certs
+    secret:
+        secretName: custom-certs</code></pre></div>
+
+<h4 id="firefox">Firefox</h4>
+
+<p>By default, a Firefox test uses a new, blank profile for each test run. In order to pick up the added certificates, a Firefox profile containing the appropriate certificate database has to be specified via <code>selenium.firefox.profile=/path/to/profile/folder</code> in <code>testsuite.properties</code>. In order to make this process easier, a dedicated Firefox profile for use with certificates is located at <code>/headless/firefox-certificates</code> to be used, instead of the generated profiles in <code>/headless/.mozilla/firefox/long_random_id.default</code>.</p>
+
+<p><strong>Attention:</strong> If this property is not set, added certificates will have no effect.</p>
+
 <h2 id="create-s2i-build">Creating an S2I build</h2>
 
 <p>The following build-config template is ready to use to create Sakuli S2I builds for various repositories and test suites.
@@ -720,6 +801,15 @@ objects:
 <li>
 <ul>
 <li><a href="#setup">Setup</a></li>
+<li><a href="#adding-custom-certificates">Adding Custom Certificates</a>
+<ul>
+<li><a href="#certificate-secret">Certificate Secret</a></li>
+<li><a href="#certificate-volume-mount">Certificate Volume Mount</a></li>
+<li><a href="#sakuli-trusted-cert-dir-variable">SAKULI_TRUSTED_CERT_DIR Variable</a>
+<ul>
+<li><a href="#firefox">Firefox</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#create-s2i-build">Creating an S2I build</a>
 <ul>
 <li><a href="#advanced-s2i-build-configuration">Advanced S2I build configuration</a></li>

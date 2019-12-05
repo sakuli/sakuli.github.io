@@ -602,22 +602,13 @@ Now that the test is done and wont change frequently, it would be feasible to bu
 
 <p>We can do so by creating our own Dockerfile next to our project directory:
 <section class="unstyled-list-section"><ul>
-<li><i class="fas fa-folder"></i> <strong>/folder/containing/Dockerfile/and/project</strong></p>
-
-<p><ul>
-<li><i class="far fa-file"></i> <strong>Dockerfile</strong></li>
-<li><i class="fas fa-folder"></i> <strong>testsuite-a</strong></p>
-
-<p><ul>
-<li><i class="far fa-file"></i> <strong>package.json</strong></li>
-<li><i class="far fa-file"></i> <strong>&hellip;</strong></li>
-</ul></li>
-</ul></li>
+<li><i class="fas fa-folder"></i> <strong>/folder/containing/Dockerfile/and/project</strong> - <i class="far fa-file"></i> <strong>Dockerfile</strong> - <i class="fas fa-folder"></i> <strong>testsuite-a</strong> - <i class="far fa-file"></i> <strong>package.json</strong> - <i class="far fa-file"></i> <strong>&hellip;</strong>
+<br /></li>
 </ul></section></p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM taconsol/sakuli:2.1.2
 
-ADD ./testsuite-a $HOME/sakuli_testsuite</code></pre></div>
+ADD ./testsuite-a <span style="color:#ae81ff">\$</span>HOME/sakuli_testsuite</code></pre></div>
 
 <p>Using this Dockerfile we can now build our own test image by running</p>
 
@@ -657,9 +648,9 @@ Within this file it&rsquo;s possible to configure <a href="https://docs.npmjs.co
 <p>An empty project initialised via <code>npm init</code> already contains one script: <code>npm test</code></p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
-  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>
-  },
+<span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>
+},
 ...
 </code></pre></div>
 
@@ -669,9 +660,9 @@ Within this file it&rsquo;s possible to configure <a href="https://docs.npmjs.co
 Our test suites are located within the same folder as our <code>package.json</code>, so a test suite can be run via:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
-  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sakuli run /path/to/your/test/suite&#34;</span>
-  },
+<span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sakuli run /path/to/your/test/suite&#34;</span>
+},
 ...
 </code></pre></div>
 
@@ -694,9 +685,9 @@ If your test project does not require libraries other than Sakuli, the correct l
 <p>In case your test project requires additional dependencies, it&rsquo;s possible to run <code>npm install</code> before executing the Sakuli test.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
-  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;npm i &amp;&amp; sakuli run /path/to/your/test/suite&#34;</span>
-  },
+<span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;npm i &amp;&amp; sakuli run /path/to/your/test/suite&#34;</span>
+},
 ...
 </code></pre></div>
 
@@ -727,17 +718,17 @@ By specifying port forwardings (<strong>-p</strong>) it is possible to configure
 
 <p>The following VNC environment variables can be overwritten at the docker run phase to customize your desktop environment inside the container:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">VNC_COL_DEPTH, default: <span style="color:#ae81ff">24</span>          // Color depth
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">VNC_COL_DEPTH, default: <span style="color:#ae81ff">24</span> // Color depth
 
-VNC_RESOLUTION, default: 1280x1024  // Screen resolution
+VNC_RESOLUTION, default: 1280x1024 // Screen resolution
 
-VNC_PW, default: vncpassword        // VNC password
+VNC_PW, default: vncpassword // VNC password
 
-VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mouse interaction possible</code></pre></div>
+VNC_VIEW_ONLY, default: false // Run in view only mode, no keyboard / mouse interaction possible</code></pre></div>
 
 <p>For example, the password for VNC could be set like this:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 -e VNC_PW<span style="color:#f92672">=</span>my-new-password taconsol/sakuli:2.1.2</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~<span style="color:#ae81ff">\$</span> docker run -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 -e VNC_PW<span style="color:#f92672">=</span>my-new-password taconsol/sakuli:2.1.2</code></pre></div>
 
 <h3 id="5-2-container-user">5.2 Container User</h3>
 
@@ -748,18 +739,46 @@ VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mous
 
 <p>Add the --user flag to your docker run command:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -it -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 --user <span style="color:#ae81ff">0</span> taconsol/sakuli:2.1.2
-    </code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  ~<span style="color:#ae81ff">\$</span> docker run -it -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 --user <span style="color:#ae81ff">0</span> taconsol/sakuli:2.1.2
+  </code></pre></div></li>
 
 <li><p>Using user and group id of host system</p>
 
 <p>Add the --user flag to your docker run command:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -it -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 --user <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> taconsol/sakuli:2.1.2
-    </code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  ~$ docker run -it -p <span style="color:#ae81ff">5901</span>:5901 -p <span style="color:#ae81ff">6901</span>:6901 --user <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#ae81ff">\$</span><span style="color:#f92672">(</span>id -g<span style="color:#f92672">)</span> taconsol/sakuli:2.1.2
+  </code></pre></div></li>
 </ul>
 
-<h3 id="6-overview-environment-variables">6 Overview Environment Variables</h3>
+<h3 id="6-custom-certificates">6 Custom Certificates</h3>
+
+<p>Internal infrastructure often uses custom certificates with own root CAs etc.
+Things like untrusted certificates cause Sakuli tests to fail, since no connection to an seemingly insecure host will be established (<code>InsecureCertificateError</code>).</p>
+
+<p>Unfortunately, browsers use their own certificate store, which requires some additional work to add custom certificates.</p>
+
+<h4 id="adding-custom-certificates">Adding Custom Certificates</h4>
+
+<p>In order to add custom certificates to a Sakuli container, one has to provide two things:</p>
+
+<ul>
+<li>A directory containing certificates for import (_.crt, _.cer, *.pem)</li>
+<li>An environment variable called <code>SAKULI_TRUSTED_CERT_DIR</code> which holds the path to the directory where certificates for import are located inside the container</li>
+</ul>
+
+<p>If the environment variable has been set, a startup script will pick up all certificates contained in the given folder and import each of them to all available browser certificate stores within <code>$HOME</code>, supporting both <code>cert8.db</code> databases for older browser versions as well as <code>cert9.db</code> files for recent browser versions.</p>
+
+<h4 id="sample">Sample</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~$ docker run -v /path/to/certificates/:/certificate_import -e SAKULI_TRUSTED_CERT_DIR<span style="color:#f92672">=</span>/certificate_import/ taconsol/sakuli:2.2.0</code></pre></div>
+
+<h4 id="firefox">Firefox</h4>
+
+<p>By default, a Firefox test uses a new, blank profile for each test run. In order to pick up the added certificates, a Firefox profile containing the appropriate certificate database has to be specified via <code>selenium.firefox.profile=/path/to/profile/folder</code> in <code>testsuite.properties</code>. In order to make this process easier, a dedicated Firefox profile for use with certificates is located at <code>/headless/firefox-certificates</code> to be used, instead of the generated profiles in <code>/headless/.mozilla/firefox/long_random_id.default</code>.</p>
+
+<p><strong>Attention:</strong> If this property is not set, added certificates will have no effect.</p>
+
+<h3 id="7-overview-environment-variables">7 Overview Environment Variables</h3>
 
 <table>
 <thead>
@@ -773,7 +792,7 @@ VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mous
 <tbody>
 <tr>
 <td>SAKULI_TEST_SUITE</td>
-<td>$HOME/demo_testcase</td>
+<td>\$HOME/demo_testcase</td>
 <td>Path to Sakuli testsuite to be executed</td>
 </tr>
 
@@ -817,6 +836,12 @@ VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mous
 <td>NPM_TOKEN</td>
 <td></td>
 <td>NPM token to access npmjs.com registry</td>
+</tr>
+
+<tr>
+<td>SAKULI_TRUSTED_CERT_DIR</td>
+<td></td>
+<td>Directory containing custom certificates for import</td>
 </tr>
 </tbody>
 </table>
@@ -862,7 +887,13 @@ VNC_VIEW_ONLY, default: false       // Run in view only mode, no keyboard / mous
 <li><a href="#5-1-vnc-access">5.1 VNC Access</a></li>
 <li><a href="#5-2-configuring-vnc-access">5.2 Configuring VNC Access</a></li>
 <li><a href="#5-2-container-user">5.2 Container User</a></li>
-<li><a href="#6-overview-environment-variables">6 Overview Environment Variables</a></li>
+<li><a href="#6-custom-certificates">6 Custom Certificates</a>
+<ul>
+<li><a href="#adding-custom-certificates">Adding Custom Certificates</a></li>
+<li><a href="#sample">Sample</a></li>
+<li><a href="#firefox">Firefox</a></li>
+</ul></li>
+<li><a href="#7-overview-environment-variables">7 Overview Environment Variables</a></li>
 </ul></li>
 <li><a href="#7-summary">7 Summary</a></li>
 </ul></li>
