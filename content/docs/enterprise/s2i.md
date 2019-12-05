@@ -53,7 +53,7 @@ oc create secret generic custom-certs \
     --from-file=last-cert.pem=/path/to/last/cert.pem
 {{</highlight>}}
 
-The above snippet will create a new secret called `custom-certs` which holds three key key-value pairs storing our certificates.
+The above snippet will create a new secret called `custom-certs` which holds three key-value pairs storing our certificates.
 
 ### Certificate Volume Mount
 
