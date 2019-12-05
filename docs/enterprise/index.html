@@ -508,6 +508,45 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>Some features of Sakuli require an enterprise license. Please consult our <strong><a href="/enterprise">overview</a></strong> to see and request packages and prices. After you registered for an enterprise subscription, you will get a license-key and an NPM access token which are required to use enterprise features.</p>
 
+<h2 id="assisted-setup">Assisted Setup</h2>
+
+<p>It is assumed that you have setup your environment as described in the <a href="/docs/getting-started">Getting Started Guide</a>.</p>
+
+<p>On the commandline, navigate to the root folder of your Sakuli project (where the <code>package.json</code> file is located) and run the following command:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli enable-enterprise</code></pre></div>
+
+<p>This command starts an assistant which will guide you through the setup of enterprise features. The first question is regarding the Sakuli-license key which you should have received after subscribing to an enterprise package.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">? Would you like to enter your Sakuli license information? <span style="color:#f92672">(</span>Y/n<span style="color:#f92672">)</span></code></pre></div>
+
+<p>You can enter <code>n</code> when you have already entered the license information before.</p>
+
+<p>You can enter <code>Y</code> and paste the license key in the next prompt:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">? Please enter your license key:</code></pre></div>
+
+<p>Same applies to the NPM access token which can be pasted / entered in the next prompt:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">? Please enter your npm key:</code></pre></div>
+
+<p>The following prompt asks you about the enterprise features which you want to activate. You can use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate the cursor and <kbd>SPACE</kbd> to select or deselect a feature. Pressing <kbd>ENTER</kbd> will submit your selection and start the setup process.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">? Please Select Enterprise Features to bootstrap <span style="color:#f92672">(</span>Press &lt;space&gt; to <span style="color:#66d9ef">select</span>, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection<span style="color:#f92672">)</span>
+❯◯ Forwarding to Icinga2
+ ◯ Forwarding to Check_MK
+ ◯ Forwarding to OMD</code></pre></div>
+
+<p>Sakuli will then configure the license information globally and add install and preconfigure the selected enterprise features in your project.</p>
+
+<p>The next sections is about how to setup enterprise features manually and in more detail. You can now just start using your feature:</p>
+
+<ul>
+<li><a href="/docs/enterprise/icinga2-forwarder/">Forwarding to Icinga2</a></li>
+<li><a href="/docs/enterprise/check_mk-forwarder/">Forwarding to Check_MK</a></li>
+<li><a href="/docs/enterprise/omd-forwarder/">Forwarding to OMD</a></li>
+</ul>
+
 <h2 id="using-license-information">Using License Information</h2>
 
 <p>With your active <strong><a href="/enterprise">Sakuli Enterprise</a></strong> subscription you will receive an email with:</p>
@@ -653,6 +692,7 @@ echo <span style="color:#e6db74">&#34;export VARIABLE_NAME=VALUE&#34;</span> &gt
 <ul>
 <li>
 <ul>
+<li><a href="#assisted-setup">Assisted Setup</a></li>
 <li><a href="#using-license-information">Using License Information</a>
 <ul>
 <li><a href="#global-configuration">Global configuration</a></li>

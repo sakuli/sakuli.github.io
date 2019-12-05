@@ -543,7 +543,6 @@ You can either modify these fields to your needs or just accept the defaults.</p
   <span style="color:#e6db74">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;ISC&#34;</span>
 <span style="color:#f92672">}</span>
 
-
 Is this OK? <span style="color:#f92672">(</span>yes<span style="color:#f92672">)</span></code></pre></div>
 
 <p>The empty project has been initialized after confirming the prompt.</p>
@@ -601,7 +600,7 @@ Sakuli ships a pre-built version of OpenCV. Nonetheless, the installation still 
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn global add windows-build-tools</code></pre></div>
 
-<p>In case of errors while installing the Windows Build Tools package via <code>npm</code>, please make sure that the PowerShell is available on your system <code>PATH</code>. Additionally, you should install the Windows Build Tools by using the PowerShell in administrative mode.<br />
+<p>In case of errors while installing the Windows Build Tools package via <code>npm</code>, please make sure that the PowerShell is available on your system <code>PATH</code>. Additionally, you should install the Windows Build Tools by using the PowerShell in administrative mode.
 See <a href="https://github.com/felixrieseberg/windows-build-tools/issues/20#issuecomment-373885943"><strong>this issue</strong></a> for further reference.</p>
 
 <h4 id="macos">macOS</h4>
@@ -648,7 +647,15 @@ You can install them by running:
 <li><a href="http://robotjs.io/docs/building">robotjs</a></li>
 </ul>
 
-<h2 id="setup-your-first-test">Setup your first test</h2>
+<h2 id="setup-your-first-test">Setup Your First Test</h2>
+
+<p>Since v2.2.0 Sakuli provides an easy to use mechanism to initialize testcases and testsuites.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli create project . my-sut</code></pre></div>
+
+<p>This will create all necessary files and folders to start writing your first Sakuli test right away. With this, you can skip the next section and directly start to <a href="#write-your-first-test">write your first test</a></p>
+
+<h3 id="setup-the-project-manually">Setup the Project Manually</h3>
 
 <p>Since we wanted to keep Sakuli mostly compatible to v1, the file layout looks basically the same for testsuites.</p>
 
@@ -659,7 +666,7 @@ You can install them by running:
 <p>To describe the testsuite and its testcases, two additional files are needed: <code>testsuite.properties</code> and <code>testsuite.suite</code>. These files are required for backwards compatibility (they might not be necessary in the future but will at least be supported). These files should be added to the <code>my-sut</code> folder:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd my-sut
-echo &gt; testsuite.suite 
+echo &gt; testsuite.suite
 echo &gt; testsuite.properties</code></pre></div>
 
 <p>We can add the following contents to <code>testsuite.properties</code>:</p>
@@ -676,14 +683,16 @@ echo &gt; testsuite.properties</code></pre></div>
 
 <p>With this in mind, we can add a testcase file:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir my-testcase
-echo &gt; my-testcase/testcase.js</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir case1
+echo &gt; case1/check.js</code></pre></div>
 
 <p>And add the following information to the <code>testsuite.suite</code> file:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo my-testcase/testcase.js https://sakuli.io &gt; testsuite.suite</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo case1/check.js https://sakuli.io &gt; testsuite.suite</code></pre></div>
 
-<p>After the setup you can add the actual testcode to <code>my-testcase/testcase.js</code>:</p>
+<h2 id="write-your-first-test">Write Your First Test</h2>
+
+<p>After the setup you can add the test code to <code>case1/check.js</code>:</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -708,7 +717,7 @@ echo &gt; my-testcase/testcase.js</code></pre></div>
 </span></span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">finally</span> {
 <span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>(); <span style="color:#75715e">// 4
 </span></span><span style="color:#75715e"></span>    }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>); <span style="color:#960050;background-color:#1e0010">// 5</span></code></pre></td></tr></table>
+})() <span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">/ 5</span></code></pre></td></tr></table>
 </div>
 </div>
 
@@ -719,10 +728,8 @@ echo &gt; my-testcase/testcase.js</code></pre></div>
 <li>To provide Sakuli information about our actual testcase, we create a TestCase object, which handles the execution of a testcase.</li>
 <li>If any error occurs during testing, it will be redirected to the TestCase object. It triggers Sakuli&rsquo;s internal error handling e.g. taking a screenshot of the actual failed test execution.</li>
 <li>Regardless of a failed or passed test execution, Sakuli saves all results. This is more like a legacy artifact and will be removed in the future.</li>
-<li>When the async code within the main function (see 1.) is completed, a callback passed to the <code>then</code> function is invoked. <code>done</code> is a global function, which is injected by Sakuli and which tells the engine that the test execution is over (in theory you could call this function <code>done()</code> but the syntax above is recommended).</li>
+<li>The <code>()</code> at the end of this line will invoke the defined function. Since v2.2.0 Sakuli is able to detect this invocation without explicitly chaining the call of <code>done</code> function like in previous versions (it is still possible to add <code>.then(done)</code>);</li>
 </ol>
-
-<h2 id="write-your-first-test">Write your first Test</h2>
 
 <p>Let us write a simple test using the Sakuli.io homepage as test subject. This test will verify if our &ldquo;Getting Started&rdquo; guide that you are reading at this very moment is still accessible.</p>
 
@@ -759,7 +766,7 @@ echo &gt; my-testcase/testcase.js</code></pre></div>
 </span>    } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+})();</code></pre></td></tr></table>
 </div>
 </div>
 
@@ -814,18 +821,6 @@ inside your project folder.</p>
 
 <p>Many modern IDEs support npm scripts, so it is possible to trigger test execution directly from within your IDE!</p>
 
-<h3 id="global-installation">Global installation</h3>
-
-<p>If you do not want to create separate NPM projects for your testsuites, it is also possible to install Sakuli on a <code>global</code> scale.
-When installed with the additional <code>-g</code> flag, Sakuli will be installed and added to your system <code>PATH</code> (Windows users still have to add it manually sometimes):</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i -g @sakuli/cli</code></pre></div>
-
-<p>Once the installation has been completed, you can run your Sakuli tests from your command line by simply executing:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sakuli run $PATH_TO_TESTSUITE</code></pre></div></p>
-
-<p><strong>Attention:</strong> Installing packages globally on a system wide installation of Node via <code>sudo</code> is considered a bad practice and might run into permission problems. Working with per-user installations is recommended!</p>
-
 <h3 id="congratulations">Congratulations!</h3>
 
 <p>You wrote and executed your first Sakuli test! May there be many more to come!</p>
@@ -852,13 +847,15 @@ When installed with the additional <code>-g</code> flag, Sakuli will be installe
 <li><a href="#reference">Reference</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#setup-your-first-test">Setup your first test</a></li>
-<li><a href="#write-your-first-test">Write your first Test</a></li>
+<li><a href="#setup-your-first-test">Setup Your First Test</a>
+<ul>
+<li><a href="#setup-the-project-manually">Setup the Project Manually</a></li>
+</ul></li>
+<li><a href="#write-your-first-test">Write Your First Test</a></li>
 <li><a href="#execute-your-first-test">Execute your first test</a>
 <ul>
 <li><a href="#npx-https-www-npmjs-com-package-npx"><a href="https://www.npmjs.com/package/npx">npx</a></a></li>
 <li><a href="#npm-test">npm test</a></li>
-<li><a href="#global-installation">Global installation</a></li>
 <li><a href="#congratulations">Congratulations!</a></li>
 </ul></li>
 </ul></li>

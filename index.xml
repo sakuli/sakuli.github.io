@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/docs/enterprise/icinga2-forwarder/</guid>
-      <description>Add the forwarder to your project with:
+      <description>Add the forwarder using the assistant or configure it manually:
 npm i @sakuli/forwarder-icinga2 To register the forwarder into your project you have to edit the package.json file and add the preset to the Sakuli configuration key:
 { &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-icinga2&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the enterprise section.  Enable the Icinga2 API All steps required to enable the Icinga2 API are described in the REST API documentation.</description>
     </item>
@@ -27,7 +27,7 @@ npm i @sakuli/forwarder-icinga2 To register the forwarder into your project you 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/docs/enterprise/check_mk-forwarder/</guid>
-      <description>Add the forwarder to your project with:
+      <description>Add the forwarder using the assistant or configure it manually:
 npm i @sakuli/forwarder-checkmk To register the forwarder into your project you have to edit the package.json file and add the preset to the Sakuli configuration key:
 { &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-checkmk&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the enterprise section.  Sakuli Client Configuration It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.</description>
     </item>
@@ -38,7 +38,7 @@ npm i @sakuli/forwarder-checkmk To register the forwarder into your project you 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/docs/enterprise/omd-forwarder/</guid>
-      <description>Install the forwarder to your project with:
+      <description>Add the forwarder using the assistant or configure it manually:
 npm i @sakuli/forwarder-gearman To register the forwarder into your project you have to edit the package.json file and add the preset to the Sakuli configuration key:
 { &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-gearman&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the enterprise section.  Configure OMD Sakuli transmits performance data to a Gearman result queue rather than to OMD directly.</description>
     </item>
