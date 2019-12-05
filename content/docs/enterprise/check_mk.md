@@ -4,7 +4,7 @@ weight: 200
 slug: check_mk-forwarder
 ---
 
-Add the forwarder to your project with:
+Add the forwarder using the [assistant](/docs/enterprise/#assisted-setup) or configure it manually:
 
 {{<highlight bash>}}
 npm i @sakuli/forwarder-checkmk
@@ -48,6 +48,7 @@ Now you have to set up the properties for the Check_MK receiver. In order to do 
 |`sakuli.forwarder.check_mk.service_description`|`${testsuite.id}`|Defines the service description which is used within the check result |
 |`sakuli.forwarder.check_mk.piggyback_hostname`|`local`|Defines Hostname for check results, configurable for piggyback results |
 |`sakuli.forwarder.check_mk.output.details`|`true`|Dis- / Enables detailed HTML output|
+|`sakuli.forwarder.check_mk.section_name`|`local`|Name of the reported section (&lt;&lt;&lt;YOUR_SECTION_NAME&gt;&gt;&gt;)|
 
 An example configuration could look like this:
 

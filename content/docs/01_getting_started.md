@@ -45,7 +45,6 @@ About to write to /tmp/sakuli_starter/package.json:
   "license": "ISC"
 }
 
-
 Is this OK? (yes)
 {{< /highlight >}}
 
@@ -64,7 +63,7 @@ Several wrapper packages can be found on [**npmjs.com**](https://npmjs.com), whi
 
 Since some users encountered issues with geckodriver on Firefox, we recommend using chromedriver for now. We are working on fixes and workarounds for geckodriver.
 
-Therefore, Chrome is the preferred browser for running Sakuli tests at the moment. A suitable WebDriver can be installed via: 
+Therefore, Chrome is the preferred browser for running Sakuli tests at the moment. A suitable WebDriver can be installed via:
 
 {{< highlight bash >}}
 npm i chromedriver
@@ -102,9 +101,9 @@ Sakuli ships a pre-built version of OpenCV. Nonetheless, the installation still 
 
 #### Windows
 
-In order to install and run Sakuli on Windows you need two additional tools: [**Python 2**](https://www.python.org/downloads/windows/) and the [**Windows Build Tools**](https://www.microsoft.com/en-us/download/details.aspx?id=48159). 
+In order to install and run Sakuli on Windows you need two additional tools: [**Python 2**](https://www.python.org/downloads/windows/) and the [**Windows Build Tools**](https://www.microsoft.com/en-us/download/details.aspx?id=48159).
 
-To avoid eventual installation problems for Windows users we recommend to first install Python 2 on your system separately by downloading the required version from the official web page. Afterwards you can install the Windows Build Tools manually or via NPM using: 
+To avoid eventual installation problems for Windows users we recommend to first install Python 2 on your system separately by downloading the required version from the official web page. Afterwards you can install the Windows Build Tools manually or via NPM using:
 
 {{< highlight bash >}}
 npm install --global windows-build-tools
@@ -116,7 +115,7 @@ or
 yarn global add windows-build-tools
 {{< /highlight >}}
 
-In case of errors while installing the Windows Build Tools package via `npm`, please make sure that the PowerShell is available on your system `PATH`. Additionally, you should install the Windows Build Tools by using the PowerShell in administrative mode.  
+In case of errors while installing the Windows Build Tools package via `npm`, please make sure that the PowerShell is available on your system `PATH`. Additionally, you should install the Windows Build Tools by using the PowerShell in administrative mode.
 See [**this issue**](https://github.com/felixrieseberg/windows-build-tools/issues/20#issuecomment-373885943) for further reference.
 
 #### macOS
@@ -167,7 +166,17 @@ This will install Sakuli and its required dependencies.
 - [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs#how-to-install)
 - [robotjs](http://robotjs.io/docs/building)
 
-## Setup your first test
+## Setup Your First Test
+
+Since v2.2.0 Sakuli provides an easy to use mechanism to initialize testcases and testsuites.
+
+{{< highlight bash >}}
+npx sakuli create project . my-sut
+{{< /highlight >}}
+
+This will create all necessary files and folders to start writing your first Sakuli test right away. With this, you can skip the next section and directly start to [write your first test](#write-your-first-test)
+
+### Setup the Project Manually
 
 Since we wanted to keep Sakuli mostly compatible to v1, the file layout looks basically the same for testsuites.
 
@@ -181,7 +190,7 @@ To describe the testsuite and its testcases, two additional files are needed: `t
 
 {{< highlight bash >}}
 cd my-sut
-echo > testsuite.suite 
+echo > testsuite.suite
 echo > testsuite.properties
 {{< /highlight >}}
 
@@ -204,17 +213,19 @@ The actual testcase file must be placed inside a folder (this is due to the form
 With this in mind, we can add a testcase file:
 
 {{< highlight bash >}}
-mkdir my-testcase
-echo > my-testcase/testcase.js
+mkdir case1
+echo > case1/check.js
 {{< /highlight >}}
 
 And add the following information to the `testsuite.suite` file:
 
 {{< highlight bash >}}
-echo my-testcase/testcase.js https://sakuli.io > testsuite.suite
+echo case1/check.js https://sakuli.io > testsuite.suite
 {{< /highlight >}}
 
-After the setup you can add the actual testcode to `my-testcase/testcase.js`:
+## Write Your First Test
+
+After the setup you can add the test code to `case1/check.js`:
 
 {{< highlight typescript "linenos=table,hl_lines=1 2 6 8 11" >}}
 
@@ -227,7 +238,7 @@ After the setup you can add the actual testcode to `my-testcase/testcase.js`:
     } finally {
         await testCase.saveResult(); // 4
     }
-})().then(done); // 5
+})() // 5
 
 {{< /highlight >}}
 
@@ -237,9 +248,7 @@ Let us examine this piece of code:
 2. To provide Sakuli information about our actual testcase, we create a TestCase object, which handles the execution of a testcase.
 3. If any error occurs during testing, it will be redirected to the TestCase object. It triggers Sakuli's internal error handling e.g. taking a screenshot of the actual failed test execution.
 4. Regardless of a failed or passed test execution, Sakuli saves all results. This is more like a legacy artifact and will be removed in the future.
-5. When the async code within the main function (see 1.) is completed, a callback passed to the `then` function is invoked. `done` is a global function, which is injected by Sakuli and which tells the engine that the test execution is over (in theory you could call this function `done()` but the syntax above is recommended).
-
-## Write your first Test
+5. The `()` at the end of this line will invoke the defined function. Since v2.2.0 Sakuli is able to detect this invocation without explicitly chaining the call of `done` function like in previous versions (it is still possible to add `.then(done)`);
 
 Let us write a simple test using the Sakuli.io homepage as test subject. This test will verify if our "Getting Started" guide that you are reading at this very moment is still accessible.
 
@@ -259,7 +268,7 @@ Let us write a simple test using the Sakuli.io homepage as test subject. This te
     } finally {
         await testCase.saveResult();
     }
-})().then(done);
+})();
 
 {{< /highlight >}}
 
@@ -317,22 +326,6 @@ npm test
 inside your project folder.
 
 Many modern IDEs support npm scripts, so it is possible to trigger test execution directly from within your IDE!
-
-### Global installation
-
-If you do not want to create separate NPM projects for your testsuites, it is also possible to install Sakuli on a `global` scale.
-When installed with the additional `-g` flag, Sakuli will be installed and added to your system `PATH` (Windows users still have to add it manually sometimes):
-
-{{< highlight bash >}}
-npm i -g @sakuli/cli
-{{< /highlight >}}
-
-Once the installation has been completed, you can run your Sakuli tests from your command line by simply executing:
-{{< highlight bash >}}
-sakuli run $PATH_TO_TESTSUITE
-{{< /highlight >}}
-
-**Attention:** Installing packages globally on a system wide installation of Node via `sudo` is considered a bad practice and might run into permission problems. Working with per-user installations is recommended!
 
 ### Congratulations!
 You wrote and executed your first Sakuli test! May there be many more to come!

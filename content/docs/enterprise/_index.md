@@ -6,6 +6,53 @@ weight: 3000
 
 Some features of Sakuli require an enterprise license. Please consult our **[overview](/enterprise)** to see and request packages and prices. After you registered for an enterprise subscription, you will get a license-key and an NPM access token which are required to use enterprise features.
 
+## Assisted Setup
+
+It is assumed that you have setup your environment as described in the [Getting Started Guide](/docs/getting-started).
+
+On the commandline, navigate to the root folder of your Sakuli project (where the `package.json` file is located) and run the following command:
+
+{{<highlight bash>}}
+npx sakuli enable-enterprise
+{{</highlight>}}
+
+This command starts an assistant which will guide you through the setup of enterprise features. The first question is regarding the Sakuli-license key which you should have received after subscribing to an enterprise package.
+
+{{<highlight bash>}}
+? Would you like to enter your Sakuli license information? (Y/n)
+{{</highlight>}}
+
+You can enter `n` when you have already entered the license information before.
+
+You can enter `Y` and paste the license key in the next prompt:
+
+{{<highlight bash>}}
+? Please enter your license key:
+{{</highlight>}}
+
+Same applies to the NPM access token which can be pasted / entered in the next prompt:
+
+{{<highlight bash>}}
+? Please enter your npm key:
+{{</highlight>}}
+
+The following prompt asks you about the enterprise features which you want to activate. You can use <kbd>↑</kbd> and <kbd>↓</kbd> to navigate the cursor and <kbd>SPACE</kbd> to select or deselect a feature. Pressing <kbd>ENTER</kbd> will submit your selection and start the setup process.
+
+{{<highlight bash>}}
+? Please Select Enterprise Features to bootstrap (Press <space> to select, <a> to toggle all, <i> to invert selection)
+❯◯ Forwarding to Icinga2
+ ◯ Forwarding to Check_MK
+ ◯ Forwarding to OMD
+{{</highlight>}}
+
+Sakuli will then configure the license information globally and add install and preconfigure the selected enterprise features in your project.
+
+The next sections is about how to setup enterprise features manually and in more detail. You can now just start using your feature:
+
+- [Forwarding to Icinga2](/docs/enterprise/icinga2-forwarder/)
+- [Forwarding to Check_MK](/docs/enterprise/check_mk-forwarder/)
+- [Forwarding to OMD](/docs/enterprise/omd-forwarder/)
+
 ## Using License Information
 
 With your active **[Sakuli Enterprise](/enterprise)** subscription you will receive an email with:
@@ -14,7 +61,6 @@ With your active **[Sakuli Enterprise](/enterprise)** subscription you will rece
 - and a _NPM-Token_ - Allows access to Sakuli's private enterprise packages on NPM
 
 There are several ways to handle these information. The most simple way for setting up your enterprise features is as follows (_substitute the placeholders between the chevrons with the appropriate values_):
-
 
 ### Global configuration
 The most simple way to get your enterprise features to work is the following configuration (_substitute the placeholders marked by the angle-brackets with its appropriate values_):
@@ -150,4 +196,3 @@ A new variable can be added with the command:
 echo "export VARIABLE_NAME=VALUE" >> ~/.bashrc  # Linux
 echo "export VARIABLE_NAME=VALUE" >> ~/.profile # OSX
 {{</highlight>}}
-

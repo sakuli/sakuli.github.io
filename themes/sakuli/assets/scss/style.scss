@@ -48,7 +48,24 @@ main {
             width: 100%;
             margin: 1rem
         }
+
+
+        a {
+            color: darken($color-green, 10%);
+            font-weight: bold;
+            //transition: color .15s ease-out;
+
+            &:hover {
+                color: $color-green !important;
+            }
+
+            &:visited {
+                color: desaturate($color-green, 50%) !important;
+            }
+        }
+
     }
+
 }
 
 pre {
