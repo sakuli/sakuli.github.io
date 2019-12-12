@@ -21,9 +21,15 @@ Options:
   --package             Create additional package.json for testsuite
 {{</highlight>}}
 
+This creates a Sakuli testsuite folder with the `testsuite.suite` and `testsuite.properties` files and a `check1` folder
+containing an empty `check.js` for the Sakuli testcase. With the `--package` option it is possible to additionally create
+a `package.json`. Further information on how to set up a Sakuli project and the needed files can be found
+[here](../docs/100_writing-tests#setup-and-configuration).
+
+
 ### sakuli create masterkey
 {{<highlight bash>}}
-npx sakuli create masterkey [ --algorithm ]
+npx sakuli create <masterkey> [ --algorithm ]
 
 
 Generates a new masterkey
@@ -32,6 +38,9 @@ Generates a new masterkey
 Positionals:
   algorithm             The algorithm to create a key for                           [optional][default: "aes-128-cbc"]
 {{</highlight>}}
+
+This command outputs a masterkey which can be used to encrypt a secret with the [`sakuli encrypt`](#sakuli-encrypt)
+command or to decrypt a secret in a testcase with a Sakuli function like `Environment.decryptSecret()`.
 
   
 ### sakuli enable-enterprise
@@ -42,21 +51,12 @@ npx sakuli enable-enterprise
 Configures and enables enterprise features
 {{</highlight>}}
 
-### sakuli enable-typescript
-{{<highlight bash>}}
-npx sakuli enable-typescript project
-
-
-Enables Typescript support for the provided project
-
-
-Positionals:
-  project               Path to the project, can be absolute or relative to $PWD    [required]
-{{</highlight>}}
+This command starts an assistant which will guide you through the setup of enterprise features. More information on how
+to use the `enable-enterprise` command can be found [here](../enterprise#assisted-setup).
 
 ### sakuli encrypt
 {{<highlight bash>}}
-npx sakuli encrypt secret --masterkey
+npx sakuli encrypt <secret> --masterkey
 
 
 Encrypts a secret via provided masterkey
@@ -69,9 +69,13 @@ Options:
   --masterkey           The masterkey used for encryption                           [required]
 {{</highlight>}}
 
+To use this command it is necessary to create a masterkey with [`npx create masterkey`](#sakuli-create-masterkey) first.
+With `npx sakuli encrypt` you can now encrypt a secret or password which then can be decrypted in the Sakuli testcase
+with one of the decryption functions like `Environment.decryptSecret()`. 
+
 ### sakuli migrate
 {{<highlight bash>}}
-npx sakuli migrate path
+npx sakuli migrate <path>
 
 
 Transforms all legacy testsuites into new syntax
@@ -81,10 +85,12 @@ Positional
   path                  path to a legacy suite                                      [required]
 {{</highlight>}}
 
+Since Sakuli had some minor changes in the syntax with v2, old Sakuli v1 testcases need to be adapted to the new syntax.
+With this command Sakuli takes over this task. 
 
 ### sakuli run
 {{<highlight bash>}}
-npx sakuli run path
+npx sakuli run <path>
 
 
 Runs a Sakuli Suite
