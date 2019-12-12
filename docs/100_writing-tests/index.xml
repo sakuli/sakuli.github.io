@@ -22,6 +22,16 @@
     </item>
     
     <item>
+      <title>Frequently Asked Questions</title>
+      <link>https://sakuli.io/docs/100_writing-tests/faq-tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sakuli.io/docs/100_writing-tests/faq-tests/</guid>
+      <description>How can I handle frames or iframes in Sakuli? Since v2.2.0 Sakuli will automatically detect different frames (and iframes) and will search for elements in each frame when the element can not be found in default frame. But it is also possible to switch between frames manually by using the iframe webelement or its respective index.
+const myIframe = await _fetch(_iframe(&amp;#39;frameName&amp;#39;)); await driver.switchTo().frame(myIframe);  const frameIndex = 0; await driver.</description>
+    </item>
+    
+    <item>
       <title>Interacting with the environment</title>
       <link>https://sakuli.io/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
