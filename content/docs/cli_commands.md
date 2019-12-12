@@ -21,10 +21,9 @@ Options:
   --package             Create additional package.json for testsuite
 {{</highlight>}}
 
-This creates a Sakuli testsuite folder with the `testsuite.suite` and `testsuite.properties` files and a `check1` folder
-containing an empty `check.js` for the Sakuli testcase. With the `--package` option it is possible to additionally create
-a `package.json`. Further information on how to set up a Sakuli project and the needed files can be found
-[here](../docs/100_writing-tests#setup-and-configuration).
+This creates a Sakuli testsuite folder with the `testsuite.suite` and `testsuite.properties` files and a `case1` folder
+containing an empty `check.js`. With the `--package` option, it is possible to create an additional `package.json`.
+Further information on how to set up a Sakuli project and the needed files can be found [here](../docs/100_writing-tests#setup-and-configuration).
 
 
 ### sakuli create masterkey
@@ -39,7 +38,7 @@ Positionals:
   algorithm             The algorithm to create a key for                           [optional][default: "aes-128-cbc"]
 {{</highlight>}}
 
-This command outputs a masterkey which can be used to encrypt a secret with the [`sakuli encrypt`](#sakuli-encrypt)
+This command outputs a masterkey which can be used to encrypt a secret with the [sakuli encrypt](#sakuli-encrypt)
 command or to decrypt a secret in a testcase with a Sakuli function like `Environment.decryptSecret()`.
 
   
