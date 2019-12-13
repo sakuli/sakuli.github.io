@@ -6,7 +6,7 @@ weight: 0
 
 ### sakuli create project
 {{<highlight bash>}}
-npx sakuli create project [ path ] [ suiteName ] [ --force | -f ] [ --package ]
+npx sakuli create project [ <path> ] [ <suiteName> ] [ --force | -f ] [ --package ]
 
 
 Generates a default project structure
