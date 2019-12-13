@@ -28,7 +28,7 @@ Further information on how to set up a Sakuli project and the needed files can b
 
 ### sakuli create masterkey
 {{<highlight bash>}}
-npx sakuli create <masterkey> [ --algorithm ]
+npx sakuli create masterkey [ --algorithm ]
 
 
 Generates a new masterkey
