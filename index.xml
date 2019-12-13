@@ -86,6 +86,15 @@ To install Node on your system, you can either go to the Node website or you can
     </item>
     
     <item>
+      <title>CLI Commands</title>
+      <link>https://sakuli.io/docs/cli-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sakuli.io/docs/cli-commands/</guid>
+      <description>sakuli create project npx sakuli create project [ &amp;lt;path&amp;gt; ] [ &amp;lt;suiteName&amp;gt; ] [ --force | -f ] [ --package ] Generates a default project structure Positionals: path Path to create testsuite [optional][default: $PWD] suiteName Name of testsuite [optional][default: sakuli_test_suite] Options: --force (alias -f) Forces sakuli to create testsuite --package Create additional package.json for testsuite This creates a Sakuli testsuite folder with the testsuite.suite and testsuite.properties files and a case1 folder containing an empty check.</description>
+    </item>
+    
+    <item>
       <title>End to End Monitoring</title>
       <link>https://sakuli.io/monitoring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -15,7 +15,7 @@
     
 
     <title>
-        Sakuli End2End Testing and Monitoring | Check_MK Forwarder
+        Sakuli End2End Testing and Monitoring | CLI Commands
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,13 +36,13 @@
     <meta name="DC.Description" content="Behavior and performance validation of every application. DOM and native UI Testing features cover every scenario. Send performance data to monitoring systems.">
     <meta name="DC.Language" content="en">
 
-    <meta property="og:title" content="Sakuli End2End Testing and Monitoring | Check_MK Forwarder" />
+    <meta property="og:title" content="Sakuli End2End Testing and Monitoring | CLI Commands" />
     <meta property="og:description" content="Behavior and performance validation of every application. DOM and native UI Testing features cover every scenario. Send performance data to monitoring systems." />
     <meta property="og:image" content="https://sakuli.io/images/sakuli_hero.png" />
     <meta property="og:site_name" content="Sakuli End-to-End Testing and Monitoring" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Sakuli E2E | Check_MK Forwarder" />
+    <meta name="twitter:title" content="Sakuli E2E | CLI Commands" />
     <meta name="twitter:description" content="Behavior and performance validation of basically every application. Test like a real-world user. DOM-based and native UI Testing features cover every scenario. Send performance data to monitoring systems. The Pinnacle of Testing!" />
     <meta name="twitter:image" content="https://sakuli.io/images/sakuli_hero.png" />
     <meta name="twitter:site" content="@sakuli_e2e" />
@@ -414,7 +414,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/enterprise/check_mk-forwarder/" class=" active ">
+    <a href="/docs/enterprise/check_mk-forwarder/" class="">
             Check_MK Forwarder
     </a>
     
@@ -483,7 +483,7 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
             
 <li class="no-chevron">
     <i class="chevron">&nbsp;</i>
-    <a href="/docs/cli-commands/" class="">
+    <a href="/docs/cli-commands/" class=" active ">
             CLI Commands
     </a>
     
@@ -535,109 +535,95 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
     </aside>
     <div class="page">
         <article class="shrink-content">
-            <h1>Check_MK Forwarder</h1>
+            <h1>CLI Commands</h1>
             
 
-<p>Add the forwarder using the <a href="/docs/enterprise/#assisted-setup">assistant</a> or configure it manually:</p>
+<h3 id="sakuli-create-project">sakuli create project</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i @sakuli/forwarder-checkmk</code></pre></div>
-
-<p>To register the forwarder into your project you have to edit the <code>package.json</code> file and add the preset to the Sakuli configuration key:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;sakuli&#34;</span>: {
-        <span style="color:#f92672">&#34;presetProvider&#34;</span>: [
-            <span style="color:#e6db74">&#34;@sakuli/legacy&#34;</span>,
-            <span style="color:#e6db74">&#34;@sakuli/forwarder-checkmk&#34;</span>
-        ]
-    }
-}</code></pre></div>
-
-<div class="alert alert-dark" role="alert">
-    Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the <strong><a href="/docs/enterprise#using-licences-information">enterprise section</a></strong>.
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli create project <span style="color:#f92672">[</span> &lt;path&gt; <span style="color:#f92672">]</span> <span style="color:#f92672">[</span> &lt;suiteName&gt; <span style="color:#f92672">]</span> <span style="color:#f92672">[</span> --force | -f <span style="color:#f92672">]</span> <span style="color:#f92672">[</span> --package <span style="color:#f92672">]</span>
 
 
-<h2 id="sakuli-client-configuration">Sakuli Client Configuration</h2>
+Generates a default project structure
 
-<p>It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.</p>
 
-<h3 id="spool-folder">Spool folder</h3>
+Positionals:
+  path                  Path to create testsuite                                    <span style="color:#f92672">[</span>optional<span style="color:#f92672">][</span>default: $PWD<span style="color:#f92672">]</span>
+  suiteName             Name of testsuite                                           <span style="color:#f92672">[</span>optional<span style="color:#f92672">][</span>default: sakuli_test_suite<span style="color:#f92672">]</span>
+  
+Options:
+  --force <span style="color:#f92672">(</span>alias -f<span style="color:#f92672">)</span>    Forces sakuli to create testsuite
+  --package             Create additional package.json <span style="color:#66d9ef">for</span> testsuite</code></pre></div>
 
-<p>Create a new folder <code>spool</code> in the installation path of the Check_MK agent. This is the folder where the results will be written and stored into. Don&rsquo;t forget to grant writing permissions for the folder to the user running Sakuli checks.</p>
+<p>This creates a Sakuli testsuite folder with the <code>testsuite.suite</code> and <code>testsuite.properties</code> files and a <code>case1</code> folder
+containing an empty <code>check.js</code>. With the <code>--package</code> option, it is possible to create an additional <code>package.json</code>.
+Further information on how to set up a Sakuli project and the needed files can be found <a href="../docs/100_writing-tests#setup-and-configuration">here</a>.</p>
 
-<h3 id="forwarder-configuration">Forwarder configuration</h3>
+<h3 id="sakuli-create-masterkey">sakuli create masterkey</h3>
 
-<p>Now you have to set up the properties for the Check_MK receiver. In order to do this, edit the <code>sakuli.properties</code> in the folder containing the testsuites:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli create masterkey <span style="color:#f92672">[</span> --algorithm <span style="color:#f92672">]</span>
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Default</th>
-<th>Effect</th>
-</tr>
-</thead>
 
-<tbody>
-<tr>
-<td><code>sakuli.forwarder.check_mk.enabled</code></td>
-<td><code>false</code></td>
-<td>Enables writing to the spool file</td>
-</tr>
+Generates a new masterkey
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.spooldir</code></td>
-<td><code>/var/lib/check_mk_agent/spool</code> (Linux)<br/><code>&lt;CMK_installation_path&gt;\\spool</code> (Windows)</td>
-<td>Path to the spool folder as defined above. On Windows, the backslashes have to be escaped with &lsquo;\&lsquo;. Check_MK is expecting the result files from Sakuli in here</td>
-</tr>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.freshness</code></td>
-<td><code>600</code></td>
-<td>Defines the maximal age in seconds for which the result is still valid. If the last modification of the result file is older than this property, the result file will be ignored. The Check_MK service will turn into UNKNOWN</td>
-</tr>
+Positionals:
+  algorithm             The algorithm to create a key <span style="color:#66d9ef">for</span>                           <span style="color:#f92672">[</span>optional<span style="color:#f92672">][</span>default: <span style="color:#e6db74">&#34;aes-128-cbc&#34;</span><span style="color:#f92672">]</span></code></pre></div>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.spoolfile_prefix</code></td>
-<td><code>sakuli_suite_</code></td>
-<td>Defines the result file prefix. It can be used to change the default naming convention for the Check_MK output files</td>
-</tr>
+<p>This command outputs a masterkey which can be used to encrypt a secret with the <a href="#sakuli-encrypt">sakuli encrypt</a>
+command or to decrypt a secret in a testcase with a Sakuli function like <code>Environment.decryptSecret()</code>.</p>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.service_description</code></td>
-<td><code>${testsuite.id}</code></td>
-<td>Defines the service description which is used within the check result</td>
-</tr>
+<h3 id="sakuli-enable-enterprise">sakuli enable-enterprise</h3>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.piggyback_hostname</code></td>
-<td><code>local</code></td>
-<td>Defines Hostname for check results, configurable for piggyback results</td>
-</tr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli enable-enterprise
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.output.details</code></td>
-<td><code>true</code></td>
-<td>Dis- / Enables detailed HTML output</td>
-</tr>
 
-<tr>
-<td><code>sakuli.forwarder.check_mk.section_name</code></td>
-<td><code>local</code></td>
-<td>Name of the reported section (&lt;&lt;&lt;YOUR_SECTION_NAME&gt;&gt;&gt;)</td>
-</tr>
-</tbody>
-</table>
+Configures and enables enterprise features</code></pre></div>
 
-<p>An example configuration could look like this:</p>
+<p>This command starts an assistant which will guide you through the setup of enterprise features. More information on how
+to use the <code>enable-enterprise</code> command can be found <a href="../enterprise#assisted-setup">here</a>.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-properties" data-lang="properties">sakuli.forwarder.check_mk.enabled=true
-sakuli.forwarder.check_mk.spooldir=/var/lib/check_mk_agent/spool
-sakuli.forwarder.check_mk.freshness=600
-sakuli.forwarder.check_mk.spoolfile_prefix=sakuli_suite_
-sakuli.forwarder.check_mk.service_description=My_Custom_Service
-sakuli.forwarder.check_mk.piggyback_hostname=MyHost</code></pre></div>
+<h3 id="sakuli-encrypt">sakuli encrypt</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli encrypt &lt;secret&gt; --masterkey
+
+
+Encrypts a secret via provided masterkey
+
+
+Positionals:
+  secret                The secret to encrypt                                       <span style="color:#f92672">[</span>required<span style="color:#f92672">]</span>
+  
+Options:
+  --masterkey           The masterkey used <span style="color:#66d9ef">for</span> encryption                           <span style="color:#f92672">[</span>required<span style="color:#f92672">]</span></code></pre></div>
+
+<p>To use this command it is necessary to create a masterkey with <a href="#sakuli-create-masterkey"><code>npx create masterkey</code></a> first.
+With <code>npx sakuli encrypt</code> you can now encrypt a secret or password which then can be decrypted in the Sakuli testcase
+with one of the decryption functions like <code>Environment.decryptSecret()</code>.</p>
+
+<h3 id="sakuli-migrate">sakuli migrate</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli migrate &lt;path&gt;
+
+
+Transforms all legacy testsuites into new syntax
+
+
+Positional
+  path                  path to a legacy suite                                      <span style="color:#f92672">[</span>required<span style="color:#f92672">]</span></code></pre></div>
+
+<p>Since Sakuli had some minor changes in the syntax with v2, old Sakuli v1 testcases need to be adapted to the new syntax.
+With this command Sakuli takes over this task.</p>
+
+<h3 id="sakuli-run">sakuli run</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx sakuli run &lt;path&gt;
+
+
+Runs a Sakuli Suite
+
+
+Positionals:
+  path                  path to Sakuli suite                                        <span style="color:#f92672">[</span>required<span style="color:#f92672">]</span></code></pre></div>
 
         </article>
         <aside id="secondary-nav">
@@ -645,10 +631,14 @@ sakuli.forwarder.check_mk.piggyback_hostname=MyHost</code></pre></div>
 <ul>
 <li>
 <ul>
-<li><a href="#sakuli-client-configuration">Sakuli Client Configuration</a>
+<li>
 <ul>
-<li><a href="#spool-folder">Spool folder</a></li>
-<li><a href="#forwarder-configuration">Forwarder configuration</a></li>
+<li><a href="#sakuli-create-project">sakuli create project</a></li>
+<li><a href="#sakuli-create-masterkey">sakuli create masterkey</a></li>
+<li><a href="#sakuli-enable-enterprise">sakuli enable-enterprise</a></li>
+<li><a href="#sakuli-encrypt">sakuli encrypt</a></li>
+<li><a href="#sakuli-migrate">sakuli migrate</a></li>
+<li><a href="#sakuli-run">sakuli run</a></li>
 </ul></li>
 </ul></li>
 </ul>
