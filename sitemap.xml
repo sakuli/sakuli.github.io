@@ -44,6 +44,11 @@
   </url>
   
   <url>
+    <loc>https://sakuli.io/docs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sakuli.io/monitoring/</loc>
   </url>
   
@@ -85,10 +90,6 @@
   
   <url>
     <loc>https://sakuli.io/enterprise/core/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/</loc>
   </url>
   
   <url>
