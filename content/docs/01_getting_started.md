@@ -257,11 +257,13 @@ Let us write a simple test using the Sakuli.io homepage as test subject. This te
 (async () => {
     const testCase = new TestCase();
     try {
-        await _navigateTo("https://sakuli.io");                  // 1
-        testCase.endOfStep("Open Landing Page", 5, 10);          // 2
-        await _click(_link("Getting started"));                  // 3
-        testCase.endOfStep("Navigate to Getting Started", 3, 5);
-        await _highlight(_code("npm init"));                     // 4
+        await _navigateTo("https://sakuli.io");
+        testCase.endOfStep("Open Landing Page", 5, 10);
+        await _click(_link("Getting started"));
+        await _click(_link("Initialization"));
+        testCase.endOfStep("Navigate to Initialization Section", 3, 5);
+
+        await _highlight(_code("npm init"), 3000);
         testCase.endOfStep("Find npm init code sample");
     } catch (e) {
         await testCase.handleException(e);

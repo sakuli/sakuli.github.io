@@ -44,6 +44,7 @@ const testCase = new TestCase();
 _navigateTo("https://sakuli.io")
     .then(_ => testCase.endOfStep("Open Landing Page", 5, 10))
     .then(_ => _click(_link("Getting started")))
+    .then(_ => _click(_link("Initialization")))
     .then(_ => _highlight(_code("npm init")))
     .then(_ => testCase.endOfStep("Find npm init code sample"))
     .catch(e => testCase.handleException(e))
