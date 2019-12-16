@@ -576,14 +576,18 @@ To reproduce this scenario, you need to capture screenshots of the egg and the p
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;native_keyboard_demo&#34;</span>);
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://codepen.io/naturalhanglider/full/jQMWoq&#34;</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">screen</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>();
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
     <span style="color:#66d9ef">try</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">setSimilarity</span>(<span style="color:#ae81ff">0.8</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>
             .<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;source_egg.png&#34;</span>)
             .<span style="color:#a6e22e">mouseMove</span>()
@@ -596,7 +600,7 @@ To reproduce this scenario, you need to capture screenshots of the egg and the p
     } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+})();</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -650,14 +654,18 @@ To reproduce this scenario, you need to capture screenshots of the egg and the p
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;native_demo&#34;</span>);
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://codepen.io/naturalhanglider/full/jQMWoq&#34;</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">screen</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>();
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
     <span style="color:#66d9ef">try</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">setSimilarity</span>(<span style="color:#ae81ff">0.8</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;source_egg.png&#34;</span>).<span style="color:#a6e22e">mouseMove</span>().<span style="color:#a6e22e">mouseDown</span>(<span style="color:#a6e22e">MouseButton</span>.<span style="color:#a6e22e">LEFT</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">mouseMove</span>();
         <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>(<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">700</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">100</span>).<span style="color:#a6e22e">mouseMove</span>();
@@ -668,7 +676,7 @@ To reproduce this scenario, you need to capture screenshots of the egg and the p
     } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+})();</code></pre></td></tr></table>
 </div>
 </div>
 

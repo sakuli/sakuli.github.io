@@ -260,23 +260,19 @@ enable-background="new 0 0 283.46 283.46" xml:space="preserve">
 
 <p>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system&rsquo;s mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
     <span style="color:#66d9ef">try</span> {
-
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;example.com&#34;</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://example.com&#34;</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_setValue</span>(<span style="color:#a6e22e">_input</span>(<span style="color:#e6db74">&#39;user&#39;</span>), <span style="color:#e6db74">&#39;me&#39;</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_setValue</span>(<span style="color:#a6e22e">_password_</span>(<span style="color:#e6db74">&#39;password&#39;</span>), <span style="color:#e6db74">&#39;top-$ecret&#39;</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_button</span>(<span style="color:#e6db74">&#39;Login&#39;</span>));
-
         <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#39;Login&#39;</span>);
     } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
     } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
-
-}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></div></p>
+})();</code></pre></div></p>
 
 <h2 id="testing-features">Testing Features</h2>
 
@@ -422,12 +418,10 @@ This small test basically opens up &lsquo;Google&rsquo;, tries to find the &lsqu
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;demo_testcase&#34;</span>);
-
     <span style="color:#66d9ef">try</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://www.google.de/?hl=en&#34;</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;About&#34;</span>), <span style="color:#ae81ff">200</span>);
@@ -436,7 +430,7 @@ This small test basically opens up &lsquo;Google&rsquo;, tries to find the &lsqu
     } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+})();</code></pre></td></tr></table>
 </div>
 </div>
 
@@ -488,14 +482,18 @@ This small test basically opens up &lsquo;Google&rsquo;, tries to find the &lsqu
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>(<span style="color:#e6db74">&#34;native_keyboard_demo&#34;</span>);
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://codepen.io/naturalhanglider/full/jQMWoq&#34;</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">screen</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Region</span>();
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">env</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Environment</span>();
     <span style="color:#66d9ef">try</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#a6e22e">url</span>);
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">setSimilarity</span>(<span style="color:#ae81ff">0.8</span>);
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">screen</span>
             .<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;source_egg.png&#34;</span>)
             .<span style="color:#a6e22e">mouseMove</span>()
@@ -508,7 +506,7 @@ This small test basically opens up &lsquo;Google&rsquo;, tries to find the &lsqu
     } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
-})().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">done</span>);</code></pre></td></tr></table>
+})();</code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -782,20 +782,24 @@ echo &gt; case1/check.js</code></pre></div>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="display:block;width:100%;background-color:#3c3d38">(<span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
 </span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">testCase</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TestCase</span>();
 </span>    <span style="color:#66d9ef">try</span> {
-        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://sakuli.io&#34;</span>);                  <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Open Landing Page&#34;</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>);          <span style="color:#75715e">// 2
-</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Getting started&#34;</span>));                  <span style="color:#75715e">// 3
-</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Navigate to Getting Started&#34;</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>);
-<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_code</span>(<span style="color:#e6db74">&#34;npm init&#34;</span>));                     <span style="color:#75715e">// 4
-</span></span><span style="color:#75715e"></span>        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Find npm init code sample&#34;</span>);
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
-</span>    } <span style="color:#66d9ef">finally</span> {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_navigateTo</span>(<span style="color:#e6db74">&#34;https://sakuli.io&#34;</span>);
+        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Open Landing Page&#34;</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>);
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Getting started&#34;</span>));
+</span>        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_click</span>(<span style="color:#a6e22e">_link</span>(<span style="color:#e6db74">&#34;Initialization&#34;</span>));
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Navigate to Initialization Section&#34;</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>);
+</span>
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">_highlight</span>(<span style="color:#a6e22e">_code</span>(<span style="color:#e6db74">&#34;npm init&#34;</span>), <span style="color:#ae81ff">3000</span>);
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">endOfStep</span>(<span style="color:#e6db74">&#34;Find npm init code sample&#34;</span>);
+</span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">handleException</span>(<span style="color:#a6e22e">e</span>);
+    } <span style="color:#66d9ef">finally</span> {
         <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">testCase</span>.<span style="color:#a6e22e">saveResult</span>();
     }
 })();</code></pre></td></tr></table>

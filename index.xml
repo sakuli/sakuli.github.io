@@ -227,7 +227,7 @@ Of course, you can also use Sakulis native testing power on its own, e.</descrip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/testing/</guid>
-      <description>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system&amp;rsquo;s mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
+      <description>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system&amp;rsquo;s mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;https://example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
     </item>
     
   </channel>
