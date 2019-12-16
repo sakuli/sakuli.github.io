@@ -129,8 +129,10 @@ The following code shows a drag&drop example in which the source and target area
     const testCase = new TestCase("native_keyboard_demo");
     const url = "https://codepen.io/naturalhanglider/full/jQMWoq";
     const screen = new Region();
+    const env = new Environment();
     try {
         await _navigateTo(url);
+        await env.setSimilarity(0.8);
         await screen
             .find("source_egg.png")
             .mouseMove()
@@ -143,7 +145,7 @@ The following code shows a drag&drop example in which the source and target area
     } finally {
         testCase.saveResult();
     }
-})().then(done);
+})();
 {{< /highlight>}}
 {{%/feature-card%}}
 
