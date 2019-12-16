@@ -5,26 +5,20 @@ slug: testing
 
 Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system's mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form:
 {{< highlight typescript >}}
-
 (async () => {
-
     const testCase = new TestCase();
     try {
-
-        await _navigateTo("example.com");
+        await _navigateTo("https://example.com");
         await _setValue(_input('user'), 'me');
         await _setValue(_password_('password'), 'top-$ecret');
         await _click(_button('Login'));
-
         testCase.endOfStep('Login');
     } catch (e) {
         await testCase.handleException(e);
     } finally {
         await testCase.saveResult();
     }
-
-}).then(done);
-
+})();
 {{< /highlight >}}
 
 ## Testing Features
@@ -96,7 +90,6 @@ const highlight = async (driver, element, duration) => {
 {{< highlight typescript "linenos=table" >}}
 (async () => {
     const testCase = new TestCase("demo_testcase");
-
     try {
         await _navigateTo("https://www.google.de/?hl=en");
         await _highlight(_link("About"), 200);
@@ -105,7 +98,7 @@ const highlight = async (driver, element, duration) => {
     } finally {
         await testCase.saveResult();
     }
-})().then(done);
+})();
 {{< /highlight >}}
 
 - No manual webdriver setup
