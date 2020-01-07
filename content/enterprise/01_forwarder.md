@@ -29,20 +29,15 @@ Sakuli and Sakuli Forwarder are designed to handle this task so you (and your ma
 
 ## Your Package
 
-Sakuli Forwarder package ships with:
+Sakuli Forwarder package ships with the following Monitoring Forwarder:
 
-- Forwarder
-- Templates
+Supported Monitoring Systems
 
-Supported Monitoring Systems:
-
-  - <a href="https://labs.consol.de/omd/" target="_blank">OMD (Nagios, Gearman)</a>
+  - <a href="https://labs.consol.de/omd/" target="_blank" rel="noopener">OMD (Nagios, Gearman)</a>
   - Icinga2
   - Checkmk
-  - SQL Databases
-   - MySQL
-   - Any other DB system --> __*on request*__
+  - <a href="https://prometheus.io/" target="_blank" rel="noopener">Prometheus</a> --> __*coming soon*__
   - ElasticSearch --> __*coming soon*__
-  - Nagios native --> __*coming soon*__
+  - SQL Databases --> __*on request*__
 
 A NPM token is necessary to retrieve the respective NPM package.
