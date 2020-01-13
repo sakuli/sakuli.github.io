@@ -3,4 +3,3 @@ languageCode: en-us
 title: Sakuli E2E Testing and Monitoring
 theme: sakuli
 sectionPagesMenu: "main"
-relativeURLs: true
