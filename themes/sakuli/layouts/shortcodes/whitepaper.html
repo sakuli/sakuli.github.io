@@ -2,15 +2,29 @@
     style="background-color: #fff; padding: 20px; box-shadow: 0px 0px 10px #7C7C7B; margin-left: 0%; margin-right: 0%; margin-top: 20px; margin-bottom: 20px">
             <div class="flexedContainer">
                 <div class="preview__item">
-                    test
-                    <img src="{{ .Site.BaseURL }}images/sakuli_hero.png" alt="preview document" width="80px"> 
+                    <img src="{{ .Site.BaseURL }}images/sakuli_hero.png" alt="preview document" class="preview__img"> 
                 </div>
-                <div class="flexedContainer__item">
-                    <i class="{{ .Get 2 }}" style="color: Grey"></i>
-                    <a href="{{ .Site.BaseURL }}{{ .Get 0 }}" download>
-                        <i class="fas fa-download" style="color: Grey"></i>
-                    </a>
-                    <a href="{{ .Site.BaseURL }}{{ .Get 0 }}">{{ .Get 1 }}</a>
+                <div class="content__item">
+                    <div class="link__item">
+                        <h3>
+                            <!--<i class="{{ .Get 2 }}" style="color: Grey"></i>-->
+                            <a href="{{ .Site.BaseURL }}{{ .Get 0 }}" download>
+                                <i class="fas fa-download" style="color: Grey; margin-right: 1em;"></i>
+                            </a>
+                            <a href="{{ .Site.BaseURL }}{{ .Get 0 }}">{{ .Get 1 }}</a>
+                        </h3>
+                    </div>
+                    <div class="description__item">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                        eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit
+                        amet.
+                    </div>
                 </div>
+
             </div> 
 </div>
