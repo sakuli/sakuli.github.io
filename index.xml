@@ -11,90 +11,6 @@
     
     
     <item>
-      <title>Icinga2 Forwarder</title>
-      <link>https://sakuli.io/docs/enterprise/icinga2-forwarder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/enterprise/icinga2-forwarder/</guid>
-      <description>Add the forwarder using the assistant or configure it manually:
-npm i @sakuli/forwarder-icinga2 To register the forwarder into your project you have to edit the package.json file and add the preset to the Sakuli configuration key:
-{ &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-icinga2&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the enterprise section.  Enable the Icinga2 API All steps required to enable the Icinga2 API are described in the REST API documentation.</description>
-    </item>
-    
-    <item>
-      <title>Check_MK Forwarder</title>
-      <link>https://sakuli.io/docs/enterprise/check_mk-forwarder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/enterprise/check_mk-forwarder/</guid>
-      <description>Add the forwarder using the assistant or configure it manually:
-npm i @sakuli/forwarder-checkmk To register the forwarder into your project you have to edit the package.json file and add the preset to the Sakuli configuration key:
-{ &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-checkmk&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the enterprise section.  Sakuli Client Configuration It is assumed that the client is already monitored by Check_MK and that an agent is installed and running on it.</description>
-    </item>
-    
-    <item>
-      <title>OMD / Gearman Forwarder</title>
-      <link>https://sakuli.io/docs/enterprise/omd-forwarder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/enterprise/omd-forwarder/</guid>
-      <description>Add the forwarder using the assistant or configure it manually:
-npm i @sakuli/forwarder-gearman To register the forwarder into your project you have to edit the package.json file and add the preset to the Sakuli configuration key:
-{ &amp;#34;sakuli&amp;#34;: { &amp;#34;presetProvider&amp;#34;: [ &amp;#34;@sakuli/legacy&amp;#34;, &amp;#34;@sakuli/forwarder-gearman&amp;#34; ] } } Installation of any enterprise feature requires a proper setup of your license information. You can find further information in the enterprise section.  Configure OMD Sakuli transmits performance data to a Gearman result queue rather than to OMD directly.</description>
-    </item>
-    
-    <item>
-      <title>E2E Test Container</title>
-      <link>https://sakuli.io/docs/enterprise/test-container/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/enterprise/test-container/</guid>
-      <description>Once you obtained a Sakuli Enterprise license your docker-user will be granted access to the private Sakuli test container image. This image is ready to go and ships with already installed:
- Sakuli Icinga2 / Check_MK / OMD Forwarder VNC / noVNC Chrome / Firefox (incl. webdriver)  1 Obtaining the Image The registered docker-hub user will then be able to pull the private image:
-docker pull taconsol/sakuli:&amp;lt;IMAGE_TAG&amp;gt; Sakuli test containers do not provide a latest tag.</description>
-    </item>
-    
-    <item>
-      <title>S2I Image</title>
-      <link>https://sakuli.io/docs/enterprise/s2i-image/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/enterprise/s2i-image/</guid>
-      <description>Sakuli enterprise comes with ready-to-use source to image (S2I) containers for RedHat OpenShift. Using this builder container, it is easily possible to create deployable Sakuli images shipped with a test suite straight from your code repository.
-Setup To setup the source to image builds on your OpenShift cluster, it is required to import the images from taconsol/sakuli-s2i. To achieve this, you have to create a docker-registry secret with your &amp;lt;docker-username&amp;gt; and &amp;lt;docker-password&amp;gt; and link it to your builder service account to authenticate on docker.</description>
-    </item>
-    
-    <item>
-      <title>Getting started</title>
-      <link>https://sakuli.io/docs/getting-started/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/getting-started/</guid>
-      <description>Prerequisites Sakuli is built and tested against the current LTS version of Node.js. In order to be able to run Sakuli on your system, we will assume that you have a Node v10.15.3 (lts/dubnium) installed on it.
-To install Node on your system, you can either go to the Node website or you can use tools like Node Version Manager, a utility to manage various Node versions on a per-user basis.</description>
-    </item>
-    
-    <item>
-      <title>Anatomy of a Project</title>
-      <link>https://sakuli.io/docs/100_writing-tests/000_anatomy-project/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/100_writing-tests/000_anatomy-project/</guid>
-      <description>This guide assumes that you have finished the &amp;ldquo;Getting started&amp;rdquo; tutorial or that you are experienced with Sakuli v1.
- Most of the complexity and conventions are due to the backwards compatibility to v1, which requires a specific folder and file structure for various reasons (the biggest is Sahi). Sakuli offers now various ways to reduce this complexity dramatically. These features will eventually become part of upcoming releases.
- Setup and configuration The minimum setup for a Sakuli project looks like this:</description>
-    </item>
-    
-    <item>
-      <title>CLI Commands</title>
-      <link>https://sakuli.io/docs/cli-commands/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/cli-commands/</guid>
-      <description>sakuli create project npx sakuli create project [ &amp;lt;path&amp;gt; ] [ &amp;lt;suiteName&amp;gt; ] [ --force | -f ] [ --package ] Generates a default project structure Positionals: path Path to create testsuite [optional][default: $PWD] suiteName Name of testsuite [optional][default: sakuli_test_suite] Options: --force (alias -f) Forces sakuli to create testsuite --package Create additional package.json for testsuite This creates a Sakuli testsuite folder with the testsuite.suite and testsuite.properties files and a case1 folder containing an empty check.</description>
-    </item>
-    
-    <item>
       <title>End to End Monitoring</title>
       <link>https://sakuli.io/monitoring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -110,26 +26,6 @@ To install Node on your system, you can either go to the Node website or you can
       
       <guid>https://sakuli.io/features/</guid>
       <description>Core Features (Open Source) Testing based on Selenium and Nut.js     Screenshot based interaction    DOM based interaction    Screen Sizes    Auto-Scroll into View     Drag and Drop    Native Control    Clipboard integration    Secrets     Simplifying Selenium    Node debugging    No more Staleelements     Supported OS (others may also work but without warranty)   Windows Windows 10 and above     Mac OS OSX V.</description>
-    </item>
-    
-    <item>
-      <title>Frequently Asked Questions</title>
-      <link>https://sakuli.io/docs/100_writing-tests/faq-tests/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/100_writing-tests/faq-tests/</guid>
-      <description>How can I handle frames or iframes in Sakuli? Since v2.2.0 Sakuli will automatically detect different frames (and iframes) and will search for elements in each frame when the element can not be found in default frame. But it is also possible to switch between frames manually by using the iframe webelement or its respective index.
-const myIframe = await _fetch(_iframe(&amp;#39;frameName&amp;#39;)); await driver.switchTo().frame(myIframe);  const frameIndex = 0; await driver.</description>
-    </item>
-    
-    <item>
-      <title>Interacting with the environment</title>
-      <link>https://sakuli.io/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</guid>
-      <description>In addition to screenshot-based test actions, Sakuli is capable of utilizing your keyboard, clipboard and environment variables. All these features are incorporated in the Environment class.
-Keyboard actions The following snippet shows a possible use-case for native keyboard actions. When initiating a download in Firefox, a native file download dialog opens. To start the download, we need to accept the file dialog, something that is not possible within the capabilities of Selenium.</description>
     </item>
     
     <item>
@@ -212,22 +108,21 @@ Build Sustainable Tests Sakuli uses state of the art web-testing technologies li
     </item>
     
     <item>
-      <title>Screenshot based Testing</title>
-      <link>https://sakuli.io/docs/100_writing-tests/100_native-testing/100_screenshot-based/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/docs/100_writing-tests/100_native-testing/100_screenshot-based/</guid>
-      <description>A lot of E2E scenarios exceed the capabilities of browsers and webdrivers. This might include common use-cases like a drag and drop from the host system to a webpage or exporting a report into a spreadsheet or PDF-format. In these cases, your web-based tests can be extended to also validate behavior and invoke interactions outside the browser, all within a single test.
-Of course, you can also use Sakulis native testing power on its own, e.</description>
-    </item>
-    
-    <item>
       <title>Testing</title>
       <link>https://sakuli.io/testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sakuli.io/testing/</guid>
       <description>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system&amp;rsquo;s mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;https://example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
+    </item>
+    
+    <item>
+      <title>Whitepaper</title>
+      <link>https://sakuli.io/wp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sakuli.io/wp/</guid>
+      <description>     10 Step Guide to E2E Monitoring   Software malfunctions cost time and money and frustrate users. E2E Monitoring identifies potential problems at an early stage. But implementation and operation is not an easy matter. Support is provided with a 10 step guide from our E2E experts.     </description>
     </item>
     
   </channel>

@@ -3,52 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sakuli.io/docs/enterprise/icinga2-forwarder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/enterprise/check_mk-forwarder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/enterprise/omd-forwarder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/enterprise/test-container/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/enterprise/s2i-image/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/getting-started/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/100_writing-tests/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/enterprise/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/100_writing-tests/000_anatomy-project/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/cli-commands/</loc>
-  </url>
-  
-  <url>
     <loc>https://sakuli.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/</loc>
     <priority>0</priority>
   </url>
   
@@ -62,14 +17,6 @@
   
   <url>
     <loc>https://sakuli.io/features/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/100_writing-tests/faq-tests/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/docs/100_writing-tests/100_native-testing/110_interacting-with-env/</loc>
   </url>
   
   <url>
@@ -106,10 +53,6 @@
   </url>
   
   <url>
-    <loc>https://sakuli.io/docs/100_writing-tests/100_native-testing/100_screenshot-based/</loc>
-  </url>
-  
-  <url>
     <loc>https://sakuli.io/tags/</loc>
     <priority>0</priority>
   </url>
@@ -119,7 +62,7 @@
   </url>
   
   <url>
-    <loc>https://sakuli.io/docs/100_writing-tests/000_web-testing/</loc>
+    <loc>https://sakuli.io/wp/</loc>
   </url>
   
 </urlset>
