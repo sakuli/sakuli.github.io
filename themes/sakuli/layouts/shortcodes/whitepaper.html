@@ -1,0 +1,22 @@
+<div
+    style="background-color: #fff; padding: 20px; box-shadow: 0px 0px 10px #7C7C7B; margin-left: 0%; margin-right: 0%; margin-top: 20px; margin-bottom: 20px">
+            <div class="flexedContainer">
+                <div class="preview__item">
+                    <a href="{{ .Get 0 }}" target="_blank" rel="noopener"><img src="/images/wp/{{ .Get 2 }}" alt="preview document" class="preview__img"> </a>
+                </div>
+                <div class="content__item">
+                    <div class="link__item">
+                        <h3>
+                            <a href="{{ .Get 0 }}" download>
+                                <i class="fas fa-download" style="color: Grey; margin-right: 1em;"></i>
+                            </a>
+                            {{ .Get 1 }}
+                        </h3>
+                    </div>
+                    <div class="description__item">
+                        {{ .Get 3 }}
+                    </div>
+                </div>
+
+            </div> 
+</div>
