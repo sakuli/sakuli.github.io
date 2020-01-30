@@ -37,4 +37,4 @@ D-80331 Munich
 Despite careful review, we assume no liability for the content of external links. The operators of sites linked to are exclusively responsible for their content.
 
 ### Copyright
-ConSol GmbH 2019
+ConSol GmbH 2020
