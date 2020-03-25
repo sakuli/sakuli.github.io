@@ -1,0 +1,15 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.hero }}
+
+<section class="hero-area" style="background-image: url('data:image/jpeg;base64,{{ readFile .bgImage | base64Encode }}'); background-position: center;">
+    <div class="block">
+        <img src="{{ .icon | relURL }}" alt="image">
+        <h1>{{ .heading }}</h1>
+        <p>{{ .content }}</p>
+        <p>{{ .contentSub }}</p>
+        {{ if .btn}}
+        <a data-scroll href="{{ .btnURL }}" class="btn btn-transparent">{{ .btnText}}</a>
+        {{ end }}
+    </div>
+</section>
+{{end}}

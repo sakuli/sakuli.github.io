@@ -1,0 +1,44 @@
+enable : true
+
+title : E2E Application Monitoring
+heading : "Secure Revenue-Stream"
+
+chapter : 
+    - title: Monitoring on Steroids
+      image : images/mainUseCases/pad_logos_monitoring.png
+      contOrder : "last"
+      imgOrder : "first"
+      paras : 
+        - content : With Sakuli it is easy to leverage your existing Monitoring to the next level. Use your infrastructure and add real-world scenario user-simulation data to your preferred Monitoring System like Prometheus, checkmk, icinga etc. 
+        - content : Don´t stop at observing server health, database load and IO performance but ensure your complex system architecture behaves as it should - implicitly including all relevant services and third-party applications.
+    - title : "Real User Simulation"
+      image : images/mainUseCases/laptop_gauge.png
+      contOrder : "last"
+      imgOrder : "first"
+      btnUrl : "demo/"
+      btnText : "Open the Live-Showcase"
+      dropdownIndex : ""
+      paras : 
+        - content : Sakuli behaves like a real user operating your applications, working through your most important processes, gathering performance data and forwarding them to the most common Monitoring Systems there are. Get notified immediately about a lack of performance or errors and be in control of your revenue-stream and conversion-rate!
+        - content : With Sakuli Monitoring you will be notified about malicious behavior of your application, even before your customers file a complaint.
+        - content : "Have a look and open the following live-showcase - Sakuli controls a web tool and connects to a Windows VM, opens tickets, copies ticket numbers to an excel list and validates customer emails:"
+
+    - title : Easy to Master
+      image : images/mainUseCases/maze3.png
+      contOrder : "first"
+      imgOrder : "last"
+      btnUrl : "#contact-us"
+      btnText : "Talk to the experts"
+      dropdownIndex : "Sakuli introduction"
+      paras : 
+        - content : Sakuli tests aren´t rocket science - with basic knowledge about HTML and CSS you are able to create and maintain your tests in no time. Add more value to your monitoring department by offering real End to End Application Monitoring. Currently under development, you will soon be able to use a frontend tool to create your tests by hovering over your desired parts of a web-site and creating the script automatically.
+
+    - title : Support and Consulting
+      image : images/mainUseCases/support_s.jpg
+      contOrder : "first"
+      imgOrder : "last"
+      btnUrl : "#contact-us"
+      btnText : "Get in touch"
+      dropdownIndex : "Personal contact"
+      paras : 
+        - content :  Use our expertise to start your E2E project, get professional training, consulting, or do-it-yourself - we offer the perfect package customized to your needs with our decades of experience in E2E Testing & Monitoring. Located all around Germany with German speaking Consultants.

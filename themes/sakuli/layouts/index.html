@@ -1,5 +1,39 @@
-{{ partial "header.html" }}
-    {{ partial "sections/hero.html" }}
-    {{ partial "sections/key-features.html" $.Site.Data.features}}
-    {{ partial "sections/stories.html" $.Site.Data.stories}}
-{{partial "footer.html" }}
+{{ define "main" }}
+
+    {{ partial "hero.html" . }}
+
+    {{ partial "navigation.html" . }}
+
+    {{ partial "start.html" . }}
+
+
+
+    {{ partial "main_use_cases.html" . }}
+
+
+    
+    {{ partial "main_use_cases_monitoring.html" . }}
+
+    {{ partial "main_use_cases_testing.html" . }}
+
+    {{ partial "success_stories.html" . }}
+
+    {{ partial "supported.html" . }}
+
+    {{ partial "features.html" . }}
+
+    {{ partial "enterprise.html" . }}
+    
+
+    {{ partial "company.html" . }}
+
+    {{ partial "team.html" . }}
+
+    {{ partial "counter.html" . }}
+    
+    {{ partial "contact.html" . }}
+
+
+    {{ partial "map.html" . }}
+
+{{ end }}

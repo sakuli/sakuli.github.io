@@ -1,0 +1,4 @@
+enable : true
+logos :
+  - image : images/references/conti_300.png
+  - image : images/references/pbb_300.png

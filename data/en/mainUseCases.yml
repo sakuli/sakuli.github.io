@@ -1,0 +1,15 @@
+enable : true
+heading : Main
+headingSpan : Use-Cases
+aboutItem : 
+- icon : fas fa-tasks
+  title : UI Testing
+  content : Use Sakuli for UI-Testing and reduce the amount of manual work dramatically. With the ability to simulate user-behavior not only on websites but on every native application, there are endless possibilities. 
+
+- icon : fas fa-chart-area
+  title : End-2-End Monitoring
+  content : What is more important than your application running at its peak performance? Get notified automatically if anything is not working as expected and be able to fix things, even before a customer will move on the the competition.
+
+- icon : fas fa-cogs
+  title : RPA
+  content : Automate processes and manual work without a huge and complex framework or expensive tool suites. Robot Process Automation with Sakuli will save time and money in no time!

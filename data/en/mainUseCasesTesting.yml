@@ -1,0 +1,12 @@
+enable : true
+
+image : images/backgrounds/rock_climbing_s.jpg
+title : No more Checklists
+paras : 
+  - content : "Sakuli makes Software Quality easy. Regression and approval tests of your most important parts of your software can now be automated, saving tons of time by eliminating manual work."
+  - content : "Use Sakuli as the UI Testing framework within your software development lifecycle and ensure the high quality standards that you expect from your product. Don´t be limited by testing only components of your software but leverage the full potential of the Sakuli built-in features like Web- and Native- Testing. The open platform character of Sakuli allows the use of most JS based UI-Testing tools (like Puppeteer) within the Sakuli context - enhancing your UI-Testing experience with Native-Testing, Containerization, Cloud-Readiness and professional maintenance and support. "
+  - content : "We know the struggle of using plain Selenium... That´s why Sakulis built-in Web Testing component is based on Selenium but the major issues and hassles are abstracted in an easy to use and intuitive DSL."
+  - content : "After all, you will save a lot of time and money by using existing Sakuli Test from development and extending your Monitoring with the same tests on Production."
+
+        
+        

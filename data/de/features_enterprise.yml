@@ -1,0 +1,79 @@
+enable : true
+heading : Enterprise
+headingSpan : Features
+featuresItem: 
+      - icon : fas fa-chart-area
+        title : Monitoring Forwarder
+        content:
+            - paragraph : "Die Kombination von End-2-End-Tests mit Überwachungslösungen erweist sich als optimal - denn eine effektive Qualitätssicherung macht bei technischer Prüfung eines Servers nicht Halt: Automatisierte End-2-End-Tests stellen sicher, dass Ihr Web- oder Rich-Client Ökosystem hält, was es verspricht."
+            - image : images/mainUseCases/monitoring_s.png
+            - paragraph : Die Testergebnisse und Daten der offenen API von Sakuli können an verschiedene Zielsysteme wie Prometheus, OMD, checkkmk, Datenbanken und proprietäre Systeme weitergeleitet werden.
+            - heading : Monitoring kritischer Workflows
+            - paragraph : Stellen Sie sich vor, Sie testen Ihre kritischen Prozesse und Arbeitsabläufe, indem Sie einen realen Benutzer simulieren und Ausführungszeiten, Warnungen und Fehlermeldungen (einschließlich Screenshots des zu testenden Systems) an das Überwachungssystem Ihrer Wahl senden. Bevor der erste Kunde sich über die Leistung beschwert, werden Sie automatisch benachrichtigt und können die Auswirkungen auf Ihre Umsätze untersuchen und gegen steuern.
+            - paragraph : Sakuli und Sakuli Forwarder sind speziell für diese Aufgaben konzipiert, damit Sie (und Ihr Manager) endlich wieder gut schlafen können.
+            - heading : Ihre Vorteile
+              list :  
+                  - liEl : Senden Sie die Ausführungszeiten der Testschritte an Ihr Überwachungssystem
+                  - liEl : Verbinden Sie eine Vielzahl von modernen Monitoring-Lösungen mit Ihren End-2-End-Tests
+                  - liEl : Reichern Sie Ihre Überwachungsdaten mit Screenshots oder Videos an
+                  - liEl : Überwachen Sie Ihre wichtigsten Prozesse und Workflows
+                  - liEl : Definieren Sie Schwellwerte und werden Sie automatisiert durch das Monitoring alarmiert
+                  - liEl : Entdecken Sie Probleme in Ihren Dritt-Anwendungen die einen Einfluß auf Ihre Systeme haben
+            - heading : Ihr Paket
+              list :  
+                  - liEl : Icinga2
+                  - liEl : checkmk
+                  - liEl : Prometheus
+                  - liEl : OMD (Nagios, Gearman)
+                  - liEl : ElasticSearch (coming soon)
+                  - liEl : SQL Datenbanken (coming soon)
+      - icon : fab fa-docker
+        title : All-in-one Docker Image
+        content:
+            - heading : Sakuli Container
+            - paragraph : Unser vorkonfigurierter Docker-Container wird Sakuli in einer isolierten Umgebung ausführen. Dadurch wird sichergestellt, dass für jeden Testlauf der gleiche Aufbau und die gleichen Bedingungen herrschen. Sie benötigen kein offenes Display für native UI-Interaktionen mit dem in jedem Container vorhandenen Headless VNC-Image. Zu Debugging-Zwecken können Sie Ihre Testausführung jederzeit live in einem Browser oder einem VNC-Client verfolgen. Skalieren Sie Ihre Tests horizontal, indem Sie so viele Container instanziieren, wie Sie benötigen.
+            - image : images/mainUseCases/container_s.png
+            - heading : Ihre Vorteile
+              list :  
+                  - liEl : "Verlassen Sie sich immer auf die gleiche, saubere Umgebung: keine Probleme mit Cookies, keine Sitzungsdaten, keine alten Test-Artefakte"
+                  - liEl : "Skalieren Sie Ihre Tests: Führen Sie mehrere Instanzen Ihres Containers parallel aus, um die Gesamtausführungszeit zu beschleunigen oder Last auf Ihrer Anwendung zu simulieren"
+                  - liEl : Orchestrieren Sie Ihren Testcluster mit OpenShift, Kubernetes oder jeder anderen Plattform
+                  - liEl : "CI/CD: Einfache Integration Ihrer Tests in Ihre continuous integration pipeline"
+                  - liEl : Das Layout und die Skalierung von Webseiten und nativen Anwendungen wird immer gleich sein, wodurch die Zuverlässigkeit der nativen Interaktionen erhöht wird
+                  - liEl : Orchestrieren, starten und ändern Sie Ihren Testcontainer innerhalb des Sakuli UI-Portals -> demnächst
+            - heading : Ihr Paket
+              list :  
+                  - liEl : Container Betriebssystem Ubuntu
+                  - liEl : Desktop Umgebung OpenBox
+                  - liEl : VNC-Server
+                  - liEl : noVNC - HTML5 VNC client
+                  - liEl : Node.js
+                  - liEl : Mozilla Firefox
+                  - liEl : Chromium
+                  - liEl : Sakuli
+                  - liEl : "Beginnend ab L-Package: RDP Installation für Remote-Verbindungen zu Windows Maschinen"
+      
+      - icon : fab fa-redhat
+        title : S2I Images
+        content:
+            - paragraph : Sakuli Container sind auch als S2I images für OpenShift verfügbar.
+            - linkUrl : "https://sakuli.io/docs/enterprise_features/s2i/"
+            - linkText : " Lesen Sie darüber in unserer Dokumentation."
+
+      - icon : fas fa-hands-helping
+        title : Support
+        content:
+            - paragraph : "Sakuli Core und Sakuli-Add-Ons werden nach einer Priorisierung der Geschäftsauswirkungen supportet. Diese Priorisierung wird von unseren Experten in Bezug auf folgende Punkte durchgeführt: "
+              list : 
+                  - liEl : Sicherheit > Funktionalität ohne Workaround > Funktionalität mit Workaround
+            - paragraph : Der Support ist auf Bugs in Sakuli / Sakuli-Add-On Bugs und auf die Anzahl der Fälle beschränkt, die im jeweiligen Subskriptionspaket angegeben sind (Beratung und Einrichtung sind nicht enthalten). Supportanfragen müssen in strukturierter Form (bitte verwenden Sie die mitgelieferte Vorlage) mit allen notwendigen Informationen über die Systemumgebung, die Konfiguration und einem detaillierten Bericht erfolgen. Kunden müssen die Reproduzierbarkeit des Problems sicherstellen, indem sie eine Fernzugriffsmöglichkeit oder ein geeignetes System zur Reproduktion anbieten. 
+            - paragraph : SLA-Zeiten sind definiert als initiale Reaktionszeit von Montag bis Freitag während der deutschen Geschäftszeiten von 08:00 - 17:00 Uhr - ausgenommen deutsche Feiertage. Der Support wird per E-Mail angeboten.
+      
+      - icon : fas fa-code
+        title : Maintenance
+        content:
+            - paragraph : Sie erhalten Zugang zu neuen Funktionen, den neuesten Updates, einschließlich Sicherheitspatches, Bugfixes und Verbesserungen für Sakuli und seine Add-Ons in der Zeit Ihres aktiven Lizenzplans. 
+            - paragraph : Das Sakuli DEV-Team verfolgt regelmäßig Sicherheitsvorfälle der zugrundeliegenden Software-Komponenten und aktualisiert Sakuli-Komponenten kurz nach Erscheinen mit den neuesten Security-Fix-Releases.
+      
+                  
+            

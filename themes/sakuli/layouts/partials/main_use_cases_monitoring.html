@@ -1,0 +1,40 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.mainUseCasesMonitoring }}
+{{ if .enable }}
+<section class="section section-bg features-2 padding-2" id="about">
+    <div class="text-center ">
+        <h1 class="sakuli-white">{{ .heading }}</h1>
+    </div>
+    <div class="container">
+
+        <!-- Call to Action -->
+        <div class="text-center d-lg-none">
+            <a href="#contact-us" class="btn btn-main mt-4 mb-4 d-lg-none">Get in Touch</a>
+        </div>
+       
+        {{ range .chapter }}
+        <!-- Chapter Benefits -->
+        <div class="row mt-5 mb-3">
+            <div class="col-md-7 order-md-{{ .contOrder }} wow {{ if eq .contOrder "last"}}fadeInLeft{{else}}fadeInRight{{end}}" data-wow-duration="500ms">
+                <div class="content text-center">
+                    <h3 class="sakuli-green">{{ .title }}</h3>
+                    {{ range .paras }}
+                    <p class="text-justify">{{ .content }}</p>
+                    {{ end }}
+                    <!-- Call to Action -->
+                    {{ if .btnText }}
+                    <div class="content text-center mb-5">
+                        <a href="{{ $.Site.BaseURL | relLangURL }}{{ .btnUrl }}" class="btn btn-main mt-5 mb-3 select-plan" data-plan="{{ .dropdownIndex }}" >{{ .btnText }}</a>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="col-md-5 order-md-{{ .imgOrder }} d-flex flex-wrap align-items-center tilt-img-parent wow {{ if eq .imgOrder "last"}}fadeInLeftBig{{else}}fadeInRightBig{{end}}" data-wow-duration="500ms">
+                <img class="img-fluid mx-auto {{ if eq .imgOrder "last"}}tilt-img-right{{else}}tilt-img{{end}}"  src="{{ .image | relURL}}">
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,19 @@
+enable : true
+bgImage : "images/backgrounds/hexagons_green_xs.jpg"
+counters :
+    - max : 1390
+      init : 0
+      icon : "fas fa-chart-area fa-3x"
+      text : "Applications Monitored"
+    - max : 42
+      init : 0
+      icon : "fas fa-medal fa-3x"
+      text : "Projects Completed"
+    - max : 25301
+      init : 0
+      icon : "fas fa-hourglass fa-3x"
+      text : "Hours Saved Testing"
+    - max : "-452"
+      init : 0
+      icon : "fas fa-moon fa-3x"
+      text : "Sleepless Nights"

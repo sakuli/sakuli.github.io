@@ -1,0 +1,27 @@
+baseURL = ""
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+title = ""
+theme = "sakuli"
+summaryLength = 10
+[languages]
+################################ English Language ########################
+    [Languages.en]
+        languageName = "EN"
+        languageCode = "en-us"
+        contentDir = "content/english"
+        weight = 1
+
+    ################################ German Language ########################
+    [Languages.de]
+        languageName = "DE"
+        languageCode = "de-de"
+        contentDir = "content/german"
+        weight = 2
+
+# Site params
+[params]
+#home= "Home"
+logo = "images/logos/logo.svg"
+# Meta data
+description = "Sakuli End2End Testing and Monitoring"

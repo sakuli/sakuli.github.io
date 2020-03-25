@@ -1,0 +1,31 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.logos }}
+{{ $bgImage := .bgImage }}
+{{ if .enable}}
+<section class="bg-two" id="logos">
+
+    <div class="container-md wow fadeInUp" data-wow-duration="500ms">
+        <div id="carousel-logos" class="carousel slide " data-ride="carousel" data-interval="2000">
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox" >
+                {{range $index, $element := .logos}}
+                <div  class="carousel-item {{ if (eq $index 0) }}active{{ end }}" style="background-image:'{{ $bgImage }}'">
+                    <img style="height: 150px;" class="thumbnail img-responsive" src="{{ .image }}" alt="First slide">
+                    <img style="height: 150px;" class="thumbnail img-responsive" src="{{ .image }}" alt="First slide">
+                    <img style="height: 150px;" class="thumbnail img-responsive" src="{{ .image }}" alt="First slide">
+                    <img style="height: 150px;" class="thumbnail img-responsive" src="{{ .image }}" alt="First slide">
+                    <img style="height: 150px;" class="thumbnail img-responsive" src="{{ .image }}" alt="First slide">
+                    <img style="height: 150px;" class="thumbnail img-responsive" src="{{ .image }}" alt="First slide">
+
+                </div>
+                {{ end }}
+            </div>
+            <!--/.Slides-->
+        </div>
+        <!--/.Carousel Wrapper-->
+    </div>
+</section>
+
+{{ end }}
+{{ end }}

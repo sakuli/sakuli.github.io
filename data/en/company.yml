@@ -1,0 +1,15 @@
+enable : true
+heading : About
+headingSpan : Us
+
+image : images/about/smartHouse_new2.jpg
+title : Developers with a penchant for Software Quality
+description : ConSol has been a partner of German and international companies for more than 30 years with a wide range of customized IT services covering the entire software life cycle. Our IT services include high-end IT consulting, customized software development and 24/7 support and operations. Our interdisciplinary team of expert implementation specialists and innovators offers solutions targeting complex technological challenges based on new and inspiring approaches and the latest technology.
+description2 :  Many years of experience, expert qualifications and the dedication of our employees ensure that our customers' business processes and IT environments will be well prepared for future challenges. We work non-proprietary and rely on our own financial resources. For each customer, we take pride in finding the perfect solution. Your success is our success!
+btnText : "Visit our Company Site"
+btnUrl : "https://www.consol.com"
+description3 : "If you would like to learn more about Consol and its portfolio, ranging from Software Engineering and Operations to OpenShift and more - feel free to visit the Consol website:"
+
+btnContactText : "Contact us"
+btnContactUrl : "#contact-us"
+dropdownIndex : "Personal contact"

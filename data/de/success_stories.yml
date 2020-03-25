@@ -1,0 +1,13 @@
+enable : true
+heading : Was unsere Kunden
+headingSpan : sagen
+stories :
+  - name : Daniel Klüh
+    title : Leiter der Abteilung Servicemanagement
+    image : ../images/references/conti_300.png
+    content : "Mit Sakuli haben wir ein umfassendes Werkzeug gefunden, mit dem wir unsere Applikationen auf ihre Funktion und Verfügbarkeit hin überwachen können. Das Tool hat uns beim Testen sowohl von Web-Content als auch von nativem User-Interface-Content gleichermaßen überzeugt. Dank Sakuli sind wir nun tatsächlich in der Lage zu beurteilen, ob und wie performant die von uns betreuten Anwendungen arbeiten. Fast jede Anomalie wird uns mittlerweile automatisch gemeldet, noch bevor der erste Anwender bei uns deswegen anruft. Es macht uns schon ein bisschen stolz, dann sagen zu können: 'Wir wissen davon und sind bereits dabei, das Problem zu lösen'."
+    
+  - name : Markus Wenzel
+    title : Head of IT Infrastructure
+    image : ../images/references/pbb_300.png
+    content : "Mit Sakuli haben wir ein umfassendes Werkzeug gefunden, mit dem wir unsere Applikationen auf ihre Funktion und Verfügbarkeit hin überwachen können. Das Tool ist auf diesem Gebiet ein Novum - und es gab für uns derzeit nichts Vergleichbares, was im Web- und GUI-Bereich gleichermaßen überzeugen konnte. Gut gelungen ist auch die Kombination mit Nagios. Eine große Hilfe bei der Beurteilung der Anwendungsqualität ist zudem die Visualisierung der Test-Laufzeiten in Grafen."

@@ -1,0 +1,59 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.success_stories }}
+{{ if .enable}}
+{{ $bgImage := .bgImage }}
+
+<section class="bg-one section" id="success_stories">
+    <div class="container fadeInUp" data-wow-duration="1500ms">
+        <div class="col-lg-12">
+            <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                <h2>{{ .heading}} <span class="color">{{ .headingSpan}}</span> </h2>
+                <div class="border-meghna"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-md mt-0 wow fadeInUp" data-wow-duration="500ms">
+        <div id="carousel-success" class="carousel slide " data-ride="carousel" data-interval="12000">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-success" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-success" data-slide-to="1"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                {{range $index, $element := .stories}}
+                <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}" style="background-image:'{{ $bgImage }}'">
+                    <div class="row">
+                        <div class="col-md-4  mt-0 mb-5  d-flex flex-wrap align-items-center">
+                            <img class="img-fluid mx-auto" src="{{ .image }}" alt="First slide">
+                        </div>
+                        <div class="col-md-8 content text-center mt-0 mb-5 align-self-center">
+                            <p class="mb-0 text-justify sakuli-green"><i class="fas fa-quote-left"></i> <i>{{ .content }}</i> <i
+                                    class="fas fa-quote-right"></i></p>
+                            <footer class="blockquote-footer text-right sakuli-white">{{ .name }} <cite title="Source Title">{{ .title }}</cite>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+                {{ end }}
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev " href="#carousel-success" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next align-bottom" href="#carousel-success" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+        </div>
+        <!--/.Carousel Wrapper-->
+    </div>
+</section>
+
+{{ end }}
+{{ end }}
