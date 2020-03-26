@@ -3,5 +3,5 @@ resources/
 public/
 custom-js/.cache
 custom-js/node_modules/
-assets/custom
+assets/custom/
 .vscode/
