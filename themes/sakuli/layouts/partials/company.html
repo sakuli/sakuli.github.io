@@ -1,0 +1,39 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.company }}
+{{ if .enable }}
+{{"<!-- about 2 -->" | safeHTML}}
+<section class="section bg-petrol features-2 padding-0" id="company">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 padding-0" style="background-image: url('{{ .image | relURL}}'); background-size: cover; background-position: bottom center; background-repeat: no-repeat; min-height: 400px;">
+                <img style="display: none;"
+                    onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .image | relURL}})'"
+                    src="{{ .Site.Data.about.image | relURL}}">
+            </div>
+            <div class="col-lg-6 pr-md-5">
+                <div class="content-block">
+                    {{with .title}} <h2 class="sakuli-white">{{ . }}</h2> {{ end }}
+                    {{with .description}} <p>{{ . }}</p> {{ end }}
+                    {{with .description2}} <p>{{ . }}</p> {{ end }}
+                </div>
+                <!-- Call to Action -->
+                {{ if .btnContactText }}
+                <div class="content text-center mb-3">
+                    <a data-plan="{{ .dropdownIndex }}" href="{{ .btnContactUrl | relLangURL}}" class="btn btn-main  mb-2 select-plan">{{ .btnContactText }}</a>
+                </div>
+                {{ end }}
+                <div class="content-block">
+                    {{with .description3}} <p>{{ . }}</p> {{ end }}
+                </div>
+                {{ if .btnText }}
+                <div class="content text-center mb-3">
+                    <a href="{{ .btnUrl }}" class="btn btn-main mb-5" target="_blank" rel="noopener">{{ .btnText }}</a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{"<!-- /about 2 -->" | safeHTML}}
+{{ end }}
+{{ end }}

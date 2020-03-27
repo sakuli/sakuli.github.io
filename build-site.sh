@@ -2,7 +2,7 @@
 
 set -e
 export GOPATH=$HOME/go
-cd vue-components
+cd custom-js
 npm ci
 npm run build
 cd -

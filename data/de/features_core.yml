@@ -1,0 +1,62 @@
+enable : true
+heading : Core
+headingSpan : Features
+featuresHead : 
+- image : "images/mainUseCases/architecture_s.png"
+  heading : "All-in-one UI Testing"
+  content : 
+      - para : "Sakuli kombiniert Web-Tests und Tests für native Anwendungen. Das ist alles was Sie benötigen, um einen realen Benutzer perfekt zu simulieren. Entwerfen Sie Ihre Tests, führen Sie sie automatisch aus und sparen Sie eine Unmenge an Zeit, indem Sie Ihre manuellen Tests drastisch reduzieren."
+      - heading : "Nachhaltige Tests"
+      - para : "Sakuli verwendet modernste Web-Testtechnologien wie Selenium, verpackt viele Standardfunktionalitäten und Use-Cases in benutzerfreundliche Pakete und löst damit die meisten Probleme, denen Testdesigner in der Vergangenheit begegnet sind. Mit intelligentem Muster- und Bildabgleich müssen Sie sich nicht um jedes einzelne Pixel kümmern. Es war nie einfacher, nachhaltige Tests für Benutzeroberflächen zu schreiben."
+      - heading : "Integration von UI-Tests in CI/CD-Pipelines"
+      - para : "Durch die Integration Ihrer Sakuli-UI-Tests in Continuous-Integration-Systeme beschleunigen Sie Ihre Software-Entwicklungszyklen und erhöhen die Qualität Ihrer ausgelieferten Software. Sakuli unterstützt eine Vielzahl von CI/CD-Tools wie Jenkins, Drone IO, Travis-CI und viele andere."
+      - para : "Sakulis' Architektur legt den Schwerpunkt auf eine offene und erweiterbare Basis. Sein modularer Node.js-Kern ermöglicht es Entwicklern, ihre eigene DSL zu erstellen, behavior-driven Methoden wie Cucumber zu integrieren, Sakuli an neue Technologien anzupassen und über die umfassenden APIs eine Schnittstelle zu jeder Art von Downstream-Anwendung herzustellen. Sakuli ist eine offene Plattform für eine Vielzahl von End-2-End-Anwendungsfällen."
+
+featuresItem : 
+- icon : fas fa-check-double
+  title : Vereinfachtes Selenium
+  content : Nie war es einfacher, den De-Facto-Standard im UI-Web-Testing zu verwenden. Sakuli bietet alle nötigen Methoden und abstrahiert somit die Komplexität von Selenium.
+
+- icon : fas fa-bolt
+  title : Keine Staleelements
+  content : "Da Sakuli die Selenium-Komplexität handhabt, müssen Sie sich keine Sorgen mehr über Staleelements machen."
+
+- icon : fas fa-expand
+  title : Screenshot basierte Interaktion
+  content : Steuern Sie jede native Anwendung und jedes Element, das nicht über das DOM zugänglich ist, mit dem in Sakuli integrierten Bildmatching. 
+
+- icon : far fa-file-code
+  title : DOM basierte Interaktion
+  content : Verwenden Sie Sakulis Abstraktion von Selenium, um Web-Anwendungen einfach zu handhaben und zu steuern. Finden Sie Elemente und interagieren Sie mit ihnen durch angezeigten Text, reguläre Ausdrücke, IDs, CSS-Klassen oder XPath-Abfragen.
+
+- icon : fas fa-tablet-alt
+  title : Display Größen
+  content : Verwenden Sie den gleichen Test für verschiedene Bildschirmauflösungen oder innerhalb von Containern. Mit der intelligenten Bilderkennung können Abweichungen eingestellt werde um nicht von jedem Pixel abzuhängen.
+
+- icon : far fa-hand-point-down
+  title : Drag & Drop
+  content : Verwenden Sie entweder DOM-basiertes Drag&Drop oder verwenden Sie die reale Simulation durch Steuerung mit der Maus.
+
+- icon : fas fa-camera
+  title : OCR
+  content : OCR kann verwendet werden, um Text aus Bildern oder Screenshots zu extrahieren.
+
+- icon : fas fa-arrows-alt-v
+  title : Auto-Scroll into View
+  content : Aktionen wie 'highlight', 'focus', 'click' etc. scrollen das Zielelement automatisch in das Ansichtsfenster.
+
+- icon : far fa-keyboard
+  title : Native Steuerung
+  content : Sakuli kann die Maus und die Tastatur genau wie ein echter Benutzer verwenden. Finden Sie Workarounds für fehlerhafte Formulare oder imitieren Sie einen Benutzer nahezu perfekt.
+
+- icon : far fa-clipboard
+  title : Clipboard Integration
+  content : Verwenden Sie die Zwischenablage mit ihren Set-, Get- und Paste-Methoden, um Daten einfach zu übertragen oder fehlerhafte Formulare zu umgehen.
+
+- icon : fas fa-lock
+  title : Secrets
+  content : Sakuli unterstützt sicher verschlüsselte Secrets.  Klartext-Passwörter und andere sensible Informationen innerhalb des Testfalls gehören damit der Vergangenheit an.
+
+- icon : fas fa-bug
+  title : Debugging
+  content : Nutzen Sie die Leistungsfähigkeit von Node.js, um Ihren Test zu debuggen.

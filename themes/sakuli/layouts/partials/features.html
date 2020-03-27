@@ -1,0 +1,165 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.features_core }}
+{{ if .enable }}
+{{"<!-- Start features core Section -->" | safeHTML}}
+<section class="bg-two features section" id="features">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {{"<!-- section title -->" | safeHTML}}
+        <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+          <h2>{{ .heading }}<span class="color"> {{ .headingSpan}}</span></h2>
+          <div class="border-meghna"></div>
+        </div>
+      </div>
+      {{"<!-- /section title -->" | safeHTML}}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-5 mb-5">
+      {{range $index, $element := .featuresHead}}
+      {{"<!-- features item -->" | safeHTML}}
+      
+      <div class="col-md-7 order-first wow fadeInLeft" data-wow-duration="500ms">
+        <div class="content text-center">
+          
+          {{ if .heading }}
+          <h2 class="sakuli-white">{{ .heading }}</h2>
+          {{ end }}
+          {{ range .content }}
+          {{ if .heading }}
+          <h4 class="sakuli-white">{{ .heading }}</h4>
+          {{ end }}
+          {{ if .para }}
+          <p class="text-justify">{{ .para }}</p>
+          {{ end }}
+          {{ end }}
+          <!-- Call to Action -->
+          {{ if .btnText }}
+          <div class="content text-center mb-4">
+            <a href="{{ .btnUrl | relURL}}" class="btn btn-main mt-5 mb-3 select-plan"
+              data-plan="{{ .dropdownIndex }}">{{ .btnText }}</a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-md-5 order-last d-flex flex-wrap align-items-center tilt-img-parent wow fadeInRight"
+        data-wow-duration="500ms">
+        <img class="img-fluid mx-auto tilt-img-right" src="{{ .image | relURL}}">
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      {{range $index, $element := .featuresItem}}
+      {{"<!-- features item -->" | safeHTML}}
+      <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="{{add $index 4}}00ms">
+        <div class="block" id="core-features-block">
+
+          {{with .icon}}<i id="feat-icons" class="{{ . }}"></i>{{ end }}
+
+          {{"<!-- Express features Yourself -->" | safeHTML}}
+
+          <div id="core-features-block-content" class="content text-center">
+            <h1>{{ .title }}</h1>
+            <hr>
+            <p>{{ .content }}</p>
+          </div>
+        </div>
+      </div>
+
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.features_enterprise }}
+{{ if .enable }}
+
+<section class="bg-one features section" id="features_section">
+  <div class="container" style="overflow: hidden">
+    <div class="col-lg-12">
+      {{"<!-- section title -->" | safeHTML}}
+      <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+        <h2>{{ .heading }}<span class="color"> {{ .headingSpan}}</span></h2>
+        <div class="border-meghna"></div>
+      </div>
+      {{"<!-- /section title -->" | safeHTML}}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 wow fadeInUp" data-wow-duration="500ms">
+        <div class="bd-example" data-example-id="">
+          <div id="accordion" role="tablist" aria-multiselectable="true">
+            {{ range $index, $element := .featuresItem }}
+
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collItem{{ $index }}" aria-expanded="false"
+                  aria-controls="collItem{{ $index }}" class="collapsed row justify-content-between flex-nowrap">
+
+                  <div class="col-1 align-middle">
+                    <i class="{{ .icon }} fa-lg mr-3" aria-hidden="true" style="vertical-align: middle;"></i>
+                  </div>
+                  <div class="col-10 align-middle">
+                    <span style="vertical-align: middle;">{{ .title }}</span>
+                  </div>
+                  <div class="col-1 align-middle">
+                    <i class="fa fa-angle-down" aria-hidden="true" style="float: right; vertical-align: middle;"></i>
+                  </div>
+
+                </a>
+              </div>
+
+              <div id="collItem{{ $index }}" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                aria-expanded="false">
+                <div class="card-block">
+                  {{ range .content }}
+                    {{ if .heading }}
+                    <h4 style="color: #404040">{{ .heading }}</h4>
+                    {{ end }}
+                    {{ if .paragraph }}
+                    <p style="color: #404040">{{ .paragraph }}</p>
+                    {{ end }}
+                    {{ if .image }}
+                    <img class="img-fluid rounded float-right" style="width: 50% \9;" src="{{ .image | relURL }}">
+                    {{ end }}
+                    {{ if .list }}
+                    <ul style="color: #404040">
+                      {{ range .list }}
+                      <li>{{ .liEl }}</li>
+                      {{ end }}
+                    </ul>
+                    {{ end }}
+                    {{ if .linkUrl }}
+                    <a href="{{ .linkUrl }}" target="blank" rel="noopener">
+                    {{ end }}
+                    {{ if .linkText }}
+                      {{ .linkText }}</a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{"<!-- /enterprise features -->" | safeHTML}}
+{{ end }}
+{{ end }}

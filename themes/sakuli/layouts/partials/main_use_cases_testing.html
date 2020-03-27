@@ -1,0 +1,27 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.mainUseCasesTesting }}
+{{ if .enable }}
+
+<section class="section bg-petrol features-2 padding-0" id="mainUseCsesTesting">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 pl-md-5">
+                <div class="content-block">
+                    <h2 class="sakuli-white">{{ .title }}</h2>
+                    {{ range .paras }}
+                    <p>{{ .content }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="col-lg-6 p-0" style="background-image: url('{{ .image | relURL}}'); background-size: cover; background-position: center top; background-repeat: no-repeat; min-height: 500px;">
+                <img style="display: none;"
+                    onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .image | relURL}})'"
+                    src="{{ .Site.Data.about.image | relURL}}">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{ end }}
+{{ end }}

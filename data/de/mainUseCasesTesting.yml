@@ -1,0 +1,12 @@
+enable : true
+
+image : images/backgrounds/rock_climbing_s.jpg
+title : Keine Checklisten mehr
+paras : 
+  - content : "Sakuli macht Software-Qualität einfach. Regressions- und Abnahmetests der wichtigsten Teile Ihrer Software können jetzt automatisiert werden, wodurch tonnenweise Zeit gespart wird, da manuelle Arbeit entfällt."
+  - content : "Verwenden Sie Sakuli als UI-Test-Framework innerhalb Ihres Softwareentwicklungs-Lebenszyklus und stellen Sie die hohen Qualitätsstandards sicher, die Sie von Ihrem Produkt erwarten. Lassen Sie sich nicht durch das alleinige Testen von Komponenten Ihrer Software beschränken, sondern nutzen Sie das volle Potenzial der in Sakuli integrierten Funktionen wie Web- und Native-Testing. Der offene Plattform-Charakter von Sakuli erlaubt die Verwendung der meisten JS-basierten UI-Test-Tools (wie Puppeteer) im Sakuli-Kontext - und verbessert so Ihre UI-Testing-Erfahrung mit Native-Testing, Containerisierung, Cloud-Readiness und professioneller Wartung und Support. "
+  - content : "Wir wissen, wie hart es ist, reines Selenium zu verwenden... Die in Sakuli eingebaute Web-Komponente basiert zwar auf Selenium, die wichtigsten Probleme und Ärgernisse werden jedoch in einer einfach zu bedienenden und intuitiven DSL abstrahiert."
+  - content : "Darüberhinaus werden Sie viel Zeit und Geld sparen, indem Sie bestehende Sakuli-Tests aus der Entwicklung verwenden und Ihr Monitoring mit den gleichen Tests auf die Produktionsumgebung erweitern."
+
+        
+        

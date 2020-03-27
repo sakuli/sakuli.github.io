@@ -1,0 +1,16 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.start }}
+{{ if .enable}}
+<section id="getting-started" class="getting-started section-sm bg-1 overly" style="background-image: url('../images/backgrounds/bg_greenish.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="sakuli-white">{{ .title }}</h2>
+                 <p class="sakuli-white">{{ .content }}</p>
+                <a href="{{ .docsUrl }}" class="btn btn-main" target="_blank" rel="noopener">{{ .btnText }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

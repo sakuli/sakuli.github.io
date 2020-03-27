@@ -1,0 +1,31 @@
+enable : true
+heading : Die
+headingSpan : Anwendungsszenarien
+aboutItem : 
+- icon : fas fa-tasks
+  title : UI Testing
+  content : Benutze Sakuli für UI-Testing und mehr deutscher Text bla bla.
+
+- icon : fas fa-chart-area
+  title : End-2-End Monitoring
+  content : Benutze Sakuli für UI-Testing und mehr deutscher Text bla bla.
+
+- icon : fas fa-cogs
+  title : RPA
+  content : Benutze Sakuli für UI-Testing und mehr deutscher Text bla bla.
+
+enable : true
+heading : Unsere
+headingSpan : Anwendungsszenarien
+aboutItem : 
+- icon : fas fa-tasks
+  title : GUI Testing
+  content : Verwenden Sie Sakuli für UI-Tests und reduzieren Sie den Umfang an manueller Arbeit entscheidend. Mit der Möglichkeit, das Benutzerverhalten nicht nur auf Websites, sondern auf jeder nativen Anwendung zu simulieren, gibt es unendlich viele Möglichkeiten. 
+
+- icon : fas fa-chart-area
+  title : End-2-End Monitoring
+  content : Was ist wichtiger, als der einwandfreie Betrieb Ihrer wichtigsten Anwendungen? Lassen Sie sich automatisch benachrichtigen, wenn etwas nicht wie erwartet funktioniert, und seien Sie somit in der Lage  Probleme zu beheben, noch bevor ein Kunde zur Konkurrenz wechselt.
+
+- icon : fas fa-cogs
+  title : RPA
+  content : Automatisieren Sie Prozesse und manuelle Arbeiten ohne komplexes Framework oder teure Tool-Suites. Die Robot-Process-Automation mit Sakuli spart im Handumdrehen Zeit und Geld!

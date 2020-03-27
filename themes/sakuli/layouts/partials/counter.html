@@ -1,0 +1,22 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.counter }}
+{{ if .enable }}
+{{"<!-- Start Counter Section -->" | safeHTML}}
+<section id="counter" class="parallax-section bg-1 section overly" style="background-image: url('{{ .bgImage | relURL }}')">
+    <div class="container">
+        <div class="row">
+            {{ range .counters }}
+            <div class="col-lg-3 col-md-6 col-12 mb-3 mt-3 text-center">
+                <div class="counters-item">
+                    <i class="{{ .icon }}"></i>
+                    <span class="count" data-count="{{ .max }}">{{ .init }}</span>
+                    <h3>{{ .text }}</h3>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{"<!-- /Counter Section -->" | safeHTML}}
+{{ end }}
+{{ end }}

@@ -1,0 +1,47 @@
+enable : true
+heading : Legal
+headingSpan : Notice
+
+company : ConSol Consulting & Solutions Software GmbH
+street : St.-Cajetan-Straße 43
+zip : D-81669 Munich
+tel : +49-89-45841-100
+fax : +49-89-45841-111
+mail: info@consol.de
+
+ul:
+  
+- head : Commercial register
+  lines : 
+    - line : "Registration court: Munich District Court"
+    - line : HRB 97371
+
+- head : Sales tax identification number (in accordance with § 27 a of the Sales Tax Law)
+  lines : 
+   - line : DE 129318612
+
+- head : Authorized company officers
+  lines : 
+   - line : Dr. Ulrich Schwanengel
+   - line : Michael Beutner – Technology
+   - line : Andrea Stellwag – Finances
+   - line : Bernd Wiserner – Resources
+  
+- head : "Responsible for content (in accordance with § 6 MDStV)"
+  lines :
+   - line : "Nico Zellner"
+
+- head : "Liability Insurance (in accordance with § 2 Abs. 1 DL-InfoV)"
+  lines : 
+   - line : Hiscox AG
+   - line : Oberanger 28
+   - line : D-80331 Munich
+   - line : (worldwide coverage)
+
+- head : Legal Notice
+  lines :
+   - line : Despite careful review, we assume no liability for the content of external links. The operators of sites linked to are exclusively responsible for their content.
+
+- head : Copyright
+  lines :
+    - line : ConSol Consulting & Solutions Software GmbH 2020

@@ -1,0 +1,52 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.enterprise }}
+{{ if .enable}}
+{{"<!-- Start Enterprise section -->" | safeHTML}}
+<section id="enterprise" class="enterprise bg-two section">
+    <div class="container">
+        <div class="row">
+            {{"<!-- section title -->" | safeHTML}}
+            <div class="col-lg-12">
+                <div class="title text-center wow fadeInDown" data-wow-duration="1500ms">
+                    <h2>{{ .heading }}<span class="color"> {{ .headingSpan }}</span></h2>
+                    <div class="border-meghna"></div>
+                </div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML}}
+            {{ range .pricingTable }}
+            {{"<!-- single enterprise table -->" | safeHTML}}
+            <div class="col-lg-3 col-md-6 col-12 text-center wow fadeInUp" data-wow-duration="500ms">
+                <div class="price-item">
+                    {{"<!-- plan name & value -->" | safeHTML}}
+                    <div class="price-title">
+                        <h3>{{ .title }}</h3>
+                        <h4>{{ .price }}</h4>
+                        <span class="small">{{ .time }}</span>
+                    </div>
+                    {{"<!-- plan description -->" | safeHTML}}
+                    <ul>
+                        {{ range .plan }}
+                        <li >
+                            <div class="no-wrap d-flex ml-md-2 ml-4 mr-4 mr-md-2">
+                                <div class="mr-auto">{{ .planDetails }}</div>
+                                <div>{{ if .iHead }}
+                                    <span data-toggle="popover" title="{{ .iHead }}" data-content="{{ .iCont }}">
+                                        <i class="fas fa-info-circle" ></i>
+                                    </span>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    <a class="btn btn-transparent select-plan" data-plan="{{ .dropdownIndex }}" href="{{ .btnURL }}">{{ .btnText }}</a>
+                </div>
+            </div>
+            {{"<!-- end single enterprise table -->" | safeHTML}}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{"<!-- /enterprise -->" | safeHTML}}
+{{ end }}
+{{ end }}

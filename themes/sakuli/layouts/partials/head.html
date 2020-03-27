@@ -1,0 +1,29 @@
+
+<head>
+    <!-- Google Tag Manager (needs to stay as first element in head) -->
+    <!-- type text/plain must stay there as klaro cookie banner will activate only on consent -->
+    <script data-name="googleanalytics" data-type="application/javascript" type="text/plain">(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TMFSKHB');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description"
+        content="{{ if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">
+    <meta name="author"
+        content="{{ with .Params.author }}{{ . }}{{else}}{{ with .Site.Params.author}}{{ . }}{{ end }}{{end}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E2E Testing & Monitoring</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL | relURL }}images/favicon.png" />
+
+    {{ $bootstrap := resources.Get "plugins/bootstrap/dist/css/bootstrap.min.css" }}
+    {{ $animate := resources.Get "plugins/animate-css/animate.css" }}
+    {{ $styles := resources.Get "css/style.css" | minify }}
+    {{ $css := slice $bootstrap $animate $styles | resources.Concat "css/bundle.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+</head>

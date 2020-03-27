@@ -1,1 +1,33 @@
-404
+<!DOCTYPE html>
+<html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" scroll-behavior="smooth">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sakuli not Found</title>
+
+    {{ $bootstrap := resources.Get "plugins/bootstrap/dist/css/bootstrap.min.css" }}
+    {{ $animate := resources.Get "plugins/animate-css/animate.css" }}
+    {{ $styles := resources.Get "css/style.css" | minify}}
+    {{ $css := slice $bootstrap $animate $styles | resources.Concat "css/bundle.css" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+
+</head>
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.hero }}
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="52">
+    <div id="content">
+<section class="hero-area"
+    style="background-image: url('data:image/jpeg;base64,{{ readFile .bgImage | base64Encode }}'); background-position: center;">
+    <div class="block">
+        <img src="{{ .icon | relURL }}" alt="image">
+        <h1>404</h1>
+        <p>Seems you got lost :(</p>
+    </div>
+</section>    </div>
+
+</body>
+
+</html>
+{{ end }}
+

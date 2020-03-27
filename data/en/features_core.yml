@@ -1,0 +1,62 @@
+enable : true
+heading : Core
+headingSpan : Features
+featuresHead : 
+- image : "images/mainUseCases/architecture_s.png"
+  heading : "All in one UI Testing"
+  content : 
+      - para : "Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, run them automatically and save a ton of time by dramatically reducing your manual testing."
+      - heading : "Build Sustainable Tests"
+      - para : "Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionalities and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel. It was never easier to write sustainable user interface tests."
+      - heading : "Integrate UI Tests into CI/CD Pipelines"
+      - para : "By integrating your Sakuli UI tests into continuous integration systems, you will speed up your software development cycles and increase the quality of your delivered software. Sakuli supports a variety of CI/CD tools like Jenkins, Drone IO, Travis-CI and many more."
+      - para : "Sakulis design prioritizes an open and extensible base. Its modular Node.js core enables developers to create their own DSL, integrate behavior driven methods like Cucumber, adapt Sakuli to new technologies and connect to any kind of downstream application using the comprehensive APIs. Sakuli is an open platform for a variety of End-2-End use-cases."
+
+featuresItem : 
+- icon : fas fa-check-double
+  title : Simplified Selenium
+  content : It was never more easy to use the de-facto standard in UI-Web-Testing. Sakuli offers all the necessary methods, but it´s easy to use.
+
+- icon : fas fa-bolt
+  title : No more Staleelements
+  content : "As Sakuli handles the Selenium complexity, you don´t have to worry about Staleelements any more."
+
+- icon : fas fa-expand
+  title : Screenshot based interaction
+  content : Control any native application or element that is not accessible via DOM with Sakulis built-in image matching. 
+
+- icon : far fa-file-code
+  title : DOM based interaction
+  content : Use Sakulis abstraction of Selenium to easily navigate and control web-apps. Find and interact with elements by displayed Text, Regular Expressions, ID, CSS classes or XPath queries.
+
+- icon : fas fa-tablet-alt
+  title : Screen Sizes
+  content : Use the same test for different screen-resolutions or within containers. Smart image recognition does not break by a few pixels.
+
+- icon : far fa-hand-point-down
+  title : Drag & Drop
+  content : Either use DOM-based Drag&Drop or use the real simulation by controlling the mouse.
+
+- icon : fas fa-camera
+  title : OCR
+  content : Character Recognition is built in and can be used to extract text from images or screenshots.
+
+- icon : fas fa-arrows-alt-v
+  title : Auto-Scroll into View
+  content : Actions like 'highlight', 'focus', 'click' and others automatically scroll the target element into the viewport.
+
+- icon : far fa-keyboard
+  title : Native Control
+  content : Sakuli can use the mouse and keyboard just like a real user would do. Easily find workarounds for buggy forms or imitate a user perfectly.
+
+- icon : far fa-clipboard
+  title : Clipboard Integration
+  content : Use the clipboard with its set, get and paste methods to easily transfer data or workaround buggy forms.
+
+- icon : fas fa-lock
+  title : Secrets Handling
+  content : Sakuli supports securly encrypted secrets, no more plain-text passwords and other sensitive information within the testcase.
+
+- icon : fas fa-bug
+  title : Debugging
+  content : Use the power of Node.js to debug your test.

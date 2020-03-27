@@ -1,0 +1,15 @@
+enable : true
+heading : Über
+headingSpan : uns
+
+image : images/about/smarthouse_xs.jpg
+title : Entwickler mit Leidenschaft für Softwarequalität
+description : Seit über 30 Jahren begleitet ConSol lokale und internationale Unternehmen mit passgenauen IT-Lösungen partnerschaftlich durch den gesamten Software-Lifecyle. Unser Portfolio umfasst High-End-IT-Beratung, agile Software-Entwicklung sowie Betrieb & Support rund um die Uhr. Ein interdisziplinäres Team aus Spezialisten, Umsetzern und Innovationstreibern garantiert die zielorientierte Lösung komplexer technologischer Fragestellungen – und begeistert durch neue Ansätze und Technologien.
+description2 :  Mit unserer langjährigen Erfahrung, der hohen Qualifikation und dem überdurchschnittlichen Engagement unserer Mitarbeiter machen wir die Geschäftsprozesse und IT-Umgebung unserer Kunden fit für die Herausforderungen von morgen. Dabei arbeiten wir herstellerunabhängig und stehen finanziell auf eigenen Beinen. Was für uns zählt, ist die kundenindividuell beste Lösung. Denn Ihr Erfolg ist unser Erfolg.
+btnText : "Zur Consol Webseite"
+btnUrl : "https://www.consol.de"
+description3 : "Wenn Sie mehr über Consol und das gesamte Portfolio erfahren möchten, angefangen von Software Engineering und Operations bis hin zu OpenShift und mehr - besuchen Sie die Consol-Website:"
+
+btnContactText : "Kontaktieren Sie uns"
+btnContactUrl : "#contact-us"
+dropdownIndex : "Personal contact"

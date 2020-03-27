@@ -1,0 +1,79 @@
+enable : true
+heading : Enterprise
+headingSpan : Features
+featuresItem: 
+      - icon : fas fa-chart-area
+        title : Monitoring Forwarder
+        content:
+            - paragraph : "Combining End-2-End testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated End-2-End tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users."
+            - image : images/mainUseCases/monitoring_s.png
+            - paragraph : Test results and data of Sakulis open API can be forwarded to different target systems like Prometheus, OMD, checkmk, databases and propriertary systems.
+            - heading : Monitor Critical Workflows
+            - paragraph : Imagine testing your critical processes and workflows by simulating a real-world user, sending execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice. Before the first customer complains about the performance, you will have been notified automatically and you will be able to investigate and minimize affects on your revenue stream.
+            - paragraph : Sakuli and Sakuli Forwarder are designed to handle this task so you (and your manager) will finally find a good night’s sleep again.
+            - heading : Your Benefits
+              list :  
+                  - liEl : Send execution times of test steps to your monitoring system
+                  - liEl : Connect a variety of modern monitoring solutions to your End-2-End tests
+                  - liEl : Attach screenshots or videos to your monitoring data
+                  - liEl : Monitor your important workflows
+                  - liEl : Define thresholds in Sakuli and let the monitoring system alert you
+                  - liEl : Detect issues in 3rd party systems that influence your application"
+            - heading : Your Package
+              list :  
+                  - liEl : Icinga2
+                  - liEl : checkmk
+                  - liEl : Prometheus
+                  - liEl : OMD (Nagios, Gearman)
+                  - liEl : ElasticSearch (coming soon)
+                  - liEl : SQL Databases (coming soon)
+      - icon : fab fa-docker
+        title : All-in-one Docker Image
+        content:
+            - heading : Sakuli Container in a Nutshell
+            - paragraph : Our pre-configured Docker container will run Sakuli in an isolated environment. This will ensure having the same setup and equal conditions for every test run. You don’t need an unlocked display for native UI interactions with the headless VNC image configured in every container. For debugging purposes, you will be able to watch your test execution live in a browser or a VNC client any time. Scale your tests horizontally by instantiating as many containers as you need.
+            - image : images/mainUseCases/container_s.png
+            - heading : Your Benefits
+              list :  
+                  - liEl : "Always rely on the same, clean environment: no cookie hassle, no session data, no old test artifacts"
+                  - liEl : "Scale your tests: Run multiple instances of your container in parallel to accelerate overall execution time or simulate heavy loads on your application"
+                  - liEl : Orchestrate your test cluster with OpenShift, Kubernetes or any other platform
+                  - liEl : "CI/CD: Easily integrate your tests into your continuous integration environment"
+                  - liEl : The layout and scaling of websites and native applications will always be the same, therefore increasing the reliability of native interactions
+                  - liEl : Orchestrate, execute and alter your test container within the Sakuli UI portal –> coming soon
+            - heading : Your Package
+              list :  
+                  - liEl : Container Operating system Ubuntu
+                  - liEl : Desktop environment OpenBox
+                  - liEl : VNC-Server
+                  - liEl : noVNC - HTML5 VNC client
+                  - liEl : Node.js
+                  - liEl : Mozilla Firefox
+                  - liEl : Chromium
+                  - liEl : Sakuli
+                  - liEl : "Starting from L-Package: RDP installation for remote connection to Windows machines"
+      
+      - icon : fab fa-redhat
+        title : S2I Images
+        content:
+            - paragraph : Sakuli Container are also available as ready-to-go S2I images for OpenShift.
+            - linkUrl : "https://sakuli.io/docs/enterprise_features/s2i/"
+            - linkText : " Check out our documentation."
+
+      - icon : fas fa-hands-helping
+        title : Professional Support
+        content:
+            - paragraph : "Sakuli Core and Sakuli add-ons are supported on a business impact prioritization. This prioritization is performed by our experts in respect to:" 
+              list : 
+                  - liEl : Security > Function without Workaround > Function with Workaround 
+            - paragraph : Support is restricted on Bugs of Sakuli and its Features (Consulting and Setup are not included) and limited to the amount of cases specified in the respective Subscription Package. Support inquiries need to be in a structured form (Please use the provided template) with all necessary information about the system environment, configuration and a detailed report. Customers need to ensure reproducibility of the issue by offering remote accessibility or an appropriate system to reproduce on. 
+            - paragraph : SLA times are defined as initial reaction time from Monday to Friday during German business hours 08:00 - 17:00 – excluding German public holidays. Support is offered via email.
+      
+      - icon : fas fa-code
+        title : Maintenance
+        content:
+            - paragraph : You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.
+            - paragraph : The Sakuli DEV team tracks security incidents of underlying software components regularly and updates Sakuli components with the latest security fix releases shortly after appearance.
+      
+                  
+            

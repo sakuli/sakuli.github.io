@@ -1,0 +1,24 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.supported }}
+<section id="supported" class="parallax-section bg-1 section overly" style="background-image: url('{{ .bgImage }}');">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                <h2 class="sakuli-dark-grey">{{ .heading}} <span class="color">{{ .headingSpan}}</span> </h2>
+                <div class="border-meghna"></div>
+            </div>
+        </div>
+        <div class="row">
+            {{ range .items }}
+            <div class="col-lg-3 col-md-6 col-6 mb-5 content text-center wow fadeInDown" data-wow-duration="500ms">
+                <div class="supported-item">
+                    <i class="{{ .icon }}"></i>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .info }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

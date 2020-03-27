@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
+<html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" scroll-behavior="smooth">
+{{- partial "head.html" . -}}
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="52">
+<!--    <p>
+        Hugo URL Test:
+        <table>
+            <tr>
+                <td style="width: 300px">Site.BaseURL:</td>
+                <td>{{ $.Site.BaseURL }}</td>
+            </tr>
+            <tr>
+                <td style="width: min-content;">Site.BaseURL | relURL:</td>
+                <td>{{ $.Site.BaseURL | relURL }}</td>
+            </tr>
+            <tr>
+                <td style="width: min-content;">Site.BaseURL | relLangURL:</td>
+                <td>{{ $.Site.BaseURL | relLangURL }}</td>
+            </tr>
+            <tr>
+                <td>Site.Language.Lang:</td>
+                <td>{{ $.Site.Language.Lang }}</td>
+
+            </tr>
+            <tr>
+                <td>Site.LanguagePrefix:</td>
+                <td>{{ $.Site.LanguagePrefix }}</td>
+            </tr>
+            <tr>
+                <td>demoLink | relLangURL:</td>
+                <td> {{ "demoLink" | relLangURL}}</td>
+            </tr>
+            <tr>
+                <td>demoLink | absLangURL:</td>
+                <td>{{ "demoLink" | absLangURL}}</td>
+            </tr>
+            <tr>
+                <td>#contact-us | relLangURL: </td>
+                <td>{{ "#contact-us" | relLangURL}}</td>
+            </tr>
+            <tr>
+                <td>#contact-us | absLangURL: </td>
+                <td>{{ "#contact-us" | absLangURL}}</td>
+            </tr>
+        </table>
+    </p>
+-->
+
+    <div id="content">
         {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+    </div>
+    {{- partial "footer.html" . -}}
+</body>
+
 </html>

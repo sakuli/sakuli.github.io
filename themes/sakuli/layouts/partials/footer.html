@@ -1,21 +1,81 @@
-</main>
-<footer>
-    <nav>
-        <ul>
-            <li> © 2020 <a href="https://consol.com" target="_blank" rel="noopener">ConSol Consulting & Solutions Software GmbH</a></li>
-            <li><a href="/legalnotice">Legal Notice</a></li>
-            <li><a id="data-privacy-link" href="https://www.consol.com/data-privacy/" target="_blank" rel="noopener">Data Privacy</a></li>
-            <li><a id="contact-link" href="https://www.consol.com/request-sakuli-enterprise" target="_blank" data-contactform="Contact our Team">Contact</a></li>
-        </ul>
-    </nav>
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.footer }}
+
+<footer id="footer" class="bg-one">
+	<div class="container">
+
+		<div class="footer-upper row justify-content-center">
+			{{ range .footerUpper }}
+			<div class="col-lg-3 col-6">
+				<h1>{{ .heading }}</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					{{ range .sections }}
+						{{ if eq .target "external" }}
+							<a href="{{ .url }}">{{ .title }}</a>
+						{{ else }}
+							{{ if eq .target "sub" }}
+								<a href="{{ $.Site.BaseURL | relLangURL }}{{ .url }}" >{{ .title }}</a>
+							{{ else }}
+								<a href="{{ $.Site.BaseURL | relLangURL }}#{{ .url }}">{{ .title }}</a>
+							{{ end }}
+						{{ end }}
+					{{ end }}
+				</ul>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+
+	<div class="container-fluid p-0">
+		<div class="footer-lower">
+			<div class="row wow fadeInUp" data-wow-duration="500ms">
+				<div class="col-xl-12">
+					<div style="text-align: center; padding-top: 20px;">
+						<div>
+							<a href="{{ .Site.BaseURL | relURL }}" style="display: inline; padding-right: 20px">
+								<img src="{{ .footerLower.logo | relURL }}" width="150" alt="Sakuli Logo" />
+							</a>
+						</div>
+
+						{{ with $data.footer }}
+						<div class="mt-3">
+							{{ range .footerLower.sections }}
+							<div class="list-inline-item">
+									<a href="{{ .url }}" style="position: relative;">
+										<i class="{{ .icon }}"></i>
+									</a> 
+							</div>
+							{{ end }}
+						</div>
+						{{ end }}
+					</div>
+
+					<div class="copyright text-center">
+						<p style="padding: 1rem; font-size: 1rem">A <a href="{{ .companyUrl }}"> {{ .companyName }} </a>
+							brand &copy;
+							<script>
+								document.write(new Date().getFullYear())
+							</script>. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>
-<div id="modal"></div>
-{{ $jqSlimJs := resources.Get "ext/jquery-3.3.1.slim.min.js" }}
-{{ $popperJs := resources.Get "ext/popper.min.js" }}
-{{ $bsJs := resources.Get "ext/bootstrap.min.js" }}
-{{ $parsleyJs := resources.Get "ext/parsley.min.js" }}
-{{ $vueJs := resources.Get "vue/index.js" }}
-{{ $js := slice $jqSlimJs $popperJs $bsJs $parsleyJs $vueJs | resources.Concat "js/bundle.js" | resources.Minify }}
+{{ end }}
+
+{{ $customJS := resources.Get "custom/index.js" }}
+
+{{ $jqueryJs := resources.Get "plugins/jquery/dist/jquery.min.js"}}
+{{ $awesome := resources.Get "plugins/awesome/all.js"}}
+{{ $bootstrapJs := resources.Get "plugins/bootstrap/dist/js/bootstrap.bundle.min.js"}}
+{{ $wowJs := resources.Get "plugins/wow/dist/wow.min.js"}}
+{{ $script := resources.Get "js/script.js" }}
+{{ $scroll := resources.Get "js/scroll-behavior-polyfill.js" }}
+{{ $klaroConfigJs := resources.Get "plugins/klaroCookie/config.js" }}
+{{ $klaroJs := resources.Get "plugins/klaroCookie/klaro.js" }}
+
+
+{{ $js := slice $jqueryJs $awesome $bootstrapJs $wowJs $customJS $script $scroll $klaroConfigJs $klaroJs | resources.Concat "js/bundle.js" | resources.Minify }}
 <script src="{{ $js.RelPermalink }}"></script>
-</body>
-</html>

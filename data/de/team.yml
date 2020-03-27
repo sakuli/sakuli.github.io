@@ -1,0 +1,71 @@
+enable : true
+heading : Unser
+headingSpan : Kern-Team
+teamMember :
+  - image : images/team/nico.jpg
+    name : Nico Zellner
+    designation : Vertrieb
+    description : 
+    socialIcon :
+      - icon : "fab fa-linkedin-in"
+        url : "https://www.linkedin.com/in/nicozellner"
+      - icon : "fab fa-xing"
+        url : "https://www.xing.com/profile/Nico_Zellner/cv"
+      - icon : "fab fa-twitter"
+        url : "https://twitter.com/nze_MUC"
+      
+  - image : images/team/simon.jpg
+    name : Simon Hofmann
+    designation : Software Engineer
+    description : 
+    socialIcon :
+      - icon : "fab fa-github"
+        url : "https://github.com/s1hofmann"
+      - icon : "fab fa-twitter"
+        url : "https://twitter.com/s1hofmann"
+      
+  - image : images/team/tim.jpg
+    name : Tim Keiner
+    designation : Software Engineer
+    description : 
+    socialIcon :
+      - icon : "fab fa-github"
+        url : "https://github.com/tnobody"
+      - icon : "fab fa-twitter"
+        url : "https://twitter.com/derKeiner"
+      
+  - image : images/team/sven.jpg
+    name : Sven Hettwer
+    designation : Software Engineer
+    description : 
+    socialIcon :
+      - icon : "fab fa-github"
+        url : "https://github.com/svettwer"
+      - icon : "fab fa-twitter"
+        url : "https://twitter.com/SvenHettwer"
+  
+  - image : images/team/cliff.jpg
+    name : Cliff Le Van
+    designation : Software Engineer
+    description : 
+    socialIcon :
+      - icon : "fab fa-github"
+        url : "https://github.com/cliffle"
+  
+  - image : images/team/marlene.jpg
+    name : Marlene Kermani
+    designation : Software Engineering Azubine
+    description : 
+
+  - image : images/team/bogdan.jpg
+    name : Bogdan Bermel
+    designation : Junior Engineer
+    description : 
+
+  - image : images/team/julian.jpg
+    name : Julian Liebich
+    designation : Software Engineering Azubi
+    description :
+
+
+    

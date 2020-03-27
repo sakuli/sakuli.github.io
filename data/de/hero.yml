@@ -1,0 +1,9 @@
+enable : true
+bgImage : "static/images/backgrounds/berg-xs.jpg"
+icon : "images/logos/logo-circle.svg"
+heading : "E2E Testing & Monitoring"
+content : "Offene Plattform für echtes UI-Testing und -Monitoring sämtlicher Anwendungen."
+contentSub : "The Pinnacle of Testing!"
+btn : true
+btnText : "EXPLORE"
+btnURL : "#getting-started"
