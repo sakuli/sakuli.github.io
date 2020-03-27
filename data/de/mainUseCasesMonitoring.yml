@@ -1,7 +1,7 @@
 enable : true
 
 title : E2E Anwendungs-Monitoring
-heading : "Umsatzfluss sicherstellen"
+heading : "Kritische Ausfälle entdecken und verhindern"
 
 chapter : 
     - title: Monitoring auf neuem Level
@@ -9,7 +9,7 @@ chapter :
       contOrder : "last"
       imgOrder : "first"
       paras : 
-        - content : Mit Sakuli ist es einfach, Ihr bestehendes Monitoring auf die nächste Stufe zu heben. Nutzen Sie Ihre bestehende Infrastruktur und erweitern Sie Ihr bevorzugtes Monitoring-System wie Prometheus, checkkmk, icinga usw. um reale Performance-Daten aus Nutzersicht.
+        - content : Mit Sakuli ist es einfach, Ihr bestehendes Monitoring auf die nächste Stufe zu heben. Nutzen Sie Ihre bestehende Infrastruktur und erweitern Sie Ihr bevorzugtes Monitoring-System wie Prometheus, checkmk, icinga usw. um reale Performance-Daten aus Nutzersicht.
         - content : Beschränken Sie Ihr Monitoring nicht auf die Beobachtung des Serverzustands, der Datenbanklast und der IO-Performance, sondern stellen Sie sicher, dass Ihre komplexe Systemarchitektur sich so verhält, wie sie sollte - implizit werden alle relevanten Dienste und Anwendungen von Drittanbietern einbezogen.
     - title : "Echte Nutzer Simulation"
       image : images/mainUseCases/laptop_gauge.png
