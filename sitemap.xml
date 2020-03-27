@@ -1,68 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://sakuli.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/monitoring/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/enterprise/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/features/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/legalnotice/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/enterprise/forwarder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/enterprise/container/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/rpa/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/enterprise/cli/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/enterprise/core/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/enterprise/hub/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/testing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sakuli.io/wp/</loc>
-  </url>
-  
-</urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	<sitemap>
+	   	<loc>en/sitemap.xml</loc>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>de/sitemap.xml</loc>
+		
+	</sitemap>
+	
+</sitemapindex>

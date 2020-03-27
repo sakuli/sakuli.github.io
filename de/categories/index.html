@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de-de" scroll-behavior="smooth">
+<head>
+    
+    
+    <script data-name="googleanalytics" data-type="application/javascript" type="text/plain">(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TMFSKHB');</script>
+    
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description"
+        content="Sakuli End2End Testing and Monitoring">
+    <meta name="author"
+        content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E2E Testing & Monitoring</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/bundle.css" integrity="" />
+</head><body id="body" data-spy="scroll" data-target=".navbar" data-offset="52">
+
+
+    <div id="content">
+
+<section class="sticky-top navigation">
+        <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                
+                        <a class="navbar-brand logo" href="/de">
+                                <img src="/images/logos/logo.svg" alt="Logo" height="42px" />
+                                <span class="pl-2 font-weight-bold"></span>
+                        </a>
+                        <button id="burger-button" class="navbar-toggler rounded-0" type="button" data-toggle="collapse"
+                                data-target="#navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navigation">
+                                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                                <a class="nav-link" onclick="closeBurgerjs()"
+                                                        href="#body"></a></li>
+                                        
+                                        
+                                
+
+                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#features">Features</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#enterprise">Enterprise</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#company">Über uns</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#contact-us">Kontakt</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="https://sakuli.io/docs/getting-started/" target="_blank" rel="noopener">Docs</a>
+                                                        </li>
+                                                        
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de/whitepaper">Paper</a>
+                                                        </li>
+                                                        
+                                                
+                                        
+                                        
+                                        
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dropdownLanguage" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        Sprache
+                                                </a>
+                                                <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropdownLanguage">
+                                                        
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <a class="dropdown-item" href="/categories/">EN</a>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <a class="dropdown-item" href="/de/categories/">DE</a>
+                                                                
+                                                                
+                                                                
+                                                        
+                                                </div>
+                                        </li>
+                                        
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dropDownSettings" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-cog"></i>
+                                                </a>
+                                                <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropDownSettings">
+                                                        <a class="dropdown-item" onclick="klaro.show();return false;closeBurgerjs()">Cookie Einstellungen</a>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <a class="nav-link" href="https://github.com/sakuli/sakuli" target="_blank" rel="noopener">
+                                                        <i class="fab fa-github"></i>
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a class="nav-link" href="https://twitter.com/sakuli_e2e" target="_blank" rel="noopener">
+                                                        <i class="fab fa-twitter"></i>
+                                                </a>
+                                        </li>
+
+                                        
+                                
+                                
+                                </ul>
+                        </div>
+                </nav>
+        </div>
+</section>
+
+<!-- Start Blog Section -->
+<section id="blog" class="section">
+    <div class="container">
+        <div class="row">
+            list of default!
+            
+        </div>
+    </div>
+</section>
+<!-- /blog -->
+
+
+    </div>
+
+
+<footer id="footer" class="bg-one">
+	<div class="container">
+
+		<div class="footer-upper row justify-content-center">
+			
+			<div class="col-lg-3 col-6">
+				<h1>Portfolio</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							<a href="https://github.com/sakuli">Open-Source</a>
+						
+					
+						
+							
+								<a href="/de#enterprise">Enterprise</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-6">
+				<h1>Download</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							
+								<a href="/de/whitepaper" >Whitepaper</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-6">
+				<h1>Services</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							
+								<a href="/de#contact-us">Kontakt</a>
+							
+						
+					
+						
+							
+								<a href="/de/legalnotice" >Impressum</a>
+							
+						
+					
+						
+							
+								<a href="/de/dataprivacy" >Datenschutz</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container-fluid p-0">
+		<div class="footer-lower">
+			<div class="row wow fadeInUp" data-wow-duration="500ms">
+				<div class="col-xl-12">
+					<div style="text-align: center; padding-top: 20px;">
+						<div>
+							<a href="/" style="display: inline; padding-right: 20px">
+								<img src="/images/logos/logo.svg" width="150" alt="Sakuli Logo" />
+							</a>
+						</div>
+
+						
+						<div class="mt-3">
+							
+							<div class="list-inline-item">
+									<a href="https://twitter.com/sakuli_e2e" style="position: relative;">
+										<i class="fab fa-twitter fa-2x"></i>
+									</a> 
+							</div>
+							
+							<div class="list-inline-item">
+									<a href="https://github.com/sakuli/sakuli" style="position: relative;">
+										<i class="fab fa-github fa-2x"></i>
+									</a> 
+							</div>
+							
+						</div>
+						
+					</div>
+
+					<div class="copyright text-center">
+						<p style="padding: 1rem; font-size: 1rem">A <a href="https://consol.de"> Consol </a>
+							brand &copy;
+							<script>
+								document.write(new Date().getFullYear())
+							</script>. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/bundle.min.js"></script>
+</body>
+
+</html>

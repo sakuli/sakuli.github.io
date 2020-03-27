@@ -1,128 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sakuli E2E Testing and Monitoring</title>
-    <link>https://sakuli.io/</link>
-    <description>Recent content on Sakuli E2E Testing and Monitoring</description>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://sakuli.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>End to End Monitoring</title>
-      <link>https://sakuli.io/monitoring/</link>
+      <title></title>
+      <link>/whitepaper/10stepguide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sakuli.io/monitoring/</guid>
-      <description>First to Know, First to Act Aside from the correct behavior of your system, you may also be interested in the actual performance of user interactions with the system. Sakuli tracks performance data and saves error screenshots of your End-2-End Test and provides it via open APIs.   E2E Application Monitoring Identifying possible performance bottlenecks - before your users will - is a critical task for operators and administrators. Sakuli makes it possible to integrate such real-world performance analysis in an automated way.</description>
-    </item>
-    
-    <item>
-      <title>Features</title>
-      <link>https://sakuli.io/features/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/features/</guid>
-      <description>Core Features (Open Source) Testing based on Selenium and Nut.js     Screenshot based interaction    DOM based interaction    Screen Sizes    Auto-Scroll into View     Drag and Drop    Native Control    Clipboard integration    Secrets     Simplifying Selenium    Node debugging    No more Staleelements     Supported OS (others may also work but without warranty)   Windows Windows 10 and above     Mac OS OSX V.</description>
-    </item>
-    
-    <item>
-      <title>Legal Notice</title>
-      <link>https://sakuli.io/legalnotice/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/legalnotice/</guid>
-      <description>Address ConSol Consulting &amp;amp; Solutions Software GmbH
-St.-Cajetan-Straße 43
-D-81669 Munich
-Telefon: +49-89-45841-100
-Telefax: +49-89-45841-111
-E-Mail: info@consol.de
-Commercial register Registration court: Munich District Court
-HRB 97371
-Sales tax identification number (in accordance with § 27 a of the Sales Tax Law) DE 129318612
-Authorized company officers Dr. Ulrich Schwanengel
-Michael Beutner – Technology
-Andrea Stellwag – Finances
-Bernd Wiserner – Resources
-Responsible for content (in accordance with § 6 MDStV) Nico Zellner</description>
-    </item>
-    
-    <item>
-      <title>Monitoring Forwarder</title>
-      <link>https://sakuli.io/enterprise/forwarder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/enterprise/forwarder/</guid>
-      <description>End-2-End Application Testing and Monitoring: Your Perfect Combination Combining End-2-End testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated End-2-End tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.
-Monitor Critical Workflows Imagine testing your critical processes and workflows by simulating a real-world user, sending execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice.</description>
-    </item>
-    
-    <item>
-      <title>Pre-Configured Headless Container</title>
-      <link>https://sakuli.io/enterprise/container/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/enterprise/container/</guid>
-      <description>Sakuli Container in a Nutshell Our pre-configured Docker container will run Sakuli in an isolated environment. This will ensure having the same setup and equal conditions for every test run. You don&amp;rsquo;t need an unlocked display for native UI interactions with the headless VNC image configured in every container. For debugging purposes, you will be able to watch your test execution live in a browser or a VNC client any time.</description>
-    </item>
-    
-    <item>
-      <title>RPA - Robot Process Automation</title>
-      <link>https://sakuli.io/rpa/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/rpa/</guid>
-      <description>Over the years systems and processes are growing, eventually heading for potential technology and media breakdowns. Considering such scenarios, automating processes and daily tasks may become quite difficult. Sakuli can help to automate tasks between various system boundaries. Downloading a report from a browser-based reporting tool app and uploading it to shared folders won&amp;rsquo;t create problems anymore: Sakuli closes the gap between browser automation and desktop automation.
-Have Sakuli do the Work Add, import or export functionalities to your application when APIs are missing or too expensive to implement.</description>
-    </item>
-    
-    <item>
-      <title>Sakuli CLI Tools</title>
-      <link>https://sakuli.io/enterprise/cli/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/enterprise/cli/</guid>
+      <guid>/whitepaper/10stepguide/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Sakuli Core</title>
-      <link>https://sakuli.io/enterprise/core/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/enterprise/core/</guid>
-      <description>All You Need UI Test Automation Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, run them automatically and save a ton of time by dramatically reducing your manual testing.
-Build Sustainable Tests Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionalities and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past.</description>
-    </item>
-    
-    <item>
-      <title>Sakuli Hub</title>
-      <link>https://sakuli.io/enterprise/hub/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/enterprise/hub/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://sakuli.io/testing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/testing/</guid>
-      <description>Sakuli makes it easy to write tests that act like real-world users. It automatically sets up and starts a webdriver instance and also lets you take control over the system&amp;rsquo;s mouse and keyboard. The example below shows a basic login to an imaginary web-based service with a login form: (async () =&amp;gt; { const testCase = new TestCase(); try { await _navigateTo(&amp;#34;https://example.com&amp;#34;); await _setValue(_input(&amp;#39;user&amp;#39;), &amp;#39;me&amp;#39;); await _setValue(_password_(&amp;#39;password&amp;#39;), &amp;#39;top-$ecret&amp;#39;); await _click(_button(&amp;#39;Login&amp;#39;)); testCase.</description>
-    </item>
-    
-    <item>
-      <title>Whitepaper</title>
-      <link>https://sakuli.io/wp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sakuli.io/wp/</guid>
-      <description>     10 Step Guide to E2E Monitoring   Software malfunctions cost time and money and frustrate users. E2E Monitoring identifies potential problems at an early stage. But implementation and operation is not an easy matter. Support is provided with a 10 step guide from our E2E experts.     </description>
     </item>
     
   </channel>

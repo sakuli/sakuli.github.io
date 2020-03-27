@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" scroll-behavior="smooth">
+<head>
+    
+    
+    <script data-name="googleanalytics" data-type="application/javascript" type="text/plain">(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TMFSKHB');</script>
+    
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description"
+        content="Sakuli End2End Testing and Monitoring">
+    <meta name="author"
+        content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E2E Testing & Monitoring</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/bundle.css" integrity="" />
+</head><body id="body" data-spy="scroll" data-target=".navbar" data-offset="52">
+
+
+    <div id="content">
+<section class="sticky-top navigation">
+        <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                
+                        <a class="navbar-brand logo" href="/">
+                                <img src="/images/logos/logo.svg" alt="Logo" height="42px" />
+                                <span class="pl-2 font-weight-bold"></span>
+                        </a>
+                        <button id="burger-button" class="navbar-toggler rounded-0" type="button" data-toggle="collapse"
+                                data-target="#navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navigation">
+                                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                                <a class="nav-link" onclick="closeBurgerjs()"
+                                                        href="#body"></a></li>
+                                        
+                                        
+                                
+
+                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#features">Features</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#enterprise">Enterprise</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#company">About us</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#contact-us">Contact</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="https://sakuli.io/docs/getting-started/" target="_blank" rel="noopener">Docs</a>
+                                                        </li>
+                                                        
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/../whitepaper/">Paper</a>
+                                                        </li>
+                                                        
+                                                
+                                        
+                                        
+                                        
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dropdownLanguage" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        Language
+                                                </a>
+                                                <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropdownLanguage">
+                                                        
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <a class="dropdown-item" href="/dataprivacy/">EN</a>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <a class="dropdown-item" href="/de/dataprivacy/">DE</a>
+                                                                
+                                                                
+                                                                
+                                                        
+                                                </div>
+                                        </li>
+                                        
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dropDownSettings" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-cog"></i>
+                                                </a>
+                                                <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropDownSettings">
+                                                        <a class="dropdown-item" onclick="klaro.show();return false;closeBurgerjs()">Cookie Settings</a>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <a class="nav-link" href="https://github.com/sakuli/sakuli" target="_blank" rel="noopener">
+                                                        <i class="fab fa-github"></i>
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a class="nav-link" href="https://twitter.com/sakuli_e2e" target="_blank" rel="noopener">
+                                                        <i class="fab fa-twitter"></i>
+                                                </a>
+                                        </li>
+
+                                        
+                                
+                                
+                                </ul>
+                        </div>
+                </nav>
+        </div>
+</section>
+
+
+
+
+
+
+<section class="section pt-4 pb-0">
+    <div class="container">
+        <div class="row">
+            <!-- section title -->
+            <div class="col-lg-12">
+                <div class="title text-center wow fadeInDown" data-wow-duration="1500ms">
+                    <h2>Privacy<span class="color"> protection</span></h2>
+                    <div class="border-meghna"></div>
+                </div>
+            </div>
+            
+
+            <div class="container col-md-8">
+                
+                    
+                    <p>The ConSol services and software solutions exclusively adress to business clients. ConSol respects and protects the privacy of its customers and visitors to its website. We adhere strictly to the provisions under data protection laws. Our data protection policy explains how the personal data of our visitors is collected and used. It also applies to the Sakuli website.</p>
+                    
+                    
+                
+                    <h5>Collection and Use of Information</h5>
+                    <p>At various points in its website, ConSol collects information to offer its customers and visitors more convenience. ConSol is the sole owner of the information collected on this site. This information is not sold or leased in any manner whatsoever to any third parties not affiliated with the company.</p>
+                    
+                    
+                
+                    
+                    <p>Different types of data are collected, depending on whether a visitor registers on our website or not.</p>
+                    
+                    
+                
+                    
+                    <p>Automatic capture of anonymous data when there is no registration:</p>
+                    
+                    
+                
+                    
+                    <p>ConSol stores log files that track IP addresses to analyze trends, diagnose problems with its servers, and monitor traffic and usage to better serve its customers and website visitors.</p>
+                    
+                    
+                
+                    
+                    <p>ConSol uses cookies to allow website visitors to use the website more conveniently and efficiently. A cookie is a piece of data stored on the user&#39;s hard drive that provides statistical information about the user. The use of cookies is in no way associated with identifiable personal information in ConSol products and emails. Some of our business partners, such as our web analytics service provider, also use cookies on our site. The provider has no access to this data.</p>
+                    
+                    
+                
+                    
+                    <p>Visitors may change whether they want to accept cookies beyond the technically necessary ones at any time (opt in):</p>
+                    <p><a class="btn btn-transparent" onclick="klaro.show();return false;">Adjust your cookie preferences </a></p>
+                    
+                
+                    
+                    <p>Additionally, visitors can set their browser to not accept cookies at all. However, this may prevent the use of certain parts of this website.</p>
+                    
+                    
+                
+                    
+                    <p>This website uses Google Analytics, a web analytics service provided by Google Inc. (&#34;Google&#34;). Google Analytics uses &#34;cookies&#34;, which are text files placed on your computer, to help the website analyze how users use the site. The information generated by the cookie about your use of the website will generally be transmitted to and stored by Google on servers in the United States. However, if IP anonymisation is activated on this website, your IP address will be shortened by Google in advance within member states of the European Union or in other signatory states to the Agreement on the European Economic Area. Only in exceptional cases will the full IP address be transmitted to a Google server in the USA where it will be shortened. On behalf of the operator of this website, Google will use this information to evaluate your use of the website, to compile reports on website activity and to provide other services relating to website activity and internet usage to the website operator. The IP address transmitted by your browser as part of Google Analytics is not combined with other data from Google. You may refuse the use of cookies by selecting the appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of this website. You can also prevent Google from collecting the data generated by the cookie and related to your use of the website (including your IP address) and Google from processing this data by downloading and installing the browser plug-in available under the following link:</p>
+                    
+                    <p><a href="http://tools.google.com/dlpage/gaoptout?hl=en" target="_blank" rel="noopener">[http://tools.google.com/dlpage/gaoptout?hl=en] </a></p>
+                
+                    
+                    <p>For our website, Google Tag Manager has been configured to ensure the anonymous collection of IP addresses.</p>
+                    
+                    
+                
+                    <h5>The following applies to registered users</h5>
+                    <p>The Sakuli website offers visitors various options to register for promotional and information e-mails, online webinars, and resources as well as support with the evaluation of our software and services. These registration forms enable visitors to sign up for ConSol mailing lists, and require the entry of contact information (such as name and e-mail address). We use this contact information for the purpose of mailing out the requested information about our company, our products, or our services. During the registration process, users can select whether they agree to the terms of use or not. Users who have registered and subsequently wish to withdraw their registration can cancel future e-mails at any time (see section ‘Unsubscribing‘ below).</p>
+                    
+                    
+                
+                    
+                    <p>As is customary in the industry, ConSol utilizes pixel tags and other methods to collect information about e-mails that the company mails out to registered website users as well as about the recipients of e-mails that registered users send to other persons. Pixel tags are tiny graphics files contained in HTML-encoded e-mails. When such an e-mail is opened in an HTML-capable e-mail program, the recipient’s computer accesses the ConSol servers to locate the pixel tag file. This allows ConSol to record and store information, such as e-mail addresses, the date and time when the recipient opened the e-mail, the HTML capability of the recipient’s e-mail program, and other protocol information. ConSol uses this information to optimize the delivery of future e-mails. </p>
+                    
+                    
+                
+                    
+                    <p>Our service provider CleverReach GmbH &amp; Co. KG uses exclusively contents or e-mail address lists provided by ConSol for the creation or delivery of communications requested by ConSol.</p>
+                    
+                    
+                
+                    <h5>Unsubscribing and Updating Information</h5>
+                    <p>If a user no longer wishes to receive the ConSol Newsletter, mailings, and promotional information, it is possible to unsubscribe by simply following the instructions contained in each Newsletter. If personal data changes or an e-mail recipient no longer wishes to receive specific mailings, all information or specific data can be corrected, updated, or deleted by entering the relevant changes on our website.</p>
+                    
+                    
+                
+                    <h5>Security and Data Protection</h5>
+                    <p>ConSol and its service providers take all precautionary measures to protect the confidentiality and security of the information of website visitors and customers by means of industry-specific security measures, such as firewalls, in combination with carefully developed security procedures. These measures serve to protect visitor and customer information from loss, misuse, or unauthorized changes.</p>
+                    
+                    
+                
+                    
+                    <p>The employees of ConSol have been trained and obligated to protect the information of customers and website visitors. Using physical, electronic, and procedural measures safeguards, we limit access to such personal information to the employees who require such information for business purposes. In addition, we conduct regular inspections to examine the appropriateness of our security measures.</p>
+                    
+                    
+                
+                    
+                    <p>Data transmissions to third countries occur only in connection with contractual execution, necessary communications, and other exceptions specifically stipulated in the German Federal Data Protection Act (BDSG). These third countries are USA.</p>
+                    
+                    
+                
+                    <h5>Data Protection Officer</h5>
+                    <p>ConSol employs a data protection officer who is responsible for the internal supervision of ConSol’s data protection policy. ConSol trains its employees regularly to ensure compliance with this policy.</p>
+                    
+                    
+                
+                    
+                    <p>Current data protection officer - Michael Elbel</p>
+                    
+                    
+                
+                    <h5>Links to Other Websites</h5>
+                    <p>The website of Sakuli or communications created by ConSol may contain links to other websites. ConSol does not accept liability for the data protection practices or the contents of such other websites. Visitors who do not agree with such companies’ collection of information about them should contact the companies in question directly.</p>
+                    
+                    
+                
+                    <h5>Contact</h5>
+                    <p>If you have questions or concerns about this policy, please contact the acting data protection officer at the address below or send an e-mail to datenschutz@consol.de.</p>
+                    
+                    
+                
+                    <h5>Disclaimer</h5>
+                    <p>We do not accept any liability for the contents of external links, despite careful monitoring of the contents. Only the operators of the linked websites are responsible for their contents.</p>
+                    
+                    
+                
+                    <h5>Copyright</h5>
+                    <p>ConSol Consulting &amp; Solutions Software GmbH 2020</p>
+                    
+                    
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+
+
+<footer id="footer" class="bg-one">
+	<div class="container">
+
+		<div class="footer-upper row justify-content-center">
+			
+			<div class="col-lg-3 col-6">
+				<h1>Portfolio</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							<a href="https://github.com/sakuli">Open-Source</a>
+						
+					
+						
+							
+								<a href="/#enterprise">Enterprise</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-6">
+				<h1>Download</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							
+								<a href="/../whitepaper" >Whitepaper</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-6">
+				<h1>Services</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							
+								<a href="/#contact-us">Contact</a>
+							
+						
+					
+						
+							
+								<a href="/../legalnotice" >Legal Notice</a>
+							
+						
+					
+						
+							
+								<a href="/../dataprivacy" >Data privacy</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container-fluid p-0">
+		<div class="footer-lower">
+			<div class="row wow fadeInUp" data-wow-duration="500ms">
+				<div class="col-xl-12">
+					<div style="text-align: center; padding-top: 20px;">
+						<div>
+							<a href="/" style="display: inline; padding-right: 20px">
+								<img src="/images/logos/logo.svg" width="150" alt="Sakuli Logo" />
+							</a>
+						</div>
+
+						
+						<div class="mt-3">
+							
+							<div class="list-inline-item">
+									<a href="https://twitter.com/sakuli_e2e" style="position: relative;">
+										<i class="fab fa-twitter fa-2x"></i>
+									</a> 
+							</div>
+							
+							<div class="list-inline-item">
+									<a href="https://github.com/sakuli/sakuli" style="position: relative;">
+										<i class="fab fa-github fa-2x"></i>
+									</a> 
+							</div>
+							
+						</div>
+						
+					</div>
+
+					<div class="copyright text-center">
+						<p style="padding: 1rem; font-size: 1rem">A <a href="https://consol.com"> Consol </a>
+							brand &copy;
+							<script>
+								document.write(new Date().getFullYear())
+							</script>. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/bundle.min.js"></script>
+</body>
+
+</html>
