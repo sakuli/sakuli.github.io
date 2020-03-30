@@ -10,4 +10,4 @@ ul :
   - li : "Die erzeugte Ticket-Nummer wird in einem Excel-File gespeichert"
   - li : "Danach wird in Paint das Sakuli Logo gezeichnet (dies dient natürlich nur dem Aufzeigen der Möglichkeiten von nativer Interaktion)"
   - li : "Schlussendlich werden die Laufzeiten der einzelnen Schritte an ein Monitoring System geschickt"
-content2 : "Auf dem ersten Display können Sie dem laufenden Test (via noVNC) und auf dem zweiten Display werden die Monitoring Daten mit einer Grafana Oberfläche dargestellt. Hier können Sie zoomen, die Graphen verändern und unterschiedliche Sichten einstellen."
+content2 : "Auf dem ersten Display können Sie den laufenden Test (via noVNC) verfolgen und auf dem zweiten Display werden die Monitoring Daten mit einer Grafana Oberfläche dargestellt. Hier können Sie zoomen, die Graphen verändern und unterschiedliche Sichten einstellen."
