@@ -27,7 +27,7 @@ chapter :
       image : images/mainUseCases/maze3.png
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "#contact-us"
+      btnUrl : "contact"
       btnText : "Sprechen Sie mit Experten"
       dropdownIndex : "Sakuli introduction"
       paras : 
@@ -37,7 +37,7 @@ chapter :
       image : images/mainUseCases/support_s.jpg
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "#contact-us"
+      btnUrl : "contact"
       btnText : "Kontaktieren Sie uns"
       dropdownIndex : "Personal contact"
       paras : 

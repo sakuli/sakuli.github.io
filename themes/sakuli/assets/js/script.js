@@ -6,10 +6,8 @@ jQuery(function ($) {
 /* link highlighter */
 	// cache the navigation links 
 	var $navigationLinks = $('#navigation > ul > li > a');
-	console.log($navigationLinks);
 	// cache (in reversed order) the sections
 	var $sections = $($(".section").get().reverse());
-	console.log($sections);
 
 	// map each section id to their corresponding navigation link
 	var sectionIdTonavigationLink = {};
