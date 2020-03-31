@@ -4,6 +4,7 @@ DefaultContentLanguage = "en"
 title = ""
 theme = "sakuli"
 summaryLength = 10
+disableHugoGeneratorInject = true
 [languages]
 ################################ English Language ########################
     [Languages.en]
