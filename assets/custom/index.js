@@ -749,6 +749,7 @@ fetch("https://www.consol.com/request-sakuli/").then(function (r) {
   var _a;
 
   var ourForm = document.querySelector("#contact-us form");
+  console.log("fetched");
 
   if (ourForm) {
     ourForm.action = (_a = remoteForm === null || remoteForm === void 0 ? void 0 : remoteForm.getAttribute("action")) !== null && _a !== void 0 ? _a : ourForm.action;
@@ -787,6 +788,12 @@ fetch("https://www.consol.com/request-sakuli/").then(function (r) {
 });
 var dropDown = document.querySelector('#powermail_field_kundenwunsch');
 
+var preSelectInterest = function preSelectInterest(ddValue) {
+  var _a;
+
+  (_a = dropDown === null || dropDown === void 0 ? void 0 : dropDown.querySelector("option[value=\"" + ddValue + "\"]")) === null || _a === void 0 ? void 0 : _a.setAttribute('selected', 'selected');
+};
+
 var resetSelection = function resetSelection() {
   var _a;
 
@@ -795,15 +802,11 @@ var resetSelection = function resetSelection() {
   });
 };
 
-Array.from(document.querySelectorAll('.select-plan')).forEach(function (button) {
-  button.addEventListener('click', function (e) {
-    var _a;
+var params = new URLSearchParams(window.location.search);
 
-    resetSelection();
-    var ddValue = button.getAttribute('data-plan');
-    (_a = dropDown === null || dropDown === void 0 ? void 0 : dropDown.querySelector("option[value=\"" + ddValue + "\"]")) === null || _a === void 0 ? void 0 : _a.setAttribute('selected', 'selected');
-  });
-});
+if (params.has('interest')) {
+  preSelectInterest(params.get('interest'));
+}
 },{"whatwg-fetch":"../node_modules/whatwg-fetch/fetch.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
