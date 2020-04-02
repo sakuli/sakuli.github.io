@@ -28,7 +28,7 @@ contactOptions :
   - value : "XLPackageSales"
     desc : "XL-Package Sales"
 
-privacyUrl : "/dataprivacy"
+privacyUrl : "/dataprivacy/"
 privacyText1 : "I have read the"
 privacyText2 : "Privacy Policy."
 privacyText3 : "I agree that my details and data will be collected and stored electronically to answer my request. Note: You can revoke your consent at any time."

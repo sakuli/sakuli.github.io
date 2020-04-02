@@ -14,7 +14,7 @@ menu:
       nav : "Über uns"
       weight : 9
     - type : sub
-      URL : "/contact"
+      URL : "/contact/"
       nav : "Kontakt"
       weight : 10
     - type : ext
@@ -22,6 +22,6 @@ menu:
       nav : "Docs"
       weight : 20
     - type : sub
-      URL : "/whitepaper"
+      URL : "/whitepaper/"
       nav : "Paper"
       weight : 25

@@ -11,5 +11,5 @@ btnUrl : "https://www.consol.com"
 description3 : "If you would like to learn more about Consol and its portfolio, ranging from Software Engineering and Operations to OpenShift and more - feel free to visit the Consol website:"
 
 btnContactText : "Contact us"
-btnContactUrl : "contact"
+btnContactUrl : "contact/"
 dropDownIndex : "Personal contact"

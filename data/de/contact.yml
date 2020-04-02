@@ -28,7 +28,7 @@ contactOptions :
   - value : "XLPackageSales"
     desc : "XL-Paket Vertrieb"
 
-privacyUrl : "/dataprivacy"
+privacyUrl : "/dataprivacy/"
 privacyText1 : "Ich willige in die Nutzung meiner Daten gemäß"
 privacyText2 : "Datenschutzerklärung"
 privacyText3 : "ein. Diese Zustimmung kann ich jederzeit widerrufen."

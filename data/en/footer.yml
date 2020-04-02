@@ -12,18 +12,18 @@ footerUpper :
     - heading : "Download"
       sections : 
       - title : "Whitepaper"
-        url : "../whitepaper"
+        url : "../whitepaper/"
         target : sub
     - heading : "Services"
       sections : 
       - title : "Contact"
-        url : "../contact"
+        url : "../contact/"
         target : sub
       - title : "Legal Notice"
-        url : "../legalnotice"
+        url : "../legalnotice/"
         target : sub
       - title : "Data privacy"
-        url : "../dataprivacy"
+        url : "../dataprivacy/"
         target : sub
 footerLower : 
     logo : "images/logos/logo.svg"

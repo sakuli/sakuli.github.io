@@ -3,7 +3,7 @@ enable : true
 title : E2E Application Monitoring
 heading : "Secure Revenue-Stream"
 btnText : Get in Touch
-btnUrl : contact
+btnUrl : contact/
 dropDownIndex : Personal contact
 
 chapter : 
@@ -29,7 +29,7 @@ chapter :
       image : images/mainUseCases/maze3.png
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "contact"
+      btnUrl : "contact/"
       btnText : "Talk to the experts"
       dropDownIndex : "Sakuli introduction"
       paras : 
@@ -39,7 +39,7 @@ chapter :
       image : images/mainUseCases/support_s.jpg
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "contact"
+      btnUrl : "contact/"
       btnText : "Get in touch"
       dropDownIndex : "Personal contact"
       paras : 
