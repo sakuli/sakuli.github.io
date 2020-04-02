@@ -1,2 +1,3 @@
 +++
+customJs = "custom/index.js"
 +++

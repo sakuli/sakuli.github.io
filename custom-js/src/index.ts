@@ -64,7 +64,7 @@ fetch("https://www.consol.com/request-sakuli/")
     const ourForm: HTMLFormElement | null = document.querySelector(
       "#contact-us form"
     );
-    console.log("fetched")
+    console.log("Fetched contact form")
     if (ourForm) {
       ourForm.action = remoteForm?.getAttribute("action") ?? ourForm.action;
       const remoteHiddens = remoteForm?.querySelectorAll(

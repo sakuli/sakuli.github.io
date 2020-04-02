@@ -19,7 +19,7 @@ pricingTable :
     time : / Monat
     btnURL : "contact"
     btnText : Anfordern
-    dropdownIndex : MPackage
+    dropDownIndex : MPackage
     plan :
       - planDetails : bis zu 4 Instanzen
         iHead : "Wie werden Instanzen gezählt:"
@@ -43,7 +43,7 @@ pricingTable :
     time : / Monat
     btnURL : "contact"
     btnText : Anfordern
-    dropdownIndex : LPackage
+    dropDownIndex : LPackage
     plan :
       - planDetails : bis zu 20 Instanzen
         iHead : "Wie werden Instanzen gezählt:"
@@ -68,7 +68,7 @@ pricingTable :
     time : "individuell"
     btnURL : "contact"
     btnText : Vertrieb kontaktieren
-    dropdownIndex : XLPackageSales
+    dropDownIndex : XLPackageSales
     plan :
       - planDetails : bis zu ∞ Instanzen
         iHead : "Wie werden Instanzen gezählt:"

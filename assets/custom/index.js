@@ -749,7 +749,7 @@ fetch("https://www.consol.com/request-sakuli/").then(function (r) {
   var _a;
 
   var ourForm = document.querySelector("#contact-us form");
-  console.log("fetched");
+  console.log("Fetched contact form");
 
   if (ourForm) {
     ourForm.action = (_a = remoteForm === null || remoteForm === void 0 ? void 0 : remoteForm.getAttribute("action")) !== null && _a !== void 0 ? _a : ourForm.action;

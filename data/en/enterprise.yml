@@ -19,7 +19,7 @@ pricingTable :
     time : / month
     btnURL : "contact"
     btnText : Request
-    dropdownIndex : MPackage
+    dropDownIndex : MPackage
     plan :
       - planDetails : up to 4 instances
         iHead : "How to count Instances:"
@@ -43,7 +43,7 @@ pricingTable :
     time : / month
     btnURL : "contact"
     btnText : Request
-    dropdownIndex : LPackage
+    dropDownIndex : LPackage
     plan :
       - planDetails : up to 20 instances
         iHead : "How to count Instances:"
@@ -68,7 +68,7 @@ pricingTable :
     time : "individual"
     btnURL : "contact"
     btnText : Contact Sales
-    dropdownIndex : XLPackageSales
+    dropDownIndex : XLPackageSales
     plan :
       - planDetails : up to ∞ instances
         iHead : "How to count Instances:"
