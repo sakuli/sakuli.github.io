@@ -14,7 +14,7 @@ menu:
       nav : "About us"
       weight : 9
     - type : sub
-      URL : "contact"
+      URL : "contact/"
       nav : "Contact"
       weight : 10
     - type : ext
