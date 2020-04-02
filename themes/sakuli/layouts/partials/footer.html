@@ -82,5 +82,4 @@
 {{ with .Params.customJs }}
 {{$cjs := resources.Get . | resources.Minify}}
 <script src="{{ $cjs.RelPermalink }}"></script>
-<h1>CUSTOM JS:{{. }}</h1>
 {{ end }}
