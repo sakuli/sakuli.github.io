@@ -3,7 +3,7 @@ enable : true
 title : E2E Anwendungs-Monitoring
 heading : "Kritische Ausfälle entdecken und verhindern"
 btnText : Persönlicher Kontakt
-btnUrl : contact
+btnUrl : /contact
 dropDownIndex : Personal contact
 
 chapter : 
@@ -29,7 +29,7 @@ chapter :
       image : images/mainUseCases/maze3.png
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "contact"
+      btnUrl : "/contact"
       btnText : "Sprechen Sie mit Experten"
       dropDownIndex : "Sakuli introduction"
       paras : 
@@ -39,7 +39,7 @@ chapter :
       image : images/mainUseCases/support_s.jpg
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "contact"
+      btnUrl : "/contact"
       btnText : "Kontaktieren Sie uns"
       dropDownIndex : "Personal contact"
       paras : 
