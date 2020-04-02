@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us" scroll-behavior="smooth">
+<html class="no-js" lang="de-de" scroll-behavior="smooth">
 <head>
     
     
@@ -15,7 +15,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description"
-        content="">
+        content="Sakuli End2End Testing and Monitoring">
     <meta name="author"
         content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,12 +31,11 @@
 
 
     <div id="content">
-
 <section class="sticky-top navigation">
         <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                 
-                        <a class="navbar-brand logo" href="/">
+                        <a class="navbar-brand logo" href="/de">
                                 <img src="/images/logos/logo.svg" alt="Logo" height="42px" />
                                 <span class="pl-2 font-weight-bold"></span>
                         </a>
@@ -59,7 +58,7 @@
                                                         
                                                         
                                                         <li class="nav-item">
-                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#features">Features</a>
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#features">Features</a>
                                                         </li>
                                                         
                                                         
@@ -68,7 +67,7 @@
                                                         
                                                         
                                                         <li class="nav-item">
-                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#enterprise">Enterprise</a>
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#enterprise">Enterprise</a>
                                                         </li>
                                                         
                                                         
@@ -77,7 +76,7 @@
                                                         
                                                         
                                                         <li class="nav-item">
-                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#company">About us</a>
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de#company">Über uns</a>
                                                         </li>
                                                         
                                                         
@@ -87,7 +86,7 @@
                                                         
                                                         
                                                         <li class="nav-item">
-                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/contact">Contact</a>
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de/contact">Kontakt</a>
                                                         </li>
                                                         
                                                 
@@ -105,7 +104,7 @@
                                                         
                                                         
                                                         <li class="nav-item">
-                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/../whitepaper/">Paper</a>
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/de/whitepaper">Paper</a>
                                                         </li>
                                                         
                                                 
@@ -127,7 +126,7 @@
                                                                 
                                                                 
                                                                 
-                                                                <a class="dropdown-item" href="/whitepaper/10stepguide/">EN</a>
+                                                                <a class="dropdown-item" href="/contact/">EN</a>
                                                                 
                                                                 
                                                                 
@@ -139,7 +138,7 @@
                                                                 
                                                                 
                                                                 
-                                                                <a class="dropdown-item" href="/de/whitepaper/10stepguide/">DE</a>
+                                                                <a class="dropdown-item" href="/de/contact/">DE</a>
                                                                 
                                                                 
                                                                 
@@ -154,7 +153,7 @@
                                                         <i class="fas fa-cog"></i>
                                                 </a>
                                                 <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropDownSettings">
-                                                        <a class="dropdown-item" onclick="klaro.show();return false;closeBurgerjs()">Cookie Settings</a>
+                                                        <a class="dropdown-item" onclick="klaro.show();return false;closeBurgerjs()">Cookie Einstellungen</a>
                                                 </div>
                                         </li>
                                         <li>
@@ -177,24 +176,141 @@
         </div>
 </section>
 
-<section class="section">
+
+
+<section id="contact-us" class="bg-one section pt-4 pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <h1></h1>
-                <ul class="list-inline mb-50">
-                    
-                </ul>
-                
+            <div class="col-lg-12">
+                <!-- section title -->
+                <div class="title text-center">
+                    <h2>Kontaktieren Sie <span class="color">Uns</span></h2>
+                    <div class="border-meghna"></div>
+                </div>
             </div>
-            <div class="col-lg-8 offset-lg-2">
-                <div class="post-single-content">
-                    Im the default single Hello World
+            <!-- Contact Details -->
+            <div class="contact-info col-lg-6 mb-3">
+                <h3>Kontakt</h3>
+                <p>  </p>
+                <div class="contact-details">
+                    
+                    <div class="con-info clearfix">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>St.-Cajetan-Straße 43, 81669 München</span>
+                    </div>
+                    
+                    <div class="con-info clearfix">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>&#43;49-89-45841-100</span>
+                    </div>
                     
                 </div>
             </div>
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-6">
+                <form id="contact-form" class="form-meghna" method="post" role="form">
+                    <div class="form-group">
+                        <select required="required" aria-required="true" class="powermail_select form-control "
+                            id="powermail_field_kundenwunsch" name="tx_powermail_pi1[field][kundenwunsch]">
+                            
+                            <option value=""  selected disabled>Ich bin interessiert an ...
+                            </option>
+                            
+                            <option value="Personal contact" >Persönlicher Kontakt
+                            </option>
+                            
+                            <option value="Sakuli introduction" >Sakuli Einführung
+                            </option>
+                            
+                            <option value="Live demo" >Live Demo
+                            </option>
+                            
+                            <option value="Free Demo License" >Kostenlose Demo Lizenz
+                            </option>
+                            
+                            <option value="MPackage" >M-Paket
+                            </option>
+                            
+                            <option value="LPackage" >L-Paket
+                            </option>
+                            
+                            <option value="XLPackageSales" >XL-Paket Vertrieb
+                            </option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group d-flex">
+                        <select required="required" aria-required="true"
+                            class="powermail_select form-control powermail_field_error" id="powermail_field_salutation"
+                            name="tx_powermail_pi1[field][salutation]">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                        </select>
+                        <input placeholder="Firstname" class="powermail_input form-control mr-2 ml-2"
+                            id="powermail_field_firstname" type="text" name="tx_powermail_pi1[field][firstname]"
+                            value="">
+                        <input placeholder="Lastname" required="required" aria-required="true"
+                            class="powermail_input form-control " id="powermail_field_name" type="text"
+                            name="tx_powermail_pi1[field][name]" value="">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Email" required="required" aria-required="true"
+                            class="powermail_input form-control " id="powermail_field_email" type="email"
+                            name="tx_powermail_pi1[field][email]" value="">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Telephone" class="powermail_input form-control" id="powermail_field_phone"
+                            type="text" name="tx_powermail_pi1[field][phone]" value="">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Company" required="required" aria-required="true"
+                            class="powermail_input form-control " id="powermail_field_company" type="text"
+                            name="tx_powermail_pi1[field][company]" value="">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Message" rows="5" cols="20" class="powermail_textarea form-control "
+                            id="powermail_field_mitteilung" name="tx_powermail_pi1[field][mitteilung]"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input aria-required="true" required="required"
+                            class="form-check-input powermail_checkbox powermail_checkbox_1389"
+                            id="powermail_field_datenschutz_1" type="checkbox"
+                            name="tx_powermail_pi1[field][datenschutz]" value="Ja" />
+                        <label for="powermail_field_datenschutz_1" class="form-check-label">
+                            Ich willige in die Nutzung meiner Daten gemäß <a href="/de/dataprivacy"> Datenschutzerklärung</a>
+                            ein. Diese Zustimmung kann ich jederzeit widerrufen.
+                        </label>
+                    </div>
+                    <div class="form-check mt-2">
+                        <input class="powermail_checkbox powermail_checkbox_1387 form-check-input"
+                            id="powermail_field_serviceangebote_1" type="checkbox"
+                            name="tx_powermail_pi1[field][serviceangebote][]" value="Ja" />
+                        <label for="powermail_field_serviceangebote_1" class="form-check-label">
+                            Ja, ich möchte zukünftig über Serviceangebote und Lösungen, natürlich ausschließlich von ConSol, informiert werden.
+                        </label>
+                    </div>
+                    <!-- /section title -->
+                    <div id="form-sent" class="d-none animated alert alert-success mt-3">
+                        <span>Vielen Dank für Ihre Nachricht, wir melden uns in Kürze bei Ihnen.</span>
+                    </div>
+                    <div id="form-sent-error" class="d-none animated alert alert-warning mt-3">
+                        <span>Das ist schief gegangen, bitte versuchen Sie es erneut oder verwenden Sie das Formular unter https://www.consol.de/anfrage-sakuli/.</span>
+                    </div>
+                    <div id="cf-submit" class="form-group">
+                        <input type="submit" id="contact-submit" class="btn btn-main mt-4 mb-2" value="Submit"
+                            style="width: 100%" />
+                    </div>
+                    <div class="d-none">
+                        <input autocomplete="new-powermail-hp" id="powermail_hp_32" type="text"
+                            name="tx_powermail_pi1[field][__hp]" value="">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
 </section>
 
 
@@ -217,7 +333,7 @@
 					
 						
 							
-								<a href="/#enterprise">Enterprise</a>
+								<a href="/de#enterprise">Enterprise</a>
 							
 						
 					
@@ -231,7 +347,7 @@
 					
 						
 							
-								<a href="/../whitepaper" >Whitepaper</a>
+								<a href="/de/whitepaper" >Whitepaper</a>
 							
 						
 					
@@ -245,19 +361,19 @@
 					
 						
 							
-								<a href="/../contact" >Contact</a>
+								<a href="/de/contact" >Kontakt</a>
 							
 						
 					
 						
 							
-								<a href="/../legalnotice" >Legal Notice</a>
+								<a href="/de/legalnotice" >Impressum</a>
 							
 						
 					
 						
 							
-								<a href="/../dataprivacy" >Data privacy</a>
+								<a href="/de/dataprivacy" >Datenschutz</a>
 							
 						
 					
@@ -298,7 +414,7 @@
 					</div>
 
 					<div class="copyright text-center">
-						<p style="padding: 1rem; font-size: 1rem">A <a href="https://consol.com"> Consol </a>
+						<p style="padding: 1rem; font-size: 1rem">A <a href="https://consol.de"> Consol </a>
 							brand &copy;
 							<script>
 								document.write(new Date().getFullYear())
@@ -325,6 +441,9 @@
 
 <script src="/js/bundle.min.js"></script>
 
+
+
+<script src="/custom/index.min.js"></script>
 
 </body>
 

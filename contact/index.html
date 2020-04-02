@@ -15,7 +15,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description"
-        content="">
+        content="Sakuli End2End Testing and Monitoring">
     <meta name="author"
         content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +31,6 @@
 
 
     <div id="content">
-
 <section class="sticky-top navigation">
         <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark">
@@ -127,7 +126,7 @@
                                                                 
                                                                 
                                                                 
-                                                                <a class="dropdown-item" href="/whitepaper/10stepguide/">EN</a>
+                                                                <a class="dropdown-item" href="/contact/">EN</a>
                                                                 
                                                                 
                                                                 
@@ -139,7 +138,7 @@
                                                                 
                                                                 
                                                                 
-                                                                <a class="dropdown-item" href="/de/whitepaper/10stepguide/">DE</a>
+                                                                <a class="dropdown-item" href="/de/contact/">DE</a>
                                                                 
                                                                 
                                                                 
@@ -177,24 +176,141 @@
         </div>
 </section>
 
-<section class="section">
+
+
+<section id="contact-us" class="bg-one section pt-4 pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <h1></h1>
-                <ul class="list-inline mb-50">
-                    
-                </ul>
-                
+            <div class="col-lg-12">
+                <!-- section title -->
+                <div class="title text-center">
+                    <h2>Get In <span class="color">Touch</span></h2>
+                    <div class="border-meghna"></div>
+                </div>
             </div>
-            <div class="col-lg-8 offset-lg-2">
-                <div class="post-single-content">
-                    Im the default single Hello World
+            <!-- Contact Details -->
+            <div class="contact-info col-lg-6 mb-3">
+                <h3>Contact</h3>
+                <p>  </p>
+                <div class="contact-details">
+                    
+                    <div class="con-info clearfix">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>St.-Cajetan-Straße 43, 81669 Munich</span>
+                    </div>
+                    
+                    <div class="con-info clearfix">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>&#43;49-89-45841-100</span>
+                    </div>
                     
                 </div>
             </div>
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-6">
+                <form id="contact-form" class="form-meghna" method="post" role="form">
+                    <div class="form-group">
+                        <select required="required" aria-required="true" class="powermail_select form-control "
+                            id="powermail_field_kundenwunsch" name="tx_powermail_pi1[field][kundenwunsch]">
+                            
+                            <option value=""  selected disabled>I´m interested in ...
+                            </option>
+                            
+                            <option value="Personal contact" >Personal contact
+                            </option>
+                            
+                            <option value="Sakuli introduction" >Sakuli introduction
+                            </option>
+                            
+                            <option value="Live demo" >Live demo
+                            </option>
+                            
+                            <option value="Free Demo License" >Free Demo License
+                            </option>
+                            
+                            <option value="MPackage" >M-Package
+                            </option>
+                            
+                            <option value="LPackage" >L-Package
+                            </option>
+                            
+                            <option value="XLPackageSales" >XL-Package Sales
+                            </option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group d-flex">
+                        <select required="required" aria-required="true"
+                            class="powermail_select form-control powermail_field_error" id="powermail_field_salutation"
+                            name="tx_powermail_pi1[field][salutation]">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                        </select>
+                        <input placeholder="Firstname" class="powermail_input form-control mr-2 ml-2"
+                            id="powermail_field_firstname" type="text" name="tx_powermail_pi1[field][firstname]"
+                            value="">
+                        <input placeholder="Lastname" required="required" aria-required="true"
+                            class="powermail_input form-control " id="powermail_field_name" type="text"
+                            name="tx_powermail_pi1[field][name]" value="">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Email" required="required" aria-required="true"
+                            class="powermail_input form-control " id="powermail_field_email" type="email"
+                            name="tx_powermail_pi1[field][email]" value="">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Telephone" class="powermail_input form-control" id="powermail_field_phone"
+                            type="text" name="tx_powermail_pi1[field][phone]" value="">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Company" required="required" aria-required="true"
+                            class="powermail_input form-control " id="powermail_field_company" type="text"
+                            name="tx_powermail_pi1[field][company]" value="">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Message" rows="5" cols="20" class="powermail_textarea form-control "
+                            id="powermail_field_mitteilung" name="tx_powermail_pi1[field][mitteilung]"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input aria-required="true" required="required"
+                            class="form-check-input powermail_checkbox powermail_checkbox_1389"
+                            id="powermail_field_datenschutz_1" type="checkbox"
+                            name="tx_powermail_pi1[field][datenschutz]" value="Ja" />
+                        <label for="powermail_field_datenschutz_1" class="form-check-label">
+                            I have read the <a href="/dataprivacy"> Privacy Policy.</a>
+                            I agree that my details and data will be collected and stored electronically to answer my request. Note: You can revoke your consent at any time.
+                        </label>
+                    </div>
+                    <div class="form-check mt-2">
+                        <input class="powermail_checkbox powermail_checkbox_1387 form-check-input"
+                            id="powermail_field_serviceangebote_1" type="checkbox"
+                            name="tx_powermail_pi1[field][serviceangebote][]" value="Ja" />
+                        <label for="powermail_field_serviceangebote_1" class="form-check-label">
+                            Yes, I would like to be informed in the future about news, services and offers.
+                        </label>
+                    </div>
+                    <!-- /section title -->
+                    <div id="form-sent" class="d-none animated alert alert-success mt-3">
+                        <span>Thank you for contacting us, we will respond shortly.</span>
+                    </div>
+                    <div id="form-sent-error" class="d-none animated alert alert-warning mt-3">
+                        <span>Something went wrong, please try again or use the contact form at https://www.consol.com/request-sakuli/.</span>
+                    </div>
+                    <div id="cf-submit" class="form-group">
+                        <input type="submit" id="contact-submit" class="btn btn-main mt-4 mb-2" value="Submit"
+                            style="width: 100%" />
+                    </div>
+                    <div class="d-none">
+                        <input autocomplete="new-powermail-hp" id="powermail_hp_32" type="text"
+                            name="tx_powermail_pi1[field][__hp]" value="">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
 </section>
 
 
@@ -325,6 +441,9 @@
 
 <script src="/js/bundle.min.js"></script>
 
+
+
+<script src="/custom/index.min.js"></script>
 
 </body>
 

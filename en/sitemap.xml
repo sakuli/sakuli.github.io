@@ -17,6 +17,20 @@
   </url>
   
   <url>
+    <loc>/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="/de/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/contact/"
+                />
+  </url>
+  
+  <url>
     <loc>/dataprivacy/</loc>
     <xhtml:link
                 rel="alternate"
