@@ -2,6 +2,9 @@ enable : true
 
 title : E2E Anwendungs-Monitoring
 heading : "Kritische Ausfälle entdecken und verhindern"
+btnText : Persönlicher Kontakt
+btnUrl : /contact
+dropDownIndex : Personal contact
 
 chapter : 
     - title: Monitoring auf neuem Level
@@ -17,7 +20,6 @@ chapter :
       imgOrder : "first"
       btnUrl : "/demo/"
       btnText : "Starten Sie den Live-Showcase"
-      dropdownIndex : ""
       paras : 
         - content : Sakuli verhält sich wie ein echter Benutzer, der Ihre Anwendungen bedient, Ihre wichtigsten Prozesse abarbeitet, Leistungsdaten sammelt und diese an die gängigsten Überwachungssysteme weiterleitet. Lassen Sie sich sofort über mangelnde Performance oder Fehler benachrichtigen und haben Sie die Kontrolle über Ihre Einnahmen und die Conversion-Rate!
         - content : Mit Sakuli Monitoring werden Sie über Fehlverhalten Ihrer Anwendung benachrichtigt, noch bevor Ihre Kunden eine Beschwerde einreichen.
@@ -27,9 +29,9 @@ chapter :
       image : images/mainUseCases/maze3.png
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "#contact-us"
+      btnUrl : "/contact"
       btnText : "Sprechen Sie mit Experten"
-      dropdownIndex : "Sakuli introduction"
+      dropDownIndex : "Sakuli introduction"
       paras : 
         - content : Sakuli-Tests sind keine Raketenwissenschaft - mit Grundkenntnissen in HTML und CSS sind Sie in der Lage, Ihre Tests im Handumdrehen zu erstellen und zu pflegen. Erhöhen Sie den Mehrwert Ihrer Monitoring-Abteilung, indem Sie ein echtes End-to-End Application Monitoring anbieten. Derzeit wird ein Tool entwickelt, das Sie zur Erstellung Ihrer Tests verwenden können, indem Sie mit der Maus über die gewünschten Teile einer Website fahren und das Skript automatisch erstellt wird.
 
@@ -37,8 +39,8 @@ chapter :
       image : images/mainUseCases/support_s.jpg
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "#contact-us"
+      btnUrl : "/contact"
       btnText : "Kontaktieren Sie uns"
-      dropdownIndex : "Personal contact"
+      dropDownIndex : "Personal contact"
       paras : 
         - content :  Nutzen Sie unsere Expertise, professionelles Training und Beratung um Ihr E2E-Projekt zu starten oder greifen Sie nur in Ausnahmesituationen auf unsere Hilfe zurück - wir bieten Ihnen mit unserer jahrzehntelangen Erfahrung im Bereich E2E Testing & Monitoring das perfekte, auf Ihre Bedürfnisse zugeschnittene Paket. Wir sind in ganz Deutschland mit deutschsprachigen Beratern vertreten.

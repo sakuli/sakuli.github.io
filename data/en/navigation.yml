@@ -13,8 +13,8 @@ menu:
       URL : "company"
       nav : "About us"
       weight : 9
-    - type : int
-      URL : "contact-us"
+    - type : sub
+      URL : "contact"
       nav : "Contact"
       weight : 10
     - type : ext

@@ -65,7 +65,6 @@
 </footer>
 {{ end }}
 
-{{ $customJS := resources.Get "custom/index.js" }}
 
 {{ $jqueryJs := resources.Get "plugins/jquery/dist/jquery.min.js"}}
 {{ $awesome := resources.Get "plugins/awesome/all.js"}}
@@ -76,6 +75,11 @@
 {{ $klaroConfigJs := resources.Get "plugins/klaroCookie/config.js" }}
 {{ $klaroJs := resources.Get "plugins/klaroCookie/klaro.js" }}
 
-
-{{ $js := slice $jqueryJs $awesome $bootstrapJs $wowJs $customJS $script $scroll $klaroConfigJs $klaroJs | resources.Concat "js/bundle.js" | resources.Minify }}
+{{ $jsResources := slice $jqueryJs $awesome $bootstrapJs $wowJs $script $scroll $klaroConfigJs $klaroJs}}
+{{ $js := $jsResources | resources.Concat "js/bundle.js" | resources.Minify }}
 <script src="{{ $js.RelPermalink }}"></script>
+
+{{ with .Params.customJs }}
+{{$cjs := resources.Get . | resources.Minify}}
+<script src="{{ $cjs.RelPermalink }}"></script>
+{{ end }}

@@ -9,7 +9,7 @@
 
         <!-- Call to Action -->
         <div class="text-center d-lg-none">
-            <a href="#contact-us" class="btn btn-main mt-4 mb-4 d-lg-none">Get in Touch</a>
+            <a href="{{ .btnUrl | relLangURL }}{{ with .dropDownIndex }}?interest={{ . }}{{ end }}" class="btn btn-main mt-4 mb-4 d-lg-none">{{ .btnText }}</a>
         </div>
        
         {{ range .chapter }}
@@ -24,7 +24,7 @@
                     <!-- Call to Action -->
                     {{ if .btnText }}
                     <div class="content text-center mb-5">
-                        <a href="{{ $.Site.BaseURL | relLangURL }}{{ .btnUrl }}" class="btn btn-main mt-5 mb-3 select-plan" data-plan="{{ .dropdownIndex }}" >{{ .btnText }}</a>
+                        <a href="{{ $.Site.BaseURL | relLangURL }}{{ .btnUrl }}{{ with .dropDownIndex }}?interest={{ . }}{{ end }}" class="btn btn-main mt-5 mb-3" >{{ .btnText }}</a>
                     </div>
                     {{ end }}
                 </div>

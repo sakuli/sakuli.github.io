@@ -17,8 +17,8 @@ footerUpper :
     - heading : "Services"
       sections : 
       - title : "Contact"
-        url : "contact-us"
-        target : internal
+        url : "../contact"
+        target : sub
       - title : "Legal Notice"
         url : "../legalnotice"
         target : sub

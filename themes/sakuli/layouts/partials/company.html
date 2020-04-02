@@ -19,7 +19,7 @@
                 <!-- Call to Action -->
                 {{ if .btnContactText }}
                 <div class="content text-center mb-3">
-                    <a data-plan="{{ .dropdownIndex }}" href="{{ .btnContactUrl | relLangURL}}" class="btn btn-main  mb-2 select-plan">{{ .btnContactText }}</a>
+                    <a href="{{ .btnContactUrl | relLangURL}}{{ with .dropDownIndex }}?interest={{ . }}{{ end }}" class="btn btn-main  mb-2 select-plan">{{ .btnContactText }}</a>
                 </div>
                 {{ end }}
                 <div class="content-block">

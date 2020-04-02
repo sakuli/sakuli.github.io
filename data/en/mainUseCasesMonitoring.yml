@@ -2,6 +2,9 @@ enable : true
 
 title : E2E Application Monitoring
 heading : "Secure Revenue-Stream"
+btnText : Get in Touch
+btnUrl : contact
+dropDownIndex : Personal contact
 
 chapter : 
     - title: Monitoring on Steroids
@@ -17,7 +20,6 @@ chapter :
       imgOrder : "first"
       btnUrl : "demo/"
       btnText : "Open the Live-Showcase"
-      dropdownIndex : ""
       paras : 
         - content : Sakuli behaves like a real user operating your applications, working through your most important processes, gathering performance data and forwarding them to the most common Monitoring Systems there are. Get notified immediately about a lack of performance or errors and be in control of your revenue-stream and conversion-rate!
         - content : With Sakuli Monitoring you will be notified about malicious behavior of your application, even before your customers file a complaint.
@@ -27,9 +29,9 @@ chapter :
       image : images/mainUseCases/maze3.png
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "#contact-us"
+      btnUrl : "contact"
       btnText : "Talk to the experts"
-      dropdownIndex : "Sakuli introduction"
+      dropDownIndex : "Sakuli introduction"
       paras : 
         - content : Sakuli tests aren´t rocket science - with basic knowledge about HTML and CSS you are able to create and maintain your tests in no time. Add more value to your monitoring department by offering real End to End Application Monitoring. Currently under development, you will soon be able to use a frontend tool to create your tests by hovering over your desired parts of a web-site and creating the script automatically.
 
@@ -37,8 +39,8 @@ chapter :
       image : images/mainUseCases/support_s.jpg
       contOrder : "first"
       imgOrder : "last"
-      btnUrl : "#contact-us"
+      btnUrl : "contact"
       btnText : "Get in touch"
-      dropdownIndex : "Personal contact"
+      dropDownIndex : "Personal contact"
       paras : 
         - content :  Use our expertise to start your E2E project, get professional training, consulting, or do-it-yourself - we offer the perfect package customized to your needs with our decades of experience in E2E Testing & Monitoring. Located all around Germany with German speaking Consultants.

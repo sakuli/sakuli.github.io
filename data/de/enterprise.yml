@@ -17,9 +17,9 @@ pricingTable :
   - title : M
     price : € 100
     time : / Monat
-    btnURL : "#contact-us"
+    btnURL : "/contact"
     btnText : Anfordern
-    dropdownIndex : MPackage
+    dropDownIndex : MPackage
     plan :
       - planDetails : bis zu 4 Instanzen
         iHead : "Wie werden Instanzen gezählt:"
@@ -41,9 +41,9 @@ pricingTable :
   - title : L
     price : € 400
     time : / Monat
-    btnURL : "#contact-us"
+    btnURL : "/contact"
     btnText : Anfordern
-    dropdownIndex : LPackage
+    dropDownIndex : LPackage
     plan :
       - planDetails : bis zu 20 Instanzen
         iHead : "Wie werden Instanzen gezählt:"
@@ -66,9 +66,9 @@ pricingTable :
   - title : XL
     price : on Request
     time : "individuell"
-    btnURL : "#contact-us"
+    btnURL : "/contact"
     btnText : Vertrieb kontaktieren
-    dropdownIndex : XLPackageSales
+    dropDownIndex : XLPackageSales
     plan :
       - planDetails : bis zu ∞ Instanzen
         iHead : "Wie werden Instanzen gezählt:"

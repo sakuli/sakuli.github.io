@@ -64,6 +64,7 @@ fetch("https://www.consol.com/request-sakuli/")
     const ourForm: HTMLFormElement | null = document.querySelector(
       "#contact-us form"
     );
+    console.log("Fetched contact form")
     if (ourForm) {
       ourForm.action = remoteForm?.getAttribute("action") ?? ourForm.action;
       const remoteHiddens = remoteForm?.querySelectorAll(
@@ -110,13 +111,14 @@ fetch("https://www.consol.com/request-sakuli/")
   });
 
 const dropDown = document.querySelector('#powermail_field_kundenwunsch');
+const preSelectInterest = (ddValue: string) => {
+  dropDown?.querySelector(`option[value="${ddValue}"]`)?.setAttribute('selected', 'selected')
+}
 const resetSelection = () => {
   Array.from(dropDown?.querySelectorAll('option') ?? []).forEach(option => option.removeAttribute('selected'))
 }
-Array.from(document.querySelectorAll('.select-plan')).forEach(button => {
-  button.addEventListener('click', e => {
-    resetSelection()
-    const ddValue = button.getAttribute('data-plan')
-    dropDown?.querySelector(`option[value="${ddValue}"]`)?.setAttribute('selected', 'selected')
-  })
-  })
+
+const params = new URLSearchParams(window.location.search)
+if (params.has('interest')) {
+  preSelectInterest(params.get('interest')!)
+}
