@@ -142,6 +142,12 @@ var klaroConfig = {
             default: false,
             title: 'Google Maps iFrame',
             purposes: ['ux'],
+            callback: function (consent, app) {
+                // This is an example callback function.
+                console.log(
+                    'User consent for app ' + app.name + ': consent=' + consent
+                );
+            },
             required: false,
             optOut: false,
             onlyOnce: false,
@@ -165,6 +171,12 @@ var klaroConfig = {
                 [/^connect-sid.*$/i, '/', 'hugodev'],
                 [/^connect-sid.*$/i, '/', 'sakuli-io.now.sh'],
             ],
+            callback: function (consent, app) {
+                // This is an example callback function.
+                console.log(
+                    'User consent for app ' + app.name + ': consent=' + consent
+                );
+            },
             required: false,
             optOut: false,
             onlyOnce: false,
@@ -224,7 +236,7 @@ var klaroConfig = {
 
             // If "onlyOnce" is set to true, the app will only be executed
             // once regardless how often the user toggles it on and off.
-            onlyOnce: true,
+            onlyOnce: false,
         },
 
         // The apps will appear in the modal in the same order as defined here.
