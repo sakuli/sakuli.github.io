@@ -34,6 +34,10 @@ paragraphs :
   - li : 
     head : 
     content : Additionally, visitors can set their browser to not accept cookies at all. However, this may prevent the use of certain parts of this website. 
+
+  - li :
+    head :
+    content : "Within the scope of our legitimate interests in the analysis, optimisation and economic operation of our online offer, we use, in accordance with your consent pursuant to Article 6 paragraph 1 lit. a GDPR Primeleads, a web analysis service of Spyla UG, Berliner Allee 121, 13088 Berlin, Germany. Primeleads uses a tracking code on our website. The generated information is transferred to a server of Spyla UG in Germany and stored there. Primeleads uses this information on our behalf to compile and evaluate visitor behaviour by means of probability calculations for a company profile and to provide us with further analysis and optimisation services related to website use. No personal data is collected through your visit with Primeleads, so that a direct identification of a specific person is not possible."
   
   
   - li :

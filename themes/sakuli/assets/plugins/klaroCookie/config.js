@@ -69,6 +69,9 @@ var klaroConfig = {
             sakuliio: {
                 description: 'Dieses Cookie speichert Ihre Entscheidung zur Cookie Verwendiung auf dieser Seite und andere Basis Informationen für eine einwandfreie Funktionalität der Seite.',
             },
+            primeLeads: {
+                description: 'Hier werden DSGVO-konform pseudonymisierte Informationen an externe Dienstleister übertragen, die es uns ermöglichen, uns noch stärker auf Ihre Bedürfnisse einzustellen.',
+            },
             mapsIframe: {
                 description: 'Der Inhalt wird von einem Dritten bezogen und auf in einem iFrame eingebettet.',
             },
@@ -98,6 +101,9 @@ var klaroConfig = {
             },
             sakuliio: {
                 description: 'This cookie is used to store your cookie consent decision and other values for basic site functionality.',
+            },
+            primeLeads: {
+                description: 'These cookies are used to support the transfer of pseudonymised information to service providers in a GDPR compliant way. This enables us to react even more closely to your needs.',
             },
             mapsIframe: {
                 description: 'This content will be delivered by an external provider and embedded into an iFrame.',
@@ -136,6 +142,29 @@ var klaroConfig = {
             default: false,
             title: 'Google Maps iFrame',
             purposes: ['ux'],
+            required: false,
+            optOut: false,
+            onlyOnce: false,
+        },
+        {
+            name: 'primeLeads',
+            default: false,
+            title: 'Primeleads',
+            purposes: ['analytics'],
+            cookies: [
+                // you can also explicitly provide a path and a domain for
+                // a given cookie. This is necessary if you have apps that
+                // set cookies for a path that is not "/" or a domain that
+                // is not the current domain. If you do not set these values
+                // properly, the cookie can't be deleted by Klaro
+                // (there is no way to access the path or domain of a cookie in JS)
+                [/^AWSALB.*$/i, '/', 'sakuli.io'],
+                [/^AWSALB.*$/i, '/', 'hugodev'],
+                [/^AWSALB.*$/i, '/', 'sakuli-io.now.sh'],
+                [/^connect-sid.*$/i, '/', 'sakuli.io'],
+                [/^connect-sid.*$/i, '/', 'hugodev'],
+                [/^connect-sid.*$/i, '/', 'sakuli-io.now.sh'],
+            ],
             required: false,
             optOut: false,
             onlyOnce: false,

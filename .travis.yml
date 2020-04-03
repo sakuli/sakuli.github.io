@@ -14,7 +14,7 @@ install:
 # script - run the build script
 script:
     - (cd custom-js && npm ci && npm run build)
-    - hugo
+    - hugo --environment production
 
 deploy:
   provider: pages

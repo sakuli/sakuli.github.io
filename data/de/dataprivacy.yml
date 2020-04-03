@@ -34,7 +34,10 @@ paragraphs :
   - li : 
     head : 
     content : Zusätzlich besteht die Möglichkeit, im Browser Cookies gar nicht zu akzeptieren. Hierdurch können jedoch unter Umständen bestimmte Teile der Webseite nicht oder nicht vollständig genutzt werden. 
-  
+
+  - li :
+    head :
+    content : "Wir nutzen im Rahmen unserer berechtigten Interessen an der Analyse, Optimierung und des wirtschaftlichen Betriebs unseres Onlineangebotes gemäß Ihrer Einwilligung nach Artikel 6 Absatz 1 lit. a DSGVO Primeleads, einen Webanalysedienst der Spyla UG, Berliner Allee 121, 13088 Berlin, Deutschland. Primeleads verwendet einen Tracking Code auf unserer Webseite. Die erzeugten Informationen werden an einen Server der Spyla UG in Deutschland übertragen und dort gespeichert. Primeleads benutzt diese Informationen in unserem Auftrag, um das Besucherverhalten mittels Wahrscheinlichkeitsberechnung für ein Unternehmensprofil zusammenzustellen und auszuwerten und um weitere mit der Websitenutzung verbundene Analyse- und Optimierungsdienstleistungen gegenüber uns zu erbringen. Es werden keine personenbezogenen Daten durch Ihren Besuch mit Primeleads erhoben, sodass eine unmittelbare Identifizierung einer konkreten Person nicht möglich ist."
   
   - li :
     head :

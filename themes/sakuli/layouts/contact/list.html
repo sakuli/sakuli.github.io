@@ -35,8 +35,7 @@
                         <select required="required" aria-required="true" class="powermail_select form-control "
                             id="powermail_field_kundenwunsch" name="tx_powermail_pi1[field][kundenwunsch]">
                             {{range $index, $element := .contactOptions}}
-                            <option value="{{ .value }}" {{ if (eq $index 0) }} selected disabled{{ end }}>{{ .desc }}
-                            </option>
+                            <option value="{{ .value }}" {{ if (eq $index 0) }} selected disabled{{ end }}>{{ .desc }}</option>
                             {{ end }}
                         </select>
                     </div>

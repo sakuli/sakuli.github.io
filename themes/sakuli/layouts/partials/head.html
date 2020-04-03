@@ -1,5 +1,6 @@
 
 <head>
+    {{ if .Site.Params.ActivateGoogleAnalytics }}
     <!-- Google Tag Manager (needs to stay as first element in head) -->
     <!-- type text/plain must stay there as klaro cookie banner will activate only on consent -->
     <script data-name="googleanalytics" data-type="application/javascript" type="text/plain">(function (w, d, s, l, i) {
@@ -11,6 +12,10 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TMFSKHB');</script>
     <!-- End Google Tag Manager -->
+    {{ end }}
+    {{ if .Site.Params.ActivatePrimeLeads }}
+        <script data-name="primeLeads" data-type="application/javascript" type="text/plain" src="https://app.primeleads.de/api/v1/4uewa4e9rh" async ></script>
+    {{ end }}
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description"
