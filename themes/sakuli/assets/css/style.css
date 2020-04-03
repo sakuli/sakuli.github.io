@@ -155,6 +155,14 @@ pre {
 .sticky-top{
   z-index: 500 !important;
 }
+/*select background issue firefox*/
+@-moz-document url-prefix() {
+  select, input, ::placeholder {
+      color:  black !important;
+      opacity: 1;
+  }
+}
+
 /*=================================================================
   live-demo
 ==================================================================*/
@@ -260,16 +268,6 @@ pre {
 /*=================================================================
   Basic Setup
 ==================================================================*/
-::-moz-selection {
-  /* Code for Firefox */
-  color: #afbac4;
-  background: #94C11F;
-}
-
-::selection {
-  color: #afbac4;
-  background: #94C11F;;
-}
 
 hr {
   border-top: 1px solid rgba(255,255,255,.1);
@@ -1196,7 +1194,7 @@ a:hover {
 
 .form-meghna ::placeholder
 {
-  color: #ddd !important;
+  color: #ddd ;
 }
 
 .google-map #map-canvas {
