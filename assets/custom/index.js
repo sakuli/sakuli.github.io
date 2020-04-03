@@ -791,6 +791,7 @@ var dropDown = document.querySelector('#powermail_field_kundenwunsch');
 var preSelectInterest = function preSelectInterest(ddValue) {
   var _a;
 
+  resetSelection();
   (_a = dropDown === null || dropDown === void 0 ? void 0 : dropDown.querySelector("option[value=\"" + ddValue + "\"]")) === null || _a === void 0 ? void 0 : _a.setAttribute('selected', 'selected');
 };
 

@@ -112,6 +112,7 @@ fetch("https://www.consol.com/request-sakuli/")
 
 const dropDown = document.querySelector('#powermail_field_kundenwunsch');
 const preSelectInterest = (ddValue: string) => {
+  resetSelection()
   dropDown?.querySelector(`option[value="${ddValue}"]`)?.setAttribute('selected', 'selected')
 }
 const resetSelection = () => {
