@@ -167,9 +167,11 @@ var klaroConfig = {
                 [/^AWSALB.*$/i, '/', 'sakuli.io'],
                 [/^AWSALB.*$/i, '/', 'hugodev'],
                 [/^AWSALB.*$/i, '/', 'sakuli-io.now.sh'],
+                [/^AWSALB.*$/i, '/', 'app.primeleads.de'],
                 [/^connect-sid.*$/i, '/', 'sakuli.io'],
                 [/^connect-sid.*$/i, '/', 'hugodev'],
                 [/^connect-sid.*$/i, '/', 'sakuli-io.now.sh'],
+                [/^connect-sid.*$/i, '/', 'app.primeleads.de'],
             ],
             callback: function (consent, app) {
                 // This is an example callback function.
