@@ -2,6 +2,10 @@ enable : true
 heading : What our customers
 headingSpan : think
 stories :
+  - name : Patric Lichtsteiner
+    title : Senior System Engineer Linux - Information & Communication Technology
+    image : images/references/zhaw_300.png
+    content : "zhaw uses Sakuli for end-to-end monitoring of web applications and Citrix Windows applications. Sakuli enables us to detect performance drops in the formation phase and thus prevents effects on productive systems. In the past, another tool was used which could only cover partial areas and required a lot of consulting from the external service provider. With Sakuli we can now implement and maintain these checks independently and in a much shorter time. I don't know of any other system with which we could perform end-to-end tests for both web applications and Windows GUIs in equal measure."
   - name : Daniel Klüh
     title : Head of Servicemanagement
     image : images/references/conti_300.png
