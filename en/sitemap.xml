@@ -59,6 +59,10 @@
   </url>
   
   <url>
+    <loc>/e2epipeline/</loc>
+  </url>
+  
+  <url>
     <loc>/legalnotice/</loc>
     <xhtml:link
                 rel="alternate"
@@ -98,6 +102,10 @@
                 hreflang="en"
                 href="/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>/e2epipeline/form/</loc>
   </url>
   
   <url>
