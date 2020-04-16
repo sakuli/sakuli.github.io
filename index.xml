@@ -10,23 +10,5 @@
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>E2E Code Page</title>
-      <link>/e2epipeline/code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/e2epipeline/code/</guid>
-      <description>await driver.switchTo().frame(1); await _click(_div(&amp;#39;element-in-frame-1&amp;#39;)); await driver.switchTo().defaultContent();  </description>
-    </item>
-    
-    <item>
-      <title>E2E Contact Form</title>
-      <link>/e2epipeline/form/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/e2epipeline/form/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
