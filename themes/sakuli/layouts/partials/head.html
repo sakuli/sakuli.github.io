@@ -16,7 +16,6 @@
     {{ if .Site.Params.ActivatePrimeLeads }}
         <script data-type="application/javascript" type="text/plain" data-src="https://app.primeleads.de/api/v1/4uewa4e9rh" data-name="primeLeads" ></script>
     {{ end }}
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description"
         content="{{ if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">
