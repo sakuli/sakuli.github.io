@@ -39,7 +39,11 @@
                         </li>
                         {{ end }}
                     </ul>
-                    <a class="btn btn-transparent" href="{{ .btnURL | relLangURL }}{{ with .dropDownIndex }}?interest={{ . }}{{ end }}">{{ .btnText }}</a>
+                    {{ if eq .btnTarget "ext" }}
+                        <a class="btn btn-transparent" href="{{ .btnURL }}">{{ .btnText }}</a>
+                    {{ else }}
+                        <a class="btn btn-transparent" href="{{ .btnURL | relLangURL }}{{ with .dropDownIndex }}?interest={{ . }}{{ end }}">{{ .btnText }}</a>
+                    {{ end }}
                 </div>
             </div>
             {{"<!-- end single enterprise table -->" | safeHTML}}

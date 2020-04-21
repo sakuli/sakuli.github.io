@@ -7,6 +7,7 @@ pricingTable :
     time : "keine Laufzeit"
     btnURL : https://github.com/sakuli/sakuli
     btnText : Github
+    btnTarget : ext
     plan :
       - planDetails : ∞ Instanzen
         iHead : "Wie werden Instanzen gezählt:"

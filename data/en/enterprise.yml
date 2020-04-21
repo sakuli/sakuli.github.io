@@ -7,6 +7,7 @@ pricingTable :
     time : "forever"
     btnURL : https://github.com/sakuli/sakuli
     btnText : Github
+    btnTarget : ext
     plan :
       - planDetails : ∞ instances
         iHead : "How to count Instances:"
