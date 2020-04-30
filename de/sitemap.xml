@@ -59,6 +59,20 @@
   </url>
   
   <url>
+    <loc>/de/features/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/features/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="/de/features/"
+                />
+  </url>
+  
+  <url>
     <loc>/de/legalnotice/</loc>
     <xhtml:link
                 rel="alternate"

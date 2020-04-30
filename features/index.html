@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" scroll-behavior="smooth">
+<head>
+    
+        
+        
+        <script data-name="googleanalytics" data-type="application/javascript" type="text/plain">(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-TMFSKHB');</script>
+        
+    
+    
+        <script data-type="application/javascript" type="text/plain" data-src="https://app.primeleads.de/api/v1/4uewa4e9rh" data-name="primeLeads" ></script>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description"
+        content="Sakuli End2End Testing and Monitoring">
+    <meta name="author"
+        content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E2E Testing & Monitoring</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/bundle.css" integrity="" />
+</head><body id="body" data-spy="scroll" data-target=".navbar" data-offset="52">
+
+
+    <div id="content">
+<section class="sticky-top navigation">
+        <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                
+                        <a class="navbar-brand logo" href="/">
+                                <img src="/images/logos/logo.svg" alt="Logo" height="42px" />
+                                <span class="pl-2 font-weight-bold"></span>
+                        </a>
+                        <button id="burger-button" class="navbar-toggler rounded-0" type="button" data-toggle="collapse"
+                                data-target="#navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navigation">
+                                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                                <a class="nav-link" onclick="closeBurgerjs()"
+                                                        href="#body"></a></li>
+                                        
+                                        
+                                
+
+                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#features">Features</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#enterprise">Enterprise</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/#company">About us</a>
+                                                        </li>
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/contact/">Contact</a>
+                                                        </li>
+                                                        
+                                                
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="https://sakuli.io/docs/getting-started/" target="_blank" rel="noopener">Docs</a>
+                                                        </li>
+                                                        
+                                                        
+                                                        
+                                                
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" onclick="closeBurgerjs()" href="/../whitepaper/">Paper</a>
+                                                        </li>
+                                                        
+                                                
+                                        
+                                        
+                                        
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dropdownLanguage" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-language fa-lg"></i>
+                                                </a>
+                                                <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropdownLanguage">
+                                                        
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <a class="dropdown-item" href="/features/">EN</a>
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                <a class="dropdown-item" href="/de/features/">DE</a>
+                                                                
+                                                                
+                                                                
+                                                        
+                                                </div>
+                                        </li>
+                                        
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dropDownSettings" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-cog"></i>
+                                                </a>
+                                                <div class="dropdown-menu bg-sakuli-black sakuli-no-border" aria-labelledby="dropDownSettings">
+                                                        <a class="dropdown-item" onclick="klaro.show();return false;closeBurgerjs()">Cookie Settings</a>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <a class="nav-link" href="https://github.com/sakuli/sakuli" target="_blank" rel="noopener">
+                                                        <i class="fab fa-github"></i>
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a class="nav-link" href="https://twitter.com/sakuli_e2e" target="_blank" rel="noopener">
+                                                        <i class="fab fa-twitter"></i>
+                                                </a>
+                                        </li>
+
+                                        
+                                
+                                
+                                </ul>
+                        </div>
+                </nav>
+        </div>
+</section>
+
+
+
+
+<!-- Start features core Section -->
+<section class="bg-two features section" id="features">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- section title -->
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                    <h2>Core<span class="color"> Features</span></h2>
+                    <div class="border-meghna"></div>
+                </div>
+            </div>
+            <!-- /section title -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            
+            <!-- features item -->
+
+            <div class="col-md-7 order-first wow fadeInLeft" data-wow-duration="500ms">
+                <div class="content text-center">
+
+                    
+                    <h2 class="sakuli-white">All in one UI Testing</h2>
+                    
+                    
+                    
+                    
+                    <p class="text-justify">Sakuli combines web testing with testing on native applications. That’s all you need in order to perfectly simulate a real-world user. Design your tests, run them automatically and save a ton of time by dramatically reducing your manual testing.</p>
+                    
+                    
+                    
+                    <h4 class="sakuli-white">Build Sustainable Tests</h4>
+                    
+                    
+                    
+                    
+                    
+                    <p class="text-justify">Sakuli uses state of the art web-testing technologies like Selenium, wraps a lot of standard functionalities and use-cases into user-friendly packages, thereby solving most of the pain points encountered by test designers in the past. With intelligent pattern and image matching, you won´t need to worry about every pixel. It was never easier to write sustainable user interface tests.</p>
+                    
+                    
+                    
+                    <h4 class="sakuli-white">Integrate UI Tests into CI/CD Pipelines</h4>
+                    
+                    
+                    
+                    
+                    
+                    <p class="text-justify">By integrating your Sakuli UI tests into continuous integration systems, you will speed up your software development cycles and increase the quality of your delivered software. Sakuli supports a variety of CI/CD tools like Jenkins, Drone IO, Travis-CI and many more.</p>
+                    
+                    
+                    
+                    
+                    <p class="text-justify">Sakulis design prioritizes an open and extensible base. Its modular Node.js core enables developers to create their own DSL, integrate behavior driven methods like Cucumber, adapt Sakuli to new technologies and connect to any kind of downstream application using the comprehensive APIs. Sakuli is an open platform for a variety of End-2-End use-cases.</p>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            <div class="col-md-5 order-last d-flex flex-wrap align-items-center tilt-img-parent wow fadeInRight"
+                data-wow-duration="500ms">
+                <img class="img-fluid mx-auto tilt-img-right" src="/images/mainUseCases/architecture_s.png">
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="400ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-check-double"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Simplified Selenium</h1>
+                        <hr>
+                        <p>It was never more easy to use the de-facto standard in UI-Web-Testing. Sakuli offers all the necessary methods, but it´s easy to use.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="500ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-bolt"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>No more Staleelements</h1>
+                        <hr>
+                        <p>As Sakuli handles the Selenium complexity, you don´t have to worry about Staleelements any more.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="600ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-expand"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Screenshot based interaction</h1>
+                        <hr>
+                        <p>Control any native application or element that is not accessible via DOM with Sakulis built-in image matching.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="700ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="far fa-file-code"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>DOM based interaction</h1>
+                        <hr>
+                        <p>Use Sakulis abstraction of Selenium to easily navigate and control web-apps. Find and interact with elements by displayed Text, Regular Expressions, ID, CSS classes or XPath queries.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="800ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-tablet-alt"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Screen Sizes</h1>
+                        <hr>
+                        <p>Use the same test for different screen-resolutions or within containers. Smart image recognition does not break by a few pixels.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="900ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="far fa-hand-point-down"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Drag &amp; Drop</h1>
+                        <hr>
+                        <p>Either use DOM-based Drag&amp;Drop or use the real simulation by controlling the mouse.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="1000ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-camera"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>OCR</h1>
+                        <hr>
+                        <p>Character Recognition is built in and can be used to extract text from images or screenshots.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="1100ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-arrows-alt-v"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Auto-Scroll into View</h1>
+                        <hr>
+                        <p>Actions like &#39;highlight&#39;, &#39;focus&#39;, &#39;click&#39; and others automatically scroll the target element into the viewport.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="1200ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="far fa-keyboard"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Native Control</h1>
+                        <hr>
+                        <p>Sakuli can use the mouse and keyboard just like a real user would do. Easily find workarounds for buggy forms or imitate a user perfectly.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="1300ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="far fa-clipboard"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Clipboard Integration</h1>
+                        <hr>
+                        <p>Use the clipboard with its set, get and paste methods to easily transfer data or workaround buggy forms.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="1400ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-lock"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Secrets Handling</h1>
+                        <hr>
+                        <p>Sakuli supports securly encrypted secrets, no more plain-text passwords and other sensitive information within the testcase.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- features item -->
+            <div class="col-lg-4 text-center wow fadeInLeftBig" data-wow-duration="1500ms">
+                <div class="block" id="core-features-block">
+
+                    <i id="feat-icons" class="fas fa-bug"></i>
+
+                    <!-- Express features Yourself -->
+
+                    <div id="core-features-block-content" class="content text-center">
+                        <h1>Debugging</h1>
+                        <hr>
+                        <p>Use the power of Node.js to debug your test.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="bg-one features section" id="features_section">
+    <div class="container" style="overflow: hidden">
+        <div class="col-lg-12">
+            <!-- section title -->
+            <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                <h2>Enterprise<span class="color"> Features</span></h2>
+                <div class="border-meghna"></div>
+            </div>
+            <!-- /section title -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInUp" data-wow-duration="500ms">
+                <div class="bd-example" data-example-id="">
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collItem0"
+                                    aria-expanded="false" aria-controls="collItem0"
+                                    class="collapsed row justify-content-between flex-nowrap">
+
+                                    <div class="col-1 align-middle">
+                                        <i class="fas fa-chart-area fa-lg mr-3" aria-hidden="true"
+                                            style="vertical-align: middle;"></i>
+                                    </div>
+                                    <div class="col-10 align-middle">
+                                        <span style="vertical-align: middle;">Monitoring Forwarder</span>
+                                    </div>
+                                    <div class="col-1 align-middle">
+                                        <i class="fa fa-angle-down" aria-hidden="true"
+                                            style="float: right; vertical-align: middle;"></i>
+                                    </div>
+
+                                </a>
+                            </div>
+
+                            <div id="collItem0" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                                aria-expanded="false">
+                                <div class="card-block">
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Combining End-2-End testing with monitoring solutions proves to be optimal – because effective quality assurance looks over and beyond any given server: Automated End-2-End tests ensure that your web or rich client ecosystem will keep its promise. Ultimately though, the quality of your systems will be assessed by the users.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    <img class="img-fluid rounded float-right" style="width: 50% \9;"
+                                        src="/images/mainUseCases/monitoring_s.png">
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Test results and data of Sakulis open API can be forwarded to different target systems like Prometheus, OMD, checkmk, databases and propriertary systems.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h4 style="color: #404040">Monitor Critical Workflows</h4>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Imagine testing your critical processes and workflows by simulating a real-world user, sending execution times, warnings and error messages (including screenshots of the system under test) to the monitoring system of your choice. Before the first customer complains about the performance, you will have been notified automatically and you will be able to investigate and minimize affects on your revenue stream.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Sakuli and Sakuli Forwarder are designed to handle this task so you (and your manager) will finally find a good night’s sleep again.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h4 style="color: #404040">Your Benefits</h4>
+                                    
+                                    
+                                    
+                                    
+                                    <ul style="color: #404040">
+                                        
+                                        <li>Send execution times of test steps to your monitoring system</li>
+                                        
+                                        <li>Connect a variety of modern monitoring solutions to your End-2-End tests</li>
+                                        
+                                        <li>Attach screenshots or videos to your monitoring data</li>
+                                        
+                                        <li>Monitor your important workflows</li>
+                                        
+                                        <li>Define thresholds in Sakuli and let the monitoring system alert you</li>
+                                        
+                                        <li>Detect issues in 3rd party systems that influence your application&#34;</li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h4 style="color: #404040">Your Package</h4>
+                                    
+                                    
+                                    
+                                    
+                                    <ul style="color: #404040">
+                                        
+                                        <li>Icinga2</li>
+                                        
+                                        <li>checkmk</li>
+                                        
+                                        <li>Prometheus</li>
+                                        
+                                        <li>OMD (Nagios, Gearman)</li>
+                                        
+                                        <li>ElasticSearch (coming soon)</li>
+                                        
+                                        <li>SQL Databases (coming soon)</li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collItem1"
+                                    aria-expanded="false" aria-controls="collItem1"
+                                    class="collapsed row justify-content-between flex-nowrap">
+
+                                    <div class="col-1 align-middle">
+                                        <i class="fab fa-docker fa-lg mr-3" aria-hidden="true"
+                                            style="vertical-align: middle;"></i>
+                                    </div>
+                                    <div class="col-10 align-middle">
+                                        <span style="vertical-align: middle;">All-in-one Docker Image</span>
+                                    </div>
+                                    <div class="col-1 align-middle">
+                                        <i class="fa fa-angle-down" aria-hidden="true"
+                                            style="float: right; vertical-align: middle;"></i>
+                                    </div>
+
+                                </a>
+                            </div>
+
+                            <div id="collItem1" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                                aria-expanded="false">
+                                <div class="card-block">
+                                    
+                                    
+                                    <h4 style="color: #404040">Sakuli Container in a Nutshell</h4>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Our pre-configured Docker container will run Sakuli in an isolated environment. This will ensure having the same setup and equal conditions for every test run. You don’t need an unlocked display for native UI interactions with the headless VNC image configured in every container. For debugging purposes, you will be able to watch your test execution live in a browser or a VNC client any time. Scale your tests horizontally by instantiating as many containers as you need.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    <img class="img-fluid rounded float-right" style="width: 50% \9;"
+                                        src="/images/mainUseCases/container_s.png">
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h4 style="color: #404040">Your Benefits</h4>
+                                    
+                                    
+                                    
+                                    
+                                    <ul style="color: #404040">
+                                        
+                                        <li>Always rely on the same, clean environment: no cookie hassle, no session data, no old test artifacts</li>
+                                        
+                                        <li>Scale your tests: Run multiple instances of your container in parallel to accelerate overall execution time or simulate heavy loads on your application</li>
+                                        
+                                        <li>Orchestrate your test cluster with OpenShift, Kubernetes or any other platform</li>
+                                        
+                                        <li>CI/CD: Easily integrate your tests into your continuous integration environment</li>
+                                        
+                                        <li>The layout and scaling of websites and native applications will always be the same, therefore increasing the reliability of native interactions</li>
+                                        
+                                        <li>Orchestrate, execute and alter your test container within the Sakuli UI portal –&gt; coming soon</li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h4 style="color: #404040">Your Package</h4>
+                                    
+                                    
+                                    
+                                    
+                                    <ul style="color: #404040">
+                                        
+                                        <li>Container Operating system Ubuntu</li>
+                                        
+                                        <li>Desktop environment OpenBox</li>
+                                        
+                                        <li>VNC-Server</li>
+                                        
+                                        <li>noVNC - HTML5 VNC client</li>
+                                        
+                                        <li>Node.js</li>
+                                        
+                                        <li>Mozilla Firefox</li>
+                                        
+                                        <li>Chromium</li>
+                                        
+                                        <li>Sakuli</li>
+                                        
+                                        <li>Starting from L-Package: RDP installation for remote connection to Windows machines</li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collItem2"
+                                    aria-expanded="false" aria-controls="collItem2"
+                                    class="collapsed row justify-content-between flex-nowrap">
+
+                                    <div class="col-1 align-middle">
+                                        <i class="fab fa-redhat fa-lg mr-3" aria-hidden="true"
+                                            style="vertical-align: middle;"></i>
+                                    </div>
+                                    <div class="col-10 align-middle">
+                                        <span style="vertical-align: middle;">S2I Images</span>
+                                    </div>
+                                    <div class="col-1 align-middle">
+                                        <i class="fa fa-angle-down" aria-hidden="true"
+                                            style="float: right; vertical-align: middle;"></i>
+                                    </div>
+
+                                </a>
+                            </div>
+
+                            <div id="collItem2" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                                aria-expanded="false">
+                                <div class="card-block">
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Sakuli Container are also available as ready-to-go S2I images for OpenShift.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <a href="https://sakuli.io/docs/enterprise_features/s2i/" target="blank" rel="noopener">
+                                        
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        
+                                         Check out our documentation.</a>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collItem3"
+                                    aria-expanded="false" aria-controls="collItem3"
+                                    class="collapsed row justify-content-between flex-nowrap">
+
+                                    <div class="col-1 align-middle">
+                                        <i class="fas fa-hands-helping fa-lg mr-3" aria-hidden="true"
+                                            style="vertical-align: middle;"></i>
+                                    </div>
+                                    <div class="col-10 align-middle">
+                                        <span style="vertical-align: middle;">Professional Support</span>
+                                    </div>
+                                    <div class="col-1 align-middle">
+                                        <i class="fa fa-angle-down" aria-hidden="true"
+                                            style="float: right; vertical-align: middle;"></i>
+                                    </div>
+
+                                </a>
+                            </div>
+
+                            <div id="collItem3" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                                aria-expanded="false">
+                                <div class="card-block">
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Sakuli Core and Sakuli add-ons are supported on a business impact prioritization. This prioritization is performed by our experts in respect to:</p>
+                                    
+                                    
+                                    
+                                    <ul style="color: #404040">
+                                        
+                                        <li>Security &gt; Function without Workaround &gt; Function with Workaround</li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">Support is restricted on Bugs of Sakuli and its Features (Consulting and Setup are not included) and limited to the amount of cases specified in the respective Subscription Package. Support inquiries need to be in a structured form (Please use the provided template) with all necessary information about the system environment, configuration and a detailed report. Customers need to ensure reproducibility of the issue by offering remote accessibility or an appropriate system to reproduce on.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">SLA times are defined as initial reaction time from Monday to Friday during German business hours 08:00 - 17:00 – excluding German public holidays. Support is offered via email.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collItem4"
+                                    aria-expanded="false" aria-controls="collItem4"
+                                    class="collapsed row justify-content-between flex-nowrap">
+
+                                    <div class="col-1 align-middle">
+                                        <i class="fas fa-code fa-lg mr-3" aria-hidden="true"
+                                            style="vertical-align: middle;"></i>
+                                    </div>
+                                    <div class="col-10 align-middle">
+                                        <span style="vertical-align: middle;">Maintenance</span>
+                                    </div>
+                                    <div class="col-1 align-middle">
+                                        <i class="fa fa-angle-down" aria-hidden="true"
+                                            style="float: right; vertical-align: middle;"></i>
+                                    </div>
+
+                                </a>
+                            </div>
+
+                            <div id="collItem4" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                                aria-expanded="false">
+                                <div class="card-block">
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    
+                                    <p style="color: #404040">The Sakuli DEV team tracks security incidents of underlying software components regularly and updates Sakuli components with the latest security fix releases shortly after appearance.</p>
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- /enterprise features -->
+
+
+
+
+
+    </div>
+
+<footer id="footer" class="bg-one">
+	<div class="container">
+
+		<div class="footer-upper row justify-content-lg-center justify-content-start">
+			
+			<div class="col-lg-3 col-6">
+				<h1>Portfolio</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							<a href="https://github.com/sakuli">Open-Source</a>
+						
+					
+						
+							
+								<a href="/#enterprise">Enterprise</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-6">
+				<h1>Download</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							
+								<a href="/../whitepaper/" >Whitepaper</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-6">
+				<h1>Services</h1>
+				<div class="sepLine"></div>
+				<ul class="list-inline">
+					
+						
+							
+								<a href="/../contact/" >Contact</a>
+							
+						
+					
+						
+							
+								<a href="/../legalnotice/" >Legal Notice</a>
+							
+						
+					
+						
+							
+								<a href="/../dataprivacy/" >Data privacy</a>
+							
+						
+					
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container-fluid p-0">
+		<div class="footer-lower">
+			<div class="row wow fadeInUp" data-wow-duration="500ms">
+				<div class="col-xl-12">
+					<div style="text-align: center; padding-top: 20px;">
+						<div>
+							<a href="/" style="display: inline; padding-right: 20px">
+								<img src="/images/logos/logo.svg" width="150" alt="Sakuli Logo" />
+							</a>
+						</div>
+
+						
+						<div class="mt-3">
+							
+							<div class="list-inline-item">
+									<a href="https://twitter.com/sakuli_e2e" style="position: relative;">
+										<i class="fab fa-twitter fa-2x"></i>
+									</a> 
+							</div>
+							
+							<div class="list-inline-item">
+									<a href="https://github.com/sakuli/sakuli" style="position: relative;">
+										<i class="fab fa-github fa-2x"></i>
+									</a> 
+							</div>
+							
+						</div>
+						
+					</div>
+
+					<div class="copyright text-center">
+						<p style="padding: 1rem; font-size: 1rem">A <a href="https://consol.com"> Consol </a>
+							brand &copy;
+							<script>
+								document.write(new Date().getFullYear())
+							</script>. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/bundle.min.js"></script>
+
+
+</body>
+
+</html>
