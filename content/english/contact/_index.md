@@ -1,6 +1,7 @@
 +++
 customJs = "custom/index.js"
 aliases = [
-    "/enterprise/"
+    "/enterprise/",
+    "/request-live-demo/"
 ]
 +++
