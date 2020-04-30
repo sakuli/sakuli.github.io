@@ -1,13 +1,14 @@
 enable : true
 heading : Live
 headingSpan : Demo
-headingSub : "Drücken Sie Start und lehnen Sie sich zurück"
-content : "Der Test wird in einem Container hoch gefahren und gestartet - er simuliert den folgenden Prozess:"
+headingSub : "Automatisiertes E2E Monitoring"
+content : "Was Sie nach einem Klick auf 'Start' sehen ist kein Video, sondern das Display eines Containers der live hoch gefahren wird. Im darin ablaufenden Test wird folgender Prozess von Sakuli durchgespielt und die Laufzeitmessungen werden im darunter angezeigten Monitoring dargestellt:"
 ul :
-  - li : "Das zu testende System ist ein Ticket-Tool und eine Windows Anwendung"
+  - li : "Das zu testende System ist zum einen ein Web Ticket-Tool und zum anderen eine Windows Anwendung"
   - li : "Sakuli führt einen Prozess aus und verwendet dafür Web- und Bildbasierte Interaktion"
-  - li : "Dabei werden verschiedene Rollen - ein End-User und eine Geschäftsperson simuliert und der Eingang einer Bestätigungs Email geprüft "
-  - li : "Die erzeugte Ticket-Nummer wird in einem Excel-File gespeichert"
-  - li : "Danach wird in Paint das Sakuli Logo gezeichnet (dies dient natürlich nur dem Aufzeigen der Möglichkeiten von nativer Interaktion)"
+  - li : "Dabei werden verschiedene Rollen - ein End-User und eine Geschäftsperson simuliert (Sakuli loggt sich mit unterschiedlichen Zugangsdaten ein)"
+  - li : "Die erzeugte Ticket-Nummer wird bei jedem Durchlauf in einem Excel-File gespeichert"
+  - li : "Sakuli zeichnet ein Logo mit der Grafik-Anwendung Paint (dies dient natürlich nur dem Aufzeigen der Möglichkeiten von nativer Interaktion)"
+  - li : "Der Eingang einer Bestätigungs-Email wird in Gmail geprüft"
   - li : "Schlussendlich werden die Laufzeiten der einzelnen Schritte an ein Monitoring System geschickt"
 content2 : "Auf dem ersten Display können Sie den laufenden Test (via noVNC) verfolgen und auf dem zweiten Display werden die Monitoring Daten mit einer Grafana Oberfläche dargestellt. Hier können Sie zoomen, die Graphen verändern und unterschiedliche Sichten einstellen."
