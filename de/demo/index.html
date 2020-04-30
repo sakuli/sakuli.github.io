@@ -196,19 +196,21 @@
         <div class="row ml-2 mr-2 ml-md-5 mr-md-5">
             <!-- /section title -->
             <div class="col-8">
-                <h4>Drücken Sie Start und lehnen Sie sich zurück</h4>
-                <p>Der Test wird in einem Container hoch gefahren und gestartet - er simuliert den folgenden Prozess:</p>
+                <h4>Automatisiertes E2E Monitoring</h4>
+                <p>Was Sie nach einem Klick auf &#39;Start&#39; sehen ist kein Video, sondern das Display eines Containers der live hoch gefahren wird. Im darin ablaufenden Test wird folgender Prozess von Sakuli durchgespielt und die Laufzeitmessungen werden im darunter angezeigten Monitoring dargestellt:</p>
                 <ul>
                     
-                    <li>Das zu testende System ist ein Ticket-Tool und eine Windows Anwendung</li>
+                    <li>Das zu testende System ist zum einen ein Web Ticket-Tool und zum anderen eine Windows Anwendung</li>
                     
                     <li>Sakuli führt einen Prozess aus und verwendet dafür Web- und Bildbasierte Interaktion</li>
                     
-                    <li>Dabei werden verschiedene Rollen - ein End-User und eine Geschäftsperson simuliert und der Eingang einer Bestätigungs Email geprüft </li>
+                    <li>Dabei werden verschiedene Rollen - ein End-User und eine Geschäftsperson simuliert (Sakuli loggt sich mit unterschiedlichen Zugangsdaten ein)</li>
                     
-                    <li>Die erzeugte Ticket-Nummer wird in einem Excel-File gespeichert</li>
+                    <li>Die erzeugte Ticket-Nummer wird bei jedem Durchlauf in einem Excel-File gespeichert</li>
                     
-                    <li>Danach wird in Paint das Sakuli Logo gezeichnet (dies dient natürlich nur dem Aufzeigen der Möglichkeiten von nativer Interaktion)</li>
+                    <li>Sakuli zeichnet ein Logo mit der Grafik-Anwendung Paint (dies dient natürlich nur dem Aufzeigen der Möglichkeiten von nativer Interaktion)</li>
+                    
+                    <li>Der Eingang einer Bestätigungs-Email wird in Gmail geprüft</li>
                     
                     <li>Schlussendlich werden die Laufzeiten der einzelnen Schritte an ein Monitoring System geschickt</li>
                     
