@@ -1,0 +1,18 @@
+#credits {
+    padding: 2rem;
+}
+
+pre {
+    white-space: pre-wrap;
+    overflow: auto;
+    font-size: .8rem;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+    padding: .5rem;
+    font-size: .8rem;
+}
