@@ -5,3 +5,4 @@ custom-js/.cache
 custom-js/node_modules/
 assets/custom/
 .vscode/
+.idea
