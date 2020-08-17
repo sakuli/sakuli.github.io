@@ -4,7 +4,7 @@ headingSpan : Core-Team
 teamMember :
   - image : images/team/nico.jpg
     name : Nico Zellner
-    designation : Sales
+    designation : Business Development
     description : 
     socialIcon :
       - icon : "fab fa-linkedin-in"
@@ -51,21 +51,22 @@ teamMember :
     socialIcon :
       - icon : "fab fa-github"
         url : "https://github.com/cliffle"
-  
-  - image : images/team/marlene.jpg
-    name : Marlène Kermani
-    designation : Software Engineering Apprentice
-    description : 
 
-  - image : images/team/bogdan.jpg
-    name : Bogdan Bermel
-    designation : Junior Engineer
+  - image : images/team/chi.jpg
+    name : Thuy Nguyen
+    designation : Sales
     description : 
+    socialIcon :
+      - icon : "fab fa-xing"
+        url : "https://www.xing.com/profile/Thuy_Nguyen124/cv"
 
   - image : images/team/julian.jpg
     name : Julian Liebich
     designation : Software Engineering Apprentice
     description :
 
-
+  - image : images/team/marlene.jpg
+    name : Marlène Kermani
+    designation : Software Engineering Apprentice
+    description : 
     
