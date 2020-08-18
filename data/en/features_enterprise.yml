@@ -74,6 +74,14 @@ featuresItem:
         content:
             - paragraph : You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.
             - paragraph : The Sakuli DEV team tracks security incidents of underlying software components regularly and updates Sakuli components with the latest security fix releases shortly after appearance.
-      
-                  
-            
+
+      - icon : fas fa-code
+        title : Sakuli-Dashboard
+        content:
+            - paragraph : A small and simple dashboard application to show sakuli VNC-views and monitoring metrics.
+            - heading: Features
+              list:
+                  - liEl: Configurable display layout
+                  - liEl: Configurable play button to perform actions on k8s cluster
+                  - liEl: Automated display updates after play button has been clicked
+                  - liEl: Automated updates on displays in case the service is only temporarily available
