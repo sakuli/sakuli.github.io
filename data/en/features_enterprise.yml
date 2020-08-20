@@ -78,10 +78,10 @@ featuresItem:
       - icon : fas fa-desktop
         title : Sakuli-Dashboard
         content:
-            - paragraph : A small and simple dashboard application to show sakuli VNC-views and monitoring metrics.
+            - paragraph : A dashboard application to show sakuli VNC-views and monitoring metrics.
             - heading: Features
               list:
                   - liEl: Configurable display layout
-                  - liEl: Configurable play button to perform actions on k8s cluster
-                  - liEl: Automated display updates after play button has been clicked
-                  - liEl: Automated updates on displays in case the service is only temporarily available
+                  - liEl: Configurable play button to perform actions on Kubernetes/Openshift clusters
+                  - liEl: Trigger your Sakuli test with a button and watch it perform in real-time
+                  - liEl: Embed your monitoring metrics on the dashboard to check the performance of your application
