@@ -78,7 +78,7 @@ featuresItem:
       - icon : fas fa-desktop
         title : Sakuli-Dashboard
         content:
-            - paragraph : A dashboard application to show sakuli VNC-views and monitoring metrics.
+            - paragraph : With the Sakuli dashboard, you can track the monitoring metrics of your application alongside a live video feed of your Sakuli check.
             - heading: Features
               list:
                   - liEl: Configurable play button to perform actions on Kubernetes/Openshift clusters

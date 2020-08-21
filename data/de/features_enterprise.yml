@@ -78,7 +78,7 @@ featuresItem:
       - icon : fas fa-desktop
         title : Sakuli-Dashboard
         content:
-            - paragraph : Eine Dashboard Anwendung zur Anzeige von Sakuli-VNC Ansichten und Monitoring-Metriken
+            - paragraph : Verfolgen Sie mit dem Sakuli-Dashboard die Monitoring-Metriken Ihrer Anwendung zusammen mit einem Live-Video-Feed Ihres Sakuli-Checks
             - heading: Features
               list:
                   - liEl: Konfigurierbarer Start Button um Operationen auf einem Kubernetes/Openshift Cluster durchzuführen
