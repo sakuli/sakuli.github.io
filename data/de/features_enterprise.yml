@@ -81,7 +81,6 @@ featuresItem:
             - paragraph : Eine Dashboard Anwendung zur Anzeige von Sakuli-VNC Ansichten und Monitoring-Metriken
             - heading: Features
               list:
-                  - liEl: Konfigurierbares Display Layout
                   - liEl: Konfigurierbarer Start Button um Operationen auf einem Kubernetes/Openshift Cluster durchzuführen
                   - liEl: Starten Sie Ihren Sakuli-Test mit einem Klick und beobachten Sie die Testausführung live
                   - liEl: Automatisieren Sie Ihren Sakuli-Test mit einem Cronjob, um Ihre Anwendung fortlaufend zu überwachen
