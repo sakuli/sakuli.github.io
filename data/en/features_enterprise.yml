@@ -82,6 +82,6 @@ featuresItem:
             - heading: Features
               list:
                   - liEl: Configurable play button to perform actions on Kubernetes/Openshift clusters
-                  - liEl: Trigger your Sakuli test with the play button and watch it perform in real-time
+                  - liEl: Trigger your Sakuli test on your cluster with the play button and watch it perform in real-time
                   - liEl: Start your Sakuli test automatically with a cronjob to monitor your application continuously
                   - liEl: Embed your monitoring metrics on the dashboard to check the performance of your application

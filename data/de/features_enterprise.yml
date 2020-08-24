@@ -82,7 +82,7 @@ featuresItem:
             - heading: Features
               list:
                   - liEl: Konfigurierbarer Start Button um Operationen auf einem Kubernetes/Openshift Cluster durchzuführen
-                  - liEl: Starten Sie Ihren Sakuli-Test mit einem Klick und beobachten Sie die Testausführung live
+                  - liEl: Starten Sie Ihren Sakuli-Test auf Ihrem Cluster mit einem Klick und beobachten Sie live die Testausführung
                   - liEl: Automatisieren Sie Ihren Sakuli-Test mit einem Cronjob, um Ihre Anwendung fortlaufend zu überwachen
                   - liEl: Integrieren Sie Ihre Monitoring-Metriken in das Dashboard, um die Leistung Ihrer Anwendung zu überprüfen
 
