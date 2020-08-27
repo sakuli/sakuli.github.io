@@ -79,10 +79,11 @@ featuresItem:
         title : Sakuli-Dashboard
         content:
             - paragraph : Start und Überwachung Ihres Sakuli Test und Darstellung der Monitoring-Metriken Ihrer Anwendung in real-time.
-            - paragraph : Eine Demo des Dashboards finden Sie unter [https://sakuli.io/de/demo/](https://sakuli.io/de/demo/) 
             - heading: Features
               list:
                   - liEl: Konfigurierbarer Start Button um Sakuli Tests auf einem Kubernetes/Openshift Cluster zu starten
                   - liEl: Beobachten Sie die Testausführung live über das im Dashboard eingebundene VNC Display
                   - liEl: Automatisierter Start Ihrer Sakuli Tests in bestimmten Zeitintervallen, um Ihre Anwendung fortlaufend zu überwachen
                   - liEl: Einbindung Ihres Monitoring Frontends um die Leistung Ihrer Anwendung kontinuierlich zu überwachen.
+            - linkUrl: "https://sakuli.io/de/demo/"
+            - linkText: "Eine Demo des Dashboards finden Sie hier."
