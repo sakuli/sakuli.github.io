@@ -78,10 +78,11 @@ featuresItem:
       - icon : fas fa-desktop
         title : Sakuli-Dashboard
         content:
-            - paragraph : With the Sakuli dashboard, you can track the monitoring metrics of your application alongside a live video feed of your Sakuli check.
+            - paragraph : Start and supervision of your Sakuli test und display of monitoring data in real-time.
+            - paragraph : You will find a demo of the dashboard here: [https://sakuli.io/demo/](https://sakuli.io/demo/) 
             - heading: Features
               list:
-                  - liEl: Configurable play button to perform actions on Kubernetes/Openshift clusters
-                  - liEl: Trigger your Sakuli test on your cluster with the play button and watch it perform in real-time
-                  - liEl: Start your Sakuli test automatically with a cronjob to monitor your application continuously
-                  - liEl: Embed your monitoring metrics on the dashboard to check the performance of your application
+                  - liEl: Configurable play button to start sakuli tests on Kubernetes/Openshift clusters
+                  - liEl: Watch your Sakuli test in real-time with the integrated VNC display
+                  - liEl: Automated start of your Sakuli tests in defined cycles to monitor your application continuously
+                  - liEl: Embed your monitoring frontend to the dashboard and monitor the performance of your application
