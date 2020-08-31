@@ -89,3 +89,4 @@ pricingTable :
       - planDetails : Docker Container
       - planDetails : RDP Container
       - planDetails : S2I Images
+      - planDetails : Sakuli-Dashboard
