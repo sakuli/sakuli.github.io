@@ -2,7 +2,7 @@ enable : true
 heading : Live
 headingSpan : Demo
 headingSub : "Automatisiertes E2E Monitoring"
-content : "Was Sie nach einem Klick auf 'Start' sehen ist kein Video, sondern das Display eines Containers der live hoch gefahren wird. Im darin ablaufenden Test wird folgender Prozess von Sakuli durchgespielt und die Laufzeitmessungen werden im darunter angezeigten Monitoring dargestellt:"
+content : "Was Sie nach einem Klick auf 'Start' sehen ist kein Video, sondern das Display eines Containers der live hoch gefahren wird. Im darin ablaufenden Test wird folgender Prozess von Sakuli durchgespielt und die Laufzeitmessungen werden im angezeigten Monitoring dargestellt:"
 ul :
   - li : "Das zu testende System ist zum einen ein Web Ticket-Tool und zum anderen eine Windows Anwendung"
   - li : "Sakuli führt einen Prozess aus und verwendet dafür Web- und Bildbasierte Interaktion"

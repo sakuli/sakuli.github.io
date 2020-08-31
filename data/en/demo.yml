@@ -2,7 +2,7 @@ enable : true
 heading : Live
 headingSpan : Demo
 headingSub : "Automated E2E Monitoring"
-content : "What you will see after a click on 'start' is not a video, but a display of a container that is started on the fly. The Sakuli test within runs the following process and sends the performance data to the monitoring system shown below:"
+content : "What you will see after a click on 'start' is not a video, but a display of a container that is started on the fly. The Sakuli test within runs the following process and sends the performance data to the shown monitoring system:"
 ul :
   - li : "System under Test is a ticket web-tool and a Windows application"
   - li : "Sakuli simulates a process with those tools using web- and native interactions"
