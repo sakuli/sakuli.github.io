@@ -27,6 +27,8 @@ contactOptions :
     desc : "L-Package"
   - value : "XLPackageSales"
     desc : "XL-Package Sales"
+  - value : "freePOC"
+    desc : "Free Proof of Concept"
 
 privacyUrl : "/dataprivacy/"
 privacyText1 : "I have read the"

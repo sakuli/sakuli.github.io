@@ -1,0 +1,16 @@
+enable : true
+
+title : End of Year Special
+heading : "End of Year Special"
+
+chapter : 
+    - title: Kostenloser POC für Ihre Anwendung
+      image : images/backgrounds/special_POC_s.png
+      contOrder : "first"
+      imgOrder : "last"
+      btnUrl : "/contact/"
+      dropDownIndex : freePOC
+      btnText : "Kostenloser POC anfordern"
+      paras : 
+        - content : Bilder sagen mehr als 1000 Worte; ein Proof of Concept noch viel mehr! Deshalb bieten wir Ihnen zum Jahresende an, einen kosenlosen POC für eine Ihrer Anwendungen zu bauen - ganz ohne Ihr Zutun.
+        - content : "Lassen Sie sich überraschen: Einer unserer Produktexperten wird Ihnen den E2E Monitoring POC über einen Video Call präsentieren und steht natürlich auch für Fragen zur Verfügung."
