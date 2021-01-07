@@ -20,5 +20,8 @@ jobs:
           hugo-version: '0.68.3'
       - name: Build
         run: |
-          cd custom-js && npm ci && npm run build
+          pushd custom-js
+          npm ci
+          npm run build
+          popd
           hugo -b /docs --environment production
