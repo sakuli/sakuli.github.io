@@ -3,128 +3,128 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
+    <loc>/docs/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/"
+                href="/docs/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/docs/"
                 />
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>/docs/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/contact/"
+                href="/docs/de/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/contact/"
+                href="/docs/contact/"
                 />
   </url>
   
   <url>
-    <loc>/dataprivacy/</loc>
+    <loc>/docs/dataprivacy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/dataprivacy/"
+                href="/docs/de/dataprivacy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/dataprivacy/"
+                href="/docs/dataprivacy/"
                 />
   </url>
   
   <url>
-    <loc>/demo/</loc>
+    <loc>/docs/demo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/demo/"
+                href="/docs/de/demo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/demo/"
+                href="/docs/demo/"
                 />
   </url>
   
   <url>
-    <loc>/features/</loc>
+    <loc>/docs/features/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/features/"
+                href="/docs/de/features/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/features/"
+                href="/docs/features/"
                 />
   </url>
   
   <url>
-    <loc>/legalnotice/</loc>
+    <loc>/docs/legalnotice/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/legalnotice/"
+                href="/docs/de/legalnotice/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/legalnotice/"
+                href="/docs/legalnotice/"
                 />
   </url>
   
   <url>
-    <loc>/whitepaper/</loc>
+    <loc>/docs/whitepaper/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/whitepaper/"
+                href="/docs/de/whitepaper/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/whitepaper/"
+                href="/docs/whitepaper/"
                 />
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/docs/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/categories/"
+                href="/docs/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="/docs/categories/"
                 />
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/docs/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/tags/"
+                href="/docs/de/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="/docs/tags/"
                 />
   </url>
   
