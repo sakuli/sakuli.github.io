@@ -1,0 +1,25 @@
+name: cd
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  release-next:
+    name: release-next
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.4.13
+        with:
+          hugo-version: '0.68.3'
+      - name: Build
+        run: |
+          cd custom-js && npm ci && npm run build
+          hugo -b /docs --environment production
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
