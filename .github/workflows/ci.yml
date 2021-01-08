@@ -24,4 +24,4 @@ jobs:
           npm ci
           npm run build
           popd
-          hugo -b /docs --environment production
+          hugo --environment production

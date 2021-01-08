@@ -19,7 +19,7 @@ jobs:
           npm ci
           npm run build
           popd
-          hugo -b /docs --environment production
+          hugo --environment production
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
