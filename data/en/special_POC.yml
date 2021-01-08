@@ -1,7 +1,7 @@
 enable : true
 
-title : End of Year Special
-heading : "End of Year Special"
+title : New Year Special
+heading : "New Year Special"
 
 chapter : 
     - title: Free E2E Monitoring POC for your application
