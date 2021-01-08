@@ -3,6 +3,7 @@ on:
   push:
     branches: [develop]
 
+
 jobs:
   release-next:
     name: release-next
