@@ -87,3 +87,10 @@ featuresItem:
                   - liEl: Einbindung Ihres Monitoring Frontends um die Leistung Ihrer Anwendung kontinuierlich im Blick zu behalten.
             - linkUrl: "https://sakuli.io/de/demo/"
             - linkText: "Eine Demo des Dashboards finden Sie hier."
+
+      - icon : fas fa-camera
+        title: OCR
+        content:
+            - paragraph: OCR kann verwendet werden, um Text aus Bildern oder Screenshots zu extrahieren.
+            - linkUrl: "https://sakuli.io/docs/enterprise_features/ocr/"
+            - linkText: " Weitere Informationen finden Sie in unserer Dokumentation."

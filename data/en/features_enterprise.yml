@@ -87,3 +87,10 @@ featuresItem:
                   - liEl: Embed your monitoring frontend to the dashboard and monitor the performance of your application.
             - linkUrl: "https://sakuli.io/demo/"
             - linkText: "You will find a demo of the dashboard here."
+
+      - icon: fas fa-camera
+        title: OCR
+        content:
+            - paragraph: Character Recognition is a plugin and can be used to extract text from images or screenshots.
+            - linkUrl: "https://sakuli.io/docs/enterprise_features/ocr/"
+            - linkText: " For more information check out our documentation."
