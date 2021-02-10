@@ -52,6 +52,13 @@ h6 {
   font-family: "Didact Gothic", sans-serif;
 }
 
+.sakuli-feature-link {
+    color: #689100 !important;
+}
+.sakuli-feature-link:hover {
+    color: black !important;
+}
+
 
 .h_dark {
   font-weight: 400;

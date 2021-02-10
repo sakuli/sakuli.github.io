@@ -37,9 +37,9 @@ featuresItem :
   title : Drag & Drop
   content : Either use DOM-based Drag&Drop or use the real simulation by controlling the mouse.
 
-- icon : fas fa-camera
-  title : OCR
-  content : Character Recognition is built in and can be used to extract text from images or screenshots.
+- icon: fas fa-globe
+  title: Cross-Browser
+  content: Sakuli supports various browsers, e.g. Chrome and Firefox
 
 - icon : fas fa-arrows-alt-v
   title : Auto-Scroll into View
