@@ -91,6 +91,6 @@ featuresItem:
       - icon : fas fa-camera
         title: OCR
         content:
-            - paragraph: OCR kann verwendet werden, um Text aus Bildern oder Screenshots zu extrahieren.
+            - paragraph: Mittels "optical character recognition" (OCR) ist Sakuli dazu in der Lage, Bildschirminhalte zu analysieren und auf Basis des dargestellten Textes Aktionen auszuführen.
             - linkUrl: "https://sakuli.io/docs/enterprise_features/ocr/"
             - linkText: " Weitere Informationen finden Sie in unserer Dokumentation."

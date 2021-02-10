@@ -91,6 +91,6 @@ featuresItem:
       - icon: fas fa-camera
         title: OCR
         content:
-            - paragraph: Character Recognition is a plugin and can be used to extract text from images or screenshots.
+            - paragraph: Using optical character recognition (OCR), Sakuli is able to analyze screen contents and to perform actions based on the displayed text.
             - linkUrl: "https://sakuli.io/docs/enterprise_features/ocr/"
             - linkText: " For more information check out our documentation."

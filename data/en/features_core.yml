@@ -39,7 +39,7 @@ featuresItem :
 
 - icon: fas fa-globe
   title: Cross-Browser
-  content: Sakuli supports various browsers, such as Chrome, Firefox or Internet Explorer
+  content: Sakuli supports various browsers, e.g. Chrome and Firefox
 
 - icon : fas fa-arrows-alt-v
   title : Auto-Scroll into View
