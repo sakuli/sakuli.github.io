@@ -27,8 +27,7 @@ contactOptions :
     desc : "L-Paket"
   - value : "XLPackageSales"
     desc : "XL-Paket Vertrieb"
-  - value : "freePOC"
-    desc : "Kostenloser POC"
+
 
 privacyUrl : "/dataprivacy/"
 privacyText1 : "Ich willige in die Nutzung meiner Daten gemäß"
