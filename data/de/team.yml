@@ -14,16 +14,6 @@ teamMember :
       - icon : "fab fa-twitter"
         url : "https://twitter.com/nze_MUC"
       
-  - image : images/team/simon.jpg
-    name : Simon Hofmann
-    designation : Software Engineer
-    description : 
-    socialIcon :
-      - icon : "fab fa-github"
-        url : "https://github.com/s1hofmann"
-      - icon : "fab fa-twitter"
-        url : "https://twitter.com/s1hofmann"
-      
   - image : images/team/tim.jpg
     name : Tim Keiner
     designation : Software Engineer
