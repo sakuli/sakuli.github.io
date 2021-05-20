@@ -37,56 +37,76 @@ const hideForm = () => {
 
 const disableForm = () => {
   Array.from(
-    document.querySelectorAll("#contact-us input, #contact-us select, #contact-us textarea")
-  ).forEach(e => {
+    document.querySelectorAll(
+      "#contact-us input, #contact-us select, #contact-us textarea"
+    )
+  ).forEach((e) => {
     e.setAttribute("disabled", "disabled");
   });
 };
 
 const enableForm = () => {
   Array.from(
-    document.querySelectorAll("#contact-us input, #contact-us select, #contact-us textarea")
-  ).forEach(e => {
+    document.querySelectorAll(
+      "#contact-us input, #contact-us select, #contact-us textarea"
+    )
+  ).forEach((e) => {
     e.removeAttribute("disabled");
   });
 };
 
 const resetForm = () => {
-  (document.querySelector("#contact-form")as HTMLFormElement)?.reset();
+  (document.querySelector("#contact-form") as HTMLFormElement)?.reset();
 };
 
-const wait = (ms: number) => new Promise(res => setTimeout(res, ms));
+const wait = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-fetch("https://www.consol.com/request-sakuli/")
-  .then(r => r.text())
+const ensureHostFromUrl = (hostUrl:string) => (url: string) => {
+  const from = document.createElement('a')
+  from.href = hostUrl;
+  const to = document.createElement('a')
+  to.href = url;
+
+  to.protocol = from.protocol
+  to.host = from.host
+  to.port = from.port
+
+  return to.href;
+}
+
+const targetUrl = "https://www.consol.com/request-sakuli/"
+
+const ensureTargetHost = ensureHostFromUrl(targetUrl);
+
+fetch(targetUrl)
+  .then((r) => r.text())
   .then(parseStringToHtml("form.powermail_form"))
-  .then(remoteForm => {
-    const ourForm: HTMLFormElement | null = document.querySelector(
-      "#contact-us form"
-    );
-    console.log("Fetched contact form")
+  .then((remoteForm) => {
+    const ourForm: HTMLFormElement | null =
+      document.querySelector("#contact-us form");
+    console.log("Fetched contact form");
     if (ourForm) {
-      ourForm.action = remoteForm?.getAttribute("action") ?? ourForm.action;
+      ourForm.action = ensureTargetHost(remoteForm?.getAttribute("action") ?? ourForm.action);
       const remoteHiddens = remoteForm?.querySelectorAll(
         'input[type="hidden"]'
       );
-      Array.from(remoteHiddens ?? []).forEach(hidden => {
+      Array.from(remoteHiddens ?? []).forEach((hidden) => {
         ourForm.prepend(hidden);
       });
       ourForm.addEventListener(
         "submit",
-        e => {
+        (e) => {
           e.preventDefault();
           ourForm.setAttribute("disabled", "disabled");
           const formData = new FormData(ourForm);
           hideError();
           fetch(ourForm.action, {
             method: "POST",
-            body: formData
+            body: formData,
           })
-            .then(r => r.text())
+            .then((r) => r.text())
             .then(parseStringToHtml(".powermail_message_error"))
-            .then(responseHtml => {
+            .then((responseHtml) => {
               if (responseHtml) {
                 throw responseHtml;
               }
@@ -99,7 +119,7 @@ fetch("https://www.consol.com/request-sakuli/")
                 enableForm();
               });
             })
-            .catch(e => {
+            .catch((e) => {
               showError();
               enableForm();
             });
@@ -110,16 +130,20 @@ fetch("https://www.consol.com/request-sakuli/")
     }
   });
 
-const dropDown = document.querySelector('#powermail_field_kundenwunsch');
+const dropDown = document.querySelector("#powermail_field_kundenwunsch");
 const preSelectInterest = (ddValue: string) => {
-  resetSelection()
-  dropDown?.querySelector(`option[value="${ddValue}"]`)?.setAttribute('selected', 'selected')
-}
+  resetSelection();
+  dropDown
+    ?.querySelector(`option[value="${ddValue}"]`)
+    ?.setAttribute("selected", "selected");
+};
 const resetSelection = () => {
-  Array.from(dropDown?.querySelectorAll('option') ?? []).forEach(option => option.removeAttribute('selected'))
-}
+  Array.from(dropDown?.querySelectorAll("option") ?? []).forEach((option) =>
+    option.removeAttribute("selected")
+  );
+};
 
-const params = new URLSearchParams(window.location.search)
-if (params.has('interest')) {
-  preSelectInterest(params.get('interest')!)
+const params = new URLSearchParams(window.location.search);
+if (params.has("interest")) {
+  preSelectInterest(params.get("interest")!);
 }
