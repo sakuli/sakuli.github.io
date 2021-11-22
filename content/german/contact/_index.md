@@ -1,3 +1,0 @@
-+++
-customJs = "custom/index.js"
-+++
