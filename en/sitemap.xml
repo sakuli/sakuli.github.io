@@ -17,48 +17,6 @@
   </url>
   
   <url>
-    <loc>/contact/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/contact/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/contact/"
-                />
-  </url>
-  
-  <url>
-    <loc>/dataprivacy/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/dataprivacy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/dataprivacy/"
-                />
-  </url>
-  
-  <url>
-    <loc>/demo/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/demo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/demo/"
-                />
-  </url>
-  
-  <url>
     <loc>/features/</loc>
     <xhtml:link
                 rel="alternate"
@@ -69,34 +27,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/features/"
-                />
-  </url>
-  
-  <url>
-    <loc>/legalnotice/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/legalnotice/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/legalnotice/"
-                />
-  </url>
-  
-  <url>
-    <loc>/whitepaper/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/whitepaper/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/whitepaper/"
                 />
   </url>
   
