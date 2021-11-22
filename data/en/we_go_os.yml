@@ -1,5 +1,6 @@
 enable : true
-title : "Finally a solution for real End-to-End Testing and Monitoring"
-content : "Visit the documentation, enhance your application quality and be in control of your revenue-stream:"
-docsUrl : "https://sakuli.io/docs/getting-started/"
-btnText : "Take me to the Docs and get started  "
+title : "🎉 Sakuli will become Open-Source 100% 🎉"
+content : "All Enterprise Features like Container, Forwarder etc. will become open-source in the next couple of months. The full potential of Sakuli will be free of charge in the near future."
+content_2 : "We are looking for people to further maintain and develop this project. Sakuli is build with modern technology, is backed up by a good test coverage and has proven itself in production environments. For further information and to contact maintainers, please visit Github:"
+docsUrl : "https://github.com/orgs/sakuli/people/"
+btnText : "Contact us"

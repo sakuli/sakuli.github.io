@@ -1,6 +1,6 @@
 enable : true
 title : "🎉 Sakuli wird komplett Open-Source 🎉"
-content : "Alle bisher kostenpflichtigen Features wie Container, Forwarder, etc. werden in den nächsten Monaten unter OpenSource Lizenz gestellt. Das bedeutet, dass zukünftig das gesamte Potential von Sakuli kostenlos zur Verfügung steht."
-content_2 : "Aus diesem Grund sind wir im Moment auf der Suche nach Personen die dieses Projekt zukünftig pflegen und weiterentwickeln. Sakuli ist auf einer soliden Basis, hat eine sehr gute Testabdeckung und hat sich in der Produktion vielfach bewährt. Für weitere Infos und um mit den bisherigen Maintaineren in Kontakt zu treten besucht die Github Seite und hinterlasst ein Ticket oder eine Nachricht:"
+content : "Alle Enterprise Features wie Container, Forwarder, etc. werden in den nächsten Monaten unter OpenSource Lizenz gestellt. Das bedeutet, dass zukünftig das gesamte Potential von Sakuli kostenlos zur Verfügung steht."
+content_2 : "Aus diesem Grund sind wir im Moment auf der Suche nach Personen, die dieses Projekt zukünftig pflegen und weiterentwickeln. Sakuli ist auf einer soliden Basis, hat eine sehr gute Testabdeckung und hat sich in der Produktion vielfach bewährt. Für weitere Infos und um mit den bisherigen Maintaineren in Kontakt zu treten besucht die Github Seite:"
 docsUrl : "https://github.com/orgs/sakuli/people/"
 btnText : "Kontakt aufnehmen"
