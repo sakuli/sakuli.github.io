@@ -1,30 +1,4 @@
-companyUrl : "https://consol.com"
-companyName : "Consol"
-footerUpper : 
-    - heading : "Portfolio"
-      sections :
-      - title : "Open-Source"
-        url : "https://github.com/sakuli"
-        target : external
-      - title : "Enterprise"
-        url : "enterprise"
-        target : internal
-    - heading : "Download"
-      sections : 
-      - title : "Whitepaper"
-        url : "../whitepaper/"
-        target : sub
-    - heading : "Services"
-      sections : 
-      - title : "Contact"
-        url : "../contact/"
-        target : sub
-      - title : "Legal Notice"
-        url : "../legalnotice/"
-        target : sub
-      - title : "Data privacy"
-        url : "../dataprivacy/"
-        target : sub
+copyrightCompany : "Sakuli"
 footerLower : 
     logo : "images/logos/logo.svg"
     sections : 

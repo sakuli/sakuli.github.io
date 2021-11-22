@@ -1,21 +1,6 @@
 
 <head>
-    {{ if .Site.Params.ActivateGoogleAnalytics }}
-        <!-- Google Tag Manager (needs to stay as first element in head) -->
-        <!-- type text/plain must stay there as klaro cookie banner will activate only on consent -->
-        <script data-name="googleanalytics" data-type="application/javascript" type="text/plain">(function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                }); var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-TMFSKHB');</script>
-        <!-- End Google Tag Manager -->
-    {{ end }}
-    {{ if .Site.Params.ActivatePrimeLeads }}
-        <script data-type="application/javascript" type="text/plain" data-src="https://app.primeleads.de/api/v1/4uewa4e9rh" data-name="primeLeads" ></script>
-    {{ end }}
+    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description"
         content="{{ if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">

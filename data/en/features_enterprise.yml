@@ -1,5 +1,5 @@
 enable : true
-heading : Enterprise
+heading : Additional
 headingSpan : Features
 featuresItem: 
       - icon : fas fa-chart-area
@@ -51,7 +51,6 @@ featuresItem:
                   - liEl : Mozilla Firefox
                   - liEl : Chromium
                   - liEl : Sakuli
-                  - liEl : "Starting from L-Package: RDP installation for remote connection to Windows machines"
       
       - icon : fab fa-redhat
         title : S2I Images
@@ -60,21 +59,7 @@ featuresItem:
             - linkUrl : "https://sakuli.io/docs/enterprise_features/s2i/"
             - linkText : " Check out our documentation."
 
-      - icon : fas fa-hands-helping
-        title : Professional Support
-        content:
-            - paragraph : "Sakuli Core and Sakuli add-ons are supported on a business impact prioritization. This prioritization is performed by our experts in respect to:" 
-              list : 
-                  - liEl : Security > Function without Workaround > Function with Workaround 
-            - paragraph : Support is restricted on Bugs of Sakuli and its Features (Consulting and Setup are not included) and limited to the amount of cases specified in the respective Subscription Package. Support inquiries need to be in a structured form (Please use the provided template) with all necessary information about the system environment, configuration and a detailed report. Customers need to ensure reproducibility of the issue by offering remote accessibility or an appropriate system to reproduce on. 
-            - paragraph : SLA times are defined as initial reaction time from Monday to Friday during German business hours 08:00 - 17:00 – excluding German public holidays. Support is offered via email.
       
-      - icon : fas fa-code
-        title : Maintenance
-        content:
-            - paragraph : You will be granted access to new features, the latest updates, including security patches, bug-fix releases and enhancements for Sakuli and its add-ons for the time of your active licensing plan.
-            - paragraph : The Sakuli DEV team tracks security incidents of underlying software components regularly and updates Sakuli components with the latest security fix releases shortly after appearance.
-
       - icon : fas fa-desktop
         title : Sakuli-Dashboard
         content:
@@ -85,8 +70,6 @@ featuresItem:
                   - liEl: Watch your Sakuli test in real-time with the integrated VNC display.
                   - liEl: Automated scheduling of your Sakuli test to monitor your application continuously.
                   - liEl: Embed your monitoring frontend to the dashboard and monitor the performance of your application.
-            - linkUrl: "https://sakuli.io/demo/"
-            - linkText: "You will find a demo of the dashboard here."
 
       - icon: fas fa-camera
         title: OCR

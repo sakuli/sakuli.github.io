@@ -51,11 +51,10 @@
 					</div>
 
 					<div class="copyright text-center">
-						<p style="padding: 1rem; font-size: 1rem">A <a href="{{ .companyUrl }}"> {{ .companyName }} </a>
-							brand &copy;
+						<p style="padding: 1rem; font-size: 1rem">© {{ .copyrightCompany }} Authors  </a>
 							<script>
 								document.write(new Date().getFullYear())
-							</script>. All Rights Reserved.</p>
+							</script>.</p>
 					</div>
 				</div>
 			</div>
@@ -71,14 +70,9 @@
 {{ $wowJs := resources.Get "plugins/wow/dist/wow.min.js"}}
 {{ $script := resources.Get "js/script.js" }}
 {{ $scroll := resources.Get "js/scroll-behavior-polyfill.js" }}
-{{ $klaroConfigJs := resources.Get "plugins/klaroCookie/config.js" }}
-{{ $klaroJs := resources.Get "plugins/klaroCookie/klaro.js" }}
 
-{{ $jsResources := slice $jqueryJs $awesome $bootstrapJs $wowJs $script $scroll $klaroConfigJs $klaroJs}}
+
+{{ $jsResources := slice $jqueryJs $awesome $bootstrapJs $wowJs $script $scroll}}
 {{ $js := $jsResources | resources.Concat "js/bundle.js" | resources.Minify }}
 <script src="{{ $js.RelPermalink }}"></script>
 
-{{ with .Params.customJs }}
-{{$cjs := resources.Get . | resources.Minify}}
-<script src="{{ $cjs.RelPermalink }}"></script>
-{{ end }}

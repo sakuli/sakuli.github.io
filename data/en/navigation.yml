@@ -5,23 +5,7 @@ menu:
       URL : "features"
       nav : "Features"
       weight : 7
-    - type : int
-      URL : "enterprise"
-      nav : "Enterprise"
-      weight : 8
-    - type : int      
-      URL : "company"
-      nav : "About us"
-      weight : 9
-    - type : sub
-      URL : "contact/"
-      nav : "Contact"
-      weight : 10
     - type : ext
       URL : "https://sakuli.io/docs/getting-started/"
       nav : "Docs"
       weight : 20
-    - type : sub
-      URL : "../whitepaper/"
-      nav : "Paper"
-      weight : 25
