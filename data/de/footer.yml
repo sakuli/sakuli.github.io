@@ -3,7 +3,7 @@ footerUpper :
   - heading : "Services"
     sections :
       - title : "Impressum"
-        url : "../legalnotice/"
+        url : "/legalnotice/"
         target : sub
 footerLower :
     logo : "images/logos/logo.svg"
