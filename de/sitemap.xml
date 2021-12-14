@@ -31,6 +31,20 @@
   </url>
   
   <url>
+    <loc>/de/legalnotice/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/legalnotice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="/de/legalnotice/"
+                />
+  </url>
+  
+  <url>
     <loc>/de/categories/</loc>
     <xhtml:link
                 rel="alternate"
