@@ -1,5 +1,11 @@
 copyrightCompany : "Sakuli"
-footerLower : 
+footerUpper :
+  - heading : "Services"
+    sections :
+      - title : "Impressum"
+        url : "../legalnotice/"
+        target : sub
+footerLower :
     logo : "images/logos/logo.svg"
     sections : 
     - icon : "fab fa-twitter fa-2x"

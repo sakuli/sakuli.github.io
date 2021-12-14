@@ -1,4 +1,10 @@
 copyrightCompany : "Sakuli"
+footerUpper :
+  - heading : "Services"
+    sections :
+      - title : "Legal Notice"
+        url : "../legalnotice/"
+        target : sub
 footerLower : 
     logo : "images/logos/logo.svg"
     sections : 
