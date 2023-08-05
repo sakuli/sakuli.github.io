@@ -15,4 +15,5 @@
     {{ $styles := resources.Get "css/style.css" | minify }}
     {{ $css := slice $bootstrap $animate $styles | resources.Concat "css/bundle.css" }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+    <script defer data-domain="sakuli.io" src="https://plausible.io/js/script.js"></script>
 </head>
